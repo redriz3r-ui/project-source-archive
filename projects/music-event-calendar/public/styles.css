@@ -1,0 +1,260 @@
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #121212; /* Dark background for jazz club vibe */
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; /* Soft white text color for readability */
+}
+
+/* Title styling */
+h1 {
+    color: #00c2ff; /* Neon blue */
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'RetroFont', sans-serif; /* Add retro font */
+    text-shadow: 0px 0px 1px #00c2ff/* Neon glow effect */
+}
+
+/* Month navigation */
+#monthLabel {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f4e04d; /* Bright yellow accent */
+    margin: 10px 0;
+    font-family: 'ClassicSerif', serif; /* Serif font for elegance */
+    text-shadow: 0px 0px 1x #f4e04d, 0px 0px 3px #f4e04d; /* Neon glow */
+}
+
+button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #00c2ff;
+    cursor: pointer;
+    font-family: 'RetroFont', sans-serif;
+    text-shadow: 0px 0px 1px #00c2ff, 0px 0px 3px #00c2ff;
+}
+
+button:hover {
+    color: #ff4081; /* Pink for hover effect */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Calendar styling */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for each day of the week */
+    gap: 5px;
+    width: 90vw;
+    max-width: 1200px;
+}
+
+.day {
+    padding: 15px;
+    background-color: #282828; /* Dark gray for day names */
+    color: #f4e04d; /* Bright yellow */
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'ClassicSerif', serif;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 5px #000; /* Shadow for 3D effect */
+}
+
+.date {
+    padding: 15px;
+    background-color: #1e1e1e; /* Subtle dark background for dates */
+    border: 1px solid #444; /* Border to define date boxes */
+    color: #ffffff;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Deep shadow */
+}
+
+.date:hover {
+    background-color: #00c2ff; /* Neon blue on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0px 0px 1px #00c2ff, 0px 0px 10px #00c2ff;
+}
+
+.date.today {
+    background-color: #ff4081; /* Pink for today */
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px #ff4081, 0px 0px 10px #ff4081;
+    box-shadow: 0px 0px 10px #ff4081, 0px 0px 20px #ff4081;
+}
+
+.event {
+    background-color: #f4e04d; /* Yellow background for events */
+    color: #1e1e1e;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    font-family: 'ClassicSerif', serif;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Upcoming events list styling */
+h2 {
+    color: #00c2ff;
+    font-size: 2rem;
+    margin-top: 30px;
+    font-weight: bold;
+    font-family: 'RetroFont', sans-serif;
+    text-shadow: 0px 0px 1px #00c2ff, 0px 0px 50px #00c2ff;
+}
+
+#eventList {
+    width: 90vw;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.event-item {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8); /* Strong shadow for 3D effect */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 5px #00c2ff, 0px 0px 15px #00c2ff;
+}
+
+/* Style for clickable event titles */
+.event-item h3 a {
+    color: #f4e04d; /* Set your preferred color for the title */
+    text-decoration: none; /* Remove the underline */
+    font-weight: bold;
+    font-family: 'RetroFont', sans-serif; /* Use your preferred font */
+    text-shadow: 0px 0px 1px #f4e04d, 0px 0px 10px #f4e04d; /* Optional: add a neon glow effect */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for links */
+.event-item h3 a:hover {
+    color: #00c2ff; /* Color on hover */
+    transform: scale(10.05); /* Slightly enlarge on hover */
+}
+
+/* Modal styling */
+#eventModal, #viewEventModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #1e1e1e;
+    border: 2px solid #444;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    max-width: 500px;
+    width: 90%;
+    z-index: 1000;
+}
+
+#eventModal h2, #viewEventModal h2 {
+    color: #00c2ff;
+    font-size: 1.8rem;
+    font-family: 'RetroFont', sans-serif;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 0px 5px #00c2ff, 0px 0px 10px #00c2ff;
+}
+
+#eventModal label, #viewEventModal label {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+#eventModal input, #eventModal textarea, #eventModal select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #333333;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-button {
+    background-color: #00c2ff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'RetroFont', sans-serif;
+    box-shadow: 0px 0px 5px #00c2ff, 0px 0px 10px #00c2ff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 10px #00c2ff, 0px 0px 20px #00c2ff;
+}
+
+#deleteEvent {
+    background-color: #ff4081;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ff4081;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-shadow: 1px 1px #000;
+}
+
+.close-button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .day, .date {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    #eventList, #calendar {
+        width: 100%;
+    }
+}
