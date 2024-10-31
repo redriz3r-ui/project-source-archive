@@ -247,6 +247,28 @@ window.addEventListener('load', () => {
     generateCalendar(currentMonth, currentYear);
 });
 
+// Define the array of band names
+const jazzBands = ["Band 1", "Band 2", "Band 3", "Band 4", "Band 5", "Band 6"];
+
+// Function to display bands on the page
+function displayBands() {
+    const bandListContainer = document.getElementById("bandList");
+
+    jazzBands.forEach((band, index) => {
+        // Create a div for each band with clickable styling
+        const bandLink = document.createElement("a");
+        bandLink.href = `#${band.toLowerCase().replace(/\s+/g, '-')}`; // Make it clickable; adjust href if needed
+        bandLink.className = "band-link";
+        bandLink.textContent = band;
+
+        // Append the link to the bandList container
+        bandListContainer.appendChild(bandLink);
+    });
+}
+
+// Call displayBands to populate the bands when the page loads
+window.onload = displayBands;
+
 // Event listeners
 document.getElementById('saveEvent').addEventListener('click', saveEvent);
 document.getElementById('deleteEvent').addEventListener('click', deleteEvent);

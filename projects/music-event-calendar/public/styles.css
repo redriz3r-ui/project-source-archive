@@ -14,20 +14,38 @@ body {
 
 /* Title styling */
 h1 {
-    color: #00c2ff; /* Neon blue */
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 6rem;
     font-weight: bold;
-    font-family: 'RetroFont', sans-serif; /* Add retro font */
-    text-shadow: 0px 0px 1px #00c2ff/* Neon glow effect */
+    color: #ffffff; /* Main text color */
+    text-align: center;
+    font-family: 'Playfair Display', ; /* Replace with your desired font */
+
+    /* Apply multiple shadows for 3D effect */
+    text-shadow: 
+        -2px -2px 0px #006666,   /* Top left shadow in darker color */
+        -4px -4px 0px #003333,   /* Further top left shadow */
+        2px 2px 0px #4db441,     /* Bottom right shadow in light color */
+        4px 4px 0px #217b5c; 
+}
+
+/* Inner outline using a pseudo-element */
+.h1:before {
+    content: attr(data-text); /* Duplicates the text content */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: transparent;
+    -webkit-text-stroke: 1px #006666; /* Outline color and thickness */
+    -webkit-text-fill-color: transparent;
+    text-shadow: none; /* Removes other shadows on the outline */
 }
 
 /* Month navigation */
 #monthLabel {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #f4e04d; /* Bright yellow accent */
+    color: #ffffff; /* Bright yellow accent */
     margin: 10px 0;
     font-family: 'ClassicSerif', serif; /* Serif font for elegance */
     text-shadow: 0px 0px 1x #f4e04d, 0px 0px 3px #f4e04d; /* Neon glow */
@@ -60,7 +78,7 @@ button:hover {
 .day {
     padding: 15px;
     background-color: #282828; /* Dark gray for day names */
-    color: #f4e04d; /* Bright yellow */
+    color: #fff; /* Bright yellow */
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
@@ -106,17 +124,16 @@ button:hover {
     font-family: 'ClassicSerif', serif;
     text-align: left;
     border-radius: 5px;
-    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Upcoming events list styling */
 h2 {
-    color: #00c2ff;
+    color: #ffffff;
     font-size: 2rem;
     margin-top: 30px;
     font-weight: bold;
     font-family: 'RetroFont', sans-serif;
-    text-shadow: 0px 0px 1px #00c2ff, 0px 0px 50px #00c2ff;
 }
 
 #eventList {
@@ -142,11 +159,15 @@ h2 {
 
 /* Style for clickable event titles */
 .event-item h3 a {
-    color: #f4e04d; /* Set your preferred color for the title */
-    text-decoration: none; /* Remove the underline */
     font-weight: bold;
-    font-family: 'RetroFont', sans-serif; /* Use your preferred font */
-    text-shadow: 0px 0px 1px #f4e04d, 0px 0px 10px #f4e04d; /* Optional: add a neon glow effect */
+    color: #ffffff; /* Main text color */
+    text-align: center;
+    font-family: 'Playfair Display', ; /* Replace with your desired font */
+
+    /* Apply multiple shadows for 3D effect */
+    text-shadow: 
+
+        2px 2px 0px #217b5c; 
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -256,5 +277,87 @@ h2 {
 
     #eventList, #calendar {
         width: 100%;
+    }
+}
+
+/* Festival Header */
+.festival-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.festival-header h1 {
+    font-size: 2.5rem;
+    color: #ff5c00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.festival-header p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-top: 10px;
+}
+
+/* Band List */
+.band-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Band Categories */
+.headliners .band-link {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.mid-tier .band-link {
+    font-size: 1.5rem;
+}
+
+.supporting-acts .band-link {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Link Styling */
+.band-link {
+    text-decoration: none;
+    color: #ff5c00;
+    transition: color 0.3s ease;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    background-color: #282828;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.band-link:hover {
+    color: #ff4081;
+    background-color: #333333;
+}
+
+/* Responsive Scaling */
+@media (max-width: 600px) {
+    .festival-header h1 {
+        font-size: 2rem;
+    }
+    
+    .festival-header p {
+        font-size: 1rem;
+    }
+    
+    .headliners .band-link {
+        font-size: 1.5rem;
+    }
+
+    .mid-tier .band-link {
+        font-size: 1.2rem;
+    }
+
+    .supporting-acts .band-link {
+        font-size: 1rem;
     }
 }
