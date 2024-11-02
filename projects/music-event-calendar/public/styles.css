@@ -14,6 +14,8 @@ body {
 
 /* Title styling */
 h1 {
+    margin-top: 10px; /* Reduce top margin */
+    margin-bottom: 5px; /* Reduce bottom margin */
     font-size: 6rem;
     font-weight: bold;
     color: #ffffff; /* Main text color */
@@ -88,6 +90,15 @@ button:hover {
 }
 
 .date {
+        width: auto;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
     padding: 15px;
     background-color: #1e1e1e; /* Subtle dark background for dates */
     border: 1px solid #444; /* Border to define date boxes */
@@ -123,7 +134,7 @@ button:hover {
     margin-top: 5px;
     font-size: 0.9rem;
     font-family: 'ClassicSerif', serif;
-    text-align: left;
+  text-align: center;
     border-radius: 5px;
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -370,3 +381,136 @@ h2 {
     }
 }
 
+.reserve-tickets-link {
+    position: absolute;
+    right: 120px; /* Adjust to position closer or farther from right */
+
+    color: #ffffff; /* White text for contrast */
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    z-index: 1000; /* Ensure it stays on top */
+    transition: transform 0.2s, background-color 0.2s; /* Smooth hover effect */
+
+    box-shadow: 0px 0px 1px #ff4081, 0px 0px 5px #ff4081;
+}
+
+.reserve-tickets-link:hover {
+    background-color: #ff3333; /* Lighter red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.section-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.section-links a {
+    text-decoration: none;
+    color: #ffffff; /* Red color */
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.section-links a:hover {
+    background-color: rgba(255, 0, 0, 0.1); /* Light red background on hover */
+}
+
+@media (max-width: 768px) {
+    /* Scale down the title and make it fit within the screen width */
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+
+    /* Make section links stack or space evenly */
+    .section-links {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    /* Resize month navigation buttons */
+    #prevMonth, #nextMonth {
+        font-size: 1.2rem;
+    }
+
+    /* Calendar styling */
+    #calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr); /* Ensures 7 columns (1 for each day of the week) */
+        gap: 2px; /* Reduces space between each day box */
+    }
+
+    /* Calendar day cells */
+    .date {
+        width: 100%; /* Make each day box fill the grid column */
+        height: 60px; /* Set a fixed height for mobile */
+        font-size: 0.75rem; /* Reduce font size for days */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Prevent overflow */
+        border-radius: 5px; /* Optional: Add a border radius for rounded corners */
+        background-color: #222; /* Optional: Uniform background color for days */
+        color: white; /* Ensures text contrast */
+    }
+
+    /* Event boxes inside calendar cells */
+    .event {
+        scale: 75%;
+        font-size: 0.01rem; /* Smaller font for event text on mobile */
+        max-height: 100px; /* Limit height for the event content */
+        text-align: center;
+        background-color: #ffeb3b; /* Background color to distinguish events */
+        color: black; /* Event text color for contrast */
+        border-radius: 3px;
+
+    }
+
+
+
+    /* About Section Grid */
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .grid-item {
+        padding: 10px;
+    }
+
+    /* Reserve Tickets Button */
+    .reserve-tickets-link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Smaller devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* Further scaling for smaller screens */
+
+
+    /* Make calendar cells more compact */
+    .date {
+        padding: 8px;
+    }
+
+    .event {
+        font-size: 0.7rem;
+    }
+}

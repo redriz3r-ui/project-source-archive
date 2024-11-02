@@ -2,105 +2,136 @@
 <html lang="en">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love The Captive</title>
+    <title>Love The Captive - Jazz Tuesdayz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+
     <h1>Jazz Tuesday</h1>
 
+    <!-- Navigation Links -->
+    <div class="section-links">
+        <a href="#calendar">Calendar</a>
+        <a href="#events">Events</a>
+        <a href="#about">About Us</a>
+        <a href="#bandList">Photos</a>
+    </div>
+
+    <!-- Reserve Tickets Banner -->
     <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
         <button id="prevMonth" style="font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer;">&#9664;</button>
         <div id="monthLabel" style="font-size: 24px; font-weight: bold;"></div>
         <button id="nextMonth" style="font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer;">&#9654;</button>
+
     </div>
+<!--      <a href="ticketing-page.html" class="reserve-tickets-link">Reserve Tickets Now!</a>  -->
 
-    <div id="calendar"></div>
+    <!-- Calendar Section -->
+    <section id="calendar">
+        <div id="calendar"></div>
+    </section>
 
-    <h2>Upcoming Events</h2>
-<div id="eventList"></div>
+    <!-- Upcoming Events Section -->
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <div id="eventList"></div>
+    </section>
 
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div id="aboutJazzTuesday" class="grid-container">
+            <div class="grid-item">
+                <h3>History</h3>
+                <p>Jazz Tuesday has been bringing soulful jazz tunes to the community since 2010. Our event started as a small gathering and has grown into a local tradition.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Location</h3>
+                <p>Hosted at the iconic Blue Note Jazz Club, a venue known for its intimate atmosphere and exceptional acoustics, making it the perfect spot for jazz lovers.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Modal for Adding/Editing Events -->
+    <div id="eventModal" style="display: none;">
+        <div class="modal-content">
+            <h2>Add/Edit Event</h2>
+            <div id="errorMessage" style="color: red; margin-bottom: 10px; display: none;"></div>
 
-<!-- Modal for Adding/Editing Events -->
-<div id="eventModal" style="display: none;">
-    <div class="modal-content">
-        <h2>Add/Edit Event</h2>
+            <label for="eventTitle">Event Title</label>
+            <input type="text" id="eventTitle" placeholder="Event Title" />
+            <label for="eventVenue">Venue</label>
+            <input type="text" id="eventVenue" placeholder="Enter Venue Name" />
 
-                <!-- Error message area -->
-                <div id="errorMessage" style="color: red; margin-bottom: 10px; display: none;"></div>
-
-
-        <label for="eventTitle">Event Title</label>
-        <input type="text" id="eventTitle" placeholder="Event Title" />
-        <label for="eventVenue">Venue</label>
-        <input type="text" id="eventVenue" placeholder="Venue" />
-
-        <label for="eventTime">Event Time</label>
-        <div>
-        <select id="eventHour">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-        </select>
-        <select id="eventMinute">
-            <option value="00">00</option>
-            <option value="15">15</option>
-            <option value="30">30</option>
-            <option value="45">45</option>
-        </select>
-        <select id="eventPeriod">
-            <option value="AM">AM</option>
-            <option value="PM">PM</option>
-        </select>
-    </div>  
-        <label for="eventDescription">Event Description</label>
-        <textarea id="eventDescription" placeholder="Event Description"></textarea>
-        <div class="button-container">
+            <label for="eventTime">Event Time</label>
+            <div>
+                <select id="eventHour">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select id="eventMinute">
+                    <option value="00">00</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                </select>
+                <select id="eventPeriod">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>  
+            <label for="eventDescription">Event Description</label>
+            <textarea id="eventDescription" placeholder="Event Description"></textarea>
             <div class="button-container">
                 <button id="saveEvent" class="action-button">Save Event</button>
                 <button id="deleteEvent" class="action-button" style="display: none;">Delete Event</button>
             </div>
             <label for="eventInstagramUrl">Band's Instagram URL</label>
-<input type="url" id="eventInstagramUrl" placeholder="https://instagram.com/bandname" />
-    </div>
-        <button onclick="closeEventModal()" class="close-button">X</button>
+            <input type="url" id="eventInstagramUrl" placeholder="https://instagram.com/bandname" />
+            <button onclick="closeEventModal()" class="close-button">X</button>
+        </div>
     </div>
 
     <!-- View Event Modal -->
-<div id="viewEventModal" style="display: none;">
-    <div class="modal-content">
-        <h2>View Event</h2>
-        <p><strong>Title:</strong> <span id="viewEventTitle"></span></p>
-        <p><strong>Time:</strong> <span id="viewEventTime"></span></p>
-        <p><strong>Description:</strong> <span id="viewEventDescription"></span></p>
-        <button onclick="closeViewEventModal()">Close</button>
+    <div id="viewEventModal" style="display: none;">
+        <div class="modal-content">
+            <h2>View Event</h2>
+            <p><strong>Venue:</strong> <span id="viewEventVenue"></span></p>
+            <p><strong>Title:</strong> <span id="viewEventTitle"></span></p>
+            <p><strong>Time:</strong> <span id="viewEventTime"></span></p>
+            <p><strong>Description:</strong> <span id="viewEventDescription"></span></p>
+            <button onclick="closeViewEventModal()">Close</button>
+        </div>
     </div>
-</div>
 
-</div>
-<div class="container">
-    <header class="festival-header">
-        <h1>Jazz Tuesday Bands</h1>
-        <p>Explore the bands that have shared the stage!</p>
-    </header>
+    <!-- Photos Section -->
+    <div class="container">
+        <header class="festival-header">
+            <h1>Featuring Bands</h1>
+        </header>
+        <section id="bandList" class="band-list"></section>
+    </div>
 
-    <!-- Container where the bands will be added -->
-    <section id="bandList" class="band-list"></section>
-</div>
+    <!-- Reserve Seats Section -->
+    <section id="reserve">
+        <h2>Reserve Seats</h2>
+        <!-- Reservation form or instructions -->
+    </section>
 
     <script src="app.js"></script>
 </body>

@@ -62,7 +62,8 @@ function saveEvent() {
 
     // Create or update event
     const existingEventIndex = eventsData.findIndex(event => event.date === eventDate);
-    const newEvent = { title, date: eventDate, time, description, instagramUrl };
+    const newEvent = { title, venue, date: eventDate, time, description, instagramUrl };
+    console.log("Saving event:", newEvent); 
 
     if (existingEventIndex > -1) {
         eventsData[existingEventIndex] = newEvent; // Update existing event
@@ -128,7 +129,11 @@ function generateCalendar(month, year) {
         if (event) {
             const eventDiv = document.createElement('div');
             eventDiv.classList.add('event');
-            eventDiv.innerHTML = `<strong>${event.title}</strong><br>${event.time}<br>${event.description}`;
+            eventDiv.innerHTML = `
+            <strong>${event.title}</strong><br>${event.time}<br>${event.description}
+                        <span class="reserve-indicator">${event.venue}</span>
+        `;
+        
             dayDiv.appendChild(eventDiv);
         }
 
@@ -198,6 +203,7 @@ function openEventModal(day) {
     // If an event exists, populate fields and show delete button
     if (event) {
         document.getElementById('eventTitle').value = event.title;
+        document.getElementById('eventVenue').value = event.venue;
         document.getElementById('eventDescription').value = event.description;
         document.getElementById('eventHour').value = event.time.split(':')[0]; // Extract hour
         document.getElementById('eventMinute').value = event.time.split(':')[1].split(' ')[0]; // Extract minute
