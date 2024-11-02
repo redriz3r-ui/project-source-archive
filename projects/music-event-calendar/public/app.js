@@ -44,19 +44,21 @@ function changeMonth(offset) {
 function saveEvent() {
     const day = document.getElementById('saveEvent').getAttribute('data-day');
     const title = document.getElementById('eventTitle').value;
+    const venue = document.getElementById('eventVenue').value;
     const hour = document.getElementById('eventHour').value;
     const minute = document.getElementById('eventMinute').value;
     const period = document.getElementById('eventPeriod').value;
     const description = document.getElementById('eventDescription').value;
     const instagramUrl = document.getElementById('eventInstagramUrl').value; // New Instagram URL input
 
-    if (!title || !hour || !minute || !period || !instagramUrl) {
+    if (!title || !hour || !minute || !period) {
         alert("Please fill out all event fields.");
         return;
     }
 
     const time = `${hour}:${minute} ${period}`;
     const eventDate = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
 
     // Create or update event
     const existingEventIndex = eventsData.findIndex(event => event.date === eventDate);
@@ -95,7 +97,7 @@ function generateCalendar(month, year) {
     addDayNames(calendar);
 
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const firstDay = new Date(year, month).getDay();
+    const firstDay = new Date(year, month, 1).getDay();
 
     // Empty cells for days before the start of the month
     for (let i = 0; i < firstDay; i++) {
@@ -106,7 +108,8 @@ function generateCalendar(month, year) {
 
     // Calendar days
     for (let day = 1; day <= daysInMonth; day++) {
-        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const eventDate = new Date(year, month, day, 12, 0, 0); // Set time to noon for consistency
+        const dateStr = `${eventDate.getFullYear()}-${String(eventDate.getMonth() + 1).padStart(2, '0')}-${String(eventDate.getDate()).padStart(2, '0')}`;
         const dayDiv = document.createElement('div');
         dayDiv.classList.add('date');
         dayDiv.textContent = day;
@@ -134,10 +137,27 @@ function generateCalendar(month, year) {
     }
 }
 
+function formatDateString(dateStr) {
+    const [year, month, day] = dateStr.split("-");
+    const date = new Date(year, month - 1, day); // Adjust month index
+
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    return date.toLocaleDateString("en-US", options);
+}
+
 // Function to display events in the list below the calendar
 function updateEventList() {
     const eventList = document.getElementById('eventList');
     eventList.innerHTML = ''; // Clear the existing list
+
+    if (eventsData.length === 0) {
+        // Display message when there are no events
+        const noEventsMessage = document.createElement('div');
+        noEventsMessage.classList.add('no-events-message'); // Add a class for styling
+        noEventsMessage.textContent = "No events yet. Check back soon!";
+        eventList.appendChild(noEventsMessage);
+        return;
+    }
 
     // Sort events by date and time to display upcoming events in order
     const sortedEvents = eventsData.sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -154,7 +174,8 @@ function updateEventList() {
                     ${event.title}
                 </a>
             </h3>
-            <p><strong>Date:</strong> ${new Date(event.date).toDateString()}</p>
+            <p><strong>Venue:</strong> ${event.venue}</p>
+            <p><strong>Date:</strong> ${formatDateString(event.date)}</p>
             <p><strong>Time:</strong> ${event.time}</p>
             <p><strong>Description:</strong> ${event.description}</p>
         `;
@@ -168,6 +189,25 @@ function openEventModal(day) {
     clearModalFields();
     document.getElementById('eventModal').style.display = 'block';
     document.getElementById('saveEvent').setAttribute('data-day', day);
+    document.getElementById('deleteEvent').setAttribute('data-day', day); // Set data-day for delete button
+
+    // Get the event date format
+    const eventDate = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const event = eventsData.find(e => e.date === eventDate);
+
+    // If an event exists, populate fields and show delete button
+    if (event) {
+        document.getElementById('eventTitle').value = event.title;
+        document.getElementById('eventDescription').value = event.description;
+        document.getElementById('eventHour').value = event.time.split(':')[0]; // Extract hour
+        document.getElementById('eventMinute').value = event.time.split(':')[1].split(' ')[0]; // Extract minute
+        document.getElementById('eventPeriod').value = event.time.split(' ')[1]; // Extract AM/PM
+        document.getElementById('eventInstagramUrl').value = event.instagramUrl;
+
+        document.getElementById('deleteEvent').style.display = 'block'; // Show delete button for existing event
+    } else {
+        document.getElementById('deleteEvent').style.display = 'none'; // Hide delete button if no event
+    }
 }
 
 function closeEventModal() {

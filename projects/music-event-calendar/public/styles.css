@@ -99,6 +99,7 @@ button:hover {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Deep shadow */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .date:hover {
@@ -140,6 +141,12 @@ h2 {
     width: 90vw;
     max-width: 1200px;
     margin-top: 20px;
+}
+
+.no-events-message {
+    text-align: center;
+    color: #999;
+    font-size: 1.2rem;
 }
 
 .event-item {
@@ -207,6 +214,7 @@ h2 {
     color: #ffffff;
     font-size: 1.2rem;
 }
+
 
 #eventModal input, #eventModal textarea, #eventModal select {
     display: block;
@@ -361,3 +369,4 @@ h2 {
         font-size: 1rem;
     }
 }
+
