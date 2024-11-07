@@ -1,3 +1,36 @@
+const bands = [
+    { name: "Main Act 1", category: "Headliner" },
+    { name: "Main Act 2", category: "Headliner" },
+    { name: "Mid-Tier Band 1", category: "Mid-Tier" },
+    { name: "Mid-Tier Band 2", category: "Mid-Tier" },
+    { name: "Supporting Band 1", category: "Supporting" },
+    { name: "Supporting Band 2", category: "Supporting" },
+    { name: "Main Act 3", category: "Headliner" },
+    { name: "Mid-Tier Band 3", category: "Mid-Tier" },
+    { name: "Supporting Band 3", category: "Supporting" },
+    { name: "Main Act 4", category: "Headliner" },
+    { name: "Mid-Tier Band 4", category: "Mid-Tier" },
+    { name: "Supporting Band 4", category: "Supporting" },
+    { name: "Main Act 5", category: "Headliner" },
+    { name: "Mid-Tier Band 5", category: "Mid-Tier" },
+    { name: "Supporting Band 5", category: "Supporting" },
+    { name: "Main Act 6", category: "Headliner" },
+    { name: "Mid-Tier Band 6", category: "Mid-Tier" },
+    { name: "Supporting Band 6", category: "Supporting" },
+];
+
+const bandGrid = document.getElementById("bandGrid");
+
+bands.forEach(band => {
+    const bandLink = document.createElement("a");
+    bandLink.href = `#${band.name.toLowerCase().replace(/\s+/g, '-')}`;
+    bandLink.className = "band-link";
+    bandLink.textContent = band.name;
+
+    bandGrid.appendChild(bandLink);
+});
+
+
 // Initialize the current month and year
 const today = new Date();
 let currentMonth = today.getMonth();
@@ -312,6 +345,64 @@ function displayBands() {
     });
 }
 
+
+
+// Function to adjust the Y-axis position of the active image
+function adjustYAxis() {
+    const yOffset = document.getElementById('ySlider').value; // Get slider value (0-100)
+    const activeImage = document.querySelector('.carousel-item.active'); // Select the active image
+
+    if (activeImage) {
+        activeImage.style.objectPosition = `50% ${yOffset}%`; // Set X-axis center (50%), Y-axis based on slider
+        activeImage.setAttribute('data-y-offset', yOffset); // Store the y-offset in data attribute
+    }
+}
+
+let currentSlide = 0;
+const slides = document.querySelectorAll(".carousel-item");
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}, 5000);
+const dots = document.querySelectorAll(".carousel-indicators .dot");
+
+// Update the Y-axis slider position when a new slide is active
+function showSlide(index) {
+    const slides = document.querySelectorAll(".carousel-item");
+    const dots = document.querySelectorAll(".carousel-indicators .dot");
+
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        dots[i].classList.remove("active");
+        if (i === index) {
+            slide.classList.add("active");
+            dots[i].classList.add("active");
+            
+            // Update the slider position to reflect the current y-offset of the new active image
+            const yOffset = slide.getAttribute('data-y-offset') || 50;
+            document.getElementById('ySlider').value = yOffset;
+            slide.style.objectPosition = `50% ${yOffset}%`;
+        }
+    });
+}
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+}
+
+// Optional: Automatic slide rotation every 5 seconds
+setInterval(nextSlide, 5000);
+
 // Call displayBands to populate the bands when the page loads
 window.onload = displayBands;
 
@@ -327,3 +418,22 @@ window.addEventListener('load', () => {
     generateCalendar(currentMonth, currentYear);
     updateEventList(); // Initial render of upcoming events list
 });
+
+
+// Show "Back to Top" button when scrolling down
+window.onscroll = function () {
+    const backToTopButton = document.getElementById("backToTop");
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        backToTopButton.classList.add("show");
+    } else {
+        backToTopButton.classList.remove("show");
+    }
+};
+
+// Function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scroll
+    });
+}

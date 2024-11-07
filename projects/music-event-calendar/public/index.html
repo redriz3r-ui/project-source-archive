@@ -12,36 +12,67 @@
 <body>
 
 
-    <h1>Jazz Tuesday</h1>
-
+    <h1>Jazz Tuesdayz</h1>
+    <h4>"Jazz is Freedom, Come As You Are."</h4>
+    <h4>Jazz Night - Every Tuesday in Downtown Fresno, CA</h4>
     <!-- Navigation Links -->
     <div class="section-links">
-        <a href="#calendar">Calendar</a>
+        <a href="#Home">Home</a>
         <a href="#events">Events</a>
+        <a href="#calendar">Calendar</a>
         <a href="#about">About Us</a>
         <a href="#bandList">Photos</a>
+        <a href="ticketing-page.html" class="reserve-tickets-link">Reserve Tickets</a> 
     </div>
 
-    <!-- Reserve Tickets Banner -->
-    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
-        <button id="prevMonth" style="font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer;">&#9664;</button>
-        <div id="monthLabel" style="font-size: 24px; font-weight: bold;"></div>
-        <button id="nextMonth" style="font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer;">&#9654;</button>
+    <!-- -->
 
+<!--      -->
+
+<!-- Photo Carousel Section -->
+<section id="photoCarousel" class="carousel">
+    <div class="carousel-inner">
+        <img src="P1102841.JPG" alt="Photo 1" class="carousel-item active">
+        <img src="P1102790.JPG" alt="Photo 2" class="carousel-item">
+        <!-- Add more images as needed -->
     </div>
-<!--      <a href="ticketing-page.html" class="reserve-tickets-link">Reserve Tickets Now!</a>  -->
+    <div class="carousel-indicators">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+    </div>
+</section>
 
-    <!-- Calendar Section -->
-    <section id="calendar">
-        <div id="calendar"></div>
-    </section>
+<!-- Y-Axis Adjustment Slider -->
+<div class="y-adjustment">
+    <label for="ySlider">Adjust Vertical Position:</label>
+    <input type="range" id="ySlider" min="0" max="100" value="50" onchange="adjustYAxis()">
+</div>
+
+<div class="main-container">
+
 
     <!-- Upcoming Events Section -->
     <section id="events">
         <h2>Upcoming Events</h2>
         <div id="eventList"></div>
     </section>
+    
+    <section id="calendar">
 
+        <!-- Calendar Section -->
+ 
+            <div id="calendar">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                    <button id="prevMonth" style="font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer;">&#9664;</button>
+                    <div id="monthLabel" style="font-size: 24px; font-weight: bold;"></div>
+                    <button id="nextMonth" style="font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer;">&#9654;</button>
+                </div>
+            </div>
+        </section>
+
+</div>
     <!-- About Us Section -->
     <section id="about">
         <h2>About Us</h2>
@@ -52,7 +83,7 @@
             </div>
             <div class="grid-item">
                 <h3>Location</h3>
-                <p>Hosted at the iconic Blue Note Jazz Club, a venue known for its intimate atmosphere and exceptional acoustics, making it the perfect spot for jazz lovers.</p>
+                <p> placeholder Text </p>
             </div>
         </div>
     </section>
@@ -120,19 +151,48 @@
     </div>
 
     <!-- Photos Section -->
-    <div class="container">
+ <div class="container">
         <header class="festival-header">
             <h1>Featuring Bands</h1>
         </header>
-        <section id="bandList" class="band-list"></section>
-    </div>
+        <div class="headliners">
+            <a href="#" class="band-link">Main Act 1</a>
+            <a href="#" class="band-link">Main Act 2</a>
+        </div>
+        
+        <!-- Mid-Tier -->
+        <div class="mid-tier">
+            <a href="#" class="band-link">Mid-Tier Band 1</a>
+            <a href="#" class="band-link">Mid-Tier Band 2</a>
+        </div>
+        
+        <!-- Supporting Acts -->
+        <div class="supporting-acts">
+            <a href="#" class="band-link">Supporting Band 1</a>
+            <a href="#" class="band-link">Supporting Band 2</a>
+        </div>
 
-    <!-- Reserve Seats Section -->
-    <section id="reserve">
+
+        <section id="featuringBands" class="featuring-bands-section">
+            <header class="festival-header">
+                <h1>Featuring Bands</h1>
+            </header>
+            <div id="bandGrid" class="band-grid"></div>
+        </section>
+
+    
+<!-- Reserve Seats Section -->
+<section id="reserve">
+    <a href="#reserve-seats" class="reserve-link">
         <h2>Reserve Seats</h2>
-        <!-- Reservation form or instructions -->
-    </section>
+    </a>
+    <!-- Reservation form or instructions -->
+</section>
+<button id="backToTop" onclick="scrollToTop()">Top↑</button>
 
-    <script src="app.js"></script>
+    <script src="app.js">
+    </script>
+
+
 </body>
 </html>
