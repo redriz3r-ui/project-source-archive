@@ -437,3 +437,34 @@ function scrollToTop() {
         behavior: "smooth" // Smooth scroll
     });
 }
+
+// Fetch events data from the backend API
+async function fetchEvents() {
+    try {
+        const response = await fetch('/api/events');
+        const events = await response.json();
+
+        // Render the events list
+        const eventList = document.getElementById('eventList');
+        eventList.innerHTML = ''; // Clear the current list
+
+        events.forEach(event => {
+            const eventItem = document.createElement('div');
+            eventItem.classList.add('event-item');
+            eventItem.innerHTML = `
+                <h3>${event.title}</h3>
+                <p><strong>Venue:</strong> ${event.venue}</p>
+                <p><strong>Date:</strong> ${event.date}</p>
+                <p><strong>Time:</strong> ${event.time}</p>
+                <p><strong>Description:</strong> ${event.description}</p>
+                <p><strong>Available Seats:</strong> ${event.availableSeats}</p>
+            `;
+            eventList.appendChild(eventItem);
+        });
+    } catch (error) {
+        console.error('Error fetching events:', error);
+    }
+}
+
+// Call fetchEvents when the page loads
+window.onload = fetchEvents;

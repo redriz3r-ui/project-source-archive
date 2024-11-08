@@ -566,9 +566,30 @@ h2 {
     h1 {
         font-size: 2rem;
     }
+    h4 {
+        text-align: center; /* Center-align headers */
+        margin: 10px 0; /* Adjust spacing around header */
+        font-weight: bold; /* Ensure text is clear and stands out */
+    }
+    .section-links {
+        font-size: 0.8rem; /* Smaller font for mobile */
+        padding: 1px 5px; /* Adjust padding for mobile */
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        gap: 10px;
+        justify-content: center;
+        margin: 15px 0;
+    }
 
-    /* Further scaling for smaller screens */
-
+    .carousel-inner img {
+        object-fit: cover;
+        object-position: center; /* Center images in the carousel */
+    }
+    
+    #photoCarousel h1, h2 {
+        text-align: center;
+        font-size: 2.5rem; /* Smaller for mobile screens */
+    }
 
     /* Make calendar cells more compact */
     .date {
