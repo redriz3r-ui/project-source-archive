@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5jioiy5vajox"]
+
+[ext_resource type="Script" uid="uid://brsgng4fx3slb" path="res://peacock.gd" id="1_c8upv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8upv"]
+albedo_color = Color(0, 0.00392157, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vncfw"]
+material = SubResource("StandardMaterial3D_c8upv")
+size = Vector3(0.5, 0.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8upv"]
+size = Vector3(0.5, 0.3, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c8upv"]
+size = Vector2(2, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vncfw"]
+size = Vector2(10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3f625"]
+size = Vector3(5, 0.1, 5)
+
+[node name="PeacockWorld" type="Node3D"]
+
+[node name="Peacock" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+script = ExtResource("1_c8upv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Peacock"]
+mesh = SubResource("BoxMesh_vncfw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Peacock"]
+shape = SubResource("BoxShape3D_c8upv")
+
+[node name="Camera3D" type="Camera3D" parent="Peacock"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
+
+[node name="Tail" type="MeshInstance3D" parent="Peacock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("PlaneMesh_c8upv")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_vncfw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_3f625")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 0)
