@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Unravel Game"
+run/main_scene="res://scenes/Main3D.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
+[input]
+
+touch={
+"deadzone": 0.5,
+"events": [Object(InputEventScreenTouch,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"index":0,"position":Vector2(0, 0),"canceled":false,"pressed":false,"double_tap":false,"script":null)
+]
+}
+drag={
+"deadzone": 0.5,
+"events": [Object(InputEventScreenDrag,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"index":0,"tilt":Vector2(0, 0),"pressure":0.0,"pen_inverted":false,"position":Vector2(0, 0),"relative":Vector2(0, 0),"screen_relative":Vector2(0, 0),"velocity":Vector2(0, 0),"screen_velocity":Vector2(0, 0),"script":null)
+]
+}
+
+[rendering]
+
+renderer/rendering_method="mobile"

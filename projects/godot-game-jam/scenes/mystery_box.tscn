@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://3smroegq80gv"]
+
+[ext_resource type="Script" uid="uid://bev68140poyb7" path="res://scripts/mystery_box.gd" id="1_3k4m3"]
+[ext_resource type="Script" uid="uid://cscmoy5fjt0wv" path="res://scripts/dial_puzzle.gd" id="2_4k5m3"]
+
+[node name="MysteryBox" type="Node3D" groups=["mystery_box"]]
+script = ExtResource("1_3k4m3")
+
+[node name="BoxMesh" type="CSGBox3D" parent="."]
+size = Vector3(2, 2, 2)
+
+[node name="DialContainer" type="Node3D" parent="."]
+
+[node name="Dial1" type="Node3D" parent="DialContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 1.01)
+script = ExtResource("2_4k5m3")
+
+[node name="DialMesh" type="CSGCylinder3D" parent="DialContainer/Dial1"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.2
+height = 0.1
+
+[node name="NumberLabel" type="Label3D" parent="DialContainer/Dial1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11)
+text = "0"
+font_size = 24
+
+[node name="Dial2" type="Node3D" parent="DialContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.01)
+script = ExtResource("2_4k5m3")
+
+[node name="DialMesh" type="CSGCylinder3D" parent="DialContainer/Dial2"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.2
+height = 0.1
+
+[node name="NumberLabel" type="Label3D" parent="DialContainer/Dial2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11)
+text = "0"
+font_size = 24
+
+[node name="Dial3" type="Node3D" parent="DialContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 1.01)
+script = ExtResource("2_4k5m3")
+
+[node name="DialMesh" type="CSGCylinder3D" parent="DialContainer/Dial3"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.2
+height = 0.1
+
+[node name="NumberLabel" type="Label3D" parent="DialContainer/Dial3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11)
+text = "0"
+font_size = 24
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

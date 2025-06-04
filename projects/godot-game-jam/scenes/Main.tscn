@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6x8v0j6y5n3q"]
+
+[ext_resource type="Script" uid="uid://covig0ymq6fb6" path="res://scripts/main.gd" id="1_2u4vw"]
+[ext_resource type="PackedScene" uid="uid://c8q6y4v2x3n1m" path="res://scenes/UnravelableObject.tscn" id="2_3u4vw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2u4vw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="GameArea" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="UnravelableObject" parent="." instance=ExtResource("2_3u4vw")]
+position = Vector2(576, 324)

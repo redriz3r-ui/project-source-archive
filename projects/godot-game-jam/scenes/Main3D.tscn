@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://main3d"]
+
+[ext_resource type="Script" uid="uid://daog0hiq3quc1" path="res://scripts/main3d.gd" id="1_main3d"]
+[ext_resource type="PackedScene" path="res://scenes/UnravelableObject3D.tscn" id="2_unravel3d"]
+
+[sub_resource type="StandardMaterial3D" id="4"]
+albedo_color = Color(0.25, 0.25, 0.28, 1)
+
+[sub_resource type="BoxMesh" id="3"]
+size = Vector3(10, 0.1, 10)
+
+[node name="Main3D" type="Node3D"]
+script = ExtResource("1_main3d")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6154, -0.788215, 0, 0.788215, 0.6154, 0, -1, 0)
+material_override = SubResource("4")
+mesh = SubResource("3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+shadow_enabled = true
+shadow_bias = 0.05
+shadow_normal_bias = 0.8
+
+[node name="UnravelableObject3D" parent="." instance=ExtResource("2_unravel3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

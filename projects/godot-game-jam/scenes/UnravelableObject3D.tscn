@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcpww3y0hk1bj"]
+
+[ext_resource type="Script" path="res://scripts/unravelable_object_3d.gd" id="1_3dscript"]
+
+[sub_resource type="SphereMesh" id="1"]
+radius = 1.0
+height = 2.0
+is_hemisphere = false
+subdivide_height = 32
+subdivide_width = 32
+
+[sub_resource type="StandardMaterial3D" id="2"]
+albedo_color = Color(0.4, 0.6, 0.8, 1)
+
+[sub_resource type="SphereMesh" id="3"]
+radius = 0.15
+height = 0.3
+is_hemisphere = false
+subdivide_height = 8
+subdivide_width = 8
+
+[sub_resource type="StandardMaterial3D" id="4"]
+albedo_color = Color(1, 0.2, 0.2, 1)
+
+[node name="UnravelableObject3D" type="Node3D"]
+script = ExtResource("1_3dscript")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("1")
+material_override = SubResource("2")
+
+[node name="Marker" type="MeshInstance3D" parent="."]
+mesh = SubResource("3")
+material_override = SubResource("4")
+position = Vector3(0, 1, 0) 
