@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=4 uid="uid://dp4m2ys8kkgy6"]
+
+[ext_resource type="Script" uid="uid://bn5ukxjcg1pea" path="res://nightsky.gd" id="1_68mg8"]
+[ext_resource type="Script" uid="uid://7tny7mrrd6xx" path="res://ShootingStarSpawner.gd" id="3_aiomh"]
+[ext_resource type="FontFile" uid="uid://o33l6o0tvp46" path="res://ARCADECLASSIC.TTF" id="4_aiomh"]
+
+[sub_resource type="Theme" id="Theme_0hm2x"]
+default_font = ExtResource("4_aiomh")
+default_font_size = 32
+
+[node name="Nightsky" type="Node2D"]
+script = ExtResource("1_68mg8")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="StarContainer" type="Node2D" parent="."]
+
+[node name="ShootingStarSpawner" type="Node2D" parent="StarContainer"]
+script = ExtResource("3_aiomh")
+
+[node name="Starfield" type="CPUParticles2D" parent="StarContainer"]
+amount = 500
+lifetime = 10.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+scale_amount_min = 0.5
+color = Color(0.00392157, 0.00392157, 0.00392157, 0.00392157)
+
+[node name="Camera2D" type="Camera2D" parent="StarContainer"]
+position = Vector2(571, 331)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = -100.0
+offset_right = 75.0
+offset_bottom = -77.0
+text = "Speed: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 150.0
+offset_top = 10.0
+offset_right = 211.0
+offset_bottom = 33.0
+theme = SubResource("Theme_0hm2x")
+theme_override_colors/font_color = Color(0.873298, 0.873298, 0.873298, 1)
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

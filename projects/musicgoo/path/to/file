@@ -1,0 +1,110 @@
+func create_asteroid_node(size: String, y_pos: float) -> Node2D:
+    var size_data = {
+        "Large": {
+            "scale_factor": 6.0, 
+            "hp": 3, 
+            "line_width": 2.0, 
+            "tier": "Large", 
+            "points": randf() < 0.4 ? -50 : 100  # 40% chance for negative points
+        },
+        "Medium": {
+            "scale_factor": 4.0, 
+            "hp": 2, 
+            "line_width": 1.5, 
+            "tier": "Medium", 
+            "points": 50
+        },
+        "Small": {
+            "scale_factor": 2.5, 
+            "hp": 1, 
+            "line_width": 1.0, 
+            "tier": "Small", 
+            "points": 10
+        }
+    }[size]
+    
+    var asteroid = Node2D.new()
+    
+    # Create the point value label
+    var point_label = Label.new()
+    var points_text = str(size_data.points)
+    if size_data.points > 0:
+        points_text = "+" + points_text
+    point_label.text = points_text
+    point_label.add_theme_color_override("font_color", Color(1, 1, 1))  # White color
+    point_label.add_theme_font_size_override("font_size", 24)  # Bigger font size
+    # Center the label on the asteroid
+    point_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+    point_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+    asteroid.add_child(point_label)
+    
+    # Rest of the existing asteroid creation code...
+    var scale_factor = size_data.scale_factor
+    var shape = generate_asteroid_shape(scale_factor)
+    var line = Line2D.new()
+    line.width = size_data.line_width
+    # Change color based on points
+    line.default_color = Color(1, 0.2, 0.2, 1) if size_data.points > 0 else Color(0.5, 0, 0, 1)
+    asteroid.add_child(line)
+    asteroid.position = Vector2(viewport_size.x + 50, y_pos)
+    var velocity = Vector2(-150.0, randf_range(-20.0, 20.0))
+    var rotation_speed = randf_range(1.0, 2.0)
+    
+    # Store all the metadata
+    asteroid.set_meta("vertices_3d", shape.vertices)
+    asteroid.set_meta("edges", shape.edges)
+    asteroid.set_meta("faces", shape.faces)
+    asteroid.set_meta("velocity", velocity)
+    asteroid.set_meta("original_velocity", velocity)
+    asteroid.set_meta("rotation", Vector3.ZERO)
+    asteroid.set_meta("angular_velocity", Vector3(
+        randf_range(-rotation_speed, rotation_speed),
+        randf_range(-rotation_speed, rotation_speed),
+        randf_range(-rotation_speed, rotation_speed)
+    ))
+    asteroid.set_meta("radius", 15.0 * scale_factor)
+    asteroid.set_meta("hp", size_data.hp)
+    asteroid.set_meta("size_tier", size_data.tier)
+    asteroid.set_meta("is_vibrating", false)
+    asteroid.set_meta("vibrate_timer", 0.0)
+    asteroid.set_meta("is_debris", false)
+    asteroid.set_meta("points", size_data.points)
+    
+    return asteroid
+
+func create_laser() -> Node2D:
+    var laser = Node2D.new()
+    var line = Line2D.new()
+    line.width = 5.0
+    line.default_color = Color(1, 0, 0)  # Starts red
+    line.add_point(Vector2(0, 0))
+    line.add_point(Vector2(0, viewport_size.y))
+    laser.add_child(line)
+    
+    # Add score threshold label
+    var threshold_label = Label.new()
+    threshold_label.add_theme_color_override("font_color", Color(1, 1, 1))  # White color
+    threshold_label.add_theme_font_size_override("font_size", 20)
+    threshold_label.text = str(SCORE_THRESHOLD_FOR_SAFE_PASSAGE) + " pts needed"
+    threshold_label.position = Vector2(-50, viewport_size.y / 2)  # Position beside the laser
+    threshold_label.rotation = -PI/2  # Rotate text to be vertical
+    laser.add_child(threshold_label)
+    
+    laser.position = Vector2(viewport_size.x + 50, 0)
+    laser.set_meta("velocity", Vector2(-100.0, 0))
+    laser.set_meta("is_right_laser", true)
+    laser.set_meta("is_safe", false)
+    return laser
+
+# In the _process function, update the laser threshold label
+# Find this section in the existing laser update code:
+if laser.get_meta("is_right_laser", false):
+    var line = laser.get_child(0) as Line2D
+    var threshold_label = laser.get_child(1) as Label
+    if score >= SCORE_THRESHOLD_FOR_SAFE_PASSAGE and not laser.get_meta("is_safe", false):
+        line.default_color = Color(0, 1, 0)  # Change to green
+        laser.set_meta("is_safe", true)
+        threshold_label.text = "SAFE!"
+    else:
+        var points_needed = SCORE_THRESHOLD_FOR_SAFE_PASSAGE - score
+        threshold_label.text = str(points_needed) + " pts needed"
