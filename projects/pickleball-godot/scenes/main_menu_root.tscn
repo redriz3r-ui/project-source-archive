@@ -1,0 +1,228 @@
+[gd_scene load_steps=2 format=3 uid="uid://di4jghjru6sqn"]
+
+[ext_resource type="Script" uid="uid://bq2yepnh5uy7v" path="res://scenes/main_menu.gd" id="1_2u4vx"]
+
+[node name="MainMenuRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2u4vx")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MainMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Pickleball Simulator"
+horizontal_alignment = 1
+
+[node name="StartTraining" type="Button" parent="MainMenu"]
+layout_mode = 2
+text = "Start Training"
+
+[node name="StartMatch" type="Button" parent="MainMenu"]
+layout_mode = 2
+text = "Start Match"
+
+[node name="ViewStats" type="Button" parent="MainMenu"]
+layout_mode = 2
+text = "View Stats"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+layout_mode = 2
+text = "Quit"
+
+[node name="TrainingMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="TrainingMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Training"
+horizontal_alignment = 1
+
+[node name="DrillList" type="VBoxContainer" parent="TrainingMenu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Back" type="Button" parent="TrainingMenu"]
+layout_mode = 2
+text = "Back"
+
+[node name="MatchMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MatchMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Match Types"
+horizontal_alignment = 1
+
+[node name="MatchList" type="VBoxContainer" parent="MatchMenu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Back" type="Button" parent="MatchMenu"]
+layout_mode = 2
+text = "Back"
+
+[node name="StatsMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="StatsMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Player Stats"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="StatsMenu"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="ExpLabel" type="Label" parent="StatsMenu"]
+layout_mode = 2
+text = "Experience: 0/100"
+
+[node name="StaminaBar" type="ProgressBar" parent="StatsMenu"]
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="BaseStats" type="VBoxContainer" parent="StatsMenu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PowerBar" type="ProgressBar" parent="StatsMenu/BaseStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="AccuracyBar" type="ProgressBar" parent="StatsMenu/BaseStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="SpeedBar" type="ProgressBar" parent="StatsMenu/BaseStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="ReactionBar" type="ProgressBar" parent="StatsMenu/BaseStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="EnduranceBar" type="ProgressBar" parent="StatsMenu/BaseStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="TechniqueStats" type="VBoxContainer" parent="StatsMenu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DriveBar" type="ProgressBar" parent="StatsMenu/TechniqueStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="DinkBar" type="ProgressBar" parent="StatsMenu/TechniqueStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="VolleyBar" type="ProgressBar" parent="StatsMenu/TechniqueStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="LobBar" type="ProgressBar" parent="StatsMenu/TechniqueStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="TopspinBar" type="ProgressBar" parent="StatsMenu/TechniqueStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="SliceBar" type="ProgressBar" parent="StatsMenu/TechniqueStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="BlockBar" type="ProgressBar" parent="StatsMenu/TechniqueStats"]
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="History" type="VBoxContainer" parent="StatsMenu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TrainingSessionsLabel" type="Label" parent="StatsMenu/History"]
+layout_mode = 2
+text = "Training Sessions: 0"
+
+[node name="MatchesPlayedLabel" type="Label" parent="StatsMenu/History"]
+layout_mode = 2
+text = "Matches Played: 0"
+
+[node name="Back" type="Button" parent="StatsMenu"]
+layout_mode = 2
+text = "Back"
