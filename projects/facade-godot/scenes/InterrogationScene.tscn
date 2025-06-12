@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=3 uid="uid://df5etolqgbpfo"]
+
+[ext_resource type="Script" uid="uid://cv7vncvqn6ppi" path="res://scripts/InterrogationStateManager.gd" id="1_2k4m3"]
+[ext_resource type="Script" uid="uid://c1u5fsi5iq1ij" path="res://scripts/InterrogationUI.gd" id="2_3k4m5"]
+
+[node name="InterrogationScene" type="Node"]
+script = ExtResource("1_2k4m3")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_3k4m5")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StatsPanel" type="Panel" parent="UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer/StatsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="TrustContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TrustLabel" type="Label" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer/TrustContainer"]
+layout_mode = 2
+text = "Trust: 50"
+
+[node name="TrustBar" type="ProgressBar" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer/TrustContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="TensionContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TensionLabel" type="Label" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer/TensionContainer"]
+layout_mode = 2
+text = "Tension: 50"
+
+[node name="TensionBar" type="ProgressBar" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer/TensionContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="TimerContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimerLabel" type="Label" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer/TimerContainer"]
+layout_mode = 2
+text = "Time: 5:00"
+
+[node name="TimerBar" type="ProgressBar" parent="UI/MarginContainer/VBoxContainer/StatsPanel/HBoxContainer/TimerContainer"]
+layout_mode = 2
+value = 100.0
+
+[node name="DialoguePanel" type="Panel" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/DialoguePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="SuspectDialogue" type="RichTextLabel" parent="UI/MarginContainer/VBoxContainer/DialoguePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "What do you want from me?"
+
+[node name="ChoiceButtons" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/DialoguePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Choice1" type="Button" parent="UI/MarginContainer/VBoxContainer/DialoguePanel/VBoxContainer/ChoiceButtons"]
+layout_mode = 2
+text = "Just trying to understand you"
+
+[node name="Choice2" type="Button" parent="UI/MarginContainer/VBoxContainer/DialoguePanel/VBoxContainer/ChoiceButtons"]
+layout_mode = 2
+text = "Where were you last night?"
+
+[node name="Choice3" type="Button" parent="UI/MarginContainer/VBoxContainer/DialoguePanel/VBoxContainer/ChoiceButtons"]
+layout_mode = 2
+text = "We already know you lied"
+
+[node name="ReplayButton" type="Button" parent="UI/MarginContainer/VBoxContainer/DialoguePanel/VBoxContainer/ChoiceButtons"]
+visible = false
+layout_mode = 2
+text = "Replay"

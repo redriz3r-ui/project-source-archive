@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl3hi4f3e0ooj"]
+
+[ext_resource type="Script" uid="uid://bb3mbsn2pvw1d" path="res://scripts/main.gd" id="1_2u4vx"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_2u4vx")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScenarioLabel" type="Label" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Scenario Step 1
+Goal: Help resolve the conflict between Alex and Robin"
+horizontal_alignment = 1
+
+[node name="TimeLocationContainer" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TimeLabel" type="Label" parent="UI/MarginContainer/VBoxContainer/TimeLocationContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Day 1 - Morning"
+
+[node name="LocationLabel" type="Label" parent="UI/MarginContainer/VBoxContainer/TimeLocationContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Location: Cafe"
+horizontal_alignment = 2
+
+[node name="StatsLabel" type="Label" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Trust: 50
+Tension: 50
+Affection: 50
+Communication: 50"
+
+[node name="ResponseLabel" type="Label" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 18
+text = "You're at the coffee shop when you see Alex and Robin having an argument. They seem upset."
+autowrap_mode = 3
+
+[node name="InputContainer" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="InputField" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/InputContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Type your response..."
+
+[node name="InputContainer#SubmitButton" type="Button" parent="."]
+size_flags_horizontal = 3
+text = "Send"
