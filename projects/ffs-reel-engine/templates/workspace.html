@@ -1,70 +1,34 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FFS Reel Workspace</title>
-  <link rel="stylesheet" href="/static/workspace.css">
-</head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="/" aria-label="Fresno Film Society home"><span>F</span><span>S</span></a>
-    <div class="project-identity">
-      <p>FRESNO FILM SOCIETY <span>/</span> REEL ENGINE</p>
-      <h1 id="project-title">Loading project…</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FFS Reel Engine</title><link rel="stylesheet" href="/static/workspace.css"></head><body>
+<header><a class="brand" href="/">F<span>S</span></a><div><p>FRESNO FILM SOCIETY</p><h1 id="project-title">Reel Engine</h1></div><div class="header-actions"><span id="save-state">Loading…</span><button id="preview-output" class="quiet">Preview</button><button id="export-reel">Export reel</button></div></header>
+<main>
+  <aside class="setup">
+    <p class="step">01 / DIRECTION</p><h2>What should this feel like?</h2>
+    <div id="source" class="source"></div>
+    <label>Mood style<select id="mood-style"><option value="balanced">Balanced</option><option value="romantic">Romantic</option><option value="melancholic">Melancholic</option><option value="dreamy">Dreamy</option><option value="energetic">Energetic</option><option value="city">City</option><option value="architecture">Architecture</option><option value="night">Night</option><option value="nature">Nature</option><option value="dialogue">Dialogue-driven</option><option value="custom">Custom direction</option></select></label>
+    <label id="custom-field" hidden>Creative direction<textarea id="mood-prompt" rows="3" placeholder="Describe the images, feeling, or atmosphere"></textarea></label>
+    <div class="two"><label>Length<select id="target-duration"><option value="18">18 seconds</option><option value="24">24 seconds</option><option value="28" selected>28 seconds</option><option value="36">36 seconds</option></select></label><label>Moments<select id="clip-count"><option>6</option><option>8</option><option selected>10</option><option>12</option></select></label></div>
+    <p id="mood-note" class="note"></p><button id="generate" class="generate">Generate branded draft</button>
+    <div class="engine-state"><span id="engine-dot"></span><div><strong id="engine-title">Checking media…</strong><p id="engine-detail">Shot detection and visual indexing run automatically when needed.</p></div></div>
+  </aside>
+  <section class="board">
+    <div class="board-head"><div><p class="step">02 / STORYBOARD</p><h2>Your branded cut</h2><p>Footage first. Every word remains editable inside the approved FFS trailer system.</p></div><strong id="duration">0.0s</strong></div>
+    <div id="cards" class="cards"></div><button id="add-card" class="add">＋ Add footage card</button>
+  </section>
+  <aside class="inspector">
+    <p class="step">03 / CARD</p><h2 id="card-name">Select a card</h2>
+    <div class="phone"><video id="preview" playsinline muted></video><div class="overlay"><small id="preview-top"></small><strong id="preview-bottom"></strong></div><img src="/assets/ffs-brand/ffs-square.png" id="preview-logo" alt="FS"></div>
+    <button id="play" class="play">▶ Preview this moment</button>
+    <div id="card-fields" hidden>
+      <label>Small information<textarea id="top-text" rows="2" maxlength="240"></textarea></label>
+      <label>Trailer copy<textarea id="bottom-text" rows="3" maxlength="240"></textarea></label>
+      <div class="two"><label>Start<input id="source-start" type="number" min="0" step=".1"></label><label>Duration<input id="card-duration" type="number" min=".5" max="10" step=".1"></label></div>
+      <label>Footage type<select id="card-kind"><option value="film">Film footage</option><option value="venue">Replaceable event footage</option></select></label>
+      <label id="media-field">Replacement video path<input id="media-path" placeholder="Leave blank to use film placeholder"></label>
+      <label class="check"><input id="final-cta" type="checkbox"> Use event-information CTA layout</label>
+      <label class="check"><input id="show-logo" type="checkbox" checked> Show persistent FFS mark</label>
+      <button id="remove-card" class="danger">Remove card</button>
     </div>
-    <div class="top-actions"><span id="save-state">Saved locally</span><button id="preview-reel" type="button">Preview reel</button><button id="export-reel" class="primary" type="button">Export</button></div>
-  </header>
-
-  <main class="workspace">
-    <aside class="library">
-      <div class="panel-heading"><div><p class="eyebrow">01 · SOURCE</p><h2>Media library</h2></div><button class="icon-button" id="add-source" title="Multi-source ingestion is the next engine milestone">+</button></div>
-      <p class="aside-note">Everything available to this reel. Films, event footage, and conversations will live together here.</p>
-      <div id="sources" class="source-list"></div>
-      <div class="library-section">
-        <p class="eyebrow">BUILD WITH</p>
-        <button class="recipe-button active" data-recipe="montage"><span>Visual montage</span><small>Feeling, rhythm, atmosphere</small></button>
-        <button class="recipe-button" data-recipe="editorial"><span>Editorial story</span><small>Argument, dialogue, context</small></button>
-        <button class="recipe-button" data-recipe="conversion"><span>Event invitation</span><small>Details, venue, call to action</small></button>
-      </div>
-      <div class="legacy-links">
-        <p class="eyebrow">DETAILED TOOLS</p>
-        <a href="/projects/{{ project_id }}/montage">Shot finder</a>
-        <a href="/projects/{{ project_id }}/scenes">Research & concepts</a>
-        <a href="/projects/{{ project_id }}/conversion">Invitation editor</a>
-      </div>
-    </aside>
-
-    <section class="storyboard-area">
-      <div class="storyboard-heading">
-        <div><p class="eyebrow">02 · STORY</p><h2>Storyboard</h2><p id="story-summary">Arrange the reel as a sequence of ideas—not a timeline.</p></div>
-        <div class="view-controls"><button class="selected">Cards</button><button disabled title="The preferred editor is storyboard-first">Timeline</button></div>
-      </div>
-      <nav class="story-beats" aria-label="Story sections">
-        <button class="active">Opening</button><span></span><button>Film</button><span></span><button>Feeling</button><span></span><button>Invitation</button>
-      </nav>
-      <div id="storyboard" class="storyboard-grid"></div>
-      <button id="add-beat" class="add-beat" type="button">＋ Add story beat</button>
-    </section>
-
-    <aside class="inspector">
-      <p class="eyebrow">03 · FRAME</p>
-      <div class="reel-frame">
-        <video id="clip-preview" playsinline muted></video>
-        <div id="text-overlay" class="text-overlay"><small>FRESNO FILM SOCIETY PRESENTS</small><strong id="overlay-copy">A NIGHT AT THE MOVIES</strong></div>
-        <span class="frame-mark">FS</span>
-      </div>
-      <div class="playback"><button id="play-selected" type="button">▶</button><div><strong id="selected-label">Select a card</strong><small id="selected-time">00:00 – 00:00</small></div></div>
-      <div class="inspector-section">
-        <p class="eyebrow">OVERLAY</p>
-        <label>Words on screen<textarea id="overlay-input" rows="3" maxlength="180" placeholder="Keep it simple, like a movie trailer"></textarea></label>
-        <label class="split">Position<select id="overlay-position"><option value="center">Center</option><option value="top">Above the action</option><option value="bottom">Below the action</option></select></label>
-      </div>
-      <div class="inspector-section status-card"><span class="status-dot"></span><div><strong>Existing engine connected</strong><p>Current preview, analysis, and export tools remain available while this shell evolves.</p></div></div>
-    </aside>
-  </main>
-  <div id="notice" class="notice" hidden></div>
-  <script>window.PROJECT_ID={{ project_id|tojson }};</script>
-  <script src="/static/workspace.js"></script>
-</body>
-</html>
+    <details class="event"><summary>Event information</summary><div id="event-fields"></div></details>
+  </aside>
+</main><div id="toast" hidden></div>
+<script>window.PROJECT_ID={{ project_id|tojson }};</script><script src="/static/workspace.js"></script></body></html>

@@ -20,8 +20,8 @@ class UnifiedWorkspaceRouteTests(unittest.TestCase):
                     f"/projects/{project['id']}/workspace"
                 )
             self.assertEqual(response.status_code, 200)
-            self.assertIn(b"Media library", response.data)
-            self.assertIn(b"Storyboard", response.data)
+            self.assertIn(b"Generate branded draft", response.data)
+            self.assertIn(b"Your branded cut", response.data)
 
     def test_workspace_rejects_unknown_project(self):
         with tempfile.TemporaryDirectory() as directory:

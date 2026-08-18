@@ -6,7 +6,7 @@ import subprocess
 import uuid
 from pathlib import Path
 
-from flask import Flask, jsonify, render_template, request, send_file
+from flask import Flask, jsonify, render_template, request, send_file, send_from_directory
 from dotenv import load_dotenv
 
 from src.engine import EngineError, ReelEngine
@@ -286,6 +286,11 @@ def output(name: str):
     if not path.is_file():
         return jsonify({"error": "Output file not found. Render or copy this export into the current workspace."}), 404
     return send_file(path, conditional=True)
+
+
+@app.get("/assets/<path:name>")
+def asset(name: str):
+    return send_from_directory(ROOT / "assets", name)
 
 
 @app.get("/api/projects/<project_id>/thumbnail/<name>")
