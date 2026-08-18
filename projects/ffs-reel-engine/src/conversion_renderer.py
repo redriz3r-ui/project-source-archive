@@ -67,19 +67,25 @@ def default_conversion_config(project: dict) -> dict:
         "persistent_logo": True,
         "slots": [
             {"kind": "film", "source_start": starts[0], "duration": 3,
+             "audio_mode": "silent",
              "top_text": "FRESNO FILM SOCIETY PRESENTS",
              "bottom_text": "SPEND ONE NIGHT|IN VIENNA."},
             {"kind": "venue", "source_start": starts[1], "duration": 2,
+             "audio_mode": "silent",
              "top_text": "ISLA EXTERIOR FOOTAGE · PLACEHOLDER", "bottom_text": "",
              "media_path": ""},
             {"kind": "film", "source_start": starts[2], "duration": 4,
+             "audio_mode": "silent",
              "top_text": "", "bottom_text": "MEET JESSE|AND CÉLINE."},
             {"kind": "venue", "source_start": starts[3], "duration": 2,
+             "audio_mode": "silent",
              "top_text": "ISLA TEA / ATMOSPHERE FOOTAGE · PLACEHOLDER",
              "bottom_text": "", "media_path": ""},
             {"kind": "film", "source_start": starts[4], "duration": 3,
+             "audio_mode": "silent",
              "top_text": "", "bottom_text": "ONE NIGHT TOGETHER.|UNTIL DAWN."},
             {"kind": "film", "source_start": starts[5], "duration": 4,
+             "audio_mode": "silent",
              "top_text": "", "bottom_text": "", "final_cta": True},
         ],
     }
@@ -106,12 +112,18 @@ def normalize_conversion_config(project: dict, raw: dict) -> dict:
         media_path = str(item.get("media_path") or "").strip()
         if media_path and not Path(media_path).expanduser().is_file():
             raise ConversionRenderError(f"Slot {index} venue footage does not exist.")
+        audio_mode = str(item.get("audio_mode") or "silent")
+        if audio_mode not in {"silent", "original", "reduced"}:
+            raise ConversionRenderError(
+                f"Slot {index} audio must be silent, original, or reduced."
+            )
         slots.append({
             "kind": item["kind"], "source_start": round(start, 3),
             "duration": round(duration, 3), "media_path": media_path,
             "top_text": str(item.get("top_text") or "")[:240],
             "bottom_text": str(item.get("bottom_text") or "")[:240],
             "final_cta": bool(item.get("final_cta", False)),
+            "audio_mode": audio_mode,
         })
     return {
         "mode": "conversion_overlay", "event": event, "slots": slots,
@@ -147,6 +159,16 @@ def _render_slot(movie: Path, slot: dict, event: dict, assets: Path, work: Path,
         overlay_filter = ";[base]format=yuv420p[v]"
         audio_input = 1
     inputs.extend(["-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo"])
+    audio_mode = slot.get("audio_mode", "silent")
+    audio_filter = ""
+    audio_map = f"{audio_input}:a:0"
+    if audio_mode in {"original", "reduced"}:
+        gain = 1.0 if audio_mode == "original" else 0.25
+        audio_filter = (
+            f";[0:a:0]volume={gain:.3f},atrim=duration={float(slot['duration']):g},"
+            "asetpts=PTS-STARTPTS[audio]"
+        )
+        audio_map = "[audio]"
     filters = (
         "[0:v]scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,"
         "crop=1080:1920,setsar=1,"
@@ -156,11 +178,11 @@ def _render_slot(movie: Path, slot: dict, event: dict, assets: Path, work: Path,
         f"drawtext=fontfile={_filter_path(_HEADLINE)}:textfile={_filter_path(bottom)}:"
         "expansion=none:fontcolor=0xF2EFE5:fontsize=94:line_spacing=2:x=72:"
         "y=h-text_h-235:borderw=3:bordercolor=black@0.62[base]"
-        f"{logo_filter}{overlay_filter}"
+        f"{logo_filter}{overlay_filter}{audio_filter}"
     )
     command = ["ffmpeg", "-hide_banner", "-loglevel", "error", *inputs,
                "-t", f"{slot['duration']:g}", "-filter_complex", filters,
-               "-map", "[v]", "-map", f"{audio_input}:a:0", *_ENCODE,
+               "-map", "[v]", "-map", audio_map, *_ENCODE,
                "-shortest", "-movflags", "+faststart", "-y", str(destination)]
     _run(command, f"Conversion slot {number}")
 

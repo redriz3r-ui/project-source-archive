@@ -45,6 +45,7 @@ class ConversionRendererTests(unittest.TestCase):
         self.assertEqual(18, sum(slot["duration"] for slot in config["slots"]))
         self.assertEqual(2, sum(slot["kind"] == "venue" for slot in config["slots"]))
         self.assertTrue(config["persistent_logo"])
+        self.assertTrue(all(slot["audio_mode"] == "silent" for slot in config["slots"]))
 
     def test_normalization_validates_slots_and_missing_venue_media(self):
         config = default_conversion_config(self.project)
@@ -75,6 +76,22 @@ class ConversionRendererTests(unittest.TestCase):
             self.assertIn("ffs-square.png", joined)
             self.assertNotIn("SPEND ONE NIGHT", joined)
         self.assertEqual("copy", runner.commands[-1][runner.commands[-1].index("-c") + 1])
+
+    def test_original_and_reduced_audio_are_mapped_from_source(self):
+        config = default_conversion_config(self.project)
+        config["slots"][0]["audio_mode"] = "original"
+        config["slots"][1]["audio_mode"] = "reduced"
+        runner = RecordingRunner()
+        with patch("src.conversion_renderer._RUNNER", runner):
+            render_conversion_reel(
+                self.project, config, self.root / "audio-work",
+                self.root / "audio-output.mp4", self.assets,
+            )
+        first = " ".join(runner.commands[0])
+        second = " ".join(runner.commands[1])
+        self.assertIn("[0:a:0]volume=1.000", first)
+        self.assertIn("[0:a:0]volume=0.250", second)
+        self.assertIn("-map [audio]", first)
 
     def test_conversion_routes_create_edit_and_persist_configuration(self):
         engine = ReelEngine(self.root / "engine")
