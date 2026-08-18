@@ -282,7 +282,10 @@ def media(project_id: str):
 def output(name: str):
     if not re.fullmatch(r"[a-zA-Z0-9._-]+", name):
         return jsonify({"error": "Invalid output name"}), 400
-    return send_file(ROOT / "outputs" / name, conditional=True)
+    path = ROOT / "outputs" / name
+    if not path.is_file():
+        return jsonify({"error": "Output file not found. Render or copy this export into the current workspace."}), 404
+    return send_file(path, conditional=True)
 
 
 @app.get("/api/projects/<project_id>/thumbnail/<name>")

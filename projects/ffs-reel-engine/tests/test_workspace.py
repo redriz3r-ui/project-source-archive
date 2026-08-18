@@ -32,6 +32,11 @@ class UnifiedWorkspaceRouteTests(unittest.TestCase):
             self.assertEqual(response.status_code, 400)
             self.assertEqual(json.loads(response.data)["error"], "Project not found.")
 
+    def test_missing_historical_output_returns_404(self):
+        response = web.app.test_client().get("/api/output/missing-preview.mp4")
+        self.assertEqual(response.status_code, 404)
+        self.assertIn("Output file not found", json.loads(response.data)["error"])
+
 
 if __name__ == "__main__":
     unittest.main()
