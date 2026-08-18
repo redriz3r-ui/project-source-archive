@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FFS Mood Montage</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <link rel="stylesheet" href="/static/transcription.css">
+</head>
+<body>
+<header>
+  <span class="mark">FFS</span>
+  <div><p>FRESNO FILM SOCIETY</p><h1>Reel Engine</h1></div>
+  <span class="recipe">RECIPE 01 · MOOD MONTAGE V4</span>
+</header>
+<main>
+  <section class="panel setup">
+    <p class="eyebrow">Fast visual Reel</p>
+    <h2>Build a feeling from moments.</h2>
+    <div id="setup-fields">
+      <label>Film title<input id="title" value="Before Sunrise"></label>
+      <label>Movie file path<input id="movie" value="/path/to/user/Media/data/movies/Before.Sunrise.1995.720p.BluRay.x264-[YTS.AM].mp4"></label>
+      <button id="analyze">Detect movie shots</button>
+    </div>
+    <div id="draft-controls" hidden>
+      <label>Mood Style
+        <select id="mood-style">
+          <option value="balanced">Balanced · full-film coverage</option>
+          <option value="romantic">Romantic · closeness and vulnerability</option>
+          <option value="melancholic">Melancholic · longing and separation</option>
+          <option value="dreamy">Dreamy · night, memory, possibility</option>
+          <option value="energetic">Energetic · laughter and momentum</option>
+          <option value="city">City · streets and urban movement</option>
+          <option value="architecture">Architecture · buildings and structural space</option>
+          <option value="night">Night · streetlights and nocturnal color</option>
+          <option value="nature">Nature · landscape and outdoor calm</option>
+          <option value="dialogue">Dialogue-driven · revealing exchanges</option>
+          <option value="custom">Custom prompt</option>
+        </select>
+      </label>
+      <label id="custom-mood-field" hidden>Describe the feeling to find
+        <input id="mood-prompt" maxlength="300" placeholder="e.g. hesitant attraction turning into comfort">
+      </label>
+      <p id="mood-description" class="mood-description">Evenly samples the whole film. No AI selection.</p>
+      <label>Draft label<input id="mood-label" value="A night in Vienna"></label>
+      <div class="compact-fields">
+        <label>Shots<input id="auto-count" type="number" min="6" max="12" value="10"></label>
+        <label>Target seconds<input id="target-duration" type="number" min="20" max="36" value="28"></label>
+      </div>
+      <button id="build-visual-index" class="secondary">Build visual overview · one time</button>
+      <p id="visual-index-status" class="hint">Visual overview not built. It scouts 72 evenly spaced frames; each mood later builds its own dense shot index.</p>
+      <button id="balanced-draft">Build balanced draft</button>
+      <p class="hint">A visual mood scouts the overview, reopens promising regions, detects their cuts, and builds a reusable mood-specific shot index. Balanced requires no index.</p>
+      <p class="hint">The first build of a new mood sends only its targeted still frames to your configured OpenAI vision model. Repeating the exact mood uses the saved local index.</p>
+      <a id="editorial-link" class="secondary-link">Open Editorial Reel Engine</a>
+      <a id="conversion-link" class="secondary-link">Open Conversion Mode</a>
+    </div>
+    <p id="status">Load a movie or open an existing project.</p>
+    <p id="save-status" class="hint"></p>
+    <div id="transcription-panel" hidden>
+      <p class="eyebrow">Editorial index · Optional</p>
+      <button id="transcribe">Begin background transcription</button>
+      <button id="cancel-transcription" class="secondary" hidden>Pause transcription</button>
+      <div class="progress"><span id="progress-fill"></span></div>
+      <p id="transcription-status">Not started</p>
+    </div>
+  </section>
+
+  <section class="panel candidates">
+    <div class="section-head">
+      <div><p class="eyebrow">Detected-shot browser</p><p class="hint">Click any shot to add or remove it.</p></div>
+      <span id="count"></span>
+    </div>
+    <div id="shots" class="shot-grid"><p class="empty">Load a movie to detect its shots.</p></div>
+  </section>
+
+  <aside class="panel preview">
+    <p class="eyebrow">Saved montage storyboard</p>
+    <div class="montage-player"><video id="montage-preview" controls playsinline></video></div>
+    <div id="story"><p class="empty">Build a balanced draft or select 6–10 moments.</p></div>
+    <p id="selection-note" class="selection-note"></p>
+    <p id="duration">0 shots · 0.0 seconds</p>
+
+    <details class="packaging" open>
+      <summary>FFS packaging</summary>
+      <label class="audio-toggle"><input id="all-movie-audio" type="checkbox"> Use movie audio on all clips</label>
+      <label>Movie audio level <output id="movie-audio-level-value" for="movie-audio-level">100%</output>
+        <input id="movie-audio-level" type="range" min="0" max="200" step="5" value="100">
+      </label>
+      <p class="hint">Individual clips can still be muted below. Raise the level when the source scene is naturally quiet.</p>
+      <label class="audio-toggle"><input id="opening-card" type="checkbox"> Add opening card</label>
+      <label>Opening copy<input id="opening-text" maxlength="180" value="Before Sunrise"></label>
+      <label class="audio-toggle"><input id="end-card" type="checkbox" checked> Add FFS end card</label>
+      <label>End-card copy<input id="end-text" maxlength="180" value="FILM LIVES HERE"></label>
+    </details>
+
+    <button id="export" disabled>Export post-ready montage</button>
+    <a id="download" hidden>Download finished Reel</a>
+    <div id="finished-reel" class="finished-reel" hidden>
+      <video id="montage-output" controls playsinline></video>
+    </div>
+  </aside>
+</main>
+<script>window.INITIAL_PROJECT_ID={{ initial_project_id|tojson }};</script>
+<script src="/static/app.js"></script>
+</body>
+</html>

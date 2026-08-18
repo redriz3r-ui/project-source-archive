@@ -1,0 +1,6 @@
+Flask==2.3.3
+mlx-whisper==0.4.3
+openai-whisper==20250625
+sentence-transformers>=5.0,<6
+openai>=2,<3
+python-dotenv>=1,<2

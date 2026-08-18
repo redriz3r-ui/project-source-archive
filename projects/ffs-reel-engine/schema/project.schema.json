@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FFS Reel Engine Project",
+  "type": "object",
+  "required": ["schema_version", "id", "title", "recipe", "movie", "transcript", "candidates", "exports"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "id": {"type": "string"},
+    "title": {"type": "string"},
+    "recipe": {"enum": ["mood_montage", "editorial_analysis", "scene_worth_watching"]},
+    "movie": {"type": ["object", "null"]},
+    "transcript": {"type": "array"},
+    "candidates": {"type": "array"},
+    "exports": {"type": "array"},
+    "active_storyboard_id": {"type": "string"},
+    "editorial_storyboards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "topic", "format", "revision", "cards"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^story-[a-f0-9]{8}$"},
+          "title": {"type": "string"},
+          "topic": {"type": "string"},
+          "format": {"enum": ["analytical_argument", "detail_missed", "poetic_ffs"]},
+          "revision": {"type": "integer", "minimum": 1},
+          "cards": {"type": "array", "minItems": 1, "maxItems": 16}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,5 @@
+.secondary { margin-top: 8px; background: #4b443d; }
+.progress { height: 9px; margin-top: 15px; border-radius: 99px; background: #0e0c0b; overflow: hidden; }
+.progress span { display: block; width: 0; height: 100%; background: var(--red); transition: width .25s; }
+#transcription-panel { margin-top: 25px; padding-top: 10px; border-top: 1px solid var(--line); }
+#transcription-status { font-size: 12px; color: #aa9d89; }

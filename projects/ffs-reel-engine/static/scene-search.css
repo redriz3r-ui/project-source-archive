@@ -1,0 +1,55 @@
+#scene-search { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; margin: 16px 0; }
+#scene-search button { width: auto; }
+#search-status { color: #bd765e; font-size: 12px; }
+.review-actions { display: flex; gap: 6px; margin-top: 10px; }
+.review-actions button { width: auto; padding: 6px 9px; font-size: 10px; }
+.review-actions .secondary, #jump-dialogue.secondary, #show-all.secondary { background: #4b443d; }
+#jump-dialogue { margin-top: 8px; }
+mark { background: #d97857; color: #fff; padding: 0 2px; }
+.scene-index-panel { margin-top: 18px; }
+#evidence-form { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 8px; }
+#evidence-topic { flex: 1 1 100%; }
+#evidence-form button { width: auto; }
+#ai-research { min-width: 210px; }
+#local-evidence.local-fallback { background: transparent; border: 1px solid #594c42; color: #a99a88; }
+#local-evidence.local-fallback:hover { border-color: #8d7564; color: #d0c1af; }
+#analyze-visuals { border: 1px solid #9b604c; }
+#evidence-status { color: #d48769; font-size: 12px; min-height: 18px; }
+#research-summary { color: #a99a88; line-height: 1.55; margin: 6px 0; }
+#evidence-angles { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+.angle-chip { border: 1px solid #594c42; border-radius: 999px; padding: 5px 8px; color: #b9a995; font-size: 10px; }
+.evidence-item { padding: 16px; margin-top: 10px; border: 1px solid var(--line); border-radius: 8px; background: #201c18; cursor: pointer; }
+.evidence-item:hover,.evidence-item.selected { border-color: #c66a4b; background: #28221d; }
+.evidence-head { display: flex; justify-content: space-between; gap: 12px; }
+.evidence-head h3 { margin: 0; }
+.evidence-score { color: #d48769; font-size: 11px; white-space: nowrap; }
+.evidence-item blockquote { margin: 12px 0 8px; color: #c9bcaa; line-height: 1.5; }
+.evidence-meta { color: #8f8375; font-size: 11px; }
+#thesis-direction { color: #d8cbbb; font: 17px/1.5 Georgia,serif; }
+.editorial-reason { color: #d7c8b5 !important; }
+.supported-claim { border-left: 2px solid #c66a4b; padding-left: 10px; }
+.visual-evidence { margin: 14px 0 10px; border-top: 1px solid var(--line); padding-top: 12px; }
+.visual-summary { color: #e0cdb7; font: 15px/1.45 Georgia,serif; }
+.visual-frame-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin: 10px 0; }
+.visual-frame-grid figure { margin: 0; }
+.visual-frame-grid img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 5px; background: #0d0b09; }
+.visual-frame-grid figcaption { margin-top: 4px; color: #8f8375; font-size: 9px; }
+.visual-findings { background: #191613; border-radius: 6px; padding: 10px 12px; }
+.visual-label { color: #d48769; font-size: 10px; letter-spacing: .11em; text-transform: uppercase; }
+.visual-findings ul { margin: 7px 0; padding-left: 18px; }
+.visual-findings li { margin: 6px 0; color: #c9bcaa; font-size: 12px; line-height: 1.45; }
+.visual-findings li span { display: block; color: #938879; }
+.concept-panel { margin-top: 18px; }
+.concept-card { border: 1px solid var(--line); border-radius: 9px; padding: 18px; margin-top: 12px; background: #201c18; }
+.concept-card h3 { margin: 4px 0 8px; font: 24px Georgia,serif; }
+.concept-format { color: #d48769; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.concept-hook { font: 18px/1.4 Georgia,serif; color: #e2d5c4; }
+.concept-thesis { line-height: 1.55; color: #bcae9b; }
+.beat-list { list-style: none; padding: 0; margin: 14px 0; }
+.beat-list li { display: grid; grid-template-columns: 100px 1fr auto; gap: 10px; border-top: 1px solid var(--line); padding: 9px 0; font-size: 12px; }
+.beat-type { color: #d48769; text-transform: uppercase; font-size: 10px; }
+.concept-actions { display: flex; justify-content: space-between; align-items: center; }
+.concept-actions button { width: auto; }
+@media (max-width: 700px) { #scene-search { grid-template-columns: 1fr; } #scene-search button { width: 100%; } }
+@media (max-width: 700px) { #evidence-form { grid-template-columns: 1fr; } #evidence-form button { width: 100%; } }
+@media (max-width: 700px) { .visual-frame-grid { grid-template-columns: 1fr; } }
