@@ -29,6 +29,13 @@ def mood_montage_editor(project_id: str):
     return render_template("index.html", initial_project_id=project_id)
 
 
+@app.get("/projects/<project_id>/workspace")
+def unified_workspace(project_id: str):
+    """Unified project shell; existing recipe editors remain available as tools."""
+    engine.load(project_id)
+    return render_template("workspace.html", project_id=project_id)
+
+
 @app.get("/projects/<project_id>/scenes")
 def scene_review(project_id: str):
     engine.load(project_id)
@@ -292,4 +299,4 @@ def engine_error(error: EngineError):
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8777, debug=False)
+    app.run(host="127.0.0.1", port=int(__import__("os").environ.get("REEL_ENGINE_PORT", "8777")), debug=False)

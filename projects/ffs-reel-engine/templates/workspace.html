@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FFS Reel Workspace</title>
+  <link rel="stylesheet" href="/static/workspace.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Fresno Film Society home"><span>F</span><span>S</span></a>
+    <div class="project-identity">
+      <p>FRESNO FILM SOCIETY <span>/</span> REEL ENGINE</p>
+      <h1 id="project-title">Loading project…</h1>
+    </div>
+    <div class="top-actions"><span id="save-state">Saved locally</span><button id="preview-reel" type="button">Preview reel</button><button id="export-reel" class="primary" type="button">Export</button></div>
+  </header>
+
+  <main class="workspace">
+    <aside class="library">
+      <div class="panel-heading"><div><p class="eyebrow">01 · SOURCE</p><h2>Media library</h2></div><button class="icon-button" id="add-source" title="Multi-source ingestion is the next engine milestone">+</button></div>
+      <p class="aside-note">Everything available to this reel. Films, event footage, and conversations will live together here.</p>
+      <div id="sources" class="source-list"></div>
+      <div class="library-section">
+        <p class="eyebrow">BUILD WITH</p>
+        <button class="recipe-button active" data-recipe="montage"><span>Visual montage</span><small>Feeling, rhythm, atmosphere</small></button>
+        <button class="recipe-button" data-recipe="editorial"><span>Editorial story</span><small>Argument, dialogue, context</small></button>
+        <button class="recipe-button" data-recipe="conversion"><span>Event invitation</span><small>Details, venue, call to action</small></button>
+      </div>
+      <div class="legacy-links">
+        <p class="eyebrow">DETAILED TOOLS</p>
+        <a href="/projects/{{ project_id }}/montage">Shot finder</a>
+        <a href="/projects/{{ project_id }}/scenes">Research & concepts</a>
+        <a href="/projects/{{ project_id }}/conversion">Invitation editor</a>
+      </div>
+    </aside>
+
+    <section class="storyboard-area">
+      <div class="storyboard-heading">
+        <div><p class="eyebrow">02 · STORY</p><h2>Storyboard</h2><p id="story-summary">Arrange the reel as a sequence of ideas—not a timeline.</p></div>
+        <div class="view-controls"><button class="selected">Cards</button><button disabled title="The preferred editor is storyboard-first">Timeline</button></div>
+      </div>
+      <nav class="story-beats" aria-label="Story sections">
+        <button class="active">Opening</button><span></span><button>Film</button><span></span><button>Feeling</button><span></span><button>Invitation</button>
+      </nav>
+      <div id="storyboard" class="storyboard-grid"></div>
+      <button id="add-beat" class="add-beat" type="button">＋ Add story beat</button>
+    </section>
+
+    <aside class="inspector">
+      <p class="eyebrow">03 · FRAME</p>
+      <div class="reel-frame">
+        <video id="clip-preview" playsinline muted></video>
+        <div id="text-overlay" class="text-overlay"><small>FRESNO FILM SOCIETY PRESENTS</small><strong id="overlay-copy">A NIGHT AT THE MOVIES</strong></div>
+        <span class="frame-mark">FS</span>
+      </div>
+      <div class="playback"><button id="play-selected" type="button">▶</button><div><strong id="selected-label">Select a card</strong><small id="selected-time">00:00 – 00:00</small></div></div>
+      <div class="inspector-section">
+        <p class="eyebrow">OVERLAY</p>
+        <label>Words on screen<textarea id="overlay-input" rows="3" maxlength="180" placeholder="Keep it simple, like a movie trailer"></textarea></label>
+        <label class="split">Position<select id="overlay-position"><option value="center">Center</option><option value="top">Above the action</option><option value="bottom">Below the action</option></select></label>
+      </div>
+      <div class="inspector-section status-card"><span class="status-dot"></span><div><strong>Existing engine connected</strong><p>Current preview, analysis, and export tools remain available while this shell evolves.</p></div></div>
+    </aside>
+  </main>
+  <div id="notice" class="notice" hidden></div>
+  <script>window.PROJECT_ID={{ project_id|tojson }};</script>
+  <script src="/static/workspace.js"></script>
+</body>
+</html>

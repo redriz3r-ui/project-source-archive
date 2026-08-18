@@ -25,6 +25,17 @@ environment includes Flask and MLX Whisper.
 Open <http://127.0.0.1:8777>. Movie files remain in their original location;
 the project stores a link to the file rather than copying the feature.
 
+To compare the unified storyboard shell with the current editor, run this branch
+on a second port:
+
+```bash
+REEL_ENGINE_PORT=8778 .venv/bin/python app.py
+```
+
+Then open `/projects/<project-id>/workspace`. The shell unifies media, recipe,
+storyboard, preview, and export navigation while the existing detailed editors
+remain available underneath it.
+
 To build or resume the existing *Before Sunrise* transcript index directly:
 
 ```bash
