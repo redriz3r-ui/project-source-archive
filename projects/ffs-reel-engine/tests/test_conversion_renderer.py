@@ -93,6 +93,28 @@ class ConversionRendererTests(unittest.TestCase):
         self.assertIn("[0:a:0]volume=0.250", second)
         self.assertIn("-map [audio]", first)
 
+    def test_still_image_slot_loops_and_applies_editorial_motion(self):
+        photo = self.root / "drink.jpg"
+        photo.write_bytes(b"photo")
+        config = default_conversion_config(self.project)
+        config["slots"] = [{
+            "kind": "image", "source_start": 0, "duration": 2,
+            "media_path": str(photo), "top_text": "TEA AFTER DARK",
+            "bottom_text": "ONE NIGHT IN VIENNA", "audio_mode": "original",
+            "motion": "push_in",
+        }]
+        runner = RecordingRunner()
+        with patch("src.conversion_renderer._RUNNER", runner):
+            result = render_conversion_reel(
+                self.project, config, self.root / "photo-work",
+                self.root / "photo-output.mp4", self.assets,
+            )
+        command = " ".join(runner.commands[0])
+        self.assertIn("-loop 1", command)
+        self.assertIn("zoompan=", command)
+        self.assertNotIn("[0:a:0]", command)
+        self.assertEqual(1, result["image_slot_count"])
+
     def test_conversion_routes_create_edit_and_persist_configuration(self):
         engine = ReelEngine(self.root / "engine")
         project = engine.create_project("Before Sunrise")

@@ -104,12 +104,14 @@ def normalize_conversion_config(project: dict, raw: dict) -> dict:
         raise ConversionRenderError("Conversion Mode requires between 1 and 12 slots.")
     slots = []
     for index, item in enumerate(slots_raw, 1):
-        if not isinstance(item, dict) or item.get("kind") not in {"film", "venue"}:
-            raise ConversionRenderError(f"Slot {index} must be a film or venue slot.")
+        if not isinstance(item, dict) or item.get("kind") not in {"film", "venue", "image"}:
+            raise ConversionRenderError(f"Slot {index} must be a film, venue, or image slot.")
         duration = min(10.0, max(0.5, _number(item.get("duration"), f"Slot {index} duration")))
         start = max(0.0, _number(item.get("source_start", 0), f"Slot {index} start"))
         start = min(max(0.0, source_duration - duration), start)
         media_path = str(item.get("media_path") or "").strip()
+        if item["kind"] == "image" and not media_path:
+            raise ConversionRenderError(f"Slot {index} image path is required.")
         if media_path and not Path(media_path).expanduser().is_file():
             raise ConversionRenderError(f"Slot {index} venue footage does not exist.")
         audio_mode = str(item.get("audio_mode") or "silent")
@@ -117,6 +119,11 @@ def normalize_conversion_config(project: dict, raw: dict) -> dict:
             raise ConversionRenderError(
                 f"Slot {index} audio must be silent, original, or reduced."
             )
+        if item["kind"] == "image":
+            audio_mode = "silent"
+        motion = str(item.get("motion") or "push_in")
+        if motion not in {"push_in", "pull_out", "pan_left", "pan_right", "still"}:
+            raise ConversionRenderError(f"Slot {index} has an unsupported photo motion.")
         slots.append({
             "kind": item["kind"], "source_start": round(start, 3),
             "duration": round(duration, 3), "media_path": media_path,
@@ -124,6 +131,7 @@ def normalize_conversion_config(project: dict, raw: dict) -> dict:
             "bottom_text": str(item.get("bottom_text") or "")[:240],
             "final_cta": bool(item.get("final_cta", False)),
             "audio_mode": audio_mode,
+            "motion": motion,
         })
     return {
         "mode": "conversion_overlay", "event": event, "slots": slots,
@@ -147,7 +155,9 @@ def _render_slot(movie: Path, slot: dict, event: dict, assets: Path, work: Path,
         ]))
     bottom = _write_copy(work / f"slot-{number:02d}-bottom.txt", bottom_value)
     logo = assets / "ffs-square.png"
-    inputs = ["-ss", f"{start:g}", "-i", str(media)]
+    is_image = slot.get("kind") == "image"
+    inputs = (["-loop", "1", "-framerate", "30", "-i", str(media)] if is_image
+              else ["-ss", f"{start:g}", "-i", str(media)])
     logo_filter = ""
     overlay_filter = ""
     if persistent_logo:
@@ -169,9 +179,29 @@ def _render_slot(movie: Path, slot: dict, event: dict, assets: Path, work: Path,
             "asetpts=PTS-STARTPTS[audio]"
         )
         audio_map = "[audio]"
+    frames = max(1, round(float(slot["duration"]) * 30))
+    motion = slot.get("motion", "push_in")
+    if is_image:
+        zoom = {"push_in": "min(zoom+0.0009,1.08)",
+                "pull_out": "if(eq(on,1),1.08,max(zoom-0.0009,1.0))",
+                "pan_left": "1.06", "pan_right": "1.06", "still": "1.0"}[motion]
+        x = "iw/2-(iw/zoom/2)"
+        if motion == "pan_left":
+            x = f"(iw-iw/zoom)*(1-on/{frames})"
+        elif motion == "pan_right":
+            x = f"(iw-iw/zoom)*(on/{frames})"
+        source_filter = (
+            "[0:v]scale=1200:2134:force_original_aspect_ratio=increase:flags=lanczos,"
+            "crop=1200:2134,"
+            f"zoompan=z='{zoom}':x='{x}':y='ih/2-(ih/zoom/2)':d={frames}:s=1080x1920:fps=30,setsar=1,"
+        )
+    else:
+        source_filter = (
+            "[0:v]scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,"
+            "crop=1080:1920,setsar=1,"
+        )
     filters = (
-        "[0:v]scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,"
-        "crop=1080:1920,setsar=1,"
+        source_filter +
         f"drawtext=fontfile={_filter_path(_INFO)}:textfile={_filter_path(top)}:"
         "expansion=none:fontcolor=0xF2EFE5:fontsize=31:line_spacing=4:x=72:y=150:"
         "borderw=2:bordercolor=black@0.55,"
@@ -213,6 +243,7 @@ def render_conversion_reel(project: dict, config: dict, work_dir: Path,
         "duration": round(sum(float(slot["duration"]) for slot in normalized["slots"]), 3),
         "slot_count": len(normalized["slots"]), "mode": "conversion_overlay",
         "venue_slot_count": sum(slot["kind"] == "venue" for slot in normalized["slots"]),
+        "image_slot_count": sum(slot["kind"] == "image" for slot in normalized["slots"]),
     }
 
 
