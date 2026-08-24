@@ -1,0 +1,53 @@
+[
+  {
+    "id": "aristocrat:buffalo-cash", "canonicalName": "Buffalo Cash", "manufacturer": "Aristocrat", "family": "Buffalo", "aliases": ["Buffalo Cash Collection"],
+    "mechanics": ["hold_and_spin", "cash_on_reels", "progressive", "free_games", "wild_multipliers"],
+    "versions": [{ "gameId": null, "jurisdiction": null, "rtpPercent": null, "minimumWagerCents": null, "maximumWagerCents": null, "evidenceClaimIds": [] }],
+    "classification": { "riskProfile": "high", "phaseProfiles": ["feature_hunt", "swing"], "confidence": 0.82, "basis": ["hold_and_spin", "progressive", "cash_on_reels"], "classifierVersion": "phaseplay_rules_v1" },
+    "claims": [{ "id": "buffalo-cash-mechanics", "field": "mechanics", "value": ["hold_and_spin", "cash_on_reels", "progressive", "free_games", "wild_multipliers"], "sourceUrl": "https://www.aristocratgaming.com/us/games/us-buffalo-cash", "sourceType": "manufacturer", "retrievedAt": "2026-08-23T00:00:00.000Z", "confidence": 1 }],
+    "reviewStatus": "reviewed", "updatedAt": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "id": "aristocrat:buffalo-gold", "canonicalName": "Buffalo Gold", "manufacturer": "Aristocrat", "family": "Buffalo", "aliases": ["Buffalo Gold Collection"],
+    "mechanics": ["free_games", "wild_multipliers"], "versions": [],
+    "classification": { "riskProfile": "medium", "phaseProfiles": ["balanced"], "confidence": 0.55, "basis": ["free_games", "wild_multipliers"], "classifierVersion": "phaseplay_rules_v1" },
+    "claims": [{ "id": "buffalo-gold-title", "field": "catalog_membership", "value": true, "sourceUrl": "https://www.aristocratgaming.com/us/games/us-aristocrat-classics", "sourceType": "manufacturer", "retrievedAt": "2026-08-23T00:00:00.000Z", "confidence": 1 }],
+    "reviewStatus": "needs_review", "updatedAt": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "id": "aristocrat:buffalo-ascension", "canonicalName": "Buffalo Ascension", "manufacturer": "Aristocrat", "family": "Buffalo", "aliases": [],
+    "mechanics": ["progressive", "free_games", "persistent_reel_growth", "wild_multipliers"], "versions": [],
+    "classification": { "riskProfile": "high", "phaseProfiles": ["feature_hunt", "swing"], "confidence": 0.76, "basis": ["progressive", "persistent_reel_growth"], "classifierVersion": "phaseplay_rules_v1" },
+    "claims": [{ "id": "buffalo-ascension-mechanics", "field": "mechanics", "value": ["progressive", "free_games", "persistent_reel_growth", "wild_multipliers"], "sourceUrl": "https://www.aristocratgaming.com/emea/games/emea-buffalo-ascension", "sourceType": "manufacturer", "retrievedAt": "2026-08-23T00:00:00.000Z", "confidence": 1 }],
+    "reviewStatus": "reviewed", "updatedAt": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "id": "light-and-wonder:huff-n-x-tra-puff", "canonicalName": "Huff N' X-TRA Puff", "manufacturer": "Light & Wonder", "family": "Huff N' Puff", "aliases": ["Huff N Xtra Puff"],
+    "mechanics": ["stepper", "hold_and_spin", "big_bad_wolf_feature"],
+    "versions": [{ "gameId": "20055", "jurisdiction": "Class III", "rtpPercent": null, "minimumWagerCents": null, "maximumWagerCents": null, "evidenceClaimIds": ["xtra-puff-layout"] }],
+    "classification": { "riskProfile": "high", "phaseProfiles": ["feature_hunt", "swing"], "confidence": 0.77, "basis": ["hold_and_spin", "feature_heavy"], "classifierVersion": "phaseplay_rules_v1" },
+    "claims": [
+      { "id": "xtra-puff-layout", "field": "layout", "value": "3 reels, 27 lines, 750 credits max bet", "sourceUrl": "https://gaming.lnw.com/games/Light-And-Wonder/class3/STEPPER/Huff-N%27-X-TRA-Puff-20055", "sourceType": "manufacturer", "retrievedAt": "2026-08-23T00:00:00.000Z", "confidence": 1 },
+      { "id": "xtra-puff-mechanics", "field": "mechanics", "value": ["hold_and_spin", "big_bad_wolf_feature"], "sourceUrl": "https://gaming.lnw.com/games/Light-And-Wonder/class3/STEPPER/Huff-N%27-X-TRA-Puff-20055", "sourceType": "manufacturer", "retrievedAt": "2026-08-23T00:00:00.000Z", "confidence": 1 }
+    ],
+    "reviewStatus": "reviewed", "updatedAt": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "id": "light-and-wonder:huff-n-even-more-puff-grand", "canonicalName": "Huff N' Even More Puff Grand", "manufacturer": "Light & Wonder", "family": "Huff N' Puff", "aliases": ["Huff N Even More Puff Grand"],
+    "mechanics": ["wheel_features", "expanded_reels", "bonus_tiers"],
+    "versions": [
+      { "gameId": "71937", "jurisdiction": "iGaming", "rtpPercent": 87, "minimumWagerCents": 20, "maximumWagerCents": 10000, "evidenceClaimIds": ["even-more-puff-versions"] },
+      { "gameId": "71941", "jurisdiction": "iGaming", "rtpPercent": 96, "minimumWagerCents": 20, "maximumWagerCents": 10000, "evidenceClaimIds": ["even-more-puff-versions"] }
+    ],
+    "classification": { "riskProfile": "high", "phaseProfiles": ["feature_hunt", "swing"], "confidence": 0.72, "basis": ["expanded_reels", "bonus_tiers", "max_exposure_10000x"], "classifierVersion": "phaseplay_rules_v1" },
+    "claims": [{ "id": "even-more-puff-versions", "field": "available_versions", "value": "Game IDs 71937–71941 list RTP options from 87% to 96%, min bet 0.2 and max bet 100", "sourceUrl": "https://igaming.lnw.com/games/huff-n-even-more-puff-grand/", "sourceType": "manufacturer", "retrievedAt": "2026-08-23T00:00:00.000Z", "confidence": 1 }],
+    "reviewStatus": "reviewed", "updatedAt": "2026-08-23T00:00:00.000Z"
+  },
+  {
+    "id": "everi:888-drums-eternity", "canonicalName": "888 Drums Eternity", "manufacturer": "Everi", "family": "888 Drums", "aliases": ["888 Drums Eternity Deluxe"],
+    "mechanics": ["selectable_reel_array", "variable_bet_configuration"], "versions": [],
+    "classification": { "riskProfile": "unknown", "phaseProfiles": ["balanced", "feature_hunt"], "confidence": 0.35, "basis": ["reel_array_affects_volatility"], "classifierVersion": "phaseplay_rules_v1" },
+    "claims": [{ "id": "888-drums-reel-array", "field": "mechanics", "value": ["selectable_reel_array", "reel_array_affects_volatility"], "sourceUrl": "https://www.everi.com/games/library/filters/0-0-0-23/", "sourceType": "manufacturer", "retrievedAt": "2026-08-23T00:00:00.000Z", "confidence": 0.9 }],
+    "reviewStatus": "needs_review", "updatedAt": "2026-08-23T00:00:00.000Z"
+  }
+]

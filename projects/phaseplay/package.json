@@ -1,0 +1,22 @@
+{
+  "name": "phaseplay-ai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Bankroll and risk-management coaching for casino sessions.",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace=@phaseplay/web",
+    "dev:api": "npm run dev --workspace=@phaseplay/api",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "check": "npm run typecheck && npm run test && npm run build",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  },
+  "engines": { "node": ">=20" }
+}
