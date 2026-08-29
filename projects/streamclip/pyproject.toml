@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "streamclip-mvp"
+version = "0.1.0"
+description = "Local-first livestream chat burst detector and short-form clip generator"
+requires-python = ">=3.10"
+dependencies = [
+  "chat-downloader>=0.2.8",
+  "yt-dlp>=2025.1.15",
+]
+
+[project.optional-dependencies]
+transcribe = ["faster-whisper>=1.1.0"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+streamclip = "streamclip.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["streamclip*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

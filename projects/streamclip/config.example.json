@@ -1,0 +1,16 @@
+{
+  "window_seconds": 5,
+  "baseline_seconds": 300,
+  "min_baseline_windows": 6,
+  "z_threshold": 3.0,
+  "merge_gap_seconds": 25,
+  "max_candidates": 12,
+  "clip_pre_seconds": 15,
+  "clip_post_seconds": 45,
+  "min_clip_seconds": 45,
+  "max_clip_seconds": 90,
+  "transcribe": true,
+  "whisper_model": "small",
+  "video_quality": "bestvideo[height<=1080]+bestaudio/best[height<=1080]"
+}
+
