@@ -1,0 +1,17 @@
+import {createHash} from 'node:crypto';
+import {execFile} from 'node:child_process';
+import {mkdir,readFile,stat,writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {promisify} from 'node:util';
+import {MacOsSayNarrationAdapter} from './adapters/macos-say';
+import {verifyRender} from './render';
+import {compilePhoneFast} from '../src/phone/compiler';
+import {jordanPhoneProof} from '../src/phone/jordanProof';
+import {assessLegacyManifest,validatePhoneFast} from '../src/phone/validator';
+import {parseManifest} from '../src/manifest/schema';
+const execFileAsync=promisify(execFile);const projectDir=path.resolve('public/projects/episode-2/phone-proof');const output=path.join(projectDir,'jordan-phone-proof.mp4');const cacheFile=path.join(projectDir,'cache.json');
+const exists=(f:string)=>stat(f).then(()=>true,()=>false);const hash=async()=>{const h=createHash('sha256');for(const f of ['src/phone/schema.ts','src/phone/compiler.ts','src/phone/validator.ts','src/phone/PhoneFast.tsx','src/phone/jordanProof.ts'])h.update(await readFile(path.resolve(f)));for(const a of jordanPhoneProof.assets)h.update(await readFile(path.resolve('public',a.src)));return h.digest('hex');};
+export const runPhoneProof=async()=>{await mkdir(path.join(projectDir,'audio'),{recursive:true});const report=validatePhoneFast(jordanPhoneProof);await writeFile(path.join(projectDir,'creative-validation.json'),`${JSON.stringify(report,null,2)}\n`);if(report.status!=='PASS')throw new Error(`Creative gate failed: ${report.errors.join('; ')}`);const fingerprint=await hash();if(await exists(cacheFile)&&await exists(output)){const cache=JSON.parse(await readFile(cacheFile,'utf8'));if(cache.fingerprint===fingerprint&&cache.verified)return {status:'SKIPPED',output,report,verification:cache.verification};}
+  const voice=new MacOsSayNarrationAdapter('Daniel',185);for(const beat of jordanPhoneProof.microchapters.flatMap(x=>x.beats)){const wav=path.resolve('public',beat.audioSrc);if(await exists(wav)&&(await stat(wav)).size>1000)continue;await mkdir(path.dirname(wav),{recursive:true});await voice.synthesize(beat.narration,`${wav}.aiff`,wav);}
+  await execFileAsync(path.resolve('node_modules/.bin/remotion'),['render','src/index.ts','JordanPhoneProof',output,'--codec','h264','--scale','0.5','--concurrency','1','--gl','angle','--overwrite'],{cwd:path.resolve('.'),maxBuffer:1024*1024*20});const compiled=compilePhoneFast(jordanPhoneProof);const verification=await verifyRender(output,{width:640,height:360,requireAudio:true});if(Math.abs(verification.durationSeconds-compiled.durationInFrames/30)>.25)throw new Error('Proof duration mismatch');const legacy=parseManifest(JSON.parse(await readFile('public/projects/episode-2/manifest.json','utf8')));const scorecard={legacy:assessLegacyManifest(legacy),phoneFast:report};await writeFile(path.join(projectDir,'before-after-scorecard.json'),`${JSON.stringify(scorecard,null,2)}\n`);await writeFile(path.join(projectDir,'render-report.json'),`${JSON.stringify({verified:true,output,...verification,fingerprint},null,2)}\n`);await writeFile(cacheFile,`${JSON.stringify({fingerprint,verified:true,verification},null,2)}\n`);return {status:'RENDERED',output,report,verification};};
+if(import.meta.url===`file://${process.argv[1]}`)runPhoneProof().then(r=>console.log(`${r.status}: creative ${r.report.score}/100; ${r.verification.width}x${r.verification.height}; ${r.verification.durationSeconds.toFixed(1)}s`)).catch(e=>{console.error(e instanceof Error?e.message:e);process.exitCode=1});

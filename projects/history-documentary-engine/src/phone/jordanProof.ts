@@ -1,0 +1,30 @@
+import {phoneFastBlueprintSchema} from './schema';
+const media=(id:string,file:string,depicts:string[],roles:Array<'CHARACTER'|'ACTION'|'EVIDENCE'|'DOCUMENT'|'LOCATION'>,treatments:Array<'FULL_FRAME'|'CUTOUT'|'DETAIL'|'SIDE_BY_SIDE'|'DOCUMENT'|'STAT_OVERLAY'>,sourceUrl:string,credit:string)=>({id,src:`projects/episode-2/archive-assets/${file}`,sourceUrl,credit,date:'1993–1995',depicts,roles,treatments,storyMoments:['rookie'],rightsStatus:'EDITORIAL_FAIR_USE' as const,maxFullFrameUses:1,maxTotalUses:4});
+export const jordanPhoneProof=phoneFastBlueprintSchema.parse({
+  schemaVersion:2,id:'jordan-phone-proof',title:'The Greatest Player Becomes a Rookie',openingQuestion:'Why did the greatest basketball player alive walk away?',resolution:'Jordan’s public return answered the opening question: the detour ended when basketball pulled him back.',soundtrackSrc:'projects/episode-2/audio/score.wav',fps:30,
+  pacing:{profile:'PHONE_FAST',targetEventSeconds:2.3,maxUnchangedSeconds:3,maxSentenceWords:14,maxRevealGapSeconds:10,microchapterSeconds:{min:30,max:45}},
+  assets:[
+    media('retirement','jordan-retirement.jpg',['Jordan','retirement press conference'],['CHARACTER','EVIDENCE'],['FULL_FRAME','CUTOUT'],'https://www.opencourt-basketball.com/2025/10/06/michael-jordans-first-retirement-in-1993-the-shocking-exit-of-a-basketball-legend/','Editorial excerpt · retirement press conference'),
+    media('return','jordan-return.jpg',['Jordan','I’m back fax'],['CHARACTER','DOCUMENT'],['FULL_FRAME','DOCUMENT'],'https://www.businessinsider.com/michael-jordan-im-back-fax-2015-3','Editorial excerpt · comeback announcement'),
+    media('hero','jordan-barons-hero.jpg',['Jordan','Barons and Bulls uniforms'],['CHARACTER','EVIDENCE'],['FULL_FRAME','SIDE_BY_SIDE'],'https://www.mlb.com/milb/history/michael-jordan','MiLB editorial excerpt'),
+    media('batting1','jordan-barons-1.jpg',['Jordan','Birmingham Barons'],['ACTION'],['FULL_FRAME','CUTOUT'],'https://www.mlb.com/milb/history/michael-jordan','MiLB editorial excerpt'),
+    media('batting2','jordan-barons-2.jpg',['Jordan','baseball training'],['ACTION'],['FULL_FRAME','DETAIL'],'https://www.mlb.com/milb/history/michael-jordan','MiLB editorial excerpt'),
+    media('ballpark','jordan-barons-3.jpg',['Jordan','minor-league ballpark'],['ACTION','LOCATION'],['FULL_FRAME','DETAIL'],'https://www.mlb.com/milb/history/michael-jordan','MiLB editorial excerpt'),
+    media('swing','jordan-barons-4.jpg',['Jordan','batting'],['ACTION'],['FULL_FRAME','STAT_OVERLAY'],'https://www.mlb.com/milb/history/michael-jordan','MiLB editorial excerpt'),
+    media('whitesox','jordan-whitesox.jpg',['Jordan','White Sox'],['ACTION','CHARACTER'],['FULL_FRAME','CUTOUT'],'https://www.si.com/nba/2014/02/07/michael-jordan-ballplayer','Sports Illustrated editorial excerpt'),
+    media('debut','jordan-debut.jpg',['Jordan','Barons debut'],['ACTION','EVIDENCE'],['FULL_FRAME','DETAIL'],'https://www.ajc.com/sports/photos-michael-jordan-made-baseball-debut-years-ago/TqBppjW4KA6gjlKJ0J6BZK/','AJC editorial excerpt'),
+  ],
+  microchapters:[{id:'rookie',title:'The Greatest Player Becomes a Rookie',hook:'The best player alive quit.',question:'Why trade mastery for the minor leagues?',escalation:['He was thirty-one.','He had not played organized baseball in seventeen years.','The world expected failure.'],reveal:'His first hit began a thirteen-game streak.',payoff:'Seventeen months later, basketball pulled him back.',beats:[
+    {id:'p1',purpose:'HOOK',narration:'In 1993, Michael Jordan was basketball’s best player. Then he quit.',audioSrc:'projects/episode-2/phone-proof/audio/p1.wav',assetIds:['retirement'],captionStyle:'IMPACT'},
+    {id:'p2',purpose:'QUESTION',narration:'Why would a three-time champion trade arenas for minor-league buses?',audioSrc:'projects/episode-2/phone-proof/audio/p2.wav',assetIds:['hero','batting1'],captionStyle:'QUESTION'},
+    {id:'p3',purpose:'ESCALATION',narration:'At thirty-one, he entered Double-A after seventeen years away from organized baseball.',audioSrc:'projects/episode-2/phone-proof/audio/p3.wav',assetIds:['whitesox'],value:'17 YEARS',captionStyle:'KEYWORD'},
+    {id:'p4',purpose:'ESCALATION',narration:'His debut drew 10,359 fans—and 130 reporters waiting for failure.',audioSrc:'projects/episode-2/phone-proof/audio/p4.wav',assetIds:['debut'],value:'10,359',captionStyle:'IMPACT'},
+    {id:'p5',purpose:'REVEAL',narration:'He started hitless. Then one single triggered a thirteen-game streak.',audioSrc:'projects/episode-2/phone-proof/audio/p5.wav',assetIds:['batting2'],value:'13 GAMES',captionStyle:'KEYWORD'},
+    {id:'p6',purpose:'ESCALATION',narration:'Pitchers adjusted, feeding him breaking balls he had never learned to read.',audioSrc:'projects/episode-2/phone-proof/audio/p6.wav',assetIds:['ballpark'],captionStyle:'STANDARD'},
+    {id:'p7',purpose:'REVEAL',narration:'The final average looked brutal: .202. The full stat line complicated it.',audioSrc:'projects/episode-2/phone-proof/audio/p7.wav',assetIds:['swing'],value:'.202',captionStyle:'IMPACT'},
+    {id:'p8',purpose:'REVEAL',narration:'Then baseball itself stopped. The 1994 strike blocked the path ahead.',audioSrc:'projects/episode-2/phone-proof/audio/p8.wav',assetIds:['batting1'],label:'THE GAME STOPS',captionStyle:'KEYWORD'},
+    {id:'p9',purpose:'PAYOFF',narration:'Seventeen months after leaving, Jordan sent two words: I’m back.',audioSrc:'projects/episode-2/phone-proof/audio/p9.wav',assetIds:['return'],captionStyle:'IMPACT'},
+  ]}],
+  retentionMap:[{atSeconds:0,device:'CONTRADICTION',text:'The best player alive quit'},{atSeconds:7,device:'OPEN_LOOP',text:'Why choose Double-A?'},{atSeconds:14,device:'ESCALATION',text:'The world waits for failure'},{atSeconds:21,device:'REVERSAL',text:'A thirteen-game streak'},{atSeconds:29,device:'REVERSAL',text:'Baseball stops'},{atSeconds:36,device:'PAYOFF',text:'I’m back'}],
+  music:[{atSeconds:0,mode:'TENSION'},{atSeconds:9,mode:'MOMENTUM'},{atSeconds:29,mode:'SILENCE'},{atSeconds:34,mode:'PAYOFF'}],
+});

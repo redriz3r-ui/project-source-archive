@@ -1,0 +1,39 @@
+{
+  "title": "A Documentary Production Brief",
+  "topic": "Replace this example with a researched historical subject",
+  "targetMinutes": 2,
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Replace with a primary or authoritative source",
+      "url": "https://example.org/source",
+      "publisher": "Example institution",
+      "accessedAt": "2026-08-24",
+      "rights": "Verify before asset use"
+    }
+  ],
+  "script": [
+    {
+      "id": "context",
+      "narration": "This sourced paragraph becomes a timed archive scene automatically.",
+      "visual": "AUTO",
+      "sourceIds": ["source-1"]
+    },
+    {
+      "id": "movement",
+      "narration": "The route crossed the region and connected two important locations.",
+      "visual": "AUTO",
+      "sourceIds": ["source-1"],
+      "map": {
+        "label": "The route",
+        "year": "YEAR",
+        "region": "REGION",
+        "points": [
+          {"name": "Origin", "x": 0.24, "y": 0.62},
+          {"name": "Destination", "x": 0.76, "y": 0.4}
+        ],
+        "route": [0.24, 0.62, 0.48, 0.52, 0.76, 0.4]
+      }
+    }
+  ]
+}
