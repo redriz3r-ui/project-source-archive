@@ -1,0 +1,8 @@
+.venv/
+*.egg-info/
+__pycache__/
+*.pyc
+pico_v2/config.py
+.env
+presets.json
+

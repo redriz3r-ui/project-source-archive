@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pico-led-agent"
+version = "0.1.0"
+description = "Local natural-language controller for a Pico W LED matrix"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+serial = ["pyserial>=3.5,<4"]
+audio = ["sounddevice>=0.5,<1"]
+media = ["Pillow>=11,<13"]
+
+[project.scripts]
+pico-led = "led_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["led_agent*"]
