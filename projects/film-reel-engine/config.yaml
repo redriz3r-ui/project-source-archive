@@ -1,0 +1,56 @@
+analysis:
+  proxy_width: 640
+  proxy_fps: 12
+  sample_fps: 2
+  max_samples_per_shot: 40
+  workers: 1
+  cut_threshold: 0.32
+  minimum_shot_seconds: 0.6
+  continuous_segment_seconds: 12
+  algorithm_version: 1
+reframing:
+  default_mode: auto
+  smoothing: 0.85
+  dead_zone: 0.035
+  max_pan_speed: 0.08
+  face_weight: 0.8
+ranking:
+  visual_interest: 1.0
+  composition: 1.0
+  motion: 0.6
+  faces: 0.35
+  diversity: 1.6
+  timestamp_separation: 90
+pacing:
+  default: 2.3
+  dreamy: 3.3
+  romantic: 3.0
+  melancholy: 3.6
+  lonely: 3.5
+  frenetic: 1.1
+  energetic: 1.4
+  chaotic: 1.2
+  restless: 1.8
+spoilers:
+  low_max_fraction: 0.8
+  medium_max_fraction: 0.95
+  excluded_ranges: []
+export:
+  width: 1080
+  height: 1920
+  fps: 30
+  codec: libx264
+  crf: 18
+  preset: medium
+  threads: 2
+preview:
+  width: 360
+  crf: 28
+  preset: ultrafast
+end_card:
+  enabled: false
+  duration: 2.5
+  lines: []
+semantic:
+  plugin: null
+  version: '1'

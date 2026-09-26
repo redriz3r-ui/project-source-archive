@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="reel-token" content="__LOCAL_TOKEN__">
+  <title>Frame / Film Reel Engine</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0c0e0d; --panel:#161a17; --panel2:#1c211d; --line:#303a32; --ink:#f2f4ed; --muted:#a0a99f; --accent:#c8ff69; --accent2:#8dbb40; --danger:#ff8c80; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(900px 650px at 90% -15%, #263b1c 0, transparent 68%),var(--bg); color:var(--ink); font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; min-height:100vh; }
+    button,input,select { font:inherit; }
+    button { cursor:pointer; }
+    .shell { max-width:1260px; margin:auto; padding:30px 36px 70px; }
+    header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:23px; gap:20px; }
+    .brand { display:flex; align-items:center; gap:13px; font-weight:850; letter-spacing:-.06em; font-size:24px; }
+    .mark { width:35px; height:35px; border:6px solid var(--accent); border-radius:9px; transform:rotate(-12deg); box-shadow:0 0 22px #c8ff6940; }
+    .brand span:last-child { color:var(--accent); }
+    .local { display:flex; align-items:center; gap:9px; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.15em; font-weight:750; }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 9px var(--accent); }
+    .hero { display:grid; grid-template-columns:1fr auto; align-items:end; gap:25px; padding:48px 0 35px; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.2em; font-weight:800; font-size:11px; }
+    h1 { margin:10px 0 10px; font-size:clamp(40px,6vw,76px); line-height:.96; letter-spacing:-.075em; max-width:780px; }
+    h1 em { font-weight:450; color:var(--accent); font-style:normal; }
+    .subtitle { color:var(--muted); max-width:550px; margin:17px 0 0; font-size:16px; }
+    .hero-stat { border:1px solid var(--line); border-radius:99px; padding:10px 16px; color:var(--muted); white-space:nowrap; font-size:12px; }
+    .grid { display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:20px; align-items:start; }
+    .steps { display:grid; gap:14px; }
+    .card,.side-card { background:linear-gradient(145deg,#1b201b,#141815); border:1px solid var(--line); border-radius:19px; box-shadow:0 8px 35px #0002; }
+    .card { padding:25px; }
+    .card-head { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+    .num { display:grid; place-items:center; width:37px; height:37px; border:1px solid #668942; color:var(--accent); border-radius:10px; font:700 13px ui-monospace,SFMono-Regular,monospace; }
+    h2 { margin:0; font-size:21px; letter-spacing:-.04em; }
+    .card-head p { margin:2px 0 0; color:var(--muted); font-size:13px; }
+    .field-label { display:block; color:#d9e0d6; font-size:12px; font-weight:700; margin:0 0 8px; letter-spacing:.02em; }
+    input,select { width:100%; min-width:0; background:#0e120f; border:1px solid #384239; border-radius:10px; color:var(--ink); padding:12px 14px; outline:none; }
+    input:focus,select:focus { border-color:var(--accent); box-shadow:0 0 0 3px #c8ff6920; }
+    input::placeholder { color:#6d786d; }
+    .inline { display:flex; gap:10px; align-items:stretch; }
+    .inline[hidden] { display:none; }
+    .inline input { flex:1; }
+    .primary,.secondary,.ghost { border-radius:10px; font-weight:750; border:1px solid transparent; padding:11px 17px; transition:transform .15s,background .15s,border-color .15s; white-space:nowrap; }
+    button:hover:not(:disabled) { transform:translateY(-1px); }
+    button:disabled { opacity:.38; cursor:not-allowed; }
+    .primary { color:#17210d; background:var(--accent); }
+    .primary:hover:not(:disabled) { background:#d8ff99; }
+    .secondary { color:var(--ink); background:#263026; border-color:#435444; }
+    .secondary:hover:not(:disabled) { border-color:var(--accent); }
+    .ghost { color:var(--accent); background:transparent; border-color:#425940; }
+    .actions { margin-top:18px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .hint { color:var(--muted); font-size:12px; }
+    .form-grid { display:grid; grid-template-columns:1fr 130px 135px; gap:12px; }
+    .moods { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+    .chip { background:#243021; color:#bfdaac; border:1px solid #3a5432; border-radius:99px; padding:5px 10px; font-size:11px; font-weight:700; }
+    .chip:hover { color:var(--ink); border-color:var(--accent); }
+    .options { display:flex; gap:18px; flex-wrap:wrap; align-items:center; margin-top:17px; color:var(--muted); font-size:12px; }
+    .options select { width:auto; padding:7px 26px 7px 10px; font-size:12px; }
+    .advanced { margin-top:18px; border:1px solid #344234; border-radius:12px; background:#111711; }
+    .advanced summary { cursor:pointer; padding:12px 15px; font-weight:750; color:#d9e9d3; list-style:none; }
+    .advanced summary::-webkit-details-marker { display:none; }
+    .advanced summary::before { content:'＋'; color:var(--accent); margin-right:9px; }
+    .advanced[open] summary::before { content:'−'; }
+    .advanced-body { padding:4px 15px 15px; border-top:1px solid #2e3a2f; }
+    .settings-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:15px; }
+    .setting-help { color:var(--muted); font-size:11px; line-height:1.35; margin-top:5px; }
+    .sound-panel { border:1px solid #344234; background:#111711; border-radius:12px; padding:15px; margin-top:20px; }
+    .sound-grid { display:grid; grid-template-columns:1fr 180px; gap:12px; }
+    .sound-panel .inline { margin-top:12px; }
+    .sound-note { color:var(--muted); font-size:11px; margin-top:9px; }
+    .volume-row { display:flex; align-items:center; gap:12px; }
+    .volume-row input { padding:0; accent-color:var(--accent); }
+    .volume-row span { min-width:40px; color:var(--accent); font-size:12px; font-weight:800; text-align:right; }
+    .side-card { padding:22px; margin-bottom:15px; }
+    .side-title { color:var(--muted); text-transform:uppercase; letter-spacing:.15em; font-size:11px; font-weight:800; margin:0 0 18px; }
+    .film-name { font-size:22px; line-height:1.12; letter-spacing:-.05em; overflow-wrap:anywhere; font-weight:750; }
+    .film-path { margin-top:9px; color:var(--muted); font:11px/1.45 ui-monospace,SFMono-Regular,monospace; word-break:break-all; }
+    .film-stats { display:flex; gap:10px; margin-top:18px; }
+    .pill { background:#263127; border-radius:7px; padding:5px 8px; font-size:11px; color:#cad9c4; }
+    .project-select { margin-top:20px; }
+    .project-select select { font-size:12px; }
+    .activity-status { color:var(--accent); font-size:18px; font-weight:730; letter-spacing:-.03em; margin:-3px 0 10px; }
+    .activity-status.error { color:var(--danger); }
+    pre { background:#0d110e; border:1px solid #2e392e; color:#b8c9b5; border-radius:10px; margin:0; padding:12px; height:175px; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; font:11px/1.55 ui-monospace,SFMono-Regular,monospace; }
+    .privacy { border:1px solid #344832; background:#1e291d; color:#b6c8ac; font-size:12px; border-radius:12px; padding:14px 15px; }
+    .privacy strong { color:var(--accent); }
+    .results { padding:38px 0 0; }
+    .results-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+    .results h2 { font-size:27px; }
+    .result-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:15px; }
+    .result { border:1px solid var(--line); border-radius:15px; overflow:hidden; background:var(--panel); }
+    .result video { display:block; width:100%; aspect-ratio:9/12; background:#050705; object-fit:contain; }
+    .result-foot { padding:12px; display:flex; justify-content:space-between; align-items:center; gap:7px; }
+    .result-name { font-weight:750; font-size:13px; }
+    .result-size { color:var(--muted); font-size:11px; }
+    .result button { padding:6px 9px; font-size:11px; }
+    .empty { border:1px dashed #3a463b; border-radius:14px; padding:28px; color:var(--muted); text-align:center; }
+    @media(max-width:850px) { .grid{grid-template-columns:1fr} .hero{grid-template-columns:1fr}.shell{padding:20px 18px 50px}.form-grid{grid-template-columns:1fr 1fr}.form-grid>div:first-child{grid-column:1/-1} }
+    @media(max-width:560px) { .inline{flex-direction:column}.form-grid{grid-template-columns:1fr 1fr}.sound-grid,.settings-grid{grid-template-columns:1fr}.card{padding:19px}.hero{padding-top:37px}.hero-stat{display:none} }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <header><div class="brand"><span class="mark" aria-hidden="true"></span>FRAME<span> / </span>studio</div><div class="local"><span class="dot"></span>Runs on this Mac</div></header>
+  <section class="hero"><div><div class="eyebrow">Film Reel Engine · Local workspace</div><h1>From footage<br>to <em>finished reel.</em></h1><p class="subtitle">Choose a video, map its shots, then direct a new cut. Three steps, one local workspace.</p></div><div class="hero-stat">✦ Original footage stays in place</div></section>
+  <div class="grid">
+    <main class="steps">
+      <section class="card"><div class="card-head"><span class="num">01</span><div><h2>Choose your video</h2><p>Point the engine at a file on your Mac.</p></div></div>
+        <label class="field-label" for="path">Video file</label><div class="inline"><input id="path" placeholder="/Users/you/Movies/my-video.mov" autocomplete="off"><button class="secondary" id="choose">Browse…</button></div>
+        <div class="actions"><span class="hint">The original is referenced, never changed.</span><button class="primary" id="ingest">Ingest video →</button></div>
+      </section>
+      <section class="card"><div class="card-head"><span class="num">02</span><div><h2>Analyze the shots</h2><p>Find cuts and build a reusable visual library.</p></div></div>
+        <details class="advanced"><summary>Adjust shot analysis</summary><div class="advanced-body"><div class="settings-grid">
+          <div><label class="field-label" for="cut_threshold">Cut threshold</label><input id="cut_threshold" type="number" min="0.05" max="0.9" step="0.01"><div class="setting-help">Lower finds more cuts; higher requires a stronger visual change.</div></div>
+          <div><label class="field-label" for="minimum_shot_seconds">Minimum shot length · sec</label><input id="minimum_shot_seconds" type="number" min="0.1" max="10" step="0.1"><div class="setting-help">Prevents very rapid cuts from becoming separate shots.</div></div>
+          <div><label class="field-label" for="continuous_segment_seconds">Uncut video segments · sec</label><input id="continuous_segment_seconds" type="number" min="2" max="60" step="1"><div class="setting-help">Splits a video with no detected cuts into intervals.</div></div>
+          <div><label class="field-label" for="sample_fps">Samples per second</label><input id="sample_fps" type="number" min="0.25" max="8" step="0.25"><div class="setting-help">More samples can capture motion better but take longer.</div></div>
+          <div><label class="field-label" for="max_samples_per_shot">Max samples per shot</label><input id="max_samples_per_shot" type="number" min="3" max="120" step="1"><div class="setting-help">Caps analysis work on long shots.</div></div>
+          <div><label class="field-label" for="face_weight">Face tracking weight</label><input id="face_weight" type="number" min="0" max="1" step="0.1"><div class="setting-help">Higher gives detected faces more influence over framing.</div></div>
+          <div><label class="field-label" for="workers">Analysis workers</label><input id="workers" type="number" min="1" max="4" step="1"><div class="setting-help">More workers can finish faster but use more memory.</div></div>
+        </div><p class="hint">These settings apply to this video project when you click Analyze.</p></div></details>
+        <div class="actions"><span class="hint" id="analysis-hint">Choose a video to begin.</span><button class="primary" id="analyze">Analyze video →</button></div>
+      </section>
+      <section class="card"><div class="card-head"><span class="num">03</span><div><h2>Generate a reel</h2><p>Set a feeling and length. The engine edits and renders.</p></div></div>
+        <div class="form-grid"><div><label class="field-label" for="mood">Mood</label><input id="mood" value="dreamy romantic" maxlength="200"></div><div><label class="field-label" for="duration">Seconds</label><input id="duration" type="number" min="1" max="600" value="20"></div><div><label class="field-label" for="variants">Versions</label><input id="variants" type="number" min="1" max="20" value="3"></div></div>
+        <div class="moods"><button class="chip" data-mood="dreamy romantic">Dreamy romantic</button><button class="chip" data-mood="dark neon">Dark neon</button><button class="chip" data-mood="quiet melancholy">Quiet melancholy</button><button class="chip" data-mood="energetic frenetic">Fast & energetic</button></div>
+        <div class="options"><label for="spoilers">Spoiler filter</label><select id="spoilers"><option value="low">Low · skip final 20%</option><option value="medium">Medium · skip final 5%</option><option value="unrestricted">Off · use whole video</option></select><span>Vertical 9:16</span></div>
+        <div class="sound-panel"><div class="sound-grid"><div><label class="field-label" for="audio">Sound</label><select id="audio"><option value="original">Use original video audio</option><option value="music">Use a music file</option><option value="muted">Mute</option><option value="dialogue_reduced">Reduce dialogue · experimental</option></select></div><div><label class="field-label" for="audio_volume">Sound level</label><div class="volume-row"><input id="audio_volume" type="range" min="0" max="200" step="5" value="100"><span id="volume-value">100%</span></div></div></div>
+          <div class="inline" id="music-picker" hidden><input id="music" placeholder="/Users/you/Music/track.mp3" aria-label="Music file path"><button class="secondary" id="choose-music">Browse…</button></div><div class="sound-note" id="sound-note">Source sound follows each selected shot, so audio may jump at cuts.</div></div>
+        <details class="advanced"><summary>Adjust shot selection</summary><div class="advanced-body"><div class="settings-grid">
+          <div><label class="field-label" for="visual_interest">Visual interest</label><input id="visual_interest" type="number" min="0" max="3" step="0.1"><div class="setting-help">Favor detail, color, contrast, and faces.</div></div>
+          <div><label class="field-label" for="composition">Composition</label><input id="composition" type="number" min="0" max="3" step="0.1"><div class="setting-help">Favor shots with stronger measured framing.</div></div>
+          <div><label class="field-label" for="motion">Motion</label><input id="motion" type="number" min="0" max="3" step="0.1"><div class="setting-help">Favor movement suited to the mood.</div></div>
+          <div><label class="field-label" for="faces">Faces</label><input id="faces" type="number" min="0" max="3" step="0.1"><div class="setting-help">Give visible faces more priority.</div></div>
+          <div><label class="field-label" for="diversity">Variety</label><input id="diversity" type="number" min="0" max="4" step="0.1"><div class="setting-help">Avoid shots that look or occur too close together.</div></div>
+        </div><p class="hint">These weights apply to new reels from this project.</p></div></details>
+        <div class="actions"><span class="hint">Review the final shot choices before posting.</span><button class="primary" id="generate">Generate reels →</button></div>
+      </section>
+    </main>
+    <aside>
+      <section class="side-card"><h3 class="side-title">Current video</h3><div id="film-name" class="film-name">No video selected</div><div id="film-path" class="film-path">Choose a file to create a project.</div><div id="film-stats" class="film-stats"></div><div class="project-select"><label class="field-label" for="projects">Switch project</label><select id="projects"><option value="">No projects yet</option></select></div></section>
+      <section class="side-card"><h3 class="side-title">Activity</h3><div id="activity" class="activity-status">Ready</div><pre id="log">Your work will appear here.</pre></section>
+      <div class="privacy"><strong>Private by design.</strong> The interface runs at 127.0.0.1 on this Mac. No video is sent to a cloud service.</div>
+    </aside>
+  </div>
+  <section class="results"><div class="results-head"><h2>Finished reels</h2><span class="hint" id="result-count">0 exports</span></div><div class="result-grid" id="results"><div class="empty">Generate a reel to see it here.</div></div></section>
+</div>
+<script>
+const token = document.querySelector('meta[name="reel-token"]').content;
+const $ = id => document.getElementById(id);
+const settingIds=['cut_threshold','minimum_shot_seconds','continuous_segment_seconds','sample_fps','max_samples_per_shot','face_weight','workers'];
+const rankingIds=['visual_interest','composition','motion','faces','diversity'];
+let lastResultKey = '', lastProjectsKey = '', lastLog = '', activeSettingsId = '', analysisDirty = false, pending = false;
+async function post(path, body={}) {
+  const response = await fetch(path, {method:'POST', headers:{'Content-Type':'application/json','X-Reel-Token':token}, body:JSON.stringify(body)});
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || 'Request failed');
+  return data;
+}
+function basename(path) { return path.split('/').filter(Boolean).pop() || path; }
+function busyError(error) { $('activity').textContent = error.message; $('activity').classList.add('error'); }
+async function act(action, body={}) {
+  if (pending) return;
+  pending = true;
+  try { await post('/api/start', {action,...body}); if(action==='analyze') analysisDirty=false; await refresh(); }
+  catch(error) { busyError(error); }
+  finally { pending = false; }
+}
+function drawResults(active) {
+  const key = active ? active.id + ':' + active.exports.map(x=>x.name+':'+x.size).join('|') : '';
+  if (key === lastResultKey) return;
+  lastResultKey = key;
+  const host = $('results'); host.replaceChildren();
+  const exports = active?.exports || [];
+  $('result-count').textContent = exports.length + (exports.length === 1 ? ' export' : ' exports');
+  if (!exports.length) { const empty=document.createElement('div'); empty.className='empty'; empty.textContent='Generate a reel to see it here.'; host.append(empty); return; }
+  for (const item of exports) {
+    const card=document.createElement('div'); card.className='result';
+    const video=document.createElement('video'); video.controls=true; video.preload='metadata'; video.playsInline=true;
+    video.src='/media/'+encodeURIComponent(active.id)+'/'+encodeURIComponent(item.name)+'?token='+encodeURIComponent(token);
+    const foot=document.createElement('div'); foot.className='result-foot';
+    const labels=document.createElement('div');
+    const name=document.createElement('div'); name.className='result-name'; name.textContent=item.name;
+    const size=document.createElement('div'); size.className='result-size'; size.textContent=(item.size/1024/1024).toFixed(1)+' MB';
+    labels.append(name,size);
+    const reveal=document.createElement('button'); reveal.className='ghost'; reveal.textContent='Finder ↗';
+    reveal.onclick=()=>post('/api/reveal',{name:item.name}).catch(busyError);
+    foot.append(labels,reveal); card.append(video,foot); host.append(card);
+  }
+}
+function draw(data) {
+  const active=data.active, job=data.job;
+  if (active && active.id!==activeSettingsId) {
+    activeSettingsId=active.id; analysisDirty=false;
+    for (const id of settingIds) $(id).value=active.analysis_settings[id];
+    for (const id of rankingIds) $(id).value=active.ranking_settings[id];
+  } else if (!active) { activeSettingsId=''; analysisDirty=false; }
+  $('film-name').textContent=active ? basename(active.source) : 'No video selected';
+  $('film-path').textContent=active ? active.source : 'Choose a file to create a project.';
+  $('film-stats').replaceChildren();
+  if (active) for (const value of [Math.round(active.duration/60)+' min', active.shots===null ? 'Not analyzed' : active.shots+' segments']) {
+    const pill=document.createElement('span'); pill.className='pill'; pill.textContent=value; $('film-stats').append(pill);
+  }
+  $('analysis-hint').textContent=!active ? 'Choose a video to begin.' : analysisDirty ? 'Settings changed. Analyze to apply them.' : !active.analysis_current ? 'Analysis settings changed. Run Analyze.' : active.shots===null ? 'Ready to map this video.' : active.shots+' segments ready. Reanalysis is optional.';
+  const projectKey=data.projects.map(p=>p.id).join('|');
+  if (projectKey!==lastProjectsKey) {
+    lastProjectsKey=projectKey; $('projects').replaceChildren();
+    if (!data.projects.length) { const option=new Option('No projects yet',''); $('projects').append(option); }
+    else for (const project of data.projects) $('projects').append(new Option(basename(project.source),project.id));
+  }
+  if (active && $('projects').value!==active.id) $('projects').value=active.id;
+  for (const id of ['choose','choose-music','ingest','analyze','generate','projects']) $(id).disabled=job.running || pending || (id==='analyze' && !active) || (id==='generate' && (!active || !active.analysis_current || analysisDirty));
+  $('activity').classList.toggle('error', !job.running && job.exit_code !== null && job.exit_code !== 0);
+  $('activity').textContent=job.running ? 'Working on '+job.action+'…' : job.exit_code===0 ? 'Step complete' : job.exit_code!==null ? 'Step failed' : 'Ready';
+  const log=job.logs.length ? job.logs.join('\n') : 'Your work will appear here.';
+  if (log!==lastLog) { lastLog=log; $('log').textContent=log; $('log').scrollTop=$('log').scrollHeight; }
+  drawResults(active);
+}
+async function refresh() { try { const response=await fetch('/api/status',{cache:'no-store'}); draw(await response.json()); } catch(error) { busyError(error); } }
+$('choose').onclick=async()=>{ try { const data=await post('/api/pick'); $('path').value=data.path; } catch(error) { if (error.message!=='File selection canceled') busyError(error); } };
+$('ingest').onclick=()=>act('ingest',{path:$('path').value.trim()});
+$('analyze').onclick=()=>act('analyze',{settings:Object.fromEntries(settingIds.map(id=>[id,Number($(id).value)]))});
+$('generate').onclick=()=>act('generate',{mood:$('mood').value.trim(),duration:Number($('duration').value),variants:Number($('variants').value),spoilers:$('spoilers').value,audio:$('audio').value,audio_volume:Number($('audio_volume').value)/100,music:$('music').value.trim(),ranking:Object.fromEntries(rankingIds.map(id=>[id,Number($(id).value)]))});
+$('choose-music').onclick=async()=>{ try { const data=await post('/api/pick',{kind:'audio'}); $('music').value=data.path; } catch(error) { if (error.message!=='File selection canceled') busyError(error); } };
+$('projects').onchange=async event=>{ try { await post('/api/select',{project:event.target.value}); lastResultKey=''; await refresh(); } catch(error) { busyError(error); } };
+document.querySelectorAll('[data-mood]').forEach(button=>button.onclick=()=>{$('mood').value=button.dataset.mood});
+settingIds.forEach(id=>$(id).addEventListener('input',()=>{ analysisDirty=true; refresh(); }));
+function updateSound() {
+  const mode=$('audio').value;
+  $('music-picker').hidden=mode!=='music';
+  $('sound-note').textContent={
+    original:'Source sound follows each selected shot, so audio may jump at cuts.',
+    music:'A local music file plays continuously across the reel. Use a track you have rights to use.',
+    muted:'The reel will have no audio track.',
+    dialogue_reduced:'Experimental stereo center cancellation; speech may remain and music may change.'
+  }[mode];
+  $('audio_volume').disabled=mode==='muted';
+}
+$('audio').onchange=updateSound;
+$('audio_volume').oninput=()=>{$('volume-value').textContent=$('audio_volume').value+'%'};
+updateSound();
+refresh(); setInterval(refresh,1800);
+</script>
+</body>
+</html>
