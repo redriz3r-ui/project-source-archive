@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Device Control — SelfPleasure</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="panel">
+      <p class="eyebrow"><a href="/">← Dashboard</a> · <a href="/camera">Vision</a> · <a href="/rules">Rules</a> · <a href="/evaluate">Evaluate</a></p>
+      <h1>DEVICE CONTROL</h1>
+      <p class="subtitle">Connect, select an output, and run a bounded manual test.</p>
+
+      <section aria-labelledby="connection-title">
+        <h2 id="connection-title">Intiface Central</h2>
+        <div class="status-row"><span>Connection</span><span id="connection">Not connected</span></div>
+        <div class="actions">
+          <button id="connect" type="button">Connect to Intiface</button>
+          <button id="scan" type="button" disabled>Scan for devices</button>
+          <button id="disconnect" type="button" disabled>Disconnect</button>
+        </div>
+      </section>
+
+      <section aria-labelledby="control-title">
+        <h2 id="control-title">Selected device</h2>
+        <p id="bench-warning" class="banner" hidden>Off-body manual bench mode only. Camera automation remains locked. Software stop may fail: keep the device's physical power-off control within reach.</p>
+        <label for="devices">Device</label>
+        <select id="devices"><option value="">None selected</option></select>
+        <p id="capabilities" class="hint">No device selected.</p>
+
+        <label for="feature">Vibration feature</label>
+        <select id="feature"><option value="">Select a device first</option></select>
+
+        <label for="intensity">Intensity: <output id="intensity-value">20%</output></label>
+        <input id="intensity" type="range" min="1" max="50" value="20" step="1" disabled>
+
+        <label for="duration">Duration (seconds)</label>
+        <input id="duration" type="number" min="0.1" max="5" value="1" step="0.1" disabled>
+        <label id="bench-confirmation-row" hidden><input id="bench-confirmation" type="checkbox"> I confirm this device is off-body on a counter and I can reach its physical power-off control.</label>
+        <p id="limits" class="hint">Tests require a separate enable action each time.</p>
+
+        <div class="actions">
+          <button id="enable" type="button" disabled>Enable one test</button>
+          <button id="test" type="button" disabled>Test Vibration</button>
+          <button id="stop" type="button">Stop</button>
+          <button id="emergency" class="danger" type="button">Emergency Stop</button>
+        </div>
+      </section>
+      <p id="message" role="status" aria-live="polite"></p>
+    </main>
+    <script src="/static/devices.js"></script>
+  </body>
+</html>

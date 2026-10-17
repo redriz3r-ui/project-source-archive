@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visual Interaction — SelfPleasure</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="panel camera-panel">
+      <p class="eyebrow"><a href="/">← Dashboard</a> · <a href="/hand">Hand tracking</a> · <a href="/devices">Device</a> · <a href="/rules">Rules</a> · <a href="/evaluate">Evaluate</a></p>
+      <h1>VISUAL INTERACTION</h1>
+      <p class="subtitle">Local preview · no recording · device activation requires explicit arming</p>
+
+      <label for="camera-index">Camera input index</label>
+      <select id="camera-index">
+        <option value="0">Camera 0 · usually built-in</option>
+        <option value="1">Camera 1</option>
+        <option value="2">Camera 2</option>
+        <option value="3">Camera 3</option>
+      </select>
+      <p class="hint">Choose an input while the camera is stopped. Camera access begins only when you press Start Camera.</p>
+
+      <div class="preview" id="preview-container">
+        <img id="preview" alt="Live local camera preview" hidden>
+        <div id="roi-selection" hidden></div>
+        <span id="preview-placeholder">Camera inactive</span>
+      </div>
+
+      <section aria-labelledby="tracking-title">
+        <h2 id="tracking-title">Tracking state</h2>
+        <div class="status-row"><span>Camera</span><span id="camera-state">Inactive</span></div>
+        <div class="status-row"><span>Face detected</span><span id="face-state">No</span></div>
+        <div class="status-row"><span>Mouth detected</span><span id="mouth-state">No</span></div>
+        <div class="status-row"><span>Mouth position</span><span id="mouth-position">—</span></div>
+        <div class="status-row"><span>Mouth openness</span><span id="mouth-openness">—</span></div>
+        <div class="status-row"><span>Face tracking quality*</span><span id="face-quality">—</span></div>
+        <div class="status-row"><span>Head motion</span><span id="head-motion">—</span></div>
+        <div class="status-row"><span>Object tracked</span><span id="object-state">No</span></div>
+        <div class="status-row"><span>Object position</span><span id="object-position">—</span></div>
+        <div class="status-row"><span>Marker axis</span><span id="marker-axis">—</span></div>
+        <div class="status-row"><span>Distance to mouth</span><span id="object-distance">—</span></div>
+        <div class="status-row"><span>Object-to-mouth bearing</span><span id="object-bearing">—</span></div>
+        <div class="status-row"><span>Interaction</span><span id="interaction-state">NO_FACE</span></div>
+        <div class="status-row"><span>Detection score*</span><span id="interaction-confidence">0.00</span></div>
+        <div class="status-row"><span>Current FPS</span><span id="fps">0</span></div>
+      </section>
+      <p class="hint">*Tracking quality and detection score are heuristics, not calibrated probabilities. Proximity does not prove contact.</p>
+
+      <section aria-labelledby="automation-title">
+        <h2 id="automation-title">Device automation · starts disarmed</h2>
+        <div class="status-row"><span>Activation status</span><span id="automation-state">DISARMED</span></div>
+        <div class="status-row"><span>Selected device</span><span id="automation-device">None</span></div>
+        <p class="hint">Choose a device on the <a href="/devices">Device Control page</a> first. Arm only after calibration and a simulator test. Tracking loss disarms automation; it will not rearm itself.</p>
+        <label for="automation-feature">Vibration feature</label>
+        <select id="automation-feature"><option value="">Select a device first</option></select>
+        <label for="automation-pattern">Pattern</label>
+        <select id="automation-pattern"><option value="SHORT_PULSE">Short pulse</option><option value="GENTLE_PULSE">Gentle pulse</option><option value="RHYTHMIC_PULSE">Rhythmic pulse</option><option value="GRADUAL_RAMP">Gradual ramp</option></select>
+        <label for="automation-intensity">Intensity limit: <output id="automation-intensity-value">20%</output></label>
+        <input id="automation-intensity" type="range" min="0.05" max="0.5" step="0.05" value="0.2">
+        <label for="automation-duration">Maximum activation (seconds)</label>
+        <input id="automation-duration" type="number" min="0.1" max="2" step="0.1" value="2">
+        <label for="automation-cooldown">Cooldown (seconds)</label>
+        <input id="automation-cooldown" type="number" min="0.5" max="30" step="0.5" value="1">
+        <div class="actions">
+          <button type="button" id="automation-arm">Arm Automation</button>
+          <button type="button" id="automation-disarm">Disarm</button>
+          <button type="button" id="automation-emergency">Emergency Stop</button>
+        </div>
+        <p id="automation-message" class="hint" role="status">No camera event can activate a device until you explicitly arm automation.</p>
+      </section>
+
+      <section aria-labelledby="calibration-title">
+        <h2 id="calibration-title">Calibration wizard</h2>
+        <div class="wizard-step">
+          <h3>1 · Position your face</h3>
+          <p class="hint">Sit in even light and keep your face in the preview. Relax your mouth, then capture the neutral mouth size and openness.</p>
+          <button type="button" id="calibrate-mouth" disabled>Capture neutral mouth</button>
+          <p id="mouth-calibration" class="hint">No mouth reference saved.</p>
+        </div>
+        <div class="wizard-step">
+          <h3>2 · Identify the object</h3>
+          <p class="hint">Put a distinctive colored marker on a non-contact part of the object, such as its base. Never place a marker on a surface intended for oral or bodily contact.</p>
+          <label for="tracking-mode">Tracking mode</label>
+          <select id="tracking-mode">
+            <option value="marker">Colored marker</option>
+            <option value="roi">Manual object rectangle (CSRT)</option>
+          </select>
+          <p id="selection-help" class="hint">Hold the marker in view, then click its center in the preview.</p>
+          <p id="marker-calibration" class="hint">Marker color not calibrated.</p>
+        </div>
+        <div class="wizard-step">
+          <h3>3 · Tune recognition</h3>
+          <label for="near-distance">Near zone (mouth widths): <output id="near-distance-value">2.0</output></label>
+          <input id="near-distance" type="range" min="0.4" max="8" step="0.1" value="2">
+          <label for="sensitivity">Sensitivity: <output id="sensitivity-value">0.50</output></label>
+          <input id="sensitivity" type="range" min="0" max="1" step="0.05" value="0.5">
+          <p class="hint">Higher sensitivity needs fewer consistent frames. Start conservatively and watch for false positives.</p>
+          <button type="button" id="save-calibration">Save calibration</button>
+        </div>
+        <div class="wizard-step">
+          <h3>4 · Test the camera position</h3>
+          <p class="hint">Move the camera or object until the mouth and marker remain visible across the intended motion. Try brief passes and occlusions; the state should avoid false active detections.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="events-title">
+        <h2 id="events-title">State changes · current session</h2>
+        <ol id="event-log" class="event-log"></ol>
+      </section>
+
+      <label class="checkbox-row" for="overlay">
+        <input type="checkbox" id="overlay" checked>
+        Show tracking overlays
+      </label>
+
+      <div class="actions">
+        <button type="button" id="start">Start Camera</button>
+        <button type="button" id="stop" disabled>Stop Camera</button>
+      </div>
+      <p id="message" role="status" aria-live="polite">Camera access begins only after you press Start Camera.</p>
+    </main>
+    <script src="/static/camera.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "sustained prop motion then withdrawal",
+    "interval_s": 0.1,
+    "samples": [
+      {"x": 0.90, "active": false}, {"x": 0.82, "active": false},
+      {"x": 0.75, "active": false}, {"x": 0.70, "active": false},
+      {"x": 0.65, "active": false}, {"x": 0.62, "active": false},
+      {"x": 0.60, "active": false}, {"x": 0.64, "active": false},
+      {"x": 0.60, "active": true}, {"x": 0.64, "active": true},
+      {"x": 0.60, "active": true}, {"x": 0.64, "active": true},
+      {"x": 0.60, "active": true}, {"x": 0.64, "active": true},
+      {"x": 0.60, "active": true}, {"x": 0.64, "active": true},
+      {"x": 0.60, "active": true}, {"x": 0.64, "active": true},
+      {"x": 0.60, "active": true}, {"x": 0.64, "active": true},
+      {"x": 0.72, "active": false}, {"x": 0.77, "active": false},
+      {"x": 0.82, "active": false}, {"x": 0.88, "active": false}
+    ]
+  },
+  {
+    "name": "brief pass in front of face",
+    "interval_s": 0.1,
+    "samples": [
+      {"x": 0.90, "active": false}, {"x": 0.80, "active": false},
+      {"x": 0.69, "active": false}, {"x": 0.62, "active": false},
+      {"x": 0.70, "active": false}, {"x": 0.81, "active": false},
+      {"x": 0.90, "active": false}
+    ]
+  },
+  {
+    "name": "stationary prop near open mouth",
+    "interval_s": 0.1,
+    "samples": [
+      {"x": 0.90, "active": false}, {"x": 0.70, "active": false},
+      {"x": 0.63, "active": false}, {"x": 0.63, "active": false},
+      {"x": 0.63, "active": false}, {"x": 0.63, "active": false},
+      {"x": 0.63, "active": false}, {"x": 0.63, "active": false},
+      {"x": 0.63, "active": false}, {"x": 0.63, "active": false},
+      {"x": 0.63, "active": false}, {"x": 0.63, "active": false},
+      {"x": 0.63, "active": false}, {"x": 0.63, "active": false}
+    ]
+  },
+  {
+    "name": "vertical approach at 4-to-3 aspect ratio",
+    "interval_s": 0.1,
+    "samples": [
+      {"x": 0.5, "y": 0.90, "active": false}, {"x": 0.5, "y": 0.86, "active": false},
+      {"x": 0.5, "y": 0.82, "active": false}, {"x": 0.5, "y": 0.79, "active": false},
+      {"x": 0.5, "y": 0.77, "active": false}, {"x": 0.5, "y": 0.79, "active": false},
+      {"x": 0.5, "y": 0.76, "active": false}, {"x": 0.5, "y": 0.79, "active": false},
+      {"x": 0.5, "y": 0.76, "active": true}, {"x": 0.5, "y": 0.79, "active": true},
+      {"x": 0.5, "y": 0.76, "active": true}, {"x": 0.5, "y": 0.79, "active": true},
+      {"x": 0.5, "y": 0.76, "active": true}, {"x": 0.5, "y": 0.79, "active": true},
+      {"x": 0.5, "y": 0.76, "active": true}, {"x": 0.5, "y": 0.79, "active": true},
+      {"x": 0.5, "y": 0.86, "active": false}, {"x": 0.5, "y": 0.91, "active": false}
+    ]
+  },
+  {
+    "name": "tracking interruption revokes positive state",
+    "interval_s": 0.1,
+    "samples": [
+      {"x": 0.90, "active": false}, {"x": 0.80, "active": false},
+      {"x": 0.70, "active": false}, {"x": 0.64, "active": false},
+      {"x": 0.60, "active": false}, {"x": 0.64, "active": false},
+      {"x": 0.60, "active": false}, {"x": 0.64, "active": false},
+      {"x": 0.60, "active": true}, {"x": 0.64, "active": true},
+      {"x": 0.60, "active": true}, {"x": 0.64, "active": true},
+      {"x": 0.60, "active": true}, {"object": false, "active": false},
+      {"object": false, "active": false}, {"x": 0.62, "active": false},
+      {"x": 0.62, "active": false}, {"face": false, "x": 0.62, "active": false},
+      {"x": 0.62, "active": false}
+    ]
+  },
+  {
+    "name": "head and prop moving together",
+    "interval_s": 0.1,
+    "samples": [
+      {"mouth_x": 0.40, "x": 0.53, "active": false},
+      {"mouth_x": 0.42, "x": 0.55, "active": false},
+      {"mouth_x": 0.44, "x": 0.57, "active": false},
+      {"mouth_x": 0.46, "x": 0.59, "active": false},
+      {"mouth_x": 0.48, "x": 0.61, "active": false},
+      {"mouth_x": 0.50, "x": 0.63, "active": false},
+      {"mouth_x": 0.52, "x": 0.65, "active": false},
+      {"mouth_x": 0.54, "x": 0.67, "active": false},
+      {"mouth_x": 0.56, "x": 0.69, "active": false},
+      {"mouth_x": 0.58, "x": 0.71, "active": false}
+    ]
+  }
+]

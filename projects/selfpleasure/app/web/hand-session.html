@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hand Stroke session — SelfPleasure</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body class="session-body">
+    <div class="session-shell">
+      <header class="session-header">
+        <div>
+          <p class="eyebrow">SELF PLEASURE · HAND STROKE</p>
+          <h1>Session</h1>
+          <p class="session-muted">Local camera · simulator available · real output suspended · no recording</p>
+        </div>
+        <div class="session-header-actions">
+          <a href="/dashboard" class="session-link">Advanced dashboard</a>
+          <button type="button" id="session-quit" hidden>Quit app</button>
+          <button type="button" id="session-emergency" class="danger session-emergency" aria-keyshortcuts="Escape">Emergency Stop <span class="session-key">Esc</span></button>
+        </div>
+      </header>
+
+      <main>
+        <section class="session-hero" aria-label="Live session status">
+          <div>
+            <p class="eyebrow">OUTPUT STATUS</p>
+            <p id="session-armed-status" class="session-state" role="status" aria-live="polite">DISARMED — no output</p>
+          <p id="session-state-explanation" class="session-muted">Nothing activates automatically. Set up below, then press Arm when ready.</p>
+          <div class="session-main-actions">
+            <button type="button" id="session-prepare" class="session-primary">Connect &amp; start hand camera</button>
+            <button type="button" id="session-arm" class="session-primary" disabled>Arm hand response</button>
+            <button type="button" id="session-pause" disabled>Pause · stop output</button>
+          </div>
+          <p id="session-next-step" class="session-muted" role="status" aria-live="polite">Start setup to continue.</p>
+          </div>
+          <div class="session-tracking-summary">
+            <p class="eyebrow">TRACKING</p>
+            <p id="session-tracking-status" class="session-state-small">Camera off</p>
+            <p id="session-tracking-explanation" class="session-muted">Camera stays off until you start it.</p>
+          </div>
+        </section>
+
+        <div class="session-grid">
+          <section class="session-card" aria-labelledby="preflight-heading">
+            <p class="session-step">1 · PREFLIGHT</p>
+            <h2 id="preflight-heading">Get ready</h2>
+            <div class="status-row"><span>Device</span><strong id="session-device">None selected</strong></div>
+            <div class="status-row"><span>Intiface</span><strong id="session-intiface">Not connected</strong></div>
+            <div class="status-row"><span>Camera</span><strong id="session-camera">Off</strong></div>
+            <p class="hint">Real-device output is suspended following a failed physical stop. You can still use the simulator for tracking and response checks.</p>
+            <div class="session-action-row">
+              <label for="session-device-select">Available device
+                <select id="session-device-select"><option value="">None</option></select>
+              </label>
+              <button type="button" id="session-select-device">Select device</button>
+              <button type="button" id="session-simulator">Use simulator</button>
+              <label for="session-feature">Vibration feature
+                <select id="session-feature"><option value="">Select a device first</option></select>
+              </label>
+              <label for="session-camera-index">Camera number
+                <input id="session-camera-index" type="number" min="0" max="9" step="1" value="0" inputmode="numeric">
+              </label>
+              <button type="button" id="session-camera-start" hidden>Start camera</button>
+            </div>
+            <div id="session-real-preflight" hidden>
+              <p id="session-real-lockout" class="session-message" hidden>Real-device output is disabled after a physical stop failure. Do not repeat the test or arm this device. Simulator mode remains available.</p>
+              <p class="session-message">Real-device pilot: only advertised vibration output, one crisp response per completed stroke, at most 20% for 0.12 seconds. A tracking or connection fault stops and disarms. Software stop is not a physical guarantee.</p>
+              <button type="button" id="session-preflight-test">Run one 0.1-second manual test at 20%</button>
+              <label class="checkbox-row" for="session-manual-check"><input id="session-manual-check" type="checkbox"> I just confirmed a short manual vibration test started and physically stopped on this selected feature.</label>
+              <label class="checkbox-row" for="session-power-check"><input id="session-power-check" type="checkbox"> I can immediately reach the device's physical power-off control.</label>
+            </div>
+          </section>
+
+          <section class="session-card session-preview-card" aria-labelledby="calibration-heading">
+            <p class="session-step">2 · QUICK CALIBRATION</p>
+            <h2 id="calibration-heading">Mark the object’s movement axis</h2>
+            <p class="session-muted">Use a harmless, mostly still prop. Click its base, then the far end of the path your hand travels. Keep any marker off contact surfaces.</p>
+            <div class="preview session-preview" id="session-preview-container">
+              <img id="session-preview" alt="Live local camera preview, not recorded" hidden>
+              <span id="session-placeholder">Camera preview is off</span>
+            </div>
+            <div class="session-action-row">
+              <button type="button" id="session-set-base">Mark base</button>
+              <button type="button" id="session-set-end">Mark far end</button>
+              <button type="button" id="session-save-axis">Save axis</button>
+            </div>
+            <details class="session-coordinates">
+              <summary>Enter axis coordinates with a keyboard</summary>
+              <p class="hint">Coordinates are percentages of the preview width and height.</p>
+              <div class="session-coordinate-grid">
+                <label for="session-base-x">Base X %<input id="session-base-x" type="number" min="0" max="100" step="1"></label>
+                <label for="session-base-y">Base Y %<input id="session-base-y" type="number" min="0" max="100" step="1"></label>
+                <label for="session-end-x">Far end X %<input id="session-end-x" type="number" min="0" max="100" step="1"></label>
+                <label for="session-end-y">Far end Y %<input id="session-end-y" type="number" min="0" max="100" step="1"></label>
+              </div>
+            </details>
+            <details class="session-advanced">
+              <summary>Visual aids</summary>
+              <label class="checkbox-row" for="session-overlay"><input type="checkbox" id="session-overlay"> Show tracking overlays</label>
+              <p class="hint">Overlays are optional and appear only in the live preview. They are not saved.</p>
+            </details>
+          </section>
+
+          <section class="session-card" aria-labelledby="tracking-heading">
+            <p class="session-step">3 · TRACKING CHECK</p>
+            <h2 id="tracking-heading">Wait for steady tracking</h2>
+            <label for="session-quality">Tracking quality <span id="session-quality-value">0%</span></label>
+            <progress id="session-quality" max="100" value="0">0%</progress>
+            <p id="session-quality-advice" class="session-muted">The camera and calibrated axis are needed before arming.</p>
+            <p class="hint">Quality is a tracking heuristic, not a probability of contact or intent. Uncertain tracking stops output.</p>
+          </section>
+
+          <details class="session-card session-response-settings" aria-labelledby="response-heading">
+            <summary id="response-heading">Response settings · 20% short pulse</summary>
+            <p class="session-step">OPTIONAL · ADJUST BEFORE ARMING</p>
+            <label for="session-intensity">Intensity ceiling <output id="session-intensity-value" for="session-intensity">20%</output></label>
+            <input id="session-intensity" type="range" min="5" max="30" step="1" value="20">
+            <p class="hint">This is a maximum, not a target. Every pulse stays at or below it.</p>
+            <label for="session-mode">When to respond</label>
+            <select id="session-mode">
+              <option value="ONE_RESPONSE">Once after each completed stroke</option>
+              <option value="FOLLOW_MOVEMENT">Follow movement with short pulses</option>
+            </select>
+            <p id="session-mode-help" class="hint">A completed stroke produces one short response. Rapid strokes during a response or cooldown are skipped.</p>
+            <label for="session-style">Response feel</label>
+            <select id="session-style">
+              <option value="GENTLE">Gentle — soft separated bursts</option>
+              <option value="CRISP" selected>Crisp — one direct pulse</option>
+              <option value="RAMP">Ramp — builds within the short response</option>
+            </select>
+            <div class="session-coordinate-grid">
+              <label for="session-duration">Pulse length (seconds)<input id="session-duration" type="number" min="0.01" max="0.5" step="0.01" value="0.18"></label>
+              <label for="session-cooldown">Rest between pulses (seconds)<input id="session-cooldown" type="number" min="0.25" max="5" step="0.01" value="0.30"></label>
+            </div>
+            <button type="button" id="session-preview-pattern">Preview response — no output</button>
+            <div id="session-pattern-preview" class="session-pattern" aria-live="polite">Preview your choice before arming.</div>
+          </details>
+        </div>
+
+        <section class="session-card session-control-card" aria-labelledby="controls-heading">
+          <p class="session-step">5 · SESSION CONTROL</p>
+          <h2 id="controls-heading">You stay in control</h2>
+          <div class="session-controls">
+            <button type="button" id="session-disarm" disabled>Disarm</button>
+            <button type="button" id="session-finish">Finish · stop & close camera</button>
+          </div>
+          <p class="hint">Pause and faults never resume automatically. Press Arm again after checking tracking. Emergency Stop is always available above; your device’s physical power switch remains the fallback.</p>
+          <div class="session-feedback" aria-label="Live stroke and response feedback">
+            <div><span>Strokes seen</span><strong id="session-strokes">0</strong></div>
+            <div><span>Pulses sent</span><strong id="session-sent">0</strong></div>
+            <div><span>Pulses completed</span><strong id="session-completed">0</strong></div>
+            <div><span>Pending</span><strong id="session-pending">0</strong></div>
+          </div>
+          <p id="session-feedback-line" class="session-muted" role="status" aria-live="polite">No session is armed.</p>
+        </section>
+        <p id="session-message" class="session-message" role="alert" hidden></p>
+      </main>
+      <footer class="session-footer">No footage or telemetry is saved by default. <a href="/hand">Open advanced tracking controls</a>.</footer>
+    </div>
+    <script src="/static/hand-session.js"></script>
+  </body>
+</html>

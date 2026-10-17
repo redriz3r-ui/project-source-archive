@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trigger Rules — SelfPleasure</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="panel settings-panel">
+      <div class="section-heading"><p class="eyebrow"><a href="/">← Dashboard</a> · <a href="/devices">Device</a> · <a href="/camera">Vision</a> · <a href="/evaluate">Evaluate</a></p><button id="emergency" class="danger" type="button">Emergency Stop</button></div>
+      <h1>TRIGGER RULES</h1>
+      <p class="subtitle">One enabled rule at a time · automation still requires explicit arming</p>
+      <div class="section-heading"><h2>Saved rules</h2><span id="automation-state" class="badge">DISARMED</span></div>
+      <div id="rule-list" class="rule-list"></div>
+      <p class="hint">Interaction Active → selected Vibration feature → one bounded pattern. Enabling a rule does not arm the device.</p>
+
+      <section aria-labelledby="edit-title">
+        <h2 id="edit-title">Create or edit a rule</h2>
+        <form id="rule-form">
+          <label for="name">Rule name</label>
+          <input id="name" type="text" maxlength="64" required placeholder="Short pulse">
+          <div class="form-grid">
+            <div><label for="trigger">Trigger</label><select id="trigger"><option>INTERACTION_ACTIVE</option></select></div>
+            <div><label for="action">Action</label><select id="action"><option>VIBRATE</option></select></div>
+            <div><label for="pattern">Pattern</label><select id="pattern"><option value="SHORT_PULSE">Short pulse</option><option value="GENTLE_PULSE">Gentle pulse</option><option value="RHYTHMIC_PULSE">Rhythmic pulse</option><option value="GRADUAL_RAMP">Gradual ramp</option></select></div>
+            <div><label for="feature">Output feature</label><select id="feature"><option value="">Select a device first</option></select></div>
+            <div><label for="intensity">Intensity limit (%)</label><input id="intensity" type="number" min="1" max="50" step="1" value="20" required></div>
+            <div><label for="duration">Maximum pulse (seconds)</label><input id="duration" type="number" min="0.1" max="2" step="0.1" value="2" required></div>
+            <div><label for="cooldown">Cooldown (seconds)</label><input id="cooldown" type="number" min="0.5" max="30" step="0.5" value="1" required></div>
+            <div><label for="confidence">Minimum detection score*</label><input id="confidence" type="number" min="0" max="1" step="0.05" value="0.6" required></div>
+          </div>
+          <p class="hint">*A heuristic score, not a calibrated probability. Increasing it may reduce activation but does not establish recognition accuracy.</p>
+          <div class="inline-actions"><button id="save" type="submit">Create rule</button><button id="cancel" type="button">Clear form</button><button id="preview-pattern" type="button">Preview pattern</button><button id="simulator" type="button">Select simulator</button></div>
+        </form>
+        <div id="pattern-preview" class="pattern-preview" role="img" aria-label="Visual pattern preview"></div>
+        <p id="pattern-summary" class="hint">Preview is visual only; it never sends a device command.</p>
+      </section>
+      <p id="message" role="status" aria-live="polite">Saved rules stay on this Mac in an ignored local configuration file.</p>
+    </main>
+    <script src="/static/rules.js"></script>
+  </body>
+</html>

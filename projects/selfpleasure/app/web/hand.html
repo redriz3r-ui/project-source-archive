@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hand Stroke tracking — SelfPleasure</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="panel camera-panel">
+      <p class="eyebrow"><a href="/">← Dashboard</a> · <a href="/hand/session">Hand session</a> · <a href="/camera">Oral vision</a> · <a href="/hand/evaluate">Evaluate strokes</a></p>
+      <h1>HAND STROKE TRACKING</h1>
+      <p class="subtitle">Opt-in camera preview · harmless prop · simulator-only haptic mapping</p>
+      <p class="hint">Place the object mostly still. Click its base and then a point along its movement axis. Keep any colored marker on a non-contact surface.</p>
+      <div class="preview" id="hand-preview-container">
+        <img id="hand-preview" alt="Local hand-tracking camera preview" hidden>
+        <span id="hand-placeholder">Camera inactive</span>
+      </div>
+      <div class="inline-actions">
+        <button type="button" id="hand-start">Start Hand Camera</button>
+        <button type="button" id="hand-stop" disabled>Stop Camera</button>
+        <button type="button" id="hand-base" disabled>Click base</button>
+        <button type="button" id="hand-endpoint" disabled>Click axis end</button>
+      </div>
+      <label class="checkbox-row" for="hand-marker-anchor">
+        <input type="checkbox" id="hand-marker-anchor"> Anchor base to colored marker (requires calibrated marker)
+      </label>
+      <div class="inline-actions">
+        <button type="button" id="hand-marker" disabled>Calibrate marker color at base</button>
+        <button type="button" id="hand-save" disabled>Save numeric axis</button>
+      </div>
+      <p class="hint">Fixed-axis mode cannot compensate for camera or object movement. Marker anchor compensates for translation, but marker loss stops tracking. Rotation and depth changes still require recalibration. Two hands near the axis are treated as ambiguous.</p>
+      <section>
+        <h2>Current tracking</h2>
+        <div class="status-row"><span>Camera</span><span id="hand-camera-state">Inactive</span></div>
+        <div class="status-row"><span>Tracking</span><span id="hand-state">NO_CALIBRATION</span></div>
+        <div class="status-row"><span>Hands detected</span><span id="hand-count">0</span></div>
+        <div class="status-row"><span>Hand position</span><span id="hand-position">—</span></div>
+        <div class="status-row"><span>Axis travel</span><span id="hand-travel">—</span></div>
+        <div class="status-row"><span>Tracking quality*</span><span id="hand-confidence">0.00</span></div>
+        <div class="status-row"><span>Marker anchor</span><span id="hand-marker-state">Off</span></div>
+        <div class="status-row"><span>Current FPS</span><span id="hand-fps">0.0</span></div>
+        <div class="status-row"><span>Stroke direction</span><span id="stroke-direction">UNKNOWN</span></div>
+        <div class="status-row"><span>Current stroke ID</span><span id="stroke-id">—</span></div>
+        <div class="status-row"><span>Stroke travel</span><span id="stroke-travel">—</span></div>
+      </section>
+      <section>
+        <h2>One-to-one haptic response · simulator only</h2>
+        <p class="hint">Each accepted completed stroke gets one short bounded simulator pulse. Busy, duplicate, and stale strokes are dropped, never queued. No real device can arm in this mode.</p>
+        <div class="status-row"><span>Response state</span><span id="hand-response-state">DISARMED</span></div>
+        <div class="status-row"><span>Selected simulator</span><span id="hand-response-device">None</span></div>
+        <div class="status-row"><span>Strokes seen while armed</span><span id="hand-response-strokes">0</span></div>
+        <div class="status-row"><span>Pending / completed responses</span><span id="hand-response-counts">0 / 0</span></div>
+        <div class="status-row"><span>Dropped responses</span><span id="hand-response-dropped">0</span></div>
+        <div class="status-row"><span>Simulator event-to-command acknowledgement</span><span id="hand-response-latency">—</span></div>
+        <label for="hand-response-feature">Vibration feature</label>
+        <select id="hand-response-feature"><option value="0">Feature 0</option></select>
+        <label for="hand-response-intensity">Maximum intensity (0–30%)</label>
+        <input id="hand-response-intensity" type="number" min="0.01" max="0.3" step="0.01" value="0.2">
+        <label for="hand-response-duration">Pulse duration (seconds, max 0.5)</label>
+        <input id="hand-response-duration" type="number" min="0.01" max="0.5" step="0.01" value="0.18">
+        <label for="hand-response-cooldown">Cooldown (seconds, min 0.25)</label>
+        <input id="hand-response-cooldown" type="number" min="0.25" max="5" step="0.05" value="0.3">
+        <label for="hand-response-mode">Response mode</label>
+        <select id="hand-response-mode"><option value="ONE_RESPONSE">One pulse per stroke</option><option value="MOTION_SHAPED">Motion-shaped intensity (experimental)</option></select>
+        <div class="inline-actions">
+          <button type="button" id="hand-create-simulator">Create simulator</button>
+          <button type="button" id="hand-arm">Arm simulated responses</button>
+          <button type="button" id="hand-disarm">Disarm</button>
+          <button type="button" id="hand-emergency" class="danger">Emergency Stop</button>
+        </div>
+      </section>
+      <section><h2>Stroke events · current camera session</h2><ol id="stroke-events" class="event-log"></ol></section>
+      <label class="checkbox-row" for="hand-overlay"><input type="checkbox" id="hand-overlay" checked> Show axis and hand overlay</label>
+      <p class="hint">*Quality is a geometric heuristic, not a validated confidence probability. The displayed latency is simulator command acknowledgement, not physical haptic onset. Evaluation mode disables all device commands. <a href="/hand/evaluate">Label a harmless-prop session →</a></p>
+      <p id="hand-message" role="status" aria-live="polite">Camera starts only when you press Start Hand Camera.</p>
+    </main>
+    <script src="/static/hand.js"></script>
+  </body>
+</html>

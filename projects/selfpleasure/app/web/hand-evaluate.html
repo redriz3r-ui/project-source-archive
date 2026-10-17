@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stroke evaluation — SelfPleasure</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body class="product-body">
+    <main class="product-shell evaluation-shell">
+      <header class="product-header"><div><p class="eyebrow">OPT-IN · LOCAL · NUMERIC ONLY</p><h1>STROKE EVALUATION</h1></div><nav><a href="/">Dashboard</a><a href="/hand">Hand tracking</a></nav><button id="stroke-emergency" class="danger" type="button">Emergency Stop</button></header>
+      <p class="banner">Use a harmless, stationary prop. Evaluation blocks device activation and never connects stroke recognition to a device. Camera access and numeric collection each require separate actions.</p>
+      <div class="dashboard-grid">
+        <section class="surface">
+          <h2>Live Hand Stroke camera</h2>
+          <div class="preview dashboard-preview"><img id="stroke-preview" alt="Local preview; not recorded" hidden><span id="stroke-placeholder">Camera off</span></div>
+          <div class="metric"><span>Camera / tracking</span><strong id="stroke-camera-state">Inactive</strong></div>
+          <div class="metric"><span>Position / FPS</span><strong id="stroke-position">—</strong></div>
+          <div class="inline-actions"><button id="stroke-camera-start" type="button">Start Hand Camera</button><button id="stroke-camera-stop" type="button">Stop Camera</button></div>
+          <p class="hint">Calibrate the object axis first on the <a href="/hand">Hand tracking page</a>. No frames, screenshots, or video are saved.</p>
+        </section>
+        <section class="surface">
+          <h2>Manual labels</h2>
+          <div class="metric"><span>Session</span><strong id="stroke-session-state">Off</strong></div>
+          <div class="metric"><span>Current interval</span><strong id="stroke-current-label">UNCERTAIN</strong></div>
+          <div class="metric"><span>Manual / detected strokes</span><strong id="stroke-counts">0 / 0</strong></div>
+          <label class="checkbox-row"><input id="stroke-collect-consent" type="checkbox"> I consent to temporary, in-memory collection of numeric tracking observations and labels.</label>
+          <div class="inline-actions"><button id="stroke-eval-start" type="button">Start evaluation</button><button id="stroke-eval-stop" type="button">Stop & review</button></div>
+          <p class="hint">Choose Testing strokes before a run, then press Mark stroke once when each deliberate traversal finishes. Choose No strokes during rest or false-positive tests. Use Uncertain when the ground truth is unclear. Button timing affects latency estimates.</p>
+          <div class="label-actions"><button id="stroke-label-positive" type="button">Testing strokes</button><button id="stroke-label-negative" type="button">No strokes</button><button id="stroke-label-uncertain" type="button">Uncertain</button></div>
+          <button id="stroke-mark" type="button">Mark one intended stroke</button>
+        </section>
+      </div>
+      <section class="surface evaluation-section"><h2>Review numeric draft</h2><div id="stroke-report" class="report-grid"></div><a id="stroke-draft-link" href="/api/stroke-evaluation/draft" target="_blank" rel="noopener" hidden>Review all numeric observations and timestamps →</a><label class="checkbox-row"><input id="stroke-save-consent" type="checkbox"> I consent to saving this numeric session locally.</label><div class="inline-actions"><button id="stroke-save" type="button">Save session</button><button id="stroke-discard" type="button">Discard draft</button></div></section>
+      <section class="surface evaluation-section"><h2>Saved sessions</h2><div id="stroke-sessions" class="rule-list"></div><p class="hint">Saved files contain only numeric observations, timestamps, labels, and metrics. They are ignored by Git and can be reviewed or deleted here.</p></section>
+      <p id="stroke-message" role="status" aria-live="polite">Start the camera and explicitly opt in before collecting data.</p>
+    </main>
+    <script src="/static/hand-evaluate.js"></script>
+  </body>
+</html>

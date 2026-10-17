@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SelfPleasure — Tabletop Stroke Mode</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body class="session-body unified-body tabletop-body">
+    <div class="session-shell unified-shell tabletop-shell">
+      <header class="session-header unified-header">
+        <div>
+          <p class="eyebrow">TABLETOP STROKE MODE · OFF-BODY ONLY</p>
+          <h1>Track the hand. Keep the prop and vibrator on the table.</h1>
+        </div>
+        <button type="button" id="tabletop-emergency" class="danger session-emergency"
+                aria-keyshortcuts="Escape">Emergency Stop <span class="session-key">Esc</span></button>
+      </header>
+
+      <main>
+        <section class="unified-status" aria-label="Tabletop mode status">
+          <div class="unified-status-primary">
+            <p class="eyebrow">MODE STATUS</p>
+            <p id="tabletop-state" class="session-state" role="status" aria-live="polite">DISARMED — no output</p>
+            <p id="tabletop-reason" class="session-muted">Not started.</p>
+          </div>
+          <div class="unified-status-pills">
+            <span>Intiface <strong id="tabletop-intiface">Not connected</strong></span>
+            <span>Device <strong id="tabletop-device-status">None selected</strong></span>
+            <span>Tracking <strong id="tabletop-tracking">Camera off</strong></span>
+          </div>
+        </section>
+
+        <div class="unified-grid tabletop-grid">
+          <section class="session-card unified-camera" aria-labelledby="tabletop-camera-title">
+            <div class="unified-card-heading">
+              <div><p class="session-step">CAMERA</p><h2 id="tabletop-camera-title">Hand and stationary prop</h2></div>
+              <span class="unified-private">Live only · never recorded</span>
+            </div>
+            <div class="preview session-preview">
+              <img id="tabletop-preview" alt="Live local tabletop camera preview" hidden>
+              <span id="tabletop-placeholder">Camera is off</span>
+            </div>
+            <p id="tabletop-camera-help" class="session-muted">Start &amp; Arm starts the camera without activating output. Calibrate before arming.</p>
+
+            <div class="unified-calibration">
+              <p class="session-step">QUICK AXIS CALIBRATION</p>
+              <p class="hint">Click Base, then the prop base in the preview. Click Far end, then its far end. Save axis.</p>
+              <div class="unified-button-row">
+                <button type="button" id="tabletop-set-base">Base</button>
+                <button type="button" id="tabletop-set-end">Far end</button>
+                <button type="button" id="tabletop-save-axis">Save axis</button>
+              </div>
+              <p id="tabletop-axis-status" class="hint" role="status" aria-live="polite">Axis not checked.</p>
+            </div>
+          </section>
+
+          <section class="session-card tabletop-device" aria-labelledby="tabletop-device-title">
+            <p class="session-step">INTIFACE DEVICE</p>
+            <h2 id="tabletop-device-title">Select one vibration feature</h2>
+            <div class="unified-button-row">
+              <button type="button" id="tabletop-connect">Connect Intiface</button>
+              <button type="button" id="tabletop-scan">Scan</button>
+            </div>
+            <label for="tabletop-device">Device
+              <select id="tabletop-device"><option value="">Choose Intiface device</option></select>
+            </label>
+            <label for="tabletop-feature">Vibration feature
+              <select id="tabletop-feature"><option value="">Choose vibration feature</option></select>
+            </label>
+            <p class="hint">Connecting and selecting never starts output. Simulated devices are intentionally hidden on this page.</p>
+            <p id="tabletop-lockout" class="session-message" role="alert"></p>
+          </section>
+        </div>
+
+        <section class="session-card unified-control tabletop-control" aria-label="Tabletop controls">
+          <div>
+            <h2>Tabletop control</h2>
+            <p class="session-muted">Fresh valid stroke updates authorize only short 80 ms commands. A tracking, command, device, or heartbeat fault disarms the mode.</p>
+          </div>
+          <div class="unified-button-row unified-control-buttons">
+            <button type="button" id="tabletop-arm" class="session-primary">Start &amp; Arm</button>
+            <button type="button" id="tabletop-stop">Stop</button>
+            <button type="button" id="tabletop-emergency-bottom" class="danger">Emergency Stop</button>
+          </div>
+        </section>
+        <p id="tabletop-message" class="session-message" role="alert" hidden></p>
+      </main>
+      <footer class="session-footer">Off-body tabletop use only. If software stop is not physically effective, use the device power control immediately.</footer>
+    </div>
+    <script src="/static/tabletop.js"></script>
+  </body>
+</html>

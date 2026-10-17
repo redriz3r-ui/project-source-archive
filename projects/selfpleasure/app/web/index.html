@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SelfPleasure — Local Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body class="product-body">
+    <main class="product-shell">
+      <header class="product-header">
+        <div><p class="eyebrow">PRIVATE · LOCAL · USER CONTROLLED</p><h1>SELF PLEASURE</h1></div>
+        <nav aria-label="Main navigation">
+          <a aria-current="page" href="/dashboard">Dashboard</a>
+          <a href="/devices">Device</a>
+          <a href="/camera">Vision</a>
+          <a href="/hand/session">Hand session</a>
+          <a href="/hand">Hand tracking</a>
+          <a href="/rules">Rules</a>
+          <a href="/evaluate">Evaluate</a>
+        </nav>
+        <button id="emergency" class="danger prominent" type="button">Emergency Stop</button>
+        <button id="quit-app" type="button" hidden>Quit app</button>
+      </header>
+
+      <p id="message" class="banner" role="status" aria-live="polite">The camera and device remain inactive until you start and arm them.</p>
+
+      <div class="dashboard-grid">
+        <section class="surface camera-surface" aria-labelledby="camera-title">
+          <div class="section-heading"><div><p class="eyebrow">01 · INPUT</p><h2 id="camera-title">Live camera</h2></div><span id="camera-badge" class="badge">Inactive</span></div>
+          <div class="preview dashboard-preview"><img id="preview" alt="Live local webcam preview" hidden><span id="preview-placeholder">Camera off · nothing recorded</span></div>
+          <div class="inline-actions"><button id="camera-start" type="button">Start Camera</button><button id="camera-stop" type="button" disabled>Stop Camera</button><a class="subtle-link" href="/camera">Vision settings →</a></div>
+        </section>
+
+        <section class="surface" aria-labelledby="device-title">
+          <div class="section-heading"><div><p class="eyebrow">02 · OUTPUT</p><h2 id="device-title">Device control</h2></div><span id="intiface-badge" class="badge">Offline</span></div>
+          <div class="metric"><span>Intiface Central</span><strong id="intiface">Not connected</strong></div>
+          <div class="metric"><span>Selected device</span><strong id="device">None selected</strong></div>
+          <div class="metric"><span>Vibration feature</span><strong id="feature">—</strong></div>
+          <div class="metric"><span>Rule intensity</span><strong id="intensity">—</strong></div>
+          <div class="metric"><span>Maximum pulse</span><strong id="duration">—</strong></div>
+          <a class="button full-link" href="/devices">Open device settings →</a>
+        </section>
+
+        <section class="surface" aria-labelledby="interaction-title">
+          <div class="section-heading"><div><p class="eyebrow">03 · DETECTION</p><h2 id="interaction-title">Interaction</h2></div><span id="interaction-badge" class="badge">NO_FACE</span></div>
+          <div class="metric"><span>Face</span><strong id="face">Not detected</strong></div>
+          <div class="metric"><span>Object</span><strong id="object">Not tracked</strong></div>
+          <div class="metric"><span>Current state</span><strong id="interaction">NO_FACE</strong></div>
+          <div class="metric"><span>Detection score*</span><strong id="confidence">0.00</strong></div>
+          <div class="metric"><span>Camera FPS</span><strong id="fps">0</strong></div>
+          <p class="hint">*A heuristic score, not a probability of contact.</p>
+        </section>
+
+        <section class="surface" aria-labelledby="rule-title">
+          <div class="section-heading"><div><p class="eyebrow">04 · AUTOMATION</p><h2 id="rule-title">Rule configuration</h2></div><span id="automation-badge" class="badge">DISARMED</span></div>
+          <div class="metric"><span>Enabled rule</span><strong id="rule-name">None</strong></div>
+          <div class="metric"><span>Trigger</span><strong>Interaction Active</strong></div>
+          <div class="metric"><span>Action</span><strong>Selected vibration feature</strong></div>
+          <div class="metric"><span>Pattern</span><strong id="pattern">—</strong></div>
+          <div class="metric"><span>Cooldown</span><strong id="cooldown">—</strong></div>
+          <div class="metric"><span>Session phase</span><strong id="session-phase">Off</strong></div>
+          <div class="metric"><span>Session progress</span><strong id="session-progress">—</strong></div>
+          <div class="session-options">
+            <label class="checkbox-row"><input id="guided-session" type="checkbox"> Guided session (opt in)</label>
+            <p class="hint">A finite sequence: gentle opening, rhythmic middle, and an optional gradual buildup. Each pulse still needs fresh detection and obeys the enabled rule's intensity and duration limits. The session disarms when complete.</p>
+            <div class="form-grid">
+              <label>Opening pulses<input id="opening-pulses" type="number" min="1" max="20" step="1" value="2"></label>
+              <label>Middle pulses<input id="middle-pulses" type="number" min="1" max="20" step="1" value="4"></label>
+            </div>
+            <label class="checkbox-row"><input id="include-buildup" type="checkbox"> Include buildup phase</label>
+            <label>Buildup pulses<input id="buildup-pulses" type="number" min="1" max="20" step="1" value="3"></label>
+          </div>
+          <div class="inline-actions"><button id="arm" type="button" disabled>Arm Automation</button><button id="disarm" type="button" disabled>Disarm</button></div>
+          <a class="subtle-link" href="/rules">Edit rules →</a>
+          <p class="hint">Arming is explicit. Tracking loss, camera stop, or device loss revokes authorization.</p>
+        </section>
+      </div>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

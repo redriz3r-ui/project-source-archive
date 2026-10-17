@@ -1,0 +1,31 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.DS_Store
+
+# Local secrets and configuration
+.env
+.env.*
+!.env.example
+secrets/
+config.local.*
+
+# Personal camera and calibration data must never be committed
+camera-data/
+camera_data/
+captures/
+recordings/
+calibration/
+calibration-images/
+calibration_images/
+evaluation-data/
+.models/
+*.mp4
+*.mov
+*.avi

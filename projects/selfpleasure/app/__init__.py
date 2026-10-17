@@ -1,0 +1,2 @@
+"""SelfPleasure application package."""
+

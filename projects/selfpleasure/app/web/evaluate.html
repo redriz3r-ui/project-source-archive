@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recognition Evaluation — SelfPleasure</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body class="product-body">
+    <main class="product-shell evaluation-shell">
+      <header class="product-header">
+        <div><p class="eyebrow">OPT-IN · LOCAL · NUMERIC ONLY</p><h1>RECOGNITION EVALUATION</h1></div>
+        <nav aria-label="Main navigation"><a href="/">Dashboard</a><a href="/camera">Vision</a><a href="/rules">Rules</a><a aria-current="page" href="/evaluate">Evaluate</a></nav>
+        <button id="emergency" class="danger prominent" type="button">Emergency Stop</button>
+      </header>
+      <p class="banner">Evaluation never activates a device. Automation and manual tests are blocked while it runs. The camera still requires an explicit start; no frames are recorded or uploaded.</p>
+      <div class="dashboard-grid">
+        <section class="surface">
+          <div class="section-heading"><h2>Live camera</h2><span id="camera-state" class="badge">Inactive</span></div>
+          <div class="preview dashboard-preview"><img id="preview" alt="Local live camera preview; not saved" hidden><span id="preview-placeholder">Camera off</span></div>
+          <div class="inline-actions"><button id="camera-start" type="button">Start Camera</button><button id="camera-stop" type="button">Stop Camera</button></div>
+          <p class="hint">Use a harmless marked prop. Test brief passes, stationary holds, marker hiding, head movement, and different lighting. Keep the marker on a non-contact surface.</p>
+        </section>
+        <section class="surface">
+          <div class="section-heading"><h2>Manual labels</h2><span id="evaluation-state" class="badge">Off</span></div>
+          <div class="metric"><span>Automation</span><strong id="automation-state">DISARMED</strong></div>
+          <div class="metric"><span>Current label</span><strong id="current-label">—</strong></div>
+          <div class="metric"><span>Numeric samples</span><strong id="sample-count">0</strong></div>
+          <label class="checkbox-row" for="collect-consent"><input id="collect-consent" type="checkbox"> I consent to temporary in-memory collection of numeric tracking observations and my labels.</label>
+          <div class="inline-actions"><button id="start-evaluation" type="button">Start evaluation</button><button id="stop-evaluation" type="button">Stop & review</button></div>
+          <p class="hint">Choose a label at the start of each interval. Uncertain intervals are excluded from precision and recall.</p>
+          <div class="label-actions"><button id="label-negative" type="button">No interaction</button><button id="label-positive" type="button">Intended interaction</button><button id="label-uncertain" type="button">Uncertain</button></div>
+        </section>
+      </div>
+      <section class="surface evaluation-section">
+        <div class="section-heading"><h2>Review draft</h2><span class="badge">Not saved</span></div>
+        <div id="report" class="report-grid"></div>
+        <h3>Recent numeric observations</h3>
+        <div class="table-scroll"><table><thead><tr><th>Time</th><th>Manual label</th><th>Detector</th><th>Score</th><th>Distance</th><th>Face / object</th></tr></thead><tbody id="recent-samples"></tbody></table></div>
+        <a id="draft-json" class="subtle-link" href="/api/evaluation/draft" target="_blank" rel="noopener" hidden>Review all numeric draft data →</a>
+        <label class="checkbox-row" for="save-consent"><input id="save-consent" type="checkbox"> I consent to saving this numeric session locally in evaluation-data/.</label>
+        <div class="inline-actions"><button id="save-evaluation" type="button">Save numeric session</button><button id="discard-evaluation" type="button">Discard draft</button></div>
+      </section>
+      <section class="surface evaluation-section">
+        <h2>Saved local sessions</h2>
+        <p class="hint">These files contain timestamps, normalized positions, tracking scores, detector states, and manual labels—no frames. They are ignored by Git. You can review or delete each session here.</p>
+        <div id="saved-sessions" class="rule-list"></div>
+        <div id="saved-review" hidden><h3>Selected session</h3><div id="saved-report" class="report-grid"></div><p id="saved-summary" class="hint"></p><a id="saved-json" class="subtle-link" href="#" target="_blank" rel="noopener">Open numeric JSON</a></div>
+      </section>
+      <p id="message" role="status" aria-live="polite">Start the camera, confirm automation is disarmed, then opt in to evaluation.</p>
+    </main>
+    <script src="/static/evaluate.js"></script>
+  </body>
+</html>
