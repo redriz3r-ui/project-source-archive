@@ -1,0 +1,14 @@
+Runtime: QGIS 4.2.3-Belém do Pará; Qt 6.11.1
+test_2d_conversion_discards_zm (__main__.QgisFeasibility.test_2d_conversion_discards_zm) ... ok
+test_ellipsoidal_geographic_meters (__main__.QgisFeasibility.test_ellipsoidal_geographic_meters) ... ok
+test_geopackage_roundtrip_retains_shape_crs_and_reference (__main__.QgisFeasibility.test_geopackage_roundtrip_retains_shape_crs_and_reference) ... ok
+test_native_crossing_without_shared_vertices_is_disconnected (__main__.QgisFeasibility.test_native_crossing_without_shared_vertices_is_disconnected) ... ok
+test_native_same_edge_ties (__main__.QgisFeasibility.test_native_same_edge_ties) ... ok
+test_native_shared_interior_vertices_connect_without_asset_evidence (__main__.QgisFeasibility.test_native_shared_interior_vertices_connect_without_asset_evidence) ... ok
+test_projected_feet_convert_to_meters (__main__.QgisFeasibility.test_projected_feet_convert_to_meters) ... ok
+test_runtime_and_interfaces (__main__.QgisFeasibility.test_runtime_and_interfaces) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.206s
+
+OK

@@ -1,0 +1,114 @@
+{
+  "batch_requests": [
+    {
+      "end_xy": [
+        10,
+        0
+      ],
+      "input_row": 1,
+      "route_id": "r_1",
+      "start_xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "end_xy": [
+        5,
+        0
+      ],
+      "input_row": 2,
+      "route_id": "r_bad",
+      "start_xy": "not-a-point"
+    },
+    {
+      "end_xy": [
+        6,
+        0
+      ],
+      "input_row": 3,
+      "route_id": "r_3",
+      "start_xy": [
+        2,
+        0
+      ]
+    }
+  ],
+  "case_id": "batch_one_bad_record",
+  "expected": {
+    "batch_failure_codes": [
+      null,
+      "INVALID_PAIR",
+      null
+    ],
+    "batch_lengths_m": [
+      10,
+      null,
+      4
+    ],
+    "batch_statuses": [
+      "SUCCESS",
+      "FAILED",
+      "SUCCESS"
+    ],
+    "build_status": "OK"
+  },
+  "network_crs": "EPSG:3857",
+  "rule_profile": {
+    "allow_2d_projection": false,
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "direction": {
+      "field": "direction",
+      "map": {
+        "both": "BOTH",
+        "forward": "FORWARD",
+        "reverse": "REVERSE"
+      },
+      "mode": "FIELD"
+    },
+    "eligibility": {
+      "field": "status",
+      "map": {
+        "blocked": "BLOCKED",
+        "open": "OPEN",
+        "unknown": "UNKNOWN"
+      },
+      "mode": "FIELD"
+    },
+    "ellipsoid": "NONE",
+    "profile_id": "synthetic_v1",
+    "qa_near_miss_m": 0.02,
+    "schema_version": "1.0.0",
+    "strict": true
+  },
+  "schema_version": "1.0.0",
+  "source": {
+    "features": [
+      {
+        "geometry": {
+          "coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "type": "LineString"
+        },
+        "properties": {
+          "asset_key": "a",
+          "direction": "both",
+          "status": "open"
+        },
+        "type": "Feature"
+      }
+    ],
+    "type": "FeatureCollection"
+  },
+  "source_crs": "EPSG:3857",
+  "source_layer_key": "synthetic_corridors",
+  "synthetic": true
+}

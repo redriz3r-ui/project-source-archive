@@ -1,0 +1,1422 @@
+{
+  "audit_date_local": "2026-10-16",
+  "scope": "Public source metadata and selected file hashes; no upstream test suite executed. Raw files kept outside repository.",
+  "repositories": [
+    {
+      "repo": "root676/QNEAT",
+      "branch": "main",
+      "sha": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "date": "2026-09-19T18:42:28Z",
+      "truncated": false,
+      "archived": false,
+      "pushed_at": "2026-09-19T18:56:56Z",
+      "api_license_label": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "recent_commits": [
+        {
+          "sha": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+          "date": "2026-09-19T18:42:28Z",
+          "subject": "add a packaging script"
+        },
+        {
+          "sha": "f9dd8c5dd8d1c4cf651ad453607c7fb70128d5e9",
+          "date": "2026-09-19T18:42:00Z",
+          "subject": "add dist/ folder to ignored folder"
+        },
+        {
+          "sha": "e0853f64947de9602d9bf2c01fe7aa3ac59d7e3b",
+          "date": "2026-08-09T22:12:10Z",
+          "subject": "add tests (AI assisted)"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "v.4.0",
+          "published_at": "2026-09-19T18:56:57Z",
+          "url": "https://github.com/root676/QNEAT/releases/tag/v.4.0",
+          "assets": []
+        }
+      ],
+      "recent_runs": []
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "branch": "main",
+      "sha": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "date": "2026-07-20T16:21:31Z",
+      "truncated": false,
+      "archived": false,
+      "pushed_at": "2026-07-20T16:21:34Z",
+      "api_license_label": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "recent_commits": [
+        {
+          "sha": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+          "date": "2026-07-20T16:21:31Z",
+          "subject": "Release 0.2.2: code cleanup (ruff lint + format), no behaviour changes"
+        },
+        {
+          "sha": "0782c8ed6611624208db78a2edc0714f4dd24029",
+          "date": "2026-07-20T16:09:36Z",
+          "subject": "Lint + format the whole codebase with ruff (clean before catalog submission)"
+        },
+        {
+          "sha": "af80e902945eeb5a95837ac66c33b31c556c69e8",
+          "date": "2026-07-20T15:58:38Z",
+          "subject": "Release 0.2.1: mark stable + inline changelog for plugins.qgis.org"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "v0.2.2",
+          "published_at": "2026-07-20T16:21:44Z",
+          "url": "https://github.com/Oksion/network-topology-qgis/releases/tag/v0.2.2",
+          "assets": [
+            {
+              "name": "network_topology-0.2.2.zip",
+              "bytes": 48890
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.1",
+          "published_at": "2026-07-20T15:59:03Z",
+          "url": "https://github.com/Oksion/network-topology-qgis/releases/tag/v0.2.1",
+          "assets": [
+            {
+              "name": "network_topology-0.2.1.zip",
+              "bytes": 48381
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.0",
+          "published_at": "2026-07-20T12:17:29Z",
+          "url": "https://github.com/Oksion/network-topology-qgis/releases/tag/v0.2.0",
+          "assets": [
+            {
+              "name": "network_topology-0.2.0.zip",
+              "bytes": 41756
+            }
+          ]
+        }
+      ],
+      "recent_runs": [
+        {
+          "id": 29759253089,
+          "url": "https://github.com/Oksion/network-topology-qgis/actions/runs/29759253089",
+          "name": "Build plugin",
+          "sha": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+          "conclusion": "success"
+        },
+        {
+          "id": 29759249626,
+          "url": "https://github.com/Oksion/network-topology-qgis/actions/runs/29759249626",
+          "name": "Build plugin",
+          "sha": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+          "conclusion": "success"
+        },
+        {
+          "id": 29758382330,
+          "url": "https://github.com/Oksion/network-topology-qgis/actions/runs/29758382330",
+          "name": "Build plugin",
+          "sha": "0782c8ed6611624208db78a2edc0714f4dd24029",
+          "conclusion": "success"
+        },
+        {
+          "id": 29757586002,
+          "url": "https://github.com/Oksion/network-topology-qgis/actions/runs/29757586002",
+          "name": "Build plugin",
+          "sha": "af80e902945eeb5a95837ac66c33b31c556c69e8",
+          "conclusion": "success"
+        },
+        {
+          "id": 29757570317,
+          "url": "https://github.com/Oksion/network-topology-qgis/actions/runs/29757570317",
+          "name": "Build plugin",
+          "sha": "af80e902945eeb5a95837ac66c33b31c556c69e8",
+          "conclusion": "success"
+        }
+      ],
+      "inspected_jobs": [
+        {
+          "name": "package",
+          "conclusion": "success",
+          "url": "https://github.com/Oksion/network-topology-qgis/actions/runs/29759253089/job/88409456546",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Read plugin version from metadata.txt",
+              "conclusion": "success"
+            },
+            {
+              "name": "Stage plugin folder (exclude dev-only files)",
+              "conclusion": "success"
+            },
+            {
+              "name": "Zip",
+              "conclusion": "success"
+            },
+            {
+              "name": "Upload build artifact",
+              "conclusion": "success"
+            },
+            {
+              "name": "Publish Release (on tag)",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "branch": "main",
+      "sha": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "date": "2026-10-13T05:51:47Z",
+      "truncated": false,
+      "archived": false,
+      "pushed_at": "2026-10-13T05:51:47Z",
+      "api_license_label": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "recent_commits": [
+        {
+          "sha": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+          "date": "2026-10-13T05:51:47Z",
+          "subject": "Merge pull request #62 from vukovicvl/perf/wp4-placement-routing"
+        },
+        {
+          "sha": "f3d489bbaf668716c186361fe00422e11364500f",
+          "date": "2026-10-13T03:14:51Z",
+          "subject": "perf(wp4): the routing graph finds an element's nearest vertex in its own grid"
+        },
+        {
+          "sha": "bfc99fa6126c5f8cc4ee65b7be7229bf0f99b0b4",
+          "date": "2026-10-13T03:14:51Z",
+          "subject": "perf(wp4): lay cable looks for its single route among the routes near the first element"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "v1.5.0",
+          "published_at": "2026-09-17T22:07:24Z",
+          "url": "https://github.com/vukovicvl/fiberq/releases/tag/v1.5.0",
+          "assets": [
+            {
+              "name": "fiberq-1.5.0.zip",
+              "bytes": 606109
+            }
+          ]
+        },
+        {
+          "tag": "v1.4.0",
+          "published_at": "2026-08-19T19:05:01Z",
+          "url": "https://github.com/vukovicvl/fiberq/releases/tag/v1.4.0",
+          "assets": [
+            {
+              "name": "fiberq-1.4.0.zip",
+              "bytes": 571730
+            }
+          ]
+        },
+        {
+          "tag": "v1.3.0",
+          "published_at": "2026-07-15T21:02:35Z",
+          "url": "https://github.com/vukovicvl/fiberq/releases/tag/v1.3.0",
+          "assets": [
+            {
+              "name": "fiberq-1.3.0.zip",
+              "bytes": 477658
+            }
+          ]
+        }
+      ],
+      "recent_runs": [
+        {
+          "id": 38353587765,
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38353587765",
+          "name": "CI",
+          "sha": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+          "conclusion": "success"
+        },
+        {
+          "id": 38345893799,
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38345893799",
+          "name": "CI",
+          "sha": "f3d489bbaf668716c186361fe00422e11364500f",
+          "conclusion": "success"
+        },
+        {
+          "id": 38208864814,
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38208864814",
+          "name": "CI",
+          "sha": "cd4de63b32d7c73a2f341516a59390ebe601ff62",
+          "conclusion": "success"
+        },
+        {
+          "id": 38200951858,
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38200951858",
+          "name": "CI",
+          "sha": "d4cb97a182882ff016d0e104642fe5d7a6a13e43",
+          "conclusion": "success"
+        },
+        {
+          "id": 38165391878,
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38165391878",
+          "name": "CI",
+          "sha": "8596509808f7e16d4b2aa8f550b6dcde9b5522b3",
+          "conclusion": "success"
+        }
+      ],
+      "inspected_jobs": [
+        {
+          "name": "Declared floor (test suite)",
+          "conclusion": "success",
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38353587765/job/115151274040",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run the suite on the oldest supported QGIS",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Declared floor (QGIS 3.22)",
+          "conclusion": "success",
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38353587765/job/115151274352",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Parse and import every module on the declared floor",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "QGIS 4.0-trixie",
+          "conclusion": "success",
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38353587765/job/115151274354",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Lint and test inside the QGIS container",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "QGIS 3.44-trixie",
+          "conclusion": "success",
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38353587765/job/115151274369",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Lint and test inside the QGIS container",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Package (build zip)",
+          "conclusion": "success",
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38353587765/job/115151274390",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build plugin zip",
+              "conclusion": "success"
+            },
+            {
+              "name": "Upload zip artifact",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Qt6 check (pyqt5_to_pyqt6)",
+          "conclusion": "success",
+          "url": "https://github.com/vukovicvl/fiberq/actions/runs/38353587765/job/115151274420",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check the package for Qt5-only API",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "branch": "main",
+      "sha": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "date": "2024-07-05T08:36:07Z",
+      "truncated": false,
+      "archived": false,
+      "pushed_at": "2024-07-05T08:56:39Z",
+      "api_license_label": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "recent_commits": [
+        {
+          "sha": "b147460b829223f7aefdf2e29ecba907007265f8",
+          "date": "2024-07-05T08:36:07Z",
+          "subject": "version 1.3.1"
+        },
+        {
+          "sha": "f525a0b38a7ec075e42de6270af9e1220f8dc7a6",
+          "date": "2024-06-03T15:41:09Z",
+          "subject": "metadata"
+        },
+        {
+          "sha": "edd7150f8217851e63d457cabc2606b1cd0098a2",
+          "date": "2024-06-03T11:06:09Z",
+          "subject": "version 1.3.0"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "1.3.1",
+          "published_at": "2024-07-05T08:56:39Z",
+          "url": "https://github.com/fryktoria/On-the-Fly-Shortest-Path/releases/tag/1.3.1",
+          "assets": [
+            {
+              "name": "On-the-Fly-Shortest-Path.1.3.1.zip",
+              "bytes": 1867337
+            }
+          ]
+        },
+        {
+          "tag": "1.3.0",
+          "published_at": "2024-06-03T15:44:38Z",
+          "url": "https://github.com/fryktoria/On-the-Fly-Shortest-Path/releases/tag/1.3.0",
+          "assets": [
+            {
+              "name": "On-the-Fly-Shortest-Path.1.3.0.zip",
+              "bytes": 1849257
+            }
+          ]
+        },
+        {
+          "tag": "1.2.1",
+          "published_at": "2024-04-21T16:06:14Z",
+          "url": "https://github.com/fryktoria/On-the-Fly-Shortest-Path/releases/tag/1.2.1",
+          "assets": [
+            {
+              "name": "On-the-Fly-Shortest-Path.1.2.1.zip",
+              "bytes": 1480602
+            }
+          ]
+        }
+      ],
+      "recent_runs": []
+    },
+    {
+      "repo": "qgis/QGIS",
+      "branch": "master",
+      "sha": "ca159e4aeafe319b357c29fe5ecb04d3a05a80b5",
+      "date": "2026-10-16T21:31:36Z",
+      "truncated": false,
+      "archived": false,
+      "pushed_at": "2026-10-16T21:31:36Z",
+      "api_license_label": {
+        "key": "gpl-2.0",
+        "name": "GNU General Public License v2.0",
+        "spdx_id": "GPL-2.0",
+        "url": "https://api.github.com/licenses/gpl-2.0",
+        "node_id": "MDc6TGljZW5zZTg="
+      },
+      "recent_commits": [
+        {
+          "sha": "ca159e4aeafe319b357c29fe5ecb04d3a05a80b5",
+          "date": "2026-10-16T21:31:36Z",
+          "subject": "make errors counter member variable instead of global static variable"
+        },
+        {
+          "sha": "7de0be8e598f71700692cc78e1352a32f7b2f7e4",
+          "date": "2026-10-16T21:31:36Z",
+          "subject": "use case-insensitive comparison when removing query parameters"
+        },
+        {
+          "sha": "4459b4cb8db49cb24ad093add9f4d4b992b387ae",
+          "date": "2026-10-16T21:31:36Z",
+          "subject": "cleanup doxygen comments in QgsWcsProvider"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "final-4_2_3",
+          "published_at": "2026-09-25T12:27:51Z",
+          "url": "https://github.com/qgis/QGIS/releases/tag/final-4_2_3",
+          "assets": [
+            {
+              "name": "QGIS-final-4_2_3-Installer.dmg",
+              "bytes": 1684801583
+            },
+            {
+              "name": "QGIS-final-4_2_3.dmg",
+              "bytes": 1592197571
+            }
+          ]
+        },
+        {
+          "tag": "final-3_44_15",
+          "published_at": "2026-09-25T12:27:57Z",
+          "url": "https://github.com/qgis/QGIS/releases/tag/final-3_44_15",
+          "assets": []
+        },
+        {
+          "tag": "final-4_2_2",
+          "published_at": "2026-08-28T12:11:35Z",
+          "url": "https://github.com/qgis/QGIS/releases/tag/final-4_2_2",
+          "assets": [
+            {
+              "name": "QGIS-final-4_2_2-Installer.dmg",
+              "bytes": 1683048454
+            },
+            {
+              "name": "QGIS-final-4_2_2.dmg",
+              "bytes": 1590728283
+            }
+          ]
+        }
+      ],
+      "recent_runs": [
+        {
+          "id": 38996048395,
+          "url": "https://github.com/qgis/QGIS/actions/runs/38996048395",
+          "name": "\ud83d\udc53 Handle stale issues",
+          "sha": "ca159e4aeafe319b357c29fe5ecb04d3a05a80b5",
+          "conclusion": "success"
+        },
+        {
+          "id": 38995915988,
+          "url": "https://github.com/qgis/QGIS/actions/runs/38995915988",
+          "name": "\ud83d\udc53 Handle stale issues",
+          "sha": "ca159e4aeafe319b357c29fe5ecb04d3a05a80b5",
+          "conclusion": "success"
+        },
+        {
+          "id": 38982456030,
+          "url": "https://github.com/qgis/QGIS/actions/runs/38982456030",
+          "name": "Write test failure comment",
+          "sha": "ca159e4aeafe319b357c29fe5ecb04d3a05a80b5",
+          "conclusion": "success"
+        },
+        {
+          "id": 38982242057,
+          "url": "https://github.com/qgis/QGIS/actions/runs/38982242057",
+          "name": "Write build artifact comments",
+          "sha": "ca159e4aeafe319b357c29fe5ecb04d3a05a80b5",
+          "conclusion": "skipped"
+        },
+        {
+          "id": 38978941772,
+          "url": "https://github.com/qgis/QGIS/actions/runs/38978941772",
+          "name": "Write build artifact comments",
+          "sha": "ca159e4aeafe319b357c29fe5ecb04d3a05a80b5",
+          "conclusion": "skipped"
+        }
+      ]
+    }
+  ],
+  "release_refs": [
+    {
+      "repo": "root676/QNEAT",
+      "tag": "v.4.0",
+      "sha": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "date": "2026-09-19T18:42:28Z",
+      "url": "https://github.com/root676/QNEAT/commit/65381fa1c272eb2eec45417f135de7bcc4a1fe7f"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "tag": "v0.2.2",
+      "sha": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "date": "2026-07-20T16:21:31Z",
+      "url": "https://github.com/Oksion/network-topology-qgis/commit/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "tag": "v1.5.0",
+      "sha": "8e1881d1bd8b1fc27c6bd7c24a6860c753f71108",
+      "date": "2026-09-17T21:51:53Z",
+      "url": "https://github.com/vukovicvl/fiberq/commit/8e1881d1bd8b1fc27c6bd7c24a6860c753f71108"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "tag": "1.3.1",
+      "sha": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "date": "2024-07-05T08:36:07Z",
+      "url": "https://github.com/fryktoria/On-the-Fly-Shortest-Path/commit/b147460b829223f7aefdf2e29ecba907007265f8"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "tag": "final-4_2_3",
+      "sha": "b041a18904a4dc9fdada8ecb2c84385054ddfee1",
+      "date": "2026-09-25T12:21:11Z",
+      "url": "https://github.com/qgis/QGIS/commit/b041a18904a4dc9fdada8ecb2c84385054ddfee1"
+    }
+  ],
+  "source_files": [
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "LICENSE",
+      "sha256": "384b34cf95482f6d7ced6c882650a1e8e096421acecbf2b1db3cef4fb047851f",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/LICENSE"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "QneatFramework.py",
+      "sha256": "cf2df6d38f2822f1657a1fbfe9843e9c1cfce7e7bc62de6b7baf860c6cb67dac",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/QneatFramework.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "QneatPlugin.py",
+      "sha256": "68d8e17148373afff3b826d9b8b159ff4a502d21e25a362ba3df48171ca3d933",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/QneatPlugin.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "QneatProvider.py",
+      "sha256": "0ecc7447634e262c680aeae58466fd973df953caf81495c12e75bbc5ca43fab5",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/QneatProvider.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "QneatUtilities.py",
+      "sha256": "fcaa7ece41dfd64971ec392addd098519e70741d368fe34c13ae17b34c98611d",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/QneatUtilities.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "__init__.py",
+      "sha256": "af10408e570759dab1fde262a80c74edaef6ce7213bca43b5636a72f482c813a",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/__init__.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/IsoAreaAsCostSurfaceFromLayer.py",
+      "sha256": "cc3f826af632fa8b88dfdaff94e63fbeda67da7ec235ae4fb9e0c603c65f7630",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/IsoAreaAsCostSurfaceFromLayer.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/IsoAreaAsCostSurfaceFromPoint.py",
+      "sha256": "fc10f34364c1cf4831efc6ce183bc7eeabab724c5c3217d14ffd629ecfffb392",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/IsoAreaAsCostSurfaceFromPoint.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/IsoAreaAsPointcloudFromLayer.py",
+      "sha256": "81135ad92219305c371f3965e9fc73ee6b7f29bfc1af8d2e4ae1f7ee851cb9d8",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/IsoAreaAsPointcloudFromLayer.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/IsoAreaAsPointcloudFromPoint.py",
+      "sha256": "3357ad7ccc8967ceadfecc916dc7c02714463ce333a694788cd78cecd1a6ea76",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/IsoAreaAsPointcloudFromPoint.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/IsoAreaFromLayer.py",
+      "sha256": "7106fbd851cd94b89760f9b671f0c1c67df2c080956b809dac425109cfc31cf7",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/IsoAreaFromLayer.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/IsoAreaFromPoint.py",
+      "sha256": "89dc281bc654c7078aa98bfa71b0b5ef3849bdae1b8d0e89344aba87fe70cd26",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/IsoAreaFromPoint.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/OdMatrixFromLayersAsLines.py",
+      "sha256": "f6a134e9145a4455768618a1a6cd6154018458a259eb5028d0b9710c4fa45432",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/OdMatrixFromLayersAsLines.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/OdMatrixFromLayersAsTable.py",
+      "sha256": "ebd51262419e8e8fa12d14ed742c1378dd83bc7fc041688028330950ef62fa37",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/OdMatrixFromLayersAsTable.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/OdMatrixFromPointsAsLines.py",
+      "sha256": "e49d1bff28513bd135064dda988f9855e470629042cbcac0d7b03e68bb2e2edb",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/OdMatrixFromPointsAsLines.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/OdMatrixFromPointsAsTable.py",
+      "sha256": "9bfb52c1eec37e8c3aaaccc41083c333360db9337ff41ea7ef9c58ce60b01b2c",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/OdMatrixFromPointsAsTable.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "algs/ShortestPathBetweenPoints.py",
+      "sha256": "39dd7a6bc74b7d0fcf4830a1663dc614c2c74561d440046f6e837a748adb7fa6",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/algs/ShortestPathBetweenPoints.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "metadata.txt",
+      "sha256": "94fac47f20e9e75e125d96307e7ff56f4627e4d0c0af7b819b17620267dbb7c3",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/metadata.txt"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "package.sh",
+      "sha256": "b5974d49b1c138388ac14bc0c52c94951b2b776f7e28e46b8e3799e860015c62",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/package.sh"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/README.md",
+      "sha256": "7d37cab022363ea2fb501f16244f6bcf3c7e61d19ba02895ca78523295aa0771",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/README.md"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/__init__.py",
+      "sha256": "e214b784eff051e77ee0356882f60cafbc5801feb95661e1578a70bd3e18cadb",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/__init__.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/data/make_fixtures.py",
+      "sha256": "c9fdb962d96f5ac0eeaa9e1e4708f5107a97a6e0581a88796a00655603b41cc5",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/data/make_fixtures.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/fixtures.py",
+      "sha256": "d454cc60481ed745496de299b8f36db1ed12c02f28f2ccc639c1ae675cf19dca",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/fixtures.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/oracle.py",
+      "sha256": "2e2f6f75c2f7befa725e5dfc8ca058e2fbc48f549bc8d931baba7ba64e1fd3e0",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/oracle.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/qgis_bootstrap.py",
+      "sha256": "a71f665946d45f175654c94e06ca98dab8ecc5410ce5ac766bc68adde5c3fb39",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/qgis_bootstrap.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/qneat_testcase.py",
+      "sha256": "6a3b14b262d71bca510033c3743499675e381bab224879e2a109dd5d00cc8ecf",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/qneat_testcase.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/raster_utils.py",
+      "sha256": "d29cf3ad7c30246af0f6762cd1e4519badf522426df1718706b01a806deff889",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/raster_utils.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/run_tests.sh",
+      "sha256": "bb82f2780b163adb82c44576b6934f4c4ce7dbe20825e13788870c2510de8167",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/run_tests.sh"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/test_crs_parity.py",
+      "sha256": "ef7d850dd1552a0fd344df6c173b6189f0fa40840710c0a646ad4b308730e423",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/test_crs_parity.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/test_iso_areas.py",
+      "sha256": "d72866b0a5590396132315cdd308c7a86025e884752064b071209724992c65b3",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/test_iso_areas.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/test_iso_cost_surface.py",
+      "sha256": "62dbba03a948097081546d4e93c98a17ef2b72c9b1f70f0d68934ed7a29d2ffa",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/test_iso_cost_surface.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/test_iso_pointcloud.py",
+      "sha256": "3e743f0681c43250fb75270c547415443929e5fac39c215e6696b762c477f8c9",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/test_iso_pointcloud.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/test_od_matrix.py",
+      "sha256": "74a64cc52da303b92876f3eb6c8be2238e83cbb6fe4773a7446dac82b2eeb0a7",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/test_od_matrix.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/test_shortest_path.py",
+      "sha256": "8bbc80a33d88d33f7b71dbef92219834bbe29764545b5101e6a64c1237c4dc7c",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/test_shortest_path.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/test_smoke.py",
+      "sha256": "ec039d759cef011fcff4d95c06e77a4c14244012b2ab0273138fdd122842a6ee",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/test_smoke.py"
+    },
+    {
+      "repo": "root676/QNEAT",
+      "ref": "65381fa1c272eb2eec45417f135de7bcc4a1fe7f",
+      "path": "tests/test_validation.py",
+      "sha256": "88c1278194eb330f77c13574ffb966c4ac4d00c524c50fcf2c9c7970b740ac11",
+      "url": "https://raw.githubusercontent.com/root676/QNEAT/65381fa1c272eb2eec45417f135de7bcc4a1fe7f/tests/test_validation.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": ".github/workflows/build-plugin.yml",
+      "sha256": "29b9829adf021f6bdd92f5f33b23513963564a9005f7eb9e4c9fcc25def35356",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/.github/workflows/build-plugin.yml"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "LICENSE",
+      "sha256": "f8b7dd9a982e625105926fa27b9cc23b511753c6a41f84cd95ac146c1822f081",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/LICENSE"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "__init__.py",
+      "sha256": "73b52f15e8e811b1f9ac8f3c40a6b49462e6d11592b0fdac9d7f67df3d9c7e64",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/__init__.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "cluster_hulls_algorithm.py",
+      "sha256": "168f16ff7881d12cc5a5d494d9491c82f0c6d566bcc5aeee72f721ceed8447b1",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/cluster_hulls_algorithm.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "connected_components_algorithm.py",
+      "sha256": "dd02c881d3ec628142669b5c80017833a7ab07ef4e7a1d596eafe727428787dd",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/connected_components_algorithm.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "console/topology_split_console.py",
+      "sha256": "fe82a8258a756010834d94dceb3e16fc9b86018d93329e2f507d34b2ba6e8e9a",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/console/topology_split_console.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "dangle_resolver_algorithm.py",
+      "sha256": "9fad2a0424b29bbaa981fe43dd716c6d92149d182f27f4689461f04a4713aa60",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/dangle_resolver_algorithm.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "metadata.txt",
+      "sha256": "5dcaaddb095b5a4b96e623ec57fe887a52267c2c9c725eae8b4c256574df07d0",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/metadata.txt"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "network_nodes_algorithm.py",
+      "sha256": "482a67db17737656e9406661a9bbffb7ff3aeb11b8f0dbd45c120916cc1317a8",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/network_nodes_algorithm.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "pseudonode_collapse_algorithm.py",
+      "sha256": "b2ad38f082e0358519af6f8302d8edda44ec83855e9f6207bf9d42300844bc08",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/pseudonode_collapse_algorithm.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "pyproject.toml",
+      "sha256": "2c705afbfc7c900f7908d00c19fa8a13fa6e075cfc89f4c892219946c2afc682",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/pyproject.toml"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tests/__init__.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tests/conftest.py",
+      "sha256": "ae80224336f9ca73521ba422c73fef3761ef09272d475ef926ca4d375fcdaba9",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tests/conftest.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tests/test_cluster_hulls.py",
+      "sha256": "13ec54925b3c071c294b51713599baa5033776a022cf1cc58dc739356642537a",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tests/test_cluster_hulls.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tests/test_connected_components.py",
+      "sha256": "67fa71521c96ffb19b511f3657764bc4c1be4bc6477535490fe9edfe7273a904",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tests/test_connected_components.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tests/test_dangle_resolver.py",
+      "sha256": "319e781b0444e7562b5639e2eb846912c684a89979035a5aafc3cb4053eac328",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tests/test_dangle_resolver.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tests/test_network_nodes.py",
+      "sha256": "0f40f38b18f4d67c5cec5eb9c207b2b20f2623ab3a135eb18173bc5be707d49c",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tests/test_network_nodes.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tests/test_pseudonode_collapse.py",
+      "sha256": "5c156f2ddf61297ab4b5d861d574aef8f441d173d59f9b13db6fd377abb3f6df",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tests/test_pseudonode_collapse.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tests/test_topology_split_algorithm.py",
+      "sha256": "acd474f33c0fc45a3fa8343ed2b22234a05c1daa0171aaf9146b14a3d178c992",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tests/test_topology_split_algorithm.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "tools/update_ts.py",
+      "sha256": "54ac50bb765d14770d54021730ecfb0b0e702e7ca080397dad8689fdc150005f",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/tools/update_ts.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "topology_split_algorithm.py",
+      "sha256": "e324a4ad5513748a9d0ba102563cedcbe737c6e2efa61795d45d8abf90e56341",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/topology_split_algorithm.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "topology_split_plugin.py",
+      "sha256": "c531e67a667921761fa951f5da7758ae66b219049899dbefc5b0a1ea2bbcf368",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/topology_split_plugin.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "topology_split_provider.py",
+      "sha256": "369d3646ada5d7509f5d3f4f54ef6f4ccb8d10d3b9e677af8e16fded19d9d61d",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/topology_split_provider.py"
+    },
+    {
+      "repo": "Oksion/network-topology-qgis",
+      "ref": "8fa24bc91b7a756c0e40a6c1723c9741a0d3d346",
+      "path": "topology_utils.py",
+      "sha256": "c23b73da35ceb9470e0085d2c82f53b09fdb0b73b9d1afe2c70be0619c61be4b",
+      "url": "https://raw.githubusercontent.com/Oksion/network-topology-qgis/8fa24bc91b7a756c0e40a6c1723c9741a0d3d346/topology_utils.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": ".github/workflows/ci.yml",
+      "sha256": "73a4affe9da3fa11bb1c91dfed7ba76b297fc3def7d856c5a898ea1271520cdb",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/.github/workflows/ci.yml"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/LICENSE"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "conftest.py",
+      "sha256": "87b1548f93ac0c219bd76f9e860f5e1b6913f1ea65b223f2684d0ff7a5d57bc4",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/conftest.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/LICENSE"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/core/interchange.py",
+      "sha256": "55b72cae728973544b9eec623abf2f88f979376e00712525e689378b876da803",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/core/interchange.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/core/interchange_bundle.py",
+      "sha256": "1d5ec7c8aa32ba993bd87ec5231235adb394f354fdb771825eb1a92478de4316",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/core/interchange_bundle.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/core/length_manager.py",
+      "sha256": "d5f6e51266c353aacbf91c2dd88a10ab8a9822d9e3fef19183ef67e0697dd078",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/core/length_manager.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/core/license_manager.py",
+      "sha256": "77fc90e47b8e55b882d36bed0808a6d868fe9ec21ba3506dc13cd62cf3b76bb4",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/core/license_manager.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/core/validation_manager.py",
+      "sha256": "3b484ca25814824d64e8c29a7f26d5abc8697125edbbd5d1848845b46fd0a4a6",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/core/validation_manager.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/core/validation_report.py",
+      "sha256": "24023a44ee30c87eb25fc4e79ad4b97819e240103eade71fc6903f8209094d86",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/core/validation_report.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/core/validation_rules.py",
+      "sha256": "b3e9dc3a9e864bf8ed8cf81cc9f67c050662ea134de6b6b5488d71080fb55b70",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/core/validation_rules.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "fiberq/metadata.txt",
+      "sha256": "b760eb0c3b5ef70cc1220e73ffb5451dc6de400f6c23137c0f4f8d62c329055a",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/fiberq/metadata.txt"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "pyproject.toml",
+      "sha256": "522ce2d3640fa61cdca6e920895de63dac358439be285b3e2a0b8343d10274e8",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/pyproject.toml"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "tests/test_interchange_roundtrip.py",
+      "sha256": "ecd38858f53e25037d5d144e77ea9002f5f314924afc8d40229452c90b1fb1a4",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/tests/test_interchange_roundtrip.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "tests/test_measure.py",
+      "sha256": "b089cdd7e3d0c47814a06447b1bf73c7934d7785b1a4856d4034503417fd0276",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/tests/test_measure.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "tests/test_qgis4_deprecations.py",
+      "sha256": "30ceedc47a6b534d90084c529bfa95f9834704960f5a643ab704bb097a9547cf",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/tests/test_qgis4_deprecations.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "tests/test_validation_topology.py",
+      "sha256": "27aecebb184a53f689e870a53b1bc936a36d56cc37ee272371a11a6b475be2e8",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/tests/test_validation_topology.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "LICENSE",
+      "sha256": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/LICENSE"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "__init__.py",
+      "sha256": "9c0058acb0bf6cbf7a636162e054d54ed800d0eba501cde4f17a089c26403459",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/__init__.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "bridge.py",
+      "sha256": "f7c4b5d31f55288dd02f096148f9c4bc03ab291b8edfa146fcf2bb4164fb7e23",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/bridge.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "bridgingLineTool.py",
+      "sha256": "3b72221a6798ac0de717514eeeb63fce71196d98cf75cf2c9a9663335e89d858",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/bridgingLineTool.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "bridgingPointTool.py",
+      "sha256": "138488430c20cdf43d2a6cc65d7f89344766cda35583b3490390be7a30b73bac",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/bridgingPointTool.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "flexjLine.py",
+      "sha256": "9042ae10d579f37fe31014f954ee3ea286d4f47b38a37f4e237d0f044ed197fd",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/flexjLine.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "flexjLineTool.py",
+      "sha256": "4f98864c2113815267c44ee05557aa2045f98833b2bbfe9e4e4ebbb57f8f5e07",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/flexjLineTool.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "geometry.py",
+      "sha256": "75cc7ed0d789525069568e7aea940dca812546db2c197bfa5c42c6b195164463",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/geometry.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "metadata.txt",
+      "sha256": "bbcb434cb5c37bf98aa3d8c03a0b2539e04075fc57f8cec98df28c379f646c52",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/metadata.txt"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "onthefly_shortest_path.py",
+      "sha256": "d523a6e0d5c425d542cdcce822e73287eb48bdf44a811cacaf999aa2d2a0de79",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/onthefly_shortest_path.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "ui_Classes.py",
+      "sha256": "fdb5c9d9019bd47ec6b90a5003f40e7b6fa74702310f9215977941e5555d278c",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/ui_Classes.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "ui_DlgConfiguration.py",
+      "sha256": "49e777a59284049779e0c48fb6f14ab44873978aa3d2c3dc9e7bf1bb864c6865",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/ui_DlgConfiguration.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "ui_DlgDockWidget.py",
+      "sha256": "18326da7cdcdbfdad6cc7a0862d2e78dae3ed9f042f46ac30fe1b091d4aa4fd5",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/ui_DlgDockWidget.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "ui_DlgLayerSelection.py",
+      "sha256": "215301bdd417ae294ee05e44236b562fde213458b820608c15dfce32b8e3f2d1",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/ui_DlgLayerSelection.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "ui_DlgMarkerCoordinates.py",
+      "sha256": "37f11026aebe1ca24ad355c77ad04825dd4e1541d6709845773cb818854e4d29",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/ui_DlgMarkerCoordinates.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "ui_DlgResults.py",
+      "sha256": "707ca74a44b584e95fab5ab211ac6041318fa3779f4cb140eb39dd4ade119f38",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/ui_DlgResults.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "ui_DlgResultsNoFiber.py",
+      "sha256": "7db0d3cc3548cf5aed6954253e01fdf285ac1650606e142da203bcebf9451e3b",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/ui_DlgResultsNoFiber.py"
+    },
+    {
+      "repo": "fryktoria/On-the-Fly-Shortest-Path",
+      "ref": "b147460b829223f7aefdf2e29ecba907007265f8",
+      "path": "vertexTool.py",
+      "sha256": "17fea25fa96001c602983ff4ed7c5df663749f6cdb0360105330cd02944bad6e",
+      "url": "https://raw.githubusercontent.com/fryktoria/On-the-Fly-Shortest-Path/b147460b829223f7aefdf2e29ecba907007265f8/vertexTool.py"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": "COPYING",
+      "sha256": "dba313854f65a8d41b1777cf9d6cb5ddf692792be04d808b82c86c63909fbdf0",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/COPYING"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": ".github/workflows/run-tests.yml",
+      "sha256": "fd51c6c913aee4c6e8ae1891c27c81f6bff38b1443a3cd6265d83d457eeb359e",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/.github/workflows/run-tests.yml"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": ".github/workflows/build-macos-qt6.yml",
+      "sha256": "c33b916a89c3cdf147b874a36fbcab800a77f86352e961eb36bc05e5ec6fa3fd",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/.github/workflows/build-macos-qt6.yml"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": "src/analysis/network/qgsvectorlayerdirector.cpp",
+      "sha256": "ab5c09a401017f38edc7b2d0a6f2800f38b958eb715dd4d80078af159b5de59e",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/src/analysis/network/qgsvectorlayerdirector.cpp"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": "src/analysis/network/qgsgraphanalyzer.cpp",
+      "sha256": "c68c9c972851d1dded8a38ebb26f5cc4549200ecdb8a51c1878ffc69e5ec7c25",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/src/analysis/network/qgsgraphanalyzer.cpp"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": "src/core/qgsdistancearea.h",
+      "sha256": "260aa86af76d6d770a24ecd8004e8421de67ba4f5fa445f0289c967d2c3e4c81",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/src/core/qgsdistancearea.h"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": "src/core/qgsvectorfilewriter.h",
+      "sha256": "8662fdd7cd59e2a6e806e6776dc9c3eb36dab2d4035682442b3c112d59bb145d",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/src/core/qgsvectorfilewriter.h"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": "src/gui/qgsdockwidget.h",
+      "sha256": "e5e9ec90cfb5192bf608bf648b5887690b35d79f6ef9c6b558d707344c545c20",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/src/gui/qgsdockwidget.h"
+    },
+    {
+      "repo": "qgis/QGIS",
+      "ref": "final-4_2_3",
+      "path": "tests/src/python/test_qgsnetworkanalysis.py",
+      "sha256": "723802e374f364a0a2f2707be15af86b2528cbc80b536cdccabf00c31b0b33da",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/final-4_2_3/tests/src/python/test_qgsnetworkanalysis.py"
+    },
+    {
+      "repo": "vukovicvl/fiberq",
+      "ref": "a447a16fae69859cdef2e8e7585d6489e81d735c",
+      "path": "Makefile",
+      "sha256": "1d00135a96644505e91d0661725f1aacfe7afca3e93f4cd5dbdcee84b92ede34",
+      "url": "https://raw.githubusercontent.com/vukovicvl/fiberq/a447a16fae69859cdef2e8e7585d6489e81d735c/Makefile"
+    }
+  ]
+}

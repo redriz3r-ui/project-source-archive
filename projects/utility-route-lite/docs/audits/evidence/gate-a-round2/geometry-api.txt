@@ -1,0 +1,5 @@
+QgsLineString nCoordinates 2 numGeometries 1
+QgsMultiLineString nCoordinates 4 numGeometries 2
+EPSG:3857 6 True
+EPSG:4978 2 False
+EPSG:5703 5 False

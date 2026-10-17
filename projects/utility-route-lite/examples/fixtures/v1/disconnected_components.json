@@ -1,0 +1,104 @@
+{
+  "case_id": "disconnected_components",
+  "expected": {
+    "build_status": "OK",
+    "component_count": 2,
+    "failure_code": "NO_ROUTE",
+    "qa_codes_include": [
+      "DISCONNECTED_COMPONENT"
+    ],
+    "route_status": "FAILED"
+  },
+  "network_crs": "EPSG:3857",
+  "request": {
+    "end_xy": [
+      22,
+      0
+    ],
+    "request_crs": "EPSG:3857",
+    "route_id": "route_1",
+    "snap_tolerance_m": 0,
+    "start_xy": [
+      0,
+      0
+    ]
+  },
+  "rule_profile": {
+    "allow_2d_projection": false,
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "direction": {
+      "field": "direction",
+      "map": {
+        "both": "BOTH",
+        "forward": "FORWARD",
+        "reverse": "REVERSE"
+      },
+      "mode": "FIELD"
+    },
+    "eligibility": {
+      "field": "status",
+      "map": {
+        "blocked": "BLOCKED",
+        "open": "OPEN",
+        "unknown": "UNKNOWN"
+      },
+      "mode": "FIELD"
+    },
+    "ellipsoid": "NONE",
+    "profile_id": "synthetic_v1",
+    "qa_near_miss_m": 0.02,
+    "schema_version": "1.0.0",
+    "strict": true
+  },
+  "schema_version": "1.0.0",
+  "source": {
+    "features": [
+      {
+        "geometry": {
+          "coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "type": "LineString"
+        },
+        "properties": {
+          "asset_key": "a",
+          "direction": "both",
+          "status": "open"
+        },
+        "type": "Feature"
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            [
+              20,
+              0
+            ],
+            [
+              22,
+              0
+            ]
+          ],
+          "type": "LineString"
+        },
+        "properties": {
+          "asset_key": "b",
+          "direction": "both",
+          "status": "open"
+        },
+        "type": "Feature"
+      }
+    ],
+    "type": "FeatureCollection"
+  },
+  "source_crs": "EPSG:3857",
+  "source_layer_key": "synthetic_corridors",
+  "synthetic": true
+}

@@ -1,0 +1,55 @@
+test_cancellation_during_geometry_processing (__main__.GateARegressionTests.test_cancellation_during_geometry_processing) ... ok
+test_collision_abort_instead_of_node_or_edge_merge (__main__.GateARegressionTests.test_collision_abort_instead_of_node_or_edge_merge) ... FAIL
+test_declared_junction_uses_network_crs_and_member_pair (__main__.GateARegressionTests.test_declared_junction_uses_network_crs_and_member_pair) ... FAIL
+test_explicit_dimension_modes_and_mixed_arity (__main__.GateARegressionTests.test_explicit_dimension_modes_and_mixed_arity) ... ok
+test_order_serialization_and_attribute_identity (__main__.GateARegressionTests.test_order_serialization_and_attribute_identity) ... ok
+test_pure_mode_rejects_projected_foot_wkt (__main__.GateARegressionTests.test_pure_mode_rejects_projected_foot_wkt) ... FAIL
+test_t_at_intermediate_vertex_stays_disconnected_and_warns (__main__.GateARegressionTests.test_t_at_intermediate_vertex_stays_disconnected_and_warns) ... FAIL
+test_typed_selected_attributes_are_distinct_and_unknown (__main__.GateARegressionTests.test_typed_selected_attributes_are_distinct_and_unknown) ... FAIL
+
+======================================================================
+FAIL: test_collision_abort_instead_of_node_or_edge_merge (__main__.GateARegressionTests.test_collision_abort_instead_of_node_or_edge_merge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/test_gate_a_regressions.py", line 68, in test_collision_abort_instead_of_node_or_edge_merge
+    with self.assertRaises(BuildError) as err: run(c)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: BuildError not raised
+
+======================================================================
+FAIL: test_declared_junction_uses_network_crs_and_member_pair (__main__.GateARegressionTests.test_declared_junction_uses_network_crs_and_member_pair)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/test_gate_a_regressions.py", line 88, in test_declared_junction_uses_network_crs_and_member_pair
+    self.assertNotIn('UNDECLARED_CROSSING', {q['code'] for q in g['qa_issues']})
+AssertionError: 'UNDECLARED_CROSSING' unexpectedly found in {'UNDECLARED_CROSSING', 'DANGLE'}
+
+======================================================================
+FAIL: test_pure_mode_rejects_projected_foot_wkt (__main__.GateARegressionTests.test_pure_mode_rejects_projected_foot_wkt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/test_gate_a_regressions.py", line 111, in test_pure_mode_rejects_projected_foot_wkt
+    with self.assertRaises(BuildError) as err: run(c)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: BuildError not raised
+
+======================================================================
+FAIL: test_t_at_intermediate_vertex_stays_disconnected_and_warns (__main__.GateARegressionTests.test_t_at_intermediate_vertex_stays_disconnected_and_warns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/test_gate_a_regressions.py", line 96, in test_t_at_intermediate_vertex_stays_disconnected_and_warns
+    self.assertIn('INTERIOR_TOUCH',{q['code'] for q in g['qa_issues']})
+AssertionError: 'INTERIOR_TOUCH' not found in {'DISCONNECTED_COMPONENT', 'DANGLE'}
+
+======================================================================
+FAIL: test_typed_selected_attributes_are_distinct_and_unknown (__main__.GateARegressionTests.test_typed_selected_attributes_are_distinct_and_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/test_gate_a_regressions.py", line 46, in test_typed_selected_attributes_are_distinct_and_unknown
+    self.assertEqual(len(hashes), len(set(hashes)))
+AssertionError: 8 != 7
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.008s
+
+FAILED (failures=5)

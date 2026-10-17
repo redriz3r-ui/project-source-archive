@@ -1,0 +1,8 @@
+test_all_python_files_parse (test_scaffold.ScaffoldTests.test_all_python_files_parse) ... ok
+test_metadata_declares_qgis_4_provider_and_unfinished_state (test_scaffold.ScaffoldTests.test_metadata_declares_qgis_4_provider_and_unfinished_state) ... ok
+test_zip_has_single_plugin_root_and_only_allowlisted_files (test_scaffold.ScaffoldTests.test_zip_has_single_plugin_root_and_only_allowlisted_files) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.019s
+
+OK

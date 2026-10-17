@@ -1,0 +1,8 @@
+test_canceled_build_publishes_no_outputs_or_source_edit (__main__.RemediationQgisTests.test_canceled_build_publishes_no_outputs_or_source_edit) ... ok
+test_z_and_m_require_consent_and_preserve_source_ordinates (__main__.RemediationQgisTests.test_z_and_m_require_consent_and_preserve_source_ordinates) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.099s
+
+OK
+QGIS: 4.2.3-Belém do Pará

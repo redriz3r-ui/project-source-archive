@@ -1,0 +1,802 @@
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/core/__init__.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/core/__init__.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/core/__init__.py	1969-12-31 16:00:00
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/core/__init__.py	2026-10-16 22:35:13
+@@ -0,0 +1 @@
++"""Pure-Python graph services. QGIS imports belong in qgis_adapters only."""
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/core/builder.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/core/builder.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/core/builder.py	1969-12-31 16:00:00
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/core/builder.py	2026-10-16 22:40:33
+@@ -0,0 +1,500 @@
++"""Validate linear parts and build a policy-controlled 2D pathway graph."""
++
++import math
++import re
++import unicodedata
++from collections import defaultdict
++
++from .serialization import digest
++
++
++VERSION = "1.0.0"
++IDENTIFIER = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
++
++
++class BuildError(ValueError):
++    def __init__(self, code, message):
++        self.code = code
++        super().__init__(f"{code}: {message}")
++
++
++def _finite_xy(value, code="INVALID_GEOMETRY"):
++    if not isinstance(value, (list, tuple)) or len(value) != 2:
++        raise BuildError(code, "expected a finite 2D coordinate")
++    if any(isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(v) for v in value):
++        raise BuildError(code, "coordinate is not finite")
++    return [float(v) if v != 0 else 0.0 for v in value]
++
++
++def _id(value, kind):
++    if not isinstance(value, str) or not IDENTIFIER.fullmatch(value):
++        raise BuildError("UNSUPPORTED_RULE", f"invalid {kind}")
++    return value
++
++
++def _validate_profile(profile):
++    expected = {"schema_version", "profile_id", "connection_policy", "eligibility", "direction",
++                "ellipsoid", "allow_2d_projection", "qa_near_miss_m", "strict"}
++    if not isinstance(profile, dict) or set(profile) != expected or profile.get("schema_version") != VERSION:
++        raise BuildError("UNSUPPORTED_RULE", "rule profile keys/version do not match v1")
++    _id(profile["profile_id"], "profile_id")
++    if profile["connection_policy"] not in ("GEOMETRIC_ENDPOINT_ONLY", "EXPLICIT_JUNCTIONS"):
++        raise BuildError("UNSUPPORTED_RULE", "unknown connection policy")
++    if profile["ellipsoid"] not in ("NONE", "WGS84") or profile["strict"] is not True:
++        raise BuildError("UNSUPPORTED_RULE", "unsupported measurement or non-strict mode")
++    if not isinstance(profile["allow_2d_projection"], bool):
++        raise BuildError("UNSUPPORTED_RULE", "allow_2d_projection must be boolean")
++    near = profile["qa_near_miss_m"]
++    if isinstance(near, bool) or not isinstance(near, (int, float)) or not math.isfinite(near) or near < 0:
++        raise BuildError("UNSUPPORTED_RULE", "invalid near-miss threshold")
++    for name, modes, labels in (("eligibility", ("FIELD", "ALL_OPEN"), {"OPEN", "BLOCKED", "UNKNOWN"}),
++                                ("direction", ("FIELD", "ALL_BOTH"), {"FORWARD", "REVERSE", "BOTH", "UNKNOWN"})):
++        rule = profile[name]
++        if not isinstance(rule, dict) or rule.get("mode") not in modes:
++            raise BuildError("UNSUPPORTED_RULE", f"invalid {name} rule")
++        if rule["mode"] == "FIELD":
++            if set(rule) != {"mode", "field", "map"} or not isinstance(rule["field"], str) or not rule["field"]:
++                raise BuildError("UNSUPPORTED_RULE", f"invalid {name} field")
++            if not isinstance(rule["map"], dict) or not rule["map"] or any(
++                not isinstance(k, str) or not isinstance(v, str) or v not in labels for k, v in rule["map"].items()
++            ):
++                raise BuildError("UNSUPPORTED_RULE", f"invalid {name} map")
++        elif set(rule) != {"mode"}:
++            raise BuildError("UNSUPPORTED_RULE", f"unexpected {name} rule keys")
++
++
++def _measure_planar(vertices):
++    return sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(vertices, vertices[1:]))
++
++
++def _interpolate(a, b, fraction):
++    return [a[0] + (b[0] - a[0]) * fraction, a[1] + (b[1] - a[1]) * fraction]
++
++
++def _clip(vertices, start, end):
++    n = len(vertices) - 1
++    def point(pos):
++        if pos == n:
++            return vertices[-1]
++        index = int(pos)
++        return _interpolate(vertices[index], vertices[index + 1], pos - index)
++    result = [point(start)]
++    result.extend(vertices[i] for i in range(math.floor(start) + 1, math.ceil(end)) if start < i < end)
++    result.append(point(end))
++    return result
++
++
++def _segment_relation(a, b, c, d):
++    """Return interior crossing, overlap, interior touch, or None for two segments."""
++    ax, ay = a; bx, by = b; cx, cy = c; dx, dy = d
++    rx, ry = bx - ax, by - ay; sx, sy = dx - cx, dy - cy
++    cross = rx * sy - ry * sx
++    qpx, qpy = cx - ax, cy - ay
++    if cross == 0:
++        if qpx * ry - qpy * rx != 0:
++            return None
++        axis = 0 if abs(rx) >= abs(ry) else 1
++        lo = max(min(a[axis], b[axis]), min(c[axis], d[axis]))
++        hi = min(max(a[axis], b[axis]), max(c[axis], d[axis]))
++        return ("OVERLAP", None) if lo < hi else None
++    t = (qpx * sy - qpy * sx) / cross
++    u = (qpx * ry - qpy * rx) / cross
++    if 0 <= t <= 1 and 0 <= u <= 1:
++        if 0 < t < 1 and 0 < u < 1:
++            return "UNDECLARED_CROSSING", _interpolate(a, b, t)
++        if (0 < t < 1) != (0 < u < 1):
++            return "INTERIOR_TOUCH", _interpolate(a, b, t)
++    return None
++
++
++def build_graph(features, *, source_crs_wkt, network_crs_wkt, layer_key, feature_key_field,
++                profile, junctions=None, transform=None, junction_transform=None, measure=None,
++                qgis_version="PURE_PYTHON", feedback=None):
++    """Build a graph from read-only feature snapshots; callbacks own CRS/metric work.
++
++    Pure mode permits only identical declared metric CRS and explicit planar length.
++    A QGIS adapter must provide transform and measure callbacks otherwise.
++    """
++    _validate_profile(profile)
++    _id(layer_key, "layer_key")
++    if not isinstance(feature_key_field, str) or not feature_key_field:
++        raise BuildError("UNSUPPORTED_RULE", "feature key field required")
++    if not source_crs_wkt or not network_crs_wkt:
++        raise BuildError("INVALID_CRS", "declared source and network CRS required")
++    if transform is None:
++        if source_crs_wkt != network_crs_wkt or profile["ellipsoid"] != "NONE":
++            raise BuildError("INVALID_CRS", "pure mode needs identical metric CRS and planar measurement")
++        transform = lambda xy: xy
++    if measure is None:
++        if profile["ellipsoid"] != "NONE":
++            raise BuildError("INVALID_CRS", "ellipsoidal measurement requires a QGIS metric callback")
++        measure = _measure_planar
++    policy = profile["connection_policy"]
++    if (policy == "EXPLICIT_JUNCTIONS") != (junctions is not None):
++        raise BuildError("INVALID_JUNCTION", "junction document presence must match policy")
++    feature_list = list(features)
++    if not feature_list:
++        raise BuildError("INVALID_GEOMETRY", "empty source layer")
++    seen_keys = set(); parts = []; issue_inputs = []
++    source_hash_rows = []
++    for feature in feature_list:
++        if feedback and feedback.isCanceled():
++            raise BuildError("CANCELED", "build canceled")
++        props = feature.get("properties")
++        if not isinstance(props, dict):
++            raise BuildError("INVALID_GEOMETRY", "feature properties missing")
++        key = props.get(feature_key_field)
++        if not isinstance(key, str) or not key.strip() or len(key.encode("utf-8")) > 128:
++            raise BuildError("DUPLICATE_SOURCE_KEY", "missing or invalid persistent source key")
++        if unicodedata.normalize("NFC", key) != key:
++            raise BuildError("DUPLICATE_SOURCE_KEY", "source key must use Unicode NFC")
++        if key in seen_keys:
++            raise BuildError("DUPLICATE_SOURCE_KEY", f"duplicate source key {key!r}")
++        seen_keys.add(key)
++        geometry = feature.get("geometry") or {}
++        if geometry.get("type") == "LineString":
++            sequences = [geometry.get("coordinates")]
++        elif geometry.get("type") == "MultiLineString":
++            sequences = geometry.get("coordinates")
++        else:
++            raise BuildError("INVALID_GEOMETRY", f"unsupported geometry for {key!r}")
++        if not isinstance(sequences, list) or not sequences:
++            raise BuildError("INVALID_GEOMETRY", f"empty geometry for {key!r}")
++        statuses = {}
++        for name, default, unknown_code in (("eligibility", "OPEN", "UNKNOWN_ELIGIBILITY"),
++                                             ("direction", "BOTH", "UNKNOWN_DIRECTION")):
++            rule = profile[name]
++            if rule["mode"] == "FIELD":
++                raw = props.get(rule["field"])
++                statuses[name] = rule["map"].get(raw, "UNKNOWN") if isinstance(raw, str) else "UNKNOWN"
++                if statuses[name] == "UNKNOWN":
++                    issue_inputs.append((unknown_code, None, key, None, None, "Unrecognized or missing rule value"))
++            else:
++                statuses[name] = default
++                issue_inputs.append((("ELIGIBILITY_ASSUMED" if name == "eligibility" else "DIRECTION_ASSUMED"),
++                                     None, key, None, None, "Explicit all-open/all-both assumption"))
++        source_hash_rows.append([key, geometry, {name: props.get(profile[name].get("field")) for name in ("eligibility", "direction")}])
++        for part_index, raw_vertices in enumerate(sequences):
++            if not isinstance(raw_vertices, list) or len(raw_vertices) < 2:
++                raise BuildError("INVALID_GEOMETRY", f"part {key}/{part_index} has fewer than two vertices")
++            has_z = bool(feature["has_z"]) if "has_z" in feature else any(
++                isinstance(v, (list, tuple)) and len(v) > 2 for v in raw_vertices)
++            has_m = bool(feature.get("has_m"))
++            if (has_z or has_m) and not profile["allow_2d_projection"]:
++                raise BuildError("UNSUPPORTED_DIMENSION", f"Z/M part {key}/{part_index} needs opt-in")
++            original = []
++            vertices = []
++            for vertex in raw_vertices:
++                if not isinstance(vertex, (list, tuple)) or len(vertex) not in (2, 3, 4):
++                    raise BuildError("INVALID_GEOMETRY", "invalid source ordinate count")
++                if any(isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(v) for v in vertex):
++                    raise BuildError("INVALID_GEOMETRY", "nonfinite source ordinate")
++                original.append([float(v) if v != 0 else 0.0 for v in vertex])
++                try:
++                    vertices.append(_finite_xy(transform(original[-1][:2]), "TRANSFORM_FAILED"))
++                except BuildError:
++                    raise
++                except Exception as exc:
++                    raise BuildError("TRANSFORM_FAILED", str(exc)) from exc
++            if any(a == b for a, b in zip(vertices, vertices[1:])):
++                raise BuildError("INVALID_GEOMETRY", f"zero-length segment in {key}/{part_index}")
++            record = {"source_layer_key": layer_key, "source_feature_key": key, "source_part_index": part_index,
++                      "original_vertices": original, "network_vertices_xy": vertices,
++                      "has_z": has_z, "has_m": has_m}
++            if feature.get("native_fid") is not None:
++                record["source_native_fid"] = str(feature["native_fid"])
++            parts.append((record, statuses))
++            if has_z or has_m:
++                issue_inputs.append(("Z_M_IGNORED", None, key, part_index, None, "Z/M ignored in 2D graph"))
++    if sum(len(p[0]["network_vertices_xy"]) for p in parts) > 2_000_000:
++        raise BuildError("LIMIT_EXCEEDED", "too many source vertices")
++    if len(parts) > 250_000:
++        raise BuildError("LIMIT_EXCEEDED", "too many physical edges")
++    parts.sort(key=lambda p: (p[0]["source_feature_key"].encode(), p[0]["source_part_index"]))
++    part_lookup = {(p["source_feature_key"], p["source_part_index"]): p for p, _ in parts}
++    anchors = defaultdict(list)
++    transition_rows = []
++    endpoint_members = []
++    used_member_positions = set()
++    if junctions is not None:
++        if not isinstance(junctions, dict) or set(junctions) != {"schema_version", "junction_crs_wkt", "junctions"} or junctions["schema_version"] != VERSION:
++            raise BuildError("INVALID_JUNCTION", "junction schema invalid")
++        if not isinstance(junctions["junction_crs_wkt"], str) or not junctions["junction_crs_wkt"]:
++            raise BuildError("INVALID_JUNCTION", "junction CRS missing")
++        if junction_transform is None:
++            if junctions["junction_crs_wkt"] != network_crs_wkt:
++                raise BuildError("INVALID_CRS", "junction transform callback required")
++            junction_transform = lambda xy: xy
++        if not isinstance(junctions["junctions"], list):
++            raise BuildError("INVALID_JUNCTION", "junctions must be an array")
++        seen_junctions = set()
++        for junction in junctions["junctions"]:
++            jid = _id(junction.get("junction_id"), "junction_id")
++            if jid in seen_junctions:
++                raise BuildError("INVALID_JUNCTION", "duplicate junction ID")
++            seen_junctions.add(jid)
++            if set(junction) != {"junction_id", "xy", "members", "transitions"}:
++                raise BuildError("INVALID_JUNCTION", "unknown junction fields")
++            declared_xy = _finite_xy(junction_transform(_finite_xy(junction["xy"], "INVALID_JUNCTION")), "INVALID_JUNCTION")
++            members = {}
++            if not isinstance(junction["members"], list) or len(junction["members"]) < 2:
++                raise BuildError("INVALID_JUNCTION", "junction needs at least two members")
++            for member in junction["members"]:
++                required = {"member_id", "source_layer_key", "source_feature_key", "source_part_index", "segment_index", "segment_fraction"}
++                if not isinstance(member, dict) or set(member) != required:
++                    raise BuildError("INVALID_JUNCTION", "member fields invalid")
++                mid = _id(member["member_id"], "member_id")
++                if mid in members or member["source_layer_key"] != layer_key:
++                    raise BuildError("INVALID_JUNCTION", "duplicate member or wrong layer")
++                part = part_lookup.get((member["source_feature_key"], member["source_part_index"]))
++                if part is None:
++                    raise BuildError("INVALID_JUNCTION", "missing source part")
++                index = member["segment_index"]; fraction = member["segment_fraction"]
++                vertices = part["network_vertices_xy"]
++                if isinstance(index, bool) or not isinstance(index, int) or not 0 <= index < len(vertices)-1:
++                    raise BuildError("INVALID_JUNCTION", "invalid segment index")
++                if isinstance(fraction, bool) or not isinstance(fraction, (int, float)) or not math.isfinite(fraction) or not 0 <= fraction <= 1:
++                    raise BuildError("INVALID_JUNCTION", "invalid segment fraction")
++                position = index + fraction
++                point = _interpolate(vertices[index], vertices[index+1], fraction)
++                if point != declared_xy:
++                    raise BuildError("INVALID_JUNCTION", "member does not exactly match junction coordinate")
++                key = (member["source_feature_key"], member["source_part_index"])
++                if (key, position) in used_member_positions:
++                    raise BuildError("INVALID_JUNCTION", "duplicate anchor on a source part")
++                used_member_positions.add((key, position))
++                if position == 0:
++                    endpoint_members.append((jid, mid, key, "START"))
++                elif position == len(vertices) - 1:
++                    endpoint_members.append((jid, mid, key, "END"))
++                else:
++                    anchor = {"segment_index": index, "segment_fraction": fraction, "junction_id": jid, "member_id": mid}
++                    anchors[key].append((position, anchor, point))
++                members[mid] = (key, position)
++            if not isinstance(junction["transitions"], list) or not junction["transitions"]:
++                raise BuildError("INVALID_JUNCTION", "junction needs a directed transition")
++            for row in junction["transitions"]:
++                if not isinstance(row, dict) or set(row) != {"from_member_id", "from_side", "to_member_id", "to_side"}:
++                    raise BuildError("INVALID_JUNCTION", "transition fields invalid")
++                if row["from_member_id"] not in members or row["to_member_id"] not in members or row["from_member_id"] == row["to_member_id"]:
++                    raise BuildError("INVALID_JUNCTION", "transition members invalid")
++                if row["from_side"] not in ("FROM_START", "FROM_END") or row["to_side"] not in ("TO_START", "TO_END"):
++                    raise BuildError("INVALID_JUNCTION", "transition side invalid")
++                transition_rows.append((jid, row.copy()))
++    nodes = {}; edges = []; port_edges = {}; endpoint_edge_lookup = {}
++    for part, statuses in parts:
++        key = (part["source_feature_key"], part["source_part_index"])
++        vertices = part["network_vertices_xy"]
++        stops = [(0, "START", vertices[0]), *sorted(anchors[key], key=lambda a: a[0]),
++                 (len(vertices)-1, "END", vertices[-1])]
++        for (start, start_anchor, start_xy), (end, end_anchor, end_xy) in zip(stops, stops[1:]):
++            clipped = _clip(vertices, start, end)
++            try:
++                length = float(measure(clipped))
++            except Exception as exc:
++                raise BuildError("INVALID_CRS", f"measurement failed: {exc}") from exc
++            if not math.isfinite(length) or length <= 0:
++                raise BuildError("INVALID_GEOMETRY", "edge has nonpositive measured length")
++            node_ids = []
++            for anchor, xy in ((start_anchor, start_xy), (end_anchor, end_xy)):
++                if policy == "GEOMETRIC_ENDPOINT_ONLY":
++                    group_key = [float(v).hex() for v in xy]
++                    kind = "GEOMETRIC_ENDPOINT"
++                else:
++                    group_key = [layer_key, *key, anchor]
++                    kind = "PART_PORT" if isinstance(anchor, str) else "INTRINSIC_SPLIT"
++                node_id = "n_" + digest(["node", 1, network_crs_wkt, policy, group_key])
++                if node_id not in nodes:
++                    nodes[node_id] = {"node_id": node_id, "xy": xy, "kind": kind, "anchors": []}
++                node_anchor = {"source_layer_key": layer_key, "source_feature_key": key[0],
++                               "source_part_index": key[1], "anchor": anchor}
++                if node_anchor not in nodes[node_id]["anchors"]:
++                    nodes[node_id]["anchors"].append(node_anchor)
++                node_ids.append(node_id)
++            edge_id = "e_" + digest(["edge", 1, layer_key, key[0], key[1], start_anchor, end_anchor])
++            edges.append({"edge_id": edge_id, "source_layer_key": layer_key, "source_feature_key": key[0],
++                          "source_part_index": key[1], "from_node_id": node_ids[0], "to_node_id": node_ids[1],
++                          "from_anchor": start_anchor, "to_anchor": end_anchor, "vertices_xy": clipped,
++                          "length_m": length, "edge_status": statuses["eligibility"], "direction": statuses["direction"]})
++            if start_anchor == "START":
++                endpoint_edge_lookup[(key, "START")] = edge_id
++            if end_anchor == "END":
++                endpoint_edge_lookup[(key, "END")] = edge_id
++            for anchor, side, eid in ((start_anchor, "END", edge_id), (end_anchor, "START", edge_id)):
++                if isinstance(anchor, dict):
++                    port_edges[(anchor["junction_id"], anchor["member_id"], side)] = eid
++    if len(edges) > 250_000:
++        raise BuildError("LIMIT_EXCEEDED", "too many derived edges")
++    edge_by_id = {edge["edge_id"]: edge for edge in edges}
++    for jid, mid, key, anchor in endpoint_members:
++        edge_id = endpoint_edge_lookup.get((key, anchor))
++        if edge_id is None:
++            raise BuildError("INVALID_JUNCTION", "endpoint member does not resolve to one adjacent edge")
++        port_edges[(jid, mid, "END" if anchor == "START" else "START")] = edge_id
++    transitions = []
++    for jid, row in transition_rows:
++        incoming_side = "START" if row["from_side"] == "FROM_START" else "END"
++        outgoing_side = "START" if row["to_side"] == "TO_START" else "END"
++        incoming_id = port_edges.get((jid, row["from_member_id"], incoming_side))
++        outgoing_id = port_edges.get((jid, row["to_member_id"], outgoing_side))
++        if not incoming_id or not outgoing_id:
++            raise BuildError("INVALID_JUNCTION", "transition side has no adjacent edge")
++        incoming = edge_by_id[incoming_id]; outgoing = edge_by_id[outgoing_id]
++        incoming_dir = "F" if incoming_side == "START" else "R"
++        outgoing_dir = "R" if outgoing_side == "START" else "F"
++        if incoming["edge_status"] != "OPEN" or outgoing["edge_status"] != "OPEN" or any(
++            edge["direction"] not in ("BOTH", required)
++            for edge, required in ((incoming, "FORWARD" if incoming_dir == "F" else "REVERSE"),
++                                   (outgoing, "FORWARD" if outgoing_dir == "F" else "REVERSE"))
++        ):
++            raise BuildError("INVALID_JUNCTION", "transition conflicts with eligibility/direction")
++        at_node_id = incoming["to_node_id"] if incoming_dir == "F" else incoming["from_node_id"]
++        transitions.append({"from_traversal_id": incoming_id + ":" + incoming_dir,
++                            "at_node_id": at_node_id, "to_traversal_id": outgoing_id + ":" + outgoing_dir,
++                            "junction_id": jid, "declared": True})
++    # Same-part continuation through split anchors is intrinsic and direction-aware.
++    for key in sorted(anchors):
++        adjacent = sorted((e for e in edges if (e["source_feature_key"], e["source_part_index"]) == key),
++                          key=lambda e: (0 if e["from_anchor"] == "START" else e["from_anchor"].get("segment_index", 0),
++                                         0 if e["from_anchor"] == "START" else e["from_anchor"].get("segment_fraction", 0)))
++        for left, right in zip(adjacent, adjacent[1:]):
++            if left["edge_status"] == right["edge_status"] == "OPEN":
++                if left["direction"] in ("BOTH", "FORWARD") and right["direction"] in ("BOTH", "FORWARD"):
++                    transitions.append({"from_traversal_id": left["edge_id"] + ":F", "at_node_id": left["to_node_id"],
++                                        "to_traversal_id": right["edge_id"] + ":F", "junction_id": None, "declared": False})
++                if left["direction"] in ("BOTH", "REVERSE") and right["direction"] in ("BOTH", "REVERSE"):
++                    transitions.append({"from_traversal_id": right["edge_id"] + ":R", "at_node_id": right["from_node_id"],
++                                        "to_traversal_id": left["edge_id"] + ":R", "junction_id": None, "declared": False})
++    parent = {node_id: node_id for node_id in nodes}
++    def find(node):
++        while parent[node] != node:
++            parent[node] = parent[parent[node]]
++            node = parent[node]
++        return node
++    def union(a, b):
++        ra, rb = find(a), find(b)
++        if ra != rb:
++            parent[max(ra, rb)] = min(ra, rb)
++    for edge in edges:
++        if edge["edge_status"] == "OPEN" and edge["direction"] != "UNKNOWN":
++            union(edge["from_node_id"], edge["to_node_id"])
++    for transition in transitions:
++        if transition["declared"]:
++            target_edge = edge_by_id[transition["to_traversal_id"].split(":")[0]]
++            target_node = target_edge["from_node_id"] if transition["to_traversal_id"].endswith(":F") else target_edge["to_node_id"]
++            union(transition["at_node_id"], target_node)
++    roots = sorted({find(n) for n in nodes})
++    component_ids = {root: "c_" + digest(["component", root]) for root in roots}
++    node_components = {node_id: component_ids[find(node_id)] for node_id in nodes}
++    degree = defaultdict(int)
++    for edge in edges:
++        if edge["edge_status"] == "OPEN" and edge["direction"] != "UNKNOWN":
++            degree[edge["from_node_id"]] += 1
++            degree[edge["to_node_id"]] += 1
++    for transition in transitions:
++        if transition["declared"]:
++            degree[transition["at_node_id"]] += 1
++            target = edge_by_id[transition["to_traversal_id"].split(":")[0]]
++            target_node = target["from_node_id"] if transition["to_traversal_id"].endswith(":F") else target["to_node_id"]
++            degree[target_node] += 1
++    for node_id in sorted(nodes):
++        if degree[node_id] == 1:
++            anchor = nodes[node_id]["anchors"][0]
++            issue_inputs.append(("DANGLE", nodes[node_id]["xy"], anchor["source_feature_key"],
++                                 anchor["source_part_index"], None, "Eligible network endpoint has one incident edge"))
++    # Diagnostic relationships never modify topology.
++    segments = []
++    for part, _ in parts:
++        coords = part["network_vertices_xy"]
++        for index, (a, b) in enumerate(zip(coords, coords[1:])):
++            segments.append((part["source_feature_key"], part["source_part_index"], index, a, b))
++    ordered_segments = sorted(segments, key=lambda s: (min(s[3][0], s[4][0]), s[0].encode(), s[1], s[2]))
++    candidate_pairs = 0
++    for i, left in enumerate(ordered_segments):
++        if feedback and feedback.isCanceled():
++            raise BuildError("CANCELED", "build canceled")
++        max_x = max(left[3][0], left[4][0])
++        for j in range(i + 1, len(ordered_segments)):
++            right = ordered_segments[j]
++            if min(right[3][0], right[4][0]) > max_x:
++                break
++            if left[:2] == right[:2] or max(left[3][1], left[4][1]) < min(right[3][1], right[4][1]) or max(right[3][1], right[4][1]) < min(left[3][1], left[4][1]):
++                continue
++            candidate_pairs += 1
++            if candidate_pairs % 10000 == 0 and feedback and feedback.isCanceled():
++                raise BuildError("CANCELED", "build canceled")
++            if candidate_pairs > 5_000_000:
++                raise BuildError("LIMIT_EXCEEDED", "too many overlapping segment candidates for complete QA")
++            relation = _segment_relation(left[3], left[4], right[3], right[4])
++            if relation:
++                code, xy = relation
++                if xy is not None and any(j["xy"] == xy for j in (junctions or {}).get("junctions", [])):
++                    continue
++                issue_inputs.append((code, xy, left[0], left[1], None, f"{code} with {right[0]}/{right[1]}"))
++    endpoints = [(p["source_feature_key"], p["source_part_index"], xy) for p, _ in parts
++                 for xy in (p["network_vertices_xy"][0], p["network_vertices_xy"][-1])]
++    near = profile["qa_near_miss_m"]
++    if near > 0:
++        planar_near = profile["ellipsoid"] == "NONE"
++        endpoints.sort(key=lambda a: (a[2][0], a[2][1], a[0].encode(), a[1]))
++        near_candidates = 0
++        for i, a in enumerate(endpoints):
++            if feedback and feedback.isCanceled():
++                raise BuildError("CANCELED", "build canceled")
++            for j in range(i + 1, len(endpoints)):
++                b = endpoints[j]
++                if planar_near and b[2][0] - a[2][0] > near:
++                    break
++                if a[:2] == b[:2] or a[2] == b[2]:
++                    continue
++                if planar_near and abs(b[2][1] - a[2][1]) > near:
++                    continue
++                near_candidates += 1
++                if near_candidates % 10000 == 0 and feedback and feedback.isCanceled():
++                    raise BuildError("CANCELED", "build canceled")
++                if near_candidates > 5_000_000:
++                    raise BuildError("LIMIT_EXCEEDED", "too many endpoint candidates for complete metric QA")
++                distance = measure([a[2], b[2]])
++                if 0 < distance <= near:
++                    issue_inputs.append(("NEAR_MISS", a[2], a[0], a[1], None, f"Endpoint within {near} m of {b[0]}/{b[1]}; not joined"))
++    if len(roots) > 1:
++        issue_inputs.append(("DISCONNECTED_COMPONENT", None, None, None, None, f"{len(roots)} eligible weak components"))
++    qa_issues = []
++    for ordinal, (code, xy, key, part_index, junction_id, message) in enumerate(sorted(issue_inputs, key=repr)):
++        qa_issues.append({"schema_version": VERSION, "issue_id": "i_" + digest([code, xy, key, part_index, junction_id, ordinal]),
++                          "route_id": None, "severity": "WARNING", "code": code, "message": message,
++                          "source_layer_key": layer_key if key is not None else None,
++                          "source_feature_key": key, "source_part_index": part_index, "edge_id": None,
++                          "junction_id": junction_id, "xy": xy})
++    for node in nodes.values():
++        node["anchors"].sort(key=lambda a: (a["source_feature_key"].encode(), a["source_part_index"], repr(a["anchor"])))
++    source_parts = [p for p, _ in parts]
++    nodes_list = sorted(nodes.values(), key=lambda n: n["node_id"])
++    edges.sort(key=lambda e: e["edge_id"])
++    transitions.sort(key=lambda t: (t["from_traversal_id"], t["at_node_id"], t["to_traversal_id"]))
++    measurement = {"ellipsoid": profile["ellipsoid"], "method": "PLANAR_LENGTH" if profile["ellipsoid"] == "NONE" else "QGIS_DISTANCE_AREA",
++                   "qgis_version": qgis_version}
++    profile_hash = digest(profile)
++    junctions_hash = digest(junctions) if junctions is not None else None
++    source_hash = digest([source_crs_wkt, layer_key, sorted(source_hash_rows, key=lambda r: r[0].encode())])
++    graph = {"schema_version": VERSION, "kind": "NETWORK_GRAPH", "source_layer_key": layer_key,
++             "source_crs_wkt": source_crs_wkt, "network_crs_wkt": network_crs_wkt,
++             "source_snapshot_sha256": source_hash, "profile_hash": profile_hash, "rule_profile": profile,
++             "junctions_sha256": junctions_hash, "measurement": measurement,
++             "source_parts": source_parts, "nodes": nodes_list, "edges": edges, "transitions": transitions,
++             "qa_issues": qa_issues}
++    graph["graph_digest"] = digest([VERSION, network_crs_wkt, source_hash, profile_hash, junctions_hash,
++                                     nodes_list, edges, transitions, measurement])
++    # Supplemental build metadata: no new connectivity semantics or extra graph edges.
++    source_to_edges = defaultdict(list)
++    for edge in edges:
++        source_to_edges[(edge["source_feature_key"], edge["source_part_index"])].append(edge["edge_id"])
++    graph["build_summary"] = {"connection_policy": policy,
++                              "connection_verification": "NOT_ASSET_VERIFIED" if policy == "GEOMETRIC_ENDPOINT_ONLY" else "DECLARED_TRANSITIONS_NOT_FIELD_VERIFIED",
++                              "physical_edge_count": len(edges), "node_count": len(nodes),
++                              "component_count": len(roots), "node_component_ids": node_components,
++                              "source_to_edges": [
++                                  {"source_layer_key": layer_key, "source_feature_key": key,
++                                   "source_part_index": part_index, "edge_ids": sorted(value)}
++                                  for (key, part_index), value in sorted(source_to_edges.items(), key=lambda item: (item[0][0].encode(), item[0][1]))]}
++    return graph
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/core/serialization.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/core/serialization.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/core/serialization.py	1969-12-31 16:00:00
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/core/serialization.py	2026-10-16 22:35:13
+@@ -0,0 +1,29 @@
++"""Canonical, versioned graph IDs and JSON serialization."""
++
++import hashlib
++import json
++import math
++import unicodedata
++
++
++def normalized(value):
++    if isinstance(value, str):
++        return unicodedata.normalize("NFC", value)
++    if isinstance(value, float):
++        if not math.isfinite(value):
++            raise ValueError("non-finite number")
++        return (0.0 if value == 0 else value).hex()
++    if isinstance(value, dict):
++        return {normalized(k): normalized(v) for k, v in value.items()}
++    if isinstance(value, (list, tuple)):
++        return [normalized(item) for item in value]
++    return value
++
++
++def digest(value):
++    payload = json.dumps(normalized(value), ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
++    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
++
++
++def pretty_json(value):
++    return json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False) + "\n"
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/metadata.txt /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/metadata.txt
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/metadata.txt	2026-10-16 22:40:42
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/metadata.txt	2026-10-16 22:36:32
+@@ -1,7 +1,7 @@
+ [general]
+ name=Utility Route Lite
+-description=Scaffold only: proposed utility route tools are NOT IMPLEMENTED.
+-about=QGIS 4 Processing plugin shell. No network analysis or review is implemented in this version.
++description=Experimental pathway Network Builder; routing and review are NOT IMPLEMENTED.
++about=Builds a policy-controlled proposed network graph from read-only utility line sources. Crossings do not imply connections. Routing and review remain NOT IMPLEMENTED.
+ version=0.1.0
+ qgisMinimumVersion=4.2
+ qgisMaximumVersion=4.99
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/processing/algorithms.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/processing/algorithms.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/processing/algorithms.py	2026-10-16 22:40:42
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/processing/algorithms.py	2026-10-16 22:39:21
+@@ -1,5 +1,10 @@
+-"""Contract-visible Processing shells. No routing or writes occur here."""
++"""Processing interface; Network Builder is implemented, other tasks are shells."""
+ 
++import json
++import os
++from pathlib import Path
++from tempfile import TemporaryDirectory
++
+ from qgis.core import (
+     QgsProcessingAlgorithm,
+     QgsProcessingException,
+@@ -7,6 +12,7 @@
+     QgsProcessingParameterBoolean,
+     QgsProcessingParameterCrs,
+     QgsProcessingParameterFeatureSource,
++    QgsProcessingParameterField,
+     QgsProcessingParameterFile,
+     QgsProcessingParameterFileDestination,
+     QgsProcessingParameterNumber,
+@@ -22,7 +28,7 @@
+         QgsProcessingParameterCrs("SOURCE_CRS", "Declared source CRS", optional=optional),
+         QgsProcessingParameterCrs("NETWORK_CRS", "Network CRS", optional=optional),
+         QgsProcessingParameterString("LAYER_KEY", "Stable source layer key", optional=optional),
+-        QgsProcessingParameterString("FEATURE_KEY_FIELD", "Stable feature key field name", optional=optional),
++        QgsProcessingParameterField("FEATURE_KEY_FIELD", "Stable feature key field", parentLayerParameterName="SOURCE_LINES", optional=optional),
+         QgsProcessingParameterFile("RULE_PROFILE", "Rule profile JSON", optional=optional),
+         QgsProcessingParameterFile("JUNCTIONS_JSON", "Declared junctions JSON", optional=True),
+     ]
+@@ -63,11 +69,68 @@
+     ALGORITHM_ID = "build_network"
+     TITLE = "Network Builder"
+ 
++    def displayName(self):  # noqa: N802
++        return self.TITLE
++
++    def shortHelpString(self):  # noqa: N802
++        return ("Build a proposed 2D utility pathway graph from a read-only line source. "
++                "Crossings and nearby gaps never create connections. Choose exact geometric endpoint "
++                "connectivity or supply a versioned, explicit junction document. Geometry does not "
++                "verify physical asset connectivity. A projected meter NETWORK_CRS and stable "
++                "feature key field are required. Invalid geometry/rules abort without a graph.")
++
+     def initAlgorithm(self, config=None):  # noqa: N802
+         for parameter in source_parameters(optional=False):
+             self.addParameter(parameter)
+         self.addParameter(QgsProcessingParameterFileDestination("GRAPH_JSON", "Network graph JSON", "JSON files (*.json)"))
+         self.addParameter(QgsProcessingParameterFileDestination("QA_GPKG", "QA issues GeoPackage", "GeoPackage files (*.gpkg)"))
++
++    def processAlgorithm(self, parameters, context, feedback):  # noqa: N802
++        from ..core.builder import BuildError
++        from ..core.serialization import pretty_json
++        from ..qgis_adapters.builder import graph_from_source, write_qa_gpkg
++
++        source = self.parameterAsSource(parameters, "SOURCE_LINES", context)
++        source_crs = self.parameterAsCrs(parameters, "SOURCE_CRS", context)
++        network_crs = self.parameterAsCrs(parameters, "NETWORK_CRS", context)
++        layer_key = self.parameterAsString(parameters, "LAYER_KEY", context)
++        feature_key_field = self.parameterAsString(parameters, "FEATURE_KEY_FIELD", context)
++        graph_path = Path(self.parameterAsFileOutput(parameters, "GRAPH_JSON", context))
++        qa_path = Path(self.parameterAsFileOutput(parameters, "QA_GPKG", context))
++        rule_path = Path(self.parameterAsFile(parameters, "RULE_PROFILE", context))
++        junction_value = self.parameterAsFile(parameters, "JUNCTIONS_JSON", context)
++        try:
++            if source is None or not str(graph_path) or not str(qa_path):
++                raise BuildError("INVALID_GEOMETRY", "source and output destinations are required")
++            if graph_path.resolve() == qa_path.resolve() or graph_path.exists() or qa_path.exists():
++                raise BuildError("EXPORT_FAILED", "output paths must differ and must not already exist")
++            profile = json.loads(rule_path.read_text(encoding="utf-8"))
++            junctions = json.loads(Path(junction_value).read_text(encoding="utf-8")) if junction_value else None
++            graph = graph_from_source(source, source_crs=source_crs, network_crs=network_crs,
++                                      layer_key=layer_key, feature_key_field=feature_key_field,
++                                      profile=profile, junctions=junctions, context=context, feedback=feedback)
++            if feedback and feedback.isCanceled():
++                raise BuildError("CANCELED", "build canceled")
++            graph_path.parent.mkdir(parents=True, exist_ok=True)
++            qa_path.parent.mkdir(parents=True, exist_ok=True)
++            with TemporaryDirectory(dir=qa_path.parent) as temporary:
++                staged_qa = Path(temporary) / "qa.gpkg"
++                staged_graph = Path(temporary) / "graph.json"
++                write_qa_gpkg(graph, staged_qa, network_crs, context)
++                staged_graph.write_text(pretty_json(graph), encoding="utf-8")
++                if feedback and feedback.isCanceled():
++                    raise BuildError("CANCELED", "build canceled")
++                os.replace(staged_qa, qa_path)
++                try:
++                    os.replace(staged_graph, graph_path)
++                except Exception:
++                    qa_path.unlink(missing_ok=True)
++                    raise
++            return {"GRAPH_JSON": str(graph_path), "QA_GPKG": str(qa_path)}
++        except BuildError as exc:
++            raise QgsProcessingException(str(exc)) from exc
++        except (OSError, ValueError, json.JSONDecodeError) as exc:
++            raise QgsProcessingException(f"Network Builder input/output error: {exc}") from exc
+ 
+ 
+ class InspectNetworkAlgorithm(StubAlgorithm):
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/processing/provider.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/processing/provider.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/processing/provider.py	2026-10-16 22:40:42
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/processing/provider.py	2026-10-16 22:39:34
+@@ -16,7 +16,7 @@
+         return "utilityroutelite"
+ 
+     def name(self):
+-        return "Utility Route Lite (NOT IMPLEMENTED)"
++        return "Utility Route Lite (experimental)"
+ 
+     def longName(self):  # noqa: N802 - QGIS API spelling
+         return self.name()
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/qgis_adapters/__init__.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/qgis_adapters/__init__.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/qgis_adapters/__init__.py	1969-12-31 16:00:00
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/qgis_adapters/__init__.py	2026-10-16 22:36:09
+@@ -0,0 +1 @@
++"""PyQGIS boundary for Utility Route Lite."""
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/qgis_adapters/builder.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/qgis_adapters/builder.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/previous/utility_route_lite/qgis_adapters/builder.py	1969-12-31 16:00:00
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpm3mi96rv/current/utility_route_lite/qgis_adapters/builder.py	2026-10-16 22:39:02
+@@ -0,0 +1,125 @@
++"""Read-only PyQGIS source adapter and GeoPackage QA output."""
++
++from pathlib import Path
++
++from qgis.PyQt.QtCore import QVariant
++from qgis.core import (
++    Qgis, QgsApplication, QgsCoordinateReferenceSystem, QgsCoordinateTransform,
++    QgsDistanceArea, QgsFeature, QgsField, QgsGeometry, QgsPointXY,
++    QgsVectorFileWriter, QgsVectorLayer, QgsWkbTypes,
++)
++
++from ..core.builder import BuildError, build_graph
++
++
++def _crs_wkt(crs):
++    return crs.toWkt()
++
++
++def _point_transform(source_crs, network_crs, context):
++    operation = QgsCoordinateTransform(source_crs, network_crs, context.transformContext())
++    def transform(xy):
++        point = operation.transform(QgsPointXY(*xy))
++        return [point.x(), point.y()]
++    return transform
++
++
++def graph_from_source(source, *, source_crs, network_crs, layer_key, feature_key_field,
++                      profile, junctions, context, feedback=None):
++    if source is None or not source_crs.isValid() or not network_crs.isValid():
++        raise BuildError("INVALID_CRS", "source/network CRS is invalid")
++    if source.sourceCrs() != source_crs:
++        raise BuildError("INVALID_CRS", "declared SOURCE_CRS differs from source layer CRS")
++    if network_crs.isGeographic() or network_crs.mapUnits() != Qgis.DistanceUnit.Meters:
++        raise BuildError("INVALID_CRS", "NETWORK_CRS must be projected with meter horizontal units")
++    names = {field.name() for field in source.fields()}
++    if feature_key_field not in names:
++        raise BuildError("UNSUPPORTED_RULE", "feature key field does not exist")
++    for rule in (profile.get("eligibility", {}), profile.get("direction", {})):
++        if rule.get("mode") == "FIELD" and rule.get("field") not in names:
++            raise BuildError("UNSUPPORTED_RULE", f"rule field {rule.get('field')!r} does not exist")
++    selected = {feature_key_field}
++    selected.update(rule["field"] for rule in (profile["eligibility"], profile["direction"]) if rule["mode"] == "FIELD")
++    features = []
++    for item in source.getFeatures():
++        if feedback and feedback.isCanceled():
++            raise BuildError("CANCELED", "build canceled")
++        geometry = item.geometry()
++        if geometry is None or geometry.isNull() or geometry.isEmpty() or QgsWkbTypes.isCurvedType(geometry.wkbType()):
++            raise BuildError("INVALID_GEOMETRY", "null, empty or curved geometry is unsupported")
++        if geometry.type() != Qgis.GeometryType.Line:
++            raise BuildError("INVALID_GEOMETRY", "only LineString/MultiLineString is supported")
++        has_z = QgsWkbTypes.hasZ(geometry.wkbType())
++        has_m = QgsWkbTypes.hasM(geometry.wkbType())
++        pieces = geometry.asGeometryCollection() if geometry.isMultipart() else [geometry]
++        sequences = []
++        for piece in pieces:
++            coordinates = []
++            for vertex in piece.vertices():
++                ordinate = [vertex.x(), vertex.y()]
++                if has_z:
++                    ordinate.append(vertex.z())
++                if has_m:
++                    ordinate.append(vertex.m())
++                coordinates.append(ordinate)
++            sequences.append(coordinates)
++        props = {name: item[name] if isinstance(item[name], str) else None for name in selected}
++        features.append({"geometry": {"type": "MultiLineString" if geometry.isMultipart() else "LineString",
++                                       "coordinates": sequences if geometry.isMultipart() else sequences[0]},
++                         "properties": props, "native_fid": str(item.id()), "has_z": has_z, "has_m": has_m})
++    distance = QgsDistanceArea()
++    distance.setSourceCrs(network_crs, context.transformContext())
++    if profile["ellipsoid"] != "NONE" and not distance.setEllipsoid(profile["ellipsoid"]):
++        raise BuildError("INVALID_CRS", "ellipsoid setup failed")
++    if profile["ellipsoid"] == "NONE":
++        distance.setEllipsoid("NONE")
++    def measure(vertices):
++        raw = distance.measureLine([QgsPointXY(*xy) for xy in vertices])
++        return distance.convertLengthMeasurement(raw, Qgis.DistanceUnit.Meters)
++    junction_transform = None
++    if junctions is not None:
++        junction_crs = QgsCoordinateReferenceSystem.fromWkt(junctions.get("junction_crs_wkt", ""))
++        if not junction_crs.isValid():
++            raise BuildError("INVALID_CRS", "junction CRS WKT is invalid")
++        junction_transform = _point_transform(junction_crs, network_crs, context)
++    return build_graph(features, source_crs_wkt=_crs_wkt(source_crs), network_crs_wkt=_crs_wkt(network_crs),
++                       layer_key=layer_key, feature_key_field=feature_key_field, profile=profile,
++                       junctions=junctions, transform=_point_transform(source_crs, network_crs, context),
++                       junction_transform=junction_transform, measure=measure,
++                       qgis_version=Qgis.QGIS_VERSION if hasattr(Qgis, "QGIS_VERSION") else QgsApplication.qgisVersion(),
++                       feedback=feedback)
++
++
++QA_FIELDS = (
++    ("schema_version", QVariant.String), ("issue_id", QVariant.String), ("route_id", QVariant.String),
++    ("severity", QVariant.String), ("code", QVariant.String), ("message", QVariant.String),
++    ("source_layer_key", QVariant.String), ("source_feature_key", QVariant.String),
++    ("source_part_index", QVariant.Int), ("edge_id", QVariant.String), ("junction_id", QVariant.String),
++)
++
++
++def write_qa_gpkg(graph, destination, network_crs, context):
++    destination = Path(destination)
++    layer = QgsVectorLayer("Point", "qa_issues", "memory")
++    if not layer.isValid():
++        raise BuildError("EXPORT_FAILED", "cannot create QA memory layer")
++    layer.setCrs(network_crs)
++    provider = layer.dataProvider()
++    provider.addAttributes([QgsField(name, field_type) for name, field_type in QA_FIELDS])
++    layer.updateFields()
++    rows = []
++    for issue in graph["qa_issues"]:
++        feature = QgsFeature(layer.fields())
++        feature.setAttributes([issue.get(name) for name, _ in QA_FIELDS])
++        if issue.get("xy") is not None:
++            feature.setGeometry(QgsGeometry.fromPointXY(QgsPointXY(*issue["xy"])))
++        rows.append(feature)
++    if rows and not provider.addFeatures(rows)[0]:
++        raise BuildError("EXPORT_FAILED", "cannot add QA issues")
++    options = QgsVectorFileWriter.SaveVectorOptions()
++    options.driverName = "GPKG"
++    options.layerName = "qa_issues"
++    error, message, _, _ = QgsVectorFileWriter.writeAsVectorFormatV3(layer, str(destination), context.transformContext(), options)
++    if error != QgsVectorFileWriter.WriterError.NoError:
++        raise BuildError("EXPORT_FAILED", message)
++    return destination

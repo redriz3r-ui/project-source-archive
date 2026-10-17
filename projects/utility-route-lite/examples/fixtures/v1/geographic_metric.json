@@ -1,0 +1,89 @@
+{
+  "case_id": "geographic_metric",
+  "expected": {
+    "build_status": "OK",
+    "length_m_range": [
+      88,
+      90
+    ],
+    "measurement_unit": "m",
+    "route_status": "SUCCESS",
+    "source_parts": [
+      [
+        "geo",
+        0
+      ]
+    ]
+  },
+  "network_crs": "EPSG:32610",
+  "request": {
+    "end_xy": [
+      -121.999,
+      37.0
+    ],
+    "request_crs": "EPSG:4326",
+    "route_id": "route_1",
+    "snap_tolerance_m": 0,
+    "start_xy": [
+      -122.0,
+      37.0
+    ]
+  },
+  "rule_profile": {
+    "allow_2d_projection": false,
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "direction": {
+      "field": "direction",
+      "map": {
+        "both": "BOTH",
+        "forward": "FORWARD",
+        "reverse": "REVERSE"
+      },
+      "mode": "FIELD"
+    },
+    "eligibility": {
+      "field": "status",
+      "map": {
+        "blocked": "BLOCKED",
+        "open": "OPEN",
+        "unknown": "UNKNOWN"
+      },
+      "mode": "FIELD"
+    },
+    "ellipsoid": "WGS84",
+    "profile_id": "synthetic_v1",
+    "qa_near_miss_m": 0.02,
+    "schema_version": "1.0.0",
+    "strict": true
+  },
+  "schema_version": "1.0.0",
+  "source": {
+    "features": [
+      {
+        "geometry": {
+          "coordinates": [
+            [
+              -122.0,
+              37.0
+            ],
+            [
+              -121.999,
+              37.0
+            ]
+          ],
+          "type": "LineString"
+        },
+        "properties": {
+          "asset_key": "geo",
+          "direction": "both",
+          "status": "open"
+        },
+        "type": "Feature"
+      }
+    ],
+    "type": "FeatureCollection"
+  },
+  "source_crs": "EPSG:4326",
+  "source_layer_key": "synthetic_corridors",
+  "synthetic": true
+}

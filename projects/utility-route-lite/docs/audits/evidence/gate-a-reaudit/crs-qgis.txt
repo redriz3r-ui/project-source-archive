@@ -1,0 +1,7 @@
+test_geographic_fixture_declares_metric_target_and_bound (__main__.CrsContractTests.test_geographic_fixture_declares_metric_target_and_bound) ... ok
+test_qgis_transform_and_ellipsoidal_length_is_meters (__main__.CrsContractTests.test_qgis_transform_and_ellipsoidal_length_is_meters) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.080s
+
+OK

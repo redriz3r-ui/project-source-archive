@@ -1,0 +1,9 @@
+test_geographic_target_rejected (__main__.QgisGateTests.test_geographic_target_rejected) ... ok
+test_inconsistent_declared_crs_rejected (__main__.QgisGateTests.test_inconsistent_declared_crs_rejected) ... ok
+test_raw_selected_attribute_change_invalidates_fingerprint (__main__.QgisGateTests.test_raw_selected_attribute_change_invalidates_fingerprint) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.055s
+
+OK
+ACTUAL QGIS: 4.2.3-Belém do Pará

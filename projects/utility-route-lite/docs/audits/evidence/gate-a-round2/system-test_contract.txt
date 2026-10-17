@@ -1,0 +1,9 @@
+test_benchmark_and_scaling_are_deterministic (test_contract.FixtureContractTests.test_benchmark_and_scaling_are_deterministic) ... ok
+test_frozen_version_and_named_cases (test_contract.FixtureContractTests.test_frozen_version_and_named_cases) ... ok
+test_oracles_use_frozen_codes_and_success_has_metric_expectation (test_contract.FixtureContractTests.test_oracles_use_frozen_codes_and_success_has_metric_expectation) ... ok
+test_regeneration_is_byte_identical (test_contract.FixtureContractTests.test_regeneration_is_byte_identical) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.080s
+
+OK

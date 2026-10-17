@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "NETWORK_GRAPH",
+  "source_layer_key": "synthetic_corridors",
+  "source_crs_wkt": "EPSG:3857",
+  "network_crs_wkt": "EPSG:3857",
+  "source_snapshot_sha256": "a1441894c1f074a4ea7ade68efafca2708a49409dd1089215a69717209aeb9d3",
+  "profile_hash": "987e837927f4bff596b1677b5acc76abf8b683682356760c9ddb54d2088dddb3",
+  "rule_profile": {
+    "allow_2d_projection": false,
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "direction": {
+      "field": "direction",
+      "map": {
+        "both": "BOTH",
+        "forward": "FORWARD",
+        "reverse": "REVERSE"
+      },
+      "mode": "FIELD"
+    },
+    "eligibility": {
+      "field": "status",
+      "map": {
+        "blocked": "BLOCKED",
+        "open": "OPEN",
+        "unknown": "UNKNOWN"
+      },
+      "mode": "FIELD"
+    },
+    "ellipsoid": "NONE",
+    "profile_id": "synthetic_v1",
+    "qa_near_miss_m": 0.02,
+    "schema_version": "1.0.0",
+    "strict": true
+  },
+  "junctions_sha256": null,
+  "measurement": {
+    "ellipsoid": "NONE",
+    "method": "PLANAR_LENGTH",
+    "qgis_version": "PURE_PYTHON"
+  },
+  "source_parts": [
+    {
+      "source_layer_key": "synthetic_corridors",
+      "source_feature_key": "h",
+      "source_part_index": 0,
+      "original_vertices": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "network_vertices_xy": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "has_z": false,
+      "has_m": false
+    }
+  ],
+  "nodes": [
+    {
+      "node_id": "n_d2db99450847b5fb5e231feb76c085842ce9f8273e5011be97ebb242d37bdb17",
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "kind": "GEOMETRIC_ENDPOINT",
+      "anchors": [
+        {
+          "source_layer_key": "synthetic_corridors",
+          "source_feature_key": "h",
+          "source_part_index": 0,
+          "anchor": "END"
+        },
+        {
+          "source_layer_key": "synthetic_corridors",
+          "source_feature_key": "h",
+          "source_part_index": 0,
+          "anchor": "START"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "e_768455488d4f80a071737080f5aa6da0463ce70e359c23de3c718f34533c558c",
+      "source_layer_key": "synthetic_corridors",
+      "source_feature_key": "h",
+      "source_part_index": 0,
+      "from_node_id": "n_d2db99450847b5fb5e231feb76c085842ce9f8273e5011be97ebb242d37bdb17",
+      "to_node_id": "n_d2db99450847b5fb5e231feb76c085842ce9f8273e5011be97ebb242d37bdb17",
+      "from_anchor": "START",
+      "to_anchor": "END",
+      "vertices_xy": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "length_m": 3.414213562373095,
+      "edge_status": "OPEN",
+      "direction": "BOTH"
+    }
+  ],
+  "transitions": [],
+  "qa_issues": [],
+  "graph_digest": "f008f004f82c6b1aefb335d7d2c06ee30b61675e4ac860d7f4b21d60c8564390",
+  "build_summary": {
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "connection_verification": "NOT_ASSET_VERIFIED",
+    "physical_edge_count": 1,
+    "node_count": 1,
+    "component_count": 1,
+    "node_component_ids": {
+      "n_d2db99450847b5fb5e231feb76c085842ce9f8273e5011be97ebb242d37bdb17": "c_1f4992d1be2323a5bd0422a98173f226674f34216fcb8d566e879d78ec6b836d"
+    },
+    "source_to_edges": [
+      {
+        "source_layer_key": "synthetic_corridors",
+        "source_feature_key": "h",
+        "source_part_index": 0,
+        "edge_ids": [
+          "e_768455488d4f80a071737080f5aa6da0463ce70e359c23de3c718f34533c558c"
+        ]
+      }
+    ]
+  }
+}

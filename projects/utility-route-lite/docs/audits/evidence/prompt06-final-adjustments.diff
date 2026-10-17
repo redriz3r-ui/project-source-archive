@@ -1,0 +1,49 @@
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpl_4mwvme/previous/utility_route_lite/core/builder.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpl_4mwvme/current/utility_route_lite/core/builder.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpl_4mwvme/previous/utility_route_lite/core/builder.py	2026-10-16 22:42:03
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpl_4mwvme/current/utility_route_lite/core/builder.py	2026-10-16 22:41:19
+@@ -68,6 +68,10 @@
+ 
+ 
+ def _interpolate(a, b, fraction):
++    if fraction == 0:
++        return list(a)
++    if fraction == 1:
++        return list(b)
+     return [a[0] + (b[0] - a[0]) * fraction, a[1] + (b[1] - a[1]) * fraction]
+ 
+ 
+@@ -375,17 +379,20 @@
+         ra, rb = find(a), find(b)
+         if ra != rb:
+             parent[max(ra, rb)] = min(ra, rb)
++    eligible_nodes = set()
+     for edge in edges:
+         if edge["edge_status"] == "OPEN" and edge["direction"] != "UNKNOWN":
++            eligible_nodes.update((edge["from_node_id"], edge["to_node_id"]))
+             union(edge["from_node_id"], edge["to_node_id"])
+     for transition in transitions:
+         if transition["declared"]:
+             target_edge = edge_by_id[transition["to_traversal_id"].split(":")[0]]
+             target_node = target_edge["from_node_id"] if transition["to_traversal_id"].endswith(":F") else target_edge["to_node_id"]
++            eligible_nodes.update((transition["at_node_id"], target_node))
+             union(transition["at_node_id"], target_node)
+-    roots = sorted({find(n) for n in nodes})
++    roots = sorted({find(n) for n in eligible_nodes})
+     component_ids = {root: "c_" + digest(["component", root]) for root in roots}
+-    node_components = {node_id: component_ids[find(node_id)] for node_id in nodes}
++    node_components = {node_id: component_ids[find(node_id)] if node_id in eligible_nodes else None for node_id in nodes}
+     degree = defaultdict(int)
+     for edge in edges:
+         if edge["edge_status"] == "OPEN" and edge["direction"] != "UNKNOWN":
+diff -ruN /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpl_4mwvme/previous/utility_route_lite/qgis_adapters/builder.py /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpl_4mwvme/current/utility_route_lite/qgis_adapters/builder.py
+--- /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpl_4mwvme/previous/utility_route_lite/qgis_adapters/builder.py	2026-10-16 22:42:03
++++ /var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpl_4mwvme/current/utility_route_lite/qgis_adapters/builder.py	2026-10-16 22:41:01
+@@ -13,7 +13,7 @@
+ 
+ 
+ def _crs_wkt(crs):
+-    return crs.toWkt()
++    return crs.toWkt(Qgis.CrsWktVariant.Wkt2_2019)
+ 
+ 
+ def _point_transform(source_crs, network_crs, context):

@@ -1,0 +1,16 @@
+[general]
+name=Utility Route Lite
+description=Experimental pathway Network Builder; routing and review are NOT IMPLEMENTED.
+about=Builds a policy-controlled proposed network graph from read-only utility line sources. Crossings do not imply connections. Routing and review remain NOT IMPLEMENTED.
+version=0.1.0
+qgisMinimumVersion=4.2
+qgisMaximumVersion=4.99
+hasProcessingProvider=yes
+experimental=True
+author=OWNER NAME REQUIRED BEFORE PUBLICATION
+email=OWNER EMAIL REQUIRED BEFORE PUBLICATION
+license=GPL-3.0-or-later
+icon=icon.svg
+category=Vector
+# repository=OWNER MUST PROVIDE REAL REPOSITORY URL BEFORE PUBLICATION
+# tracker=OWNER MUST PROVIDE REAL ISSUE TRACKER URL BEFORE PUBLICATION

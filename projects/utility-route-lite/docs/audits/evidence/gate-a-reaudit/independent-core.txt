@@ -1,0 +1,14 @@
+test_ambiguous_self_intersection_anchor_rejected (__main__.GateTests.test_ambiguous_self_intersection_anchor_rejected) ... ok
+test_cancel_before_consuming_generator (__main__.GateTests.test_cancel_before_consuming_generator) ... ok
+test_closed_self_loop_rejected (__main__.GateTests.test_closed_self_loop_rejected) ... ok
+test_controls (__main__.GateTests.test_controls) ... ok
+test_crossing_at_interior_vertices_is_reported (__main__.GateTests.test_crossing_at_interior_vertices_is_reported) ... ok
+test_equivalent_vertex_anchor_has_stable_edge_ids (__main__.GateTests.test_equivalent_vertex_anchor_has_stable_edge_ids) ... ok
+test_false_dimension_flags_cannot_silently_connect_stacked_lines (__main__.GateTests.test_false_dimension_flags_cannot_silently_connect_stacked_lines) ... ok
+test_geographic_core_cannot_label_degrees_meters (__main__.GateTests.test_geographic_core_cannot_label_degrees_meters) ... ok
+test_nonmember_crossing_is_reported (__main__.GateTests.test_nonmember_crossing_is_reported) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.007s
+
+OK

@@ -1,0 +1,7 @@
+{
+  "utility_route_lite/core/__init__.py": true,
+  "utility_route_lite/core/builder.py": true,
+  "utility_route_lite/core/serialization.py": true,
+  "utility_route_lite/qgis_adapters/__init__.py": true,
+  "utility_route_lite/qgis_adapters/builder.py": true
+}

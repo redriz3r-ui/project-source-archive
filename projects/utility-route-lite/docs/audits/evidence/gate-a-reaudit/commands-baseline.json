@@ -1,0 +1,48 @@
+[
+  {
+    "name": "original-independent-core",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py",
+      "-v"
+    ],
+    "cwd": "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv",
+    "exit_code": 1
+  },
+  {
+    "name": "original-independent-qgis",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/qgis_graph_gate.py",
+      "-v"
+    ],
+    "cwd": "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv",
+    "exit_code": 1
+  },
+  {
+    "name": "original-new-regressions",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/test_gate_a_regressions.py",
+      "-v"
+    ],
+    "cwd": "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv",
+    "exit_code": 1
+  },
+  {
+    "name": "original-fixture-adapter",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_graph_fixtures.py",
+      "-v"
+    ],
+    "cwd": "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv",
+    "exit_code": 1
+  }
+]

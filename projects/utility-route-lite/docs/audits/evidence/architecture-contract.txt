@@ -1,0 +1,10 @@
+PASS: frozen contract registry and documentation are internally consistent
+test_duplicate_processing_parameter_is_rejected (test_contract_registry.ContractRegistryTests.test_duplicate_processing_parameter_is_rejected) ... ok
+test_frozen_contract_and_docs_validate (test_contract_registry.ContractRegistryTests.test_frozen_contract_and_docs_validate) ... ok
+test_major_schema_drift_is_rejected (test_contract_registry.ContractRegistryTests.test_major_schema_drift_is_rejected) ... ok
+test_removing_provenance_field_is_rejected (test_contract_registry.ContractRegistryTests.test_removing_provenance_field_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

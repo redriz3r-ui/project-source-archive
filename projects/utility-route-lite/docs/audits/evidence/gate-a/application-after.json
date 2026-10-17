@@ -1,0 +1,14 @@
+{
+  "utility_route_lite/__init__.py": "1f5bf6ba16c9c1707b649609174d39f53f8b81c9ed3ffd115a3e4e953e0f7aa8",
+  "utility_route_lite/core/__init__.py": "33f38fdc3cb8365b299bdc96a7726e9c3e7c19cc95db94265de13d9e70dcd22f",
+  "utility_route_lite/core/builder.py": "e702ca6f5de3e18a5fd057fbc634c25258096f7e313b5bec5568fc89fa7f63b0",
+  "utility_route_lite/core/serialization.py": "b90254d84fc0684d908f9bd8e1fef1fb951a59375182bebe0eef2d6906573136",
+  "utility_route_lite/icon.svg": "2708a6f93503fad50e6a40d6db938f6234d64f7f9b4914746f2d4a6ecb608fdc",
+  "utility_route_lite/metadata.txt": "f66a1b16bcd8943fb7d9cd46d474fbab63c2539a421641a066831735747a879c",
+  "utility_route_lite/plugin.py": "e641be04426258a72ac3b1d8d646999ee67b23110bfa566f40db55dfd3eb7b65",
+  "utility_route_lite/processing/__init__.py": "bce7aa3aef08b87337d9314b3e6b777c472f9f7fbc8d05548bdd98e575f542a3",
+  "utility_route_lite/processing/algorithms.py": "68d4c6918bdb579a449a6c32ba0f0917e327ecb893327a7ce0e42894cfa94807",
+  "utility_route_lite/processing/provider.py": "4c209b975767cef59c635d03422302e905dd662a95837fd6f950ffa3ae8baa1d",
+  "utility_route_lite/qgis_adapters/__init__.py": "b64d5ef2ab1fdde857449e09543566259bb26e5c9b27690b46a09f33e7de35ed",
+  "utility_route_lite/qgis_adapters/builder.py": "2fcffb9a99533d12c2ab65007efa355f3292eaa72f65abd4d86524f8a6689117"
+}

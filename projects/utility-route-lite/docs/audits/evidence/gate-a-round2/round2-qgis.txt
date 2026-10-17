@@ -1,0 +1,10 @@
+test_dangling_symlink_is_not_clobbered (__main__.Round2Qgis.test_dangling_symlink_is_not_clobbered) ... ok
+test_native_crs_parser_validates_meter_foot_geographic_and_invalid (__main__.Round2Qgis.test_native_crs_parser_validates_meter_foot_geographic_and_invalid) ... ok
+test_rollback_preserves_replaced_qa_and_concurrent_graph (__main__.Round2Qgis.test_rollback_preserves_replaced_qa_and_concurrent_graph) ... ok
+test_separate_parent_directories_publish_complete_files (__main__.Round2Qgis.test_separate_parent_directories_publish_complete_files) ... ok
+test_unavailable_hardlinks_fail_without_publication (__main__.Round2Qgis.test_unavailable_hardlinks_fail_without_publication) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.156s
+
+OK

@@ -1,0 +1,10 @@
+test_output_created_after_precheck_is_not_overwritten (__main__.QgisReaudit.test_output_created_after_precheck_is_not_overwritten) ... ok
+test_readonly_geopackage_source_is_unchanged (__main__.QgisReaudit.test_readonly_geopackage_source_is_unchanged) ... ok
+test_repository_wkt_is_valid_projected_meter_crs (__main__.QgisReaudit.test_repository_wkt_is_valid_projected_meter_crs) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.533s
+
+OK
+QGIS 4.2.3-Belém do Pará Python 3.12.11 (main, Sep  4 2026, 00:38:55) [Clang 17.0.0 (clang-1700.6.4.2)]
+OBSERVED concurrent destination: {'exception': "Network Builder input/output error: [Errno 17] File exists: '/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpsmiw2dsy/tmpoxvxxto5/graph.json' -> '/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/tmpsmiw2dsy/graph.json'", 'sentinel_preserved': True}

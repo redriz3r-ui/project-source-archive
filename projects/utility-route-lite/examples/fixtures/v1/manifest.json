@@ -1,0 +1,24 @@
+{
+  "benchmark_id": "benchmark_1000",
+  "case_ids": [
+    "crossing_unconnected",
+    "declared_junction",
+    "prohibited_turn",
+    "tiny_endpoint_gap",
+    "disconnected_components",
+    "duplicate_source_id",
+    "duplicate_geometry",
+    "zero_length_edge",
+    "multipart_refs",
+    "blocked_shortcut",
+    "same_bent_line_interior",
+    "outside_snap_tolerance",
+    "geographic_metric",
+    "reverse_direction",
+    "same_start_end",
+    "batch_one_bad_record",
+    "csv_html_escaping"
+  ],
+  "schema_version": "1.0.0",
+  "synthetic": true
+}

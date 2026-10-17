@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "provider_id": "utilityroutelite",
+  "algorithm_ids": [
+    "utilityroutelite:build_network",
+    "utilityroutelite:inspect_network",
+    "utilityroutelite:find_route",
+    "utilityroutelite:batch_routes",
+    "utilityroutelite:export_bundle"
+  ],
+  "source_mode_parameters": [
+    "SOURCE_LINES",
+    "SOURCE_CRS",
+    "NETWORK_CRS",
+    "LAYER_KEY",
+    "FEATURE_KEY_FIELD",
+    "RULE_PROFILE"
+  ],
+  "algorithms": {
+    "utilityroutelite:build_network": {
+      "required_inputs": ["SOURCE_LINES", "SOURCE_CRS", "NETWORK_CRS", "LAYER_KEY", "FEATURE_KEY_FIELD", "RULE_PROFILE"],
+      "optional_inputs": ["JUNCTIONS_JSON"],
+      "outputs": ["GRAPH_JSON", "QA_GPKG"]
+    },
+    "utilityroutelite:inspect_network": {
+      "input_choice": "GRAPH_JSON_XOR_SOURCE_MODE",
+      "required_inputs": [],
+      "optional_inputs": ["GRAPH_JSON", "SOURCE_LINES", "SOURCE_CRS", "NETWORK_CRS", "LAYER_KEY", "FEATURE_KEY_FIELD", "RULE_PROFILE", "JUNCTIONS_JSON", "QA_NEAR_MISS_M"],
+      "outputs": ["QA_GPKG", "SUMMARY_JSON"]
+    },
+    "utilityroutelite:find_route": {
+      "input_choice": "GRAPH_JSON_XOR_SOURCE_MODE",
+      "required_inputs": ["ROUTE_ID", "START_POINT", "END_POINT", "REQUEST_CRS", "SNAP_TOLERANCE_M"],
+      "optional_inputs": ["GRAPH_JSON", "SOURCE_LINES", "SOURCE_CRS", "NETWORK_CRS", "LAYER_KEY", "FEATURE_KEY_FIELD", "RULE_PROFILE", "JUNCTIONS_JSON", "START_EDGE_ID", "END_EDGE_ID"],
+      "outputs": ["RESULT_JSON", "ROUTES_GPKG"]
+    },
+    "utilityroutelite:batch_routes": {
+      "input_choice": "GRAPH_JSON_XOR_SOURCE_MODE_AND_PAIRS_CSV_XOR_PAIRS_LAYER",
+      "required_inputs": ["PAIRS_CRS", "SNAP_TOLERANCE_M"],
+      "optional_inputs": ["GRAPH_JSON", "SOURCE_LINES", "SOURCE_CRS", "NETWORK_CRS", "LAYER_KEY", "FEATURE_KEY_FIELD", "RULE_PROFILE", "JUNCTIONS_JSON", "PAIRS_CSV", "PAIRS_LAYER"],
+      "outputs": ["RESULT_JSON", "ROUTES_GPKG", "FAILURES_CSV"]
+    },
+    "utilityroutelite:export_bundle": {
+      "required_inputs": ["RESULT_JSON", "DESTINATION"],
+      "optional_inputs": ["REVIEW_STATE_JSON", "OVERWRITE"],
+      "outputs": ["BUNDLE"]
+    }
+  },
+  "enums": {
+    "connection_policy": ["GEOMETRIC_ENDPOINT_ONLY", "EXPLICIT_JUNCTIONS"],
+    "connection_verification": ["NOT_ASSET_VERIFIED", "DECLARED_TRANSITIONS_NOT_FIELD_VERIFIED"],
+    "edge_status": ["OPEN", "BLOCKED", "UNKNOWN"],
+    "direction": ["FORWARD", "REVERSE", "BOTH", "UNKNOWN"],
+    "eligibility_mode": ["FIELD", "ALL_OPEN"],
+    "direction_mode": ["FIELD", "ALL_BOTH"],
+    "review_decision": ["UNREVIEWED", "ACCEPTED_AS_PROPOSED", "REJECTED"],
+    "request_status": ["SUCCESS", "FAILED"],
+    "qa_status": ["CLEAR", "WARNINGS", "ERRORS"],
+    "severity": ["ERROR", "WARNING", "INFO"],
+    "source_verification": ["SNAPSHOT_ONLY", "CURRENT_SOURCE_MATCHED"]
+  },
+  "error_codes": [
+    "NO_ROUTE", "OUTSIDE_SNAP_TOLERANCE", "AMBIGUOUS_SNAP", "BLOCKED_EDGE",
+    "UNKNOWN_ELIGIBILITY", "FORBIDDEN_TRANSITION", "SAME_LOCATION", "INVALID_PAIR",
+    "DUPLICATE_ROUTE_ID", "INVALID_CRS", "TRANSFORM_FAILED", "INVALID_GEOMETRY",
+    "UNSUPPORTED_DIMENSION", "UNSUPPORTED_RULE", "INVALID_JUNCTION",
+    "DUPLICATE_SOURCE_KEY", "ID_COLLISION", "STALE_GRAPH", "STALE_REVIEW", "LIMIT_EXCEEDED",
+    "CANCELED", "EXPORT_FAILED"
+  ],
+  "qa_issue_codes": [
+    "UNDECLARED_CROSSING", "INTERIOR_TOUCH", "NEAR_MISS", "OVERLAP", "DANGLE",
+    "DISCONNECTED_COMPONENT", "INVALID_GEOMETRY", "UNKNOWN_ELIGIBILITY",
+    "UNKNOWN_DIRECTION", "ELIGIBILITY_ASSUMED", "DIRECTION_ASSUMED",
+    "Z_M_IGNORED", "SOURCE_NOT_RECHECKED"
+  ],
+  "json_files": {
+    "network_graph.json": ["schema_version", "kind", "source_layer_key", "source_crs_wkt", "network_crs_wkt", "source_snapshot_sha256", "profile_hash", "rule_profile", "junctions_sha256", "graph_digest", "measurement", "source_parts", "nodes", "edges", "transitions", "qa_issues"],
+    "result.json": ["schema_version", "kind", "graph_digest", "source_snapshot_sha256", "profile_hash", "connection_policy", "connection_verification", "network_crs_wkt", "measurement", "requests", "qa_issues"],
+    "review_state.json": ["schema_version", "kind", "result_sha256", "reviews"],
+    "routing_config.json": ["schema_version", "kind", "rule_profile", "profile_hash", "connection_policy", "connection_verification", "source_snapshot_sha256", "graph_digest", "network_crs_wkt", "measurement", "counts", "dimensionality_warnings", "source_verification", "file_sha256"]
+  },
+  "summary_json_fields": ["schema_version", "connection_policy", "source_snapshot_sha256", "graph_digest", "qa_near_miss_m", "analysis_complete", "counts"],
+  "json_objects": {
+    "rule_profile": ["schema_version", "profile_id", "connection_policy", "eligibility", "direction", "ellipsoid", "allow_2d_projection", "qa_near_miss_m", "strict"],
+    "junction_document": ["schema_version", "junction_crs_wkt", "junctions"],
+    "junction": ["junction_id", "xy", "members", "transitions"],
+    "junction_member": ["member_id", "source_layer_key", "source_feature_key", "source_part_index", "segment_index", "segment_fraction"],
+    "junction_transition": ["from_member_id", "from_side", "to_member_id", "to_side"],
+    "source_part": ["source_layer_key", "source_feature_key", "source_part_index", "original_vertices", "network_vertices_xy", "has_z", "has_m"],
+    "graph_node": ["node_id", "xy", "kind", "anchors"],
+    "graph_edge": ["edge_id", "source_layer_key", "source_feature_key", "source_part_index", "from_node_id", "to_node_id", "from_anchor", "to_anchor", "vertices_xy", "length_m", "edge_status", "direction"],
+    "graph_transition": ["from_traversal_id", "at_node_id", "to_traversal_id", "junction_id", "declared"],
+    "measurement": ["ellipsoid", "method", "qgis_version"],
+    "route_request_result": ["input_row", "route_id", "requested_start_xy", "requested_end_xy", "snapped_start_xy", "snapped_end_xy", "start_offset_m", "end_offset_m", "status", "failure_code", "length_m", "qa_status", "segments", "vertices_xy"],
+    "route_segment": ["segment_seq", "edge_id", "source_layer_key", "source_feature_key", "source_part_index", "from_fraction", "to_fraction", "direction", "length_m", "vertices_xy", "edge_status"],
+    "review_record": ["route_id", "graph_digest", "source_snapshot_sha256", "profile_hash", "decision"]
+  },
+  "gpkg_layers": {
+    "proposed_routes": {
+      "geometry": "LINESTRING",
+      "fields": [
+        {"name": "schema_version", "type": "TEXT", "nullable": false},
+        {"name": "route_id", "type": "TEXT", "nullable": false},
+        {"name": "graph_digest", "type": "TEXT", "nullable": false},
+        {"name": "source_snapshot_sha256", "type": "TEXT", "nullable": false},
+        {"name": "profile_hash", "type": "TEXT", "nullable": false},
+        {"name": "connection_policy", "type": "TEXT", "nullable": false},
+        {"name": "connection_verification", "type": "TEXT", "nullable": false},
+        {"name": "length_m", "type": "REAL", "nullable": false},
+        {"name": "start_offset_m", "type": "REAL", "nullable": false},
+        {"name": "end_offset_m", "type": "REAL", "nullable": false},
+        {"name": "qa_status", "type": "TEXT", "nullable": false},
+        {"name": "review_state", "type": "TEXT", "nullable": false}
+      ]
+    },
+    "route_segments": {
+      "geometry": "LINESTRING",
+      "fields": [
+        {"name": "schema_version", "type": "TEXT", "nullable": false},
+        {"name": "route_id", "type": "TEXT", "nullable": false},
+        {"name": "segment_seq", "type": "INTEGER", "nullable": false},
+        {"name": "edge_id", "type": "TEXT", "nullable": false},
+        {"name": "source_layer_key", "type": "TEXT", "nullable": false},
+        {"name": "source_feature_key", "type": "TEXT", "nullable": false},
+        {"name": "source_native_fid", "type": "TEXT", "nullable": true},
+        {"name": "source_part_index", "type": "INTEGER", "nullable": false},
+        {"name": "from_fraction", "type": "REAL", "nullable": false},
+        {"name": "to_fraction", "type": "REAL", "nullable": false},
+        {"name": "direction", "type": "TEXT", "nullable": false},
+        {"name": "edge_status", "type": "TEXT", "nullable": false},
+        {"name": "length_m", "type": "REAL", "nullable": false}
+      ]
+    },
+    "qa_issues": {
+      "geometry": "POINT_OR_NULL",
+      "fields": [
+        {"name": "schema_version", "type": "TEXT", "nullable": false},
+        {"name": "issue_id", "type": "TEXT", "nullable": false},
+        {"name": "route_id", "type": "TEXT", "nullable": true},
+        {"name": "severity", "type": "TEXT", "nullable": false},
+        {"name": "code", "type": "TEXT", "nullable": false},
+        {"name": "message", "type": "TEXT", "nullable": false},
+        {"name": "source_layer_key", "type": "TEXT", "nullable": true},
+        {"name": "source_feature_key", "type": "TEXT", "nullable": true},
+        {"name": "source_part_index", "type": "INTEGER", "nullable": true},
+        {"name": "edge_id", "type": "TEXT", "nullable": true},
+        {"name": "junction_id", "type": "TEXT", "nullable": true}
+      ]
+    }
+  },
+  "csv_files": {
+    "route_summary.csv": ["input_row", "route_id", "status", "failure_code", "length_m", "start_offset_m", "end_offset_m", "qa_status", "review_state", "connection_verification"],
+    "failures.csv": ["input_row", "route_id", "code", "reason"]
+  },
+  "bundle_files": ["utility_routes.gpkg", "route_summary.csv", "routing_config.json", "report.html"],
+  "limits": {"max_physical_edges": 250000, "max_source_vertices": 2000000, "max_batch_requests": 100000}
+}

@@ -1,0 +1,241 @@
+test_1000_edge_benchmark_graph_is_one_component (test_builder_core.BuilderCoreTests.test_1000_edge_benchmark_graph_is_one_component) ... ok
+test_bad_junction_coordinate_is_rejected (test_builder_core.BuilderCoreTests.test_bad_junction_coordinate_is_rejected) ... ok
+test_bad_source_inputs_fail_with_stable_codes (test_builder_core.BuilderCoreTests.test_bad_source_inputs_fail_with_stable_codes) ... ok
+test_blocked_shortcut_remains_blocked (test_builder_core.BuilderCoreTests.test_blocked_shortcut_remains_blocked) ... ok
+test_declared_endpoint_to_interior_transition (test_builder_core.BuilderCoreTests.test_declared_endpoint_to_interior_transition) ... ok
+test_duplicate_geometry_is_reported_without_merging_edges (test_builder_core.BuilderCoreTests.test_duplicate_geometry_is_reported_without_merging_edges) ... ok
+test_exact_endpoint_is_one_geometric_node (test_builder_core.BuilderCoreTests.test_exact_endpoint_is_one_geometric_node) ... ok
+test_explicit_junction_splits_only_members_and_one_direction (test_builder_core.BuilderCoreTests.test_explicit_junction_splits_only_members_and_one_direction) ... ok
+test_false_crossing_is_disconnected (test_builder_core.BuilderCoreTests.test_false_crossing_is_disconnected) ... ok
+test_gap_does_not_move_endpoint (test_builder_core.BuilderCoreTests.test_gap_does_not_move_endpoint) ... ok
+test_graph_has_frozen_required_fields_and_source_edge_map (test_builder_core.BuilderCoreTests.test_graph_has_frozen_required_fields_and_source_edge_map) ... ok
+test_multipart_reference_and_deterministic_output (test_builder_core.BuilderCoreTests.test_multipart_reference_and_deterministic_output) ... ok
+test_prohibited_turn_is_not_invented (test_builder_core.BuilderCoreTests.test_prohibited_turn_is_not_invented) ... ok
+test_t_touch_at_interior_does_not_connect (test_builder_core.BuilderCoreTests.test_t_touch_at_interior_does_not_connect) ... ok
+test_unknown_status_fails_closed (test_builder_core.BuilderCoreTests.test_unknown_status_fails_closed) ... ok
+test_z_requires_opt_in_and_preserves_original_ordinates (test_builder_core.BuilderCoreTests.test_z_requires_opt_in_and_preserves_original_ordinates) ... ok
+test_benchmark_and_scaling_are_deterministic (test_contract.FixtureContractTests.test_benchmark_and_scaling_are_deterministic) ... ok
+test_frozen_version_and_named_cases (test_contract.FixtureContractTests.test_frozen_version_and_named_cases) ... ok
+test_oracles_use_frozen_codes_and_success_has_metric_expectation (test_contract.FixtureContractTests.test_oracles_use_frozen_codes_and_success_has_metric_expectation) ... ok
+test_regeneration_is_byte_identical (test_contract.FixtureContractTests.test_regeneration_is_byte_identical) ... ok
+test_geographic_fixture_declares_metric_target_and_bound (test_crs_contract.CrsContractTests.test_geographic_fixture_declares_metric_target_and_bound) ... ok
+test_qgis_transform_and_ellipsoidal_length_is_meters (test_crs_contract.CrsContractTests.test_qgis_transform_and_ellipsoidal_length_is_meters) ... skipped 'PyQGIS unavailable in this Python; run with QGIS bundled runtime'
+test_cancellation_during_geometry_processing (test_gate_a_regressions.GateARegressionTests.test_cancellation_during_geometry_processing) ... ok
+test_collision_abort_instead_of_node_or_edge_merge (test_gate_a_regressions.GateARegressionTests.test_collision_abort_instead_of_node_or_edge_merge) ... ok
+test_declared_junction_uses_network_crs_and_member_pair (test_gate_a_regressions.GateARegressionTests.test_declared_junction_uses_network_crs_and_member_pair) ... ok
+test_explicit_dimension_modes_and_mixed_arity (test_gate_a_regressions.GateARegressionTests.test_explicit_dimension_modes_and_mixed_arity) ... ok
+test_order_serialization_and_attribute_identity (test_gate_a_regressions.GateARegressionTests.test_order_serialization_and_attribute_identity) ... ok
+test_pure_mode_rejects_projected_foot_wkt (test_gate_a_regressions.GateARegressionTests.test_pure_mode_rejects_projected_foot_wkt) ... ok
+test_t_at_intermediate_vertex_stays_disconnected_and_warns (test_gate_a_regressions.GateARegressionTests.test_t_at_intermediate_vertex_stays_disconnected_and_warns) ... ok
+test_typed_selected_attributes_are_distinct_and_unknown (test_gate_a_regressions.GateARegressionTests.test_typed_selected_attributes_are_distinct_and_unknown) ... ok
+test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) ... 
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='crossing_unconnected') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='declared_junction') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='prohibited_turn') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='tiny_endpoint_gap') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='disconnected_components') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='duplicate_source_id') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='duplicate_geometry') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='zero_length_edge') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='multipart_refs') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='blocked_shortcut') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='same_bent_line_interior') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='outside_snap_tolerance') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='geographic_metric') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='reverse_direction') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='same_start_end') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='batch_one_bad_record') ... ERROR
+  test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='csv_html_escaping') ... ERROR
+test_benchmark_route_and_edge_count (test_graph_fixtures.GraphFixtureTests.test_benchmark_route_and_edge_count) ... ERROR
+test_collision_error_is_in_registry_and_prose (test_round2.Round2Tests.test_collision_error_is_in_registry_and_prose) ... ok
+test_non_cancellation_measurement_error_still_has_typed_code (test_round2.Round2Tests.test_non_cancellation_measurement_error_still_has_typed_code) ... ok
+test_strict_junction_part_index_and_feature_key_types (test_round2.Round2Tests.test_strict_junction_part_index_and_feature_key_types) ... ok
+test_transform_requires_measurement_even_for_metric_target (test_round2.Round2Tests.test_transform_requires_measurement_even_for_metric_target) ... ok
+test_all_python_files_parse (test_scaffold.ScaffoldTests.test_all_python_files_parse) ... ok
+test_metadata_declares_qgis_4_provider_and_unfinished_state (test_scaffold.ScaffoldTests.test_metadata_declares_qgis_4_provider_and_unfinished_state) ... ok
+test_zip_has_single_plugin_root_and_only_allowlisted_files (test_scaffold.ScaffoldTests.test_zip_has_single_plugin_root_and_only_allowlisted_files) ... ok
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='crossing_unconnected')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='declared_junction')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='prohibited_turn')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='tiny_endpoint_gap')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='disconnected_components')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='duplicate_source_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='duplicate_geometry')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='zero_length_edge')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='multipart_refs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='blocked_shortcut')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='same_bent_line_interior')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='outside_snap_tolerance')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='geographic_metric')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='reverse_direction')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='same_start_end')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='batch_one_bad_record')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_all_expected_graph_qa_route_and_export_results (test_graph_fixtures.GraphFixtureTests.test_all_expected_graph_qa_route_and_export_results) (case_id='csv_html_escaping')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 20, in test_all_expected_graph_qa_route_and_export_results
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+======================================================================
+ERROR: test_benchmark_route_and_edge_count (test_graph_fixtures.GraphFixtureTests.test_benchmark_route_and_edge_count)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_graph_fixtures.py", line 50, in test_benchmark_route_and_edge_count
+    actual = evaluate_fixture(case)
+  File "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/fixture_adapter.py", line 13, in evaluate_fixture
+    raise NotImplementedError("RED TEST: wire this test adapter to implemented graph, QA, routing and export services")
+NotImplementedError: RED TEST: wire this test adapter to implemented graph, QA, routing and export services
+
+----------------------------------------------------------------------
+Ran 39 tests in 0.145s
+
+FAILED (errors=18, skipped=1)

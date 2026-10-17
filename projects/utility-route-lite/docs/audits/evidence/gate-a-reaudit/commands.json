@@ -1,0 +1,134 @@
+[
+  {
+    "name": "environment",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "-c",
+      "import os,sys,json,qgis.core; from qgis.PyQt.QtCore import QT_VERSION_STR; import utility_route_lite.core.builder as b; print(json.dumps({'python':sys.version,'executable':sys.executable,'qgis':qgis.core.Qgis.QGIS_VERSION,'qt':QT_VERSION_STR,'builder':b.__file__,'env':{k:os.environ.get(k) for k in ('PYTHONHOME','PYTHONPATH','QGIS_PREFIX_PATH','QT_PLUGIN_PATH','QT_QPA_PLATFORM','PROJ_DATA','GDAL_DATA','PYTHONDONTWRITEBYTECODE')}},indent=2))"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 0
+  },
+  {
+    "name": "existing-core",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_builder_core.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 0
+  },
+  {
+    "name": "independent-core",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/audit/test_graph_gate.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 0
+  },
+  {
+    "name": "new-core",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_gate_a_regressions.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 0
+  },
+  {
+    "name": "existing-qgis",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/qgis_builder.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 0
+  },
+  {
+    "name": "independent-qgis",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/audit/qgis_graph_gate.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 0
+  },
+  {
+    "name": "new-qgis",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/audit/qgis_remediation.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 0
+  },
+  {
+    "name": "crs-qgis",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/tests/test_crs_contract.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 0
+  },
+  {
+    "name": "full-discovery-system",
+    "argv": [
+      "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 1
+  },
+  {
+    "name": "full-discovery-qgis",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "cwd": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility",
+    "exit_code": 1
+  },
+  {
+    "name": "original-independent-core",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-_rlns5sn/tests/audit/test_graph_gate.py",
+      "-v"
+    ],
+    "cwd": "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-_rlns5sn",
+    "exit_code": 1
+  },
+  {
+    "name": "original-independent-qgis",
+    "argv": [
+      "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+      "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-_rlns5sn/tests/audit/qgis_graph_gate.py",
+      "-v"
+    ],
+    "cwd": "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-_rlns5sn",
+    "exit_code": 1
+  }
+]

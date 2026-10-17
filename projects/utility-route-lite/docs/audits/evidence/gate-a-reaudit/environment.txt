@@ -1,0 +1,17 @@
+{
+  "python": "3.12.11 (main, Sep  4 2026, 00:38:55) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "executable": "/Applications/QGIS-final-4_2_3.app/Contents/MacOS/python3.12",
+  "qgis": "4.2.3-Bel\u00e9m do Par\u00e1",
+  "qt": "6.11.1",
+  "builder": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility/utility_route_lite/core/builder.py",
+  "env": {
+    "PYTHONHOME": "/Applications/QGIS-final-4_2_3.app/Contents/Resources",
+    "PYTHONPATH": "/path/to/user/Documents/01 Active Projects/Software & Experiments/FiberUtility:/Applications/QGIS-final-4_2_3.app/Contents/Resources/python3.12:/Applications/QGIS-final-4_2_3.app/Contents/Resources/python3.12/lib-dynload:/Applications/QGIS-final-4_2_3.app/Contents/Resources/python3.12/site-packages:/Applications/QGIS-final-4_2_3.app/Contents/Resources/qgis/python/plugins",
+    "QGIS_PREFIX_PATH": "/Applications/QGIS-final-4_2_3.app/Contents/Resources/qgis",
+    "QT_PLUGIN_PATH": "/Applications/QGIS-final-4_2_3.app/Contents/PlugIns",
+    "QT_QPA_PLATFORM": "offscreen",
+    "PROJ_DATA": "/Applications/QGIS-final-4_2_3.app/Contents/Resources/qgis/proj",
+    "GDAL_DATA": "/Applications/QGIS-final-4_2_3.app/Contents/Resources/qgis/gdal",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

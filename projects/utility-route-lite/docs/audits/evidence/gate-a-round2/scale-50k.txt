@@ -1,0 +1,37 @@
+{
+  "python": "3.12.11 (main, Sep  4 2026, 00:38:55) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "qgis": "4.2.3-Bel\u00e9m do Par\u00e1",
+  "runs": [
+    {
+      "order": "forward",
+      "input_edges": 50000,
+      "output_edges": 50000,
+      "nodes": 50001,
+      "components": 1,
+      "build_seconds": 3.801685292040929,
+      "peak_rss_bytes_macos": 677593088,
+      "graph_digest": "c2e0fa3f8a60773d9baf5edd6a4bac7b7b9320ed9839be9fd8f79ee8d87100d5",
+      "source_snapshot_sha256": "a60b0e5fd06523b4f9f8948809e9e1cac4a87e7ae64dae2a0236e1c0058ff27f",
+      "profile_hash": "987e837927f4bff596b1677b5acc76abf8b683682356760c9ddb54d2088dddb3",
+      "edges_hash": "775de1905130b4c2cf3563b95af7aac89973b29a8c0c6e539b44412620c65226",
+      "nodes_hash": "a613f89fb2dfa3357ad3377daaa3f93471b7cb84feca89199c7a3f1cd9c541b0"
+    },
+    {
+      "order": "reverse",
+      "input_edges": 50000,
+      "output_edges": 50000,
+      "nodes": 50001,
+      "components": 1,
+      "build_seconds": 5.362982708960772,
+      "peak_rss_bytes_macos": 677593088,
+      "graph_digest": "c2e0fa3f8a60773d9baf5edd6a4bac7b7b9320ed9839be9fd8f79ee8d87100d5",
+      "source_snapshot_sha256": "a60b0e5fd06523b4f9f8948809e9e1cac4a87e7ae64dae2a0236e1c0058ff27f",
+      "profile_hash": "987e837927f4bff596b1677b5acc76abf8b683682356760c9ddb54d2088dddb3",
+      "edges_hash": "775de1905130b4c2cf3563b95af7aac89973b29a8c0c6e539b44412620c65226",
+      "nodes_hash": "a613f89fb2dfa3357ad3377daaa3f93471b7cb84feca89199c7a3f1cd9c541b0"
+    }
+  ],
+  "repeat_identity_and_fingerprints_equal": true,
+  "cancellation_consumed": 500,
+  "cancellation_code": "CANCELED"
+}

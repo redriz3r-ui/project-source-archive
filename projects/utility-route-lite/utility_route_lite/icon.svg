@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Utility Route Lite icon">
+  <rect width="64" height="64" rx="12" fill="#183548"/>
+  <path d="M14 45 L28 45 L28 18 L50 18" fill="none" stroke="#72c6d3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="14" cy="45" r="6" fill="#f4c95d"/>
+  <circle cx="50" cy="18" r="6" fill="#f4c95d"/>
+</svg>

@@ -1,0 +1,239 @@
+[
+  {
+    "name": "existing-core",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/test_builder_core.py"
+    ],
+    "exit_code": 0,
+    "tests": 16
+  },
+  {
+    "name": "original-independent-core",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/audit/test_graph_gate.py"
+    ],
+    "exit_code": 0,
+    "tests": 9
+  },
+  {
+    "name": "round1-core",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/test_gate_a_regressions.py"
+    ],
+    "exit_code": 0,
+    "tests": 8
+  },
+  {
+    "name": "existing-qgis",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/qgis_builder.py"
+    ],
+    "exit_code": 0,
+    "tests": 4
+  },
+  {
+    "name": "original-independent-qgis",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/audit/qgis_graph_gate.py"
+    ],
+    "exit_code": 0,
+    "tests": 3
+  },
+  {
+    "name": "round1-qgis",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/audit/qgis_remediation.py"
+    ],
+    "exit_code": 0,
+    "tests": 2
+  },
+  {
+    "name": "crs-qgis",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/test_crs_contract.py"
+    ],
+    "exit_code": 0,
+    "tests": 2
+  },
+  {
+    "name": "reaudit-core",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/audit/test_reaudit_adversarial.py"
+    ],
+    "exit_code": 0,
+    "tests": 6
+  },
+  {
+    "name": "reaudit-qgis",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/audit/qgis_reaudit_adversarial.py"
+    ],
+    "exit_code": 0,
+    "tests": 3
+  },
+  {
+    "name": "round2-core",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/test_round2.py"
+    ],
+    "exit_code": 0,
+    "tests": 4
+  },
+  {
+    "name": "round2-qgis",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/audit/qgis_round2.py"
+    ],
+    "exit_code": 0,
+    "tests": 5
+  },
+  {
+    "name": "scale-50k",
+    "command": [
+      "bash",
+      "scripts/run_qgis_scaffold_macos.sh",
+      "/Applications/QGIS-final-4_2_3.app",
+      "tests/audit/reaudit_scale.py"
+    ],
+    "exit_code": 0,
+    "tests": null
+  },
+  {
+    "name": "contract",
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "scripts/check_contract.py"
+    ],
+    "exit_code": 0,
+    "tests": null
+  },
+  {
+    "name": "system-test_builder_core",
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_builder_core.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 16
+  },
+  {
+    "name": "system-test_gate_a_regressions",
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_gate_a_regressions.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 8
+  },
+  {
+    "name": "system-test_round2",
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_round2.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 4
+  },
+  {
+    "name": "system-test_contract",
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_contract.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 4
+  },
+  {
+    "name": "system-test_scaffold",
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_scaffold.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 3
+  },
+  {
+    "name": "full-discovery-system",
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 1,
+    "tests": 39
+  }
+]

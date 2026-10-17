@@ -1,0 +1,17 @@
+test_geographic_target_rejected (__main__.QgisGateTests.test_geographic_target_rejected) ... ok
+test_inconsistent_declared_crs_rejected (__main__.QgisGateTests.test_inconsistent_declared_crs_rejected) ... ok
+test_raw_selected_attribute_change_invalidates_fingerprint (__main__.QgisGateTests.test_raw_selected_attribute_change_invalidates_fingerprint) ... FAIL
+
+======================================================================
+FAIL: test_raw_selected_attribute_change_invalidates_fingerprint (__main__.QgisGateTests.test_raw_selected_attribute_change_invalidates_fingerprint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/qgis_graph_gate.py", line 35, in test_raw_selected_attribute_change_invalidates_fingerprint
+    self.assertNotEqual(a['source_snapshot_sha256'], b['source_snapshot_sha256'])
+AssertionError: 'bb1f8a4313821d12ccbc985d9ca5e9f9a5299331f7851e226b7b9b7a210bef7b' == 'bb1f8a4313821d12ccbc985d9ca5e9f9a5299331f7851e226b7b9b7a210bef7b'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.323s
+
+FAILED (failures=1)
+ACTUAL QGIS: 4.2.3-Belém do Pará

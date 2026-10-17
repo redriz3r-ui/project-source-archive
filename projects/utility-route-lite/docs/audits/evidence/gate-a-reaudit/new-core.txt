@@ -1,0 +1,13 @@
+test_cancellation_during_geometry_processing (__main__.GateARegressionTests.test_cancellation_during_geometry_processing) ... ok
+test_collision_abort_instead_of_node_or_edge_merge (__main__.GateARegressionTests.test_collision_abort_instead_of_node_or_edge_merge) ... ok
+test_declared_junction_uses_network_crs_and_member_pair (__main__.GateARegressionTests.test_declared_junction_uses_network_crs_and_member_pair) ... ok
+test_explicit_dimension_modes_and_mixed_arity (__main__.GateARegressionTests.test_explicit_dimension_modes_and_mixed_arity) ... ok
+test_order_serialization_and_attribute_identity (__main__.GateARegressionTests.test_order_serialization_and_attribute_identity) ... ok
+test_pure_mode_rejects_projected_foot_wkt (__main__.GateARegressionTests.test_pure_mode_rejects_projected_foot_wkt) ... ok
+test_t_at_intermediate_vertex_stays_disconnected_and_warns (__main__.GateARegressionTests.test_t_at_intermediate_vertex_stays_disconnected_and_warns) ... ok
+test_typed_selected_attributes_are_distinct_and_unknown (__main__.GateARegressionTests.test_typed_selected_attributes_are_distinct_and_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.007s
+
+OK

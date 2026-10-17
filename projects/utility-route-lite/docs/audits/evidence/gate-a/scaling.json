@@ -1,0 +1,17 @@
+[
+  {
+    "edges": 1000,
+    "elapsed_seconds": 0.08645924995653331,
+    "process_lifetime_peak_rss_bytes_macos": 33243136
+  },
+  {
+    "edges": 2000,
+    "elapsed_seconds": 0.25149308308027685,
+    "process_lifetime_peak_rss_bytes_macos": 46088192
+  },
+  {
+    "edges": 4000,
+    "elapsed_seconds": 0.8648978749988601,
+    "process_lifetime_peak_rss_bytes_macos": 69042176
+  }
+]

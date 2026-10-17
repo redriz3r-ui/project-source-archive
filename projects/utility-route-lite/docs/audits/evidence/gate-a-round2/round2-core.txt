@@ -1,0 +1,9 @@
+test_collision_error_is_in_registry_and_prose (__main__.Round2Tests.test_collision_error_is_in_registry_and_prose) ... ok
+test_non_cancellation_measurement_error_still_has_typed_code (__main__.Round2Tests.test_non_cancellation_measurement_error_still_has_typed_code) ... ok
+test_strict_junction_part_index_and_feature_key_types (__main__.Round2Tests.test_strict_junction_part_index_and_feature_key_types) ... ok
+test_transform_requires_measurement_even_for_metric_target (__main__.Round2Tests.test_transform_requires_measurement_even_for_metric_target) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK

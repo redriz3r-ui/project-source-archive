@@ -1,0 +1,111 @@
+{
+  "case_id": "same_bent_line_interior",
+  "expected": {
+    "build_status": "OK",
+    "length_m": 11.0,
+    "route_status": "SUCCESS",
+    "route_vertices_xy": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    "source_parts": [
+      [
+        "bend",
+        0
+      ]
+    ]
+  },
+  "network_crs": "EPSG:3857",
+  "request": {
+    "end_xy": [
+      5,
+      2
+    ],
+    "request_crs": "EPSG:3857",
+    "route_id": "route_1",
+    "snap_tolerance_m": 0,
+    "start_xy": [
+      0,
+      2
+    ]
+  },
+  "rule_profile": {
+    "allow_2d_projection": false,
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "direction": {
+      "field": "direction",
+      "map": {
+        "both": "BOTH",
+        "forward": "FORWARD",
+        "reverse": "REVERSE"
+      },
+      "mode": "FIELD"
+    },
+    "eligibility": {
+      "field": "status",
+      "map": {
+        "blocked": "BLOCKED",
+        "open": "OPEN",
+        "unknown": "UNKNOWN"
+      },
+      "mode": "FIELD"
+    },
+    "ellipsoid": "NONE",
+    "profile_id": "synthetic_v1",
+    "qa_near_miss_m": 0.02,
+    "schema_version": "1.0.0",
+    "strict": true
+  },
+  "schema_version": "1.0.0",
+  "source": {
+    "features": [
+      {
+        "geometry": {
+          "coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "type": "LineString"
+        },
+        "properties": {
+          "asset_key": "bend",
+          "direction": "both",
+          "status": "open"
+        },
+        "type": "Feature"
+      }
+    ],
+    "type": "FeatureCollection"
+  },
+  "source_crs": "EPSG:3857",
+  "source_layer_key": "synthetic_corridors",
+  "synthetic": true
+}

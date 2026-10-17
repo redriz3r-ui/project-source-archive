@@ -1,0 +1,9 @@
+test_declared_junction_only_adds_declared_transition (__main__.QgisBuilderTests.test_declared_junction_only_adds_declared_transition) ... ok
+test_false_crossing_remains_disconnected_and_deterministic (__main__.QgisBuilderTests.test_false_crossing_remains_disconnected_and_deterministic) ... ok
+test_geographic_source_has_meter_length (__main__.QgisBuilderTests.test_geographic_source_has_meter_length) ... ok
+test_multipart_keeps_part_indices (__main__.QgisBuilderTests.test_multipart_keeps_part_indices) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.502s
+
+OK

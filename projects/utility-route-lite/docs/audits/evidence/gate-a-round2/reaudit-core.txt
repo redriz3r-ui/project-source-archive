@@ -1,0 +1,28 @@
+test_controls_and_complete_json_roundtrip (__main__.ReauditAdversarial.test_controls_and_complete_json_roundtrip) ... ok
+test_junction_invalid_part_index_is_not_boolean (__main__.ReauditAdversarial.test_junction_invalid_part_index_is_not_boolean) ... ok
+test_junction_scan_stops_promptly_on_cancel (__main__.ReauditAdversarial.test_junction_scan_stops_promptly_on_cancel) ... ok
+test_measurement_cancellation_keeps_canceled_code (__main__.ReauditAdversarial.test_measurement_cancellation_keeps_canceled_code) ... ok
+test_transform_alone_cannot_authorize_degree_lengths (__main__.ReauditAdversarial.test_transform_alone_cannot_authorize_degree_lengths) ... Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+Application path not initialized
+ok
+test_valid_full_meter_wkt_in_pure_mode (__main__.ReauditAdversarial.test_valid_full_meter_wkt_in_pure_mode) ... Application path not initialized
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.403s
+
+OK
+OBSERVED segment checks after cancellation: 1

@@ -1,0 +1,52 @@
+# Utility Route Lite v1 acceptance matrix
+
+Frozen test obligations for [ARCHITECTURE.md](ARCHITECTURE.md) and [DATA_CONTRACT.md](DATA_CONTRACT.md), 2026-10-16. Prompt 05 now supplies synthetic cases and versioned oracles in [examples](../examples/README.md). Their graph/QA/route checks are intentionally red until core services exist; the CRS measurement probe passed on QGIS 4.2.3. Matrix rows below still require product implementation evidence. Code implementers should preserve the IDs, log actual commands/results, and use the QGIS runtime for adapter/integration cases.
+
+`P` means a success case and `N` an invalid/adversarial case. Each case needs an assertion on geometry **and** data/provenance where applicable. “Reject” means a stable code and no misleading successful route/output. A test that skips because `qgis` is missing is UNVERIFIED, not Pass.
+
+| ID | Capability / level | Synthetic input or action | Expected assertion | Status |
+| --- | --- | --- | --- | --- |
+| B-P01 | Builder / core | Two `OPEN` parts with exactly equal endpoints under `GEOMETRIC_ENDPOINT_ONLY`. | One endpoint graph connection, stable node/edge IDs across identical rebuilds, full vertices and `NOT_ASSET_VERIFIED` warning. | Core Pass; release review pending |
+| B-N02 | Builder / core | X crossing with no endpoint or declared junction. | Separate components, no cross transition; Inspector may flag crossing. | Core + QGIS Pass; no router yet |
+| B-N03 | Builder / core | T touch at another part's interior; coincident interior vertices on two parts. | No connection in geometric policy, even though native QGIS graph builder would connect shared interior vertices. | T-touch Pass; shared-interior-vertex case pending |
+| B-P04 | Builder / core | Two parts cross at a point explicitly listed as members of one junction, with one directed transition. | Virtual splits retain source shape and fractions; permitted direction joins, reverse direction stays disconnected. | Core + QGIS partial; router traversal pending |
+| B-N05 | Builder / core | Junction point/anchor mismatch, missing member, duplicate anchor, or transition with nonexistent side. | `INVALID_JUNCTION`; no graph publication or source edit. | Coordinate mismatch Pass; other negatives pending |
+| B-N06 | Builder / core | Duplicate feature key, zero-length or repeated-vertex part, empty/invalid curve and overlapping lines. | Duplicate/invalid geometry fails with located issue; overlap has no inferred shared edge and is flagged. | Core partial; QGIS curve/repeated-vertex negatives pending |
+| B-P07 | Builder / QGIS | MultiLineString with two parts and a bent LineString; source CRS geographic, network CRS projected meters. | Distinct `source_part_index` values; all input vertices represented; explicit CRS and meter lengths; no source mutation. | QGIS multipart and geographic subcases Pass; combined case pending |
+| B-N08 | Builder / QGIS | Z/M input with default rule, then explicit `allow_2d_projection=true`. | Default `UNSUPPORTED_DIMENSION`; opt-in yields 2D graph plus `Z_M_IGNORED`, original ordinates in source fingerprint. | Pure core Pass; QGIS integration pending |
+| E-P01 | Eligibility / core | Exact status/direction map including forward-only and blocked edges. | Only `OPEN` permitted direction produces traversals; explicit ALL modes emit assumption warnings. | Not Run |
+| E-N02 | Eligibility / core | Null, missing, numeric, unmatched or unsupported rule values. | `UNKNOWN`/`UNSUPPORTED_RULE` and QA; no traversal is allowed by a default fallback. | Not Run |
+| I-P01 | Inspector / core | Two components, one dangle, one undeclared X, one near miss inside QA threshold. | Deterministic issue codes/counts/source refs and policy; no geometry changes. | Not Run |
+| I-N02 | Inspector / core | Same near miss outside threshold; spatial overlap without explicit declaration. | Outside-threshold pair is not silently connected; overlap issue is present and cannot be misreported as a verified junction. | Not Run |
+| I-P03 | Inspector / Processing | Graph JSON mode and direct-source mode on the same fixture. | Same graph-policy QA summary and `qa_issues` GeoPackage schema; source layers stay read-only. | Not Run |
+| I-N04 | Inspector / Processing | Source layer has one invalid geometry among valid parts. | Invalid feature produces located `INVALID_GEOMETRY` issue; `analysis_complete=false` and graph-dependent counts `null` instead of a false complete summary. | Not Run |
+| R-P01 | Router / core | Two eligible paths of different measured meter length. | `heapq` search returns the shorter eligible path, ordered source edges, positive `length_m`, full bend vertices. | Not Run |
+| R-P02 | Router / core | Direct geometric shortest path contains blocked edge; longer open detour exists. | Open detour wins; blocked edge absent from segments. | Not Run |
+| R-N03 | Router / core | Only crossing or undeclared endpoint transition can connect endpoints. | `NO_ROUTE`; no invented crossing/transition or fake route feature. | Not Run |
+| R-N04 | Router / core | Shortest unrestricted route needs a forbidden transition at an explicit junction. | Longer permitted route wins, or `FORBIDDEN_TRANSITION`/`NO_ROUTE` if none; reverse transition remains forbidden without a reverse row. | Not Run |
+| R-P05 | Router / core | Same-edge start/end on one bent edge interior at two different fractions. | Temporary split exposes direct subedge; selected route respects direction, preserves intermediate vertices and remeasures partial length. | Not Run |
+| R-N06 | Router / core | Reverse direction on a forward-only part; zero-length/same snapped point. | Reverse direct travel excluded; `SAME_LOCATION` produces no empty LineString. | Not Run |
+| R-P07 | Router / core | Equal-cost eligible alternatives and repeated graph builds. | Identical traversal-ID sequence, segment order and route geometry on every run. | Not Run |
+| R-N08 | Router / core | Equidistant eligible snap edges; missing edge selector, then explicit valid selector. | First returns `AMBIGUOUS_SNAP`; selector chooses only named edge. Snap never merges edges. | Not Run |
+| R-N09 | Router / QGIS | Request outside tolerance; transform failure, unknown edge, nonfinite/negative measurement. | Stable failure code; no route or invalid weight; offsets separate from pathway length. | Not Run |
+| R-P10 | Router / QGIS | Equivalent geographic, meter and foot source inputs transformed to one network CRS. | Measured meter lengths agree within documented numerical tolerance; no degrees-as-meters behavior. | Not Run |
+| V-P01 | Reviewer / GUI | Open saved route, select segment, highlight source feature, accept as proposed, reopen. | Correct source reference and QA shown; review sidecar persists `ACCEPTED_AS_PROPOSED`, never calls it certified. | Not Run |
+| V-N02 | Reviewer / model/UI | Change source geometry, graph/profile or route result after review. | Stale digest blocks acceptance/reuse; unavailable source displays `SOURCE_NOT_RECHECKED`. | Not Run |
+| V-N03 | Reviewer / GUI | Open/close and plugin load/unload twice. | One dock/action each time; no duplicate canvas overlays/signals; source layer unchanged. | Not Run |
+| T-P01 | Batch / core | Pair table with two valid requests and one disconnected request. | Exactly two route features and one failure; graph built once; total counts and input rows correct. | Not Run |
+| T-N02 | Batch / core | Missing/duplicate route IDs, NaN/nonnumeric coordinates, mixed/missing CRS. | Per-row `INVALID_PAIR`/`DUPLICATE_ROUTE_ID`; valid rows complete; failure CSV has all failed input rows. | Not Run |
+| T-N03 | Batch / Processing | Cancel during a large staged run; exceed request limit. | `CANCELED`/`LIMIT_EXCEEDED`, no successful partial output published; bounded memory and progress checks. | Not Run |
+| T-P04 | Batch / benchmark | 1,000 synthetic pairs with a fixed graph/profile. | Record actual runtime, memory context, result counts and platform; no unsupported speed claim. | Not Run |
+| P-P01 | Packager / QGIS | Package one reviewed and one unreviewed route, reload exact GeoPackage. | Three layers/CRS/schema, line shapes, segment order/fractions, QA, review states and source references round-trip. | Not Run |
+| P-N02 | Packager / core | HTML/CSV text containing markup, quotes, leading whitespace plus `=+-@`, and local path text. | HTML escaped, CSV formula neutralized, no remote assets or credential/path leakage. | Not Run |
+| P-N03 | Packager / QGIS | Existing destination without overwrite, symlink/path traversal, destination same as source, disk/permission failure. | Clear refusal/failure; old bundle and source data untouched; no incomplete visible bundle. | Not Run |
+| P-N04 | Packager / core | Review sidecar with mismatched result/graph digest or unsupported schema version. | `STALE_REVIEW`/version error; old review cannot be attached to new route. | Not Run |
+| X-P01 | Integration / QGIS | Fresh QGIS 4.2+ profile installs exact ZIP, runs Builder → Inspector → Router → Reviewer → Batch → Packager. | Five IDs register in Toolbox/Model Designer; dock works; outputs reload and retain proposal warnings. Log exact ZIP checksum and QGIS/Qt versions. | Not Run |
+| X-N02 | Integration / audits | Final package/source inspection and malicious synthetic inputs. | No source-layer writes, telemetry, mandatory external dependency, proprietary fixtures, unlicensed copied assets, invalid metadata or package security blocker. | Not Run |
+
+## Gate interpretation
+
+- Builder and router gates require the negative crossing, shared-interior-vertex, forbidden-transition, unknown-constraint and snap-isolation cases. Passing only ordinary shortest-path fixtures is insufficient.
+- QGIS adapter gates require real PyQGIS execution at the declared minimum or a documented compatible 4.2+ runtime, with version captured. Pure-Python tests may verify core logic independently, but cannot close Processing, GUI or GeoPackage gates.
+- Geometry assertions compare the complete ordered 2D vertex sequence and segment references, not merely endpoints or total distance. Measurement tests use appropriate tolerances stated in test code and recorded units.
+- Public v1.0 is **NO-GO** until every required case passes, independent audits close blocking findings, and the exact ZIP installs and runs in a clean QGIS profile. The eight prior feasibility probes stay evidence of API availability only.

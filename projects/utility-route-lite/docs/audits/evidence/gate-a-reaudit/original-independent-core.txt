@@ -1,0 +1,88 @@
+test_ambiguous_self_intersection_anchor_rejected (__main__.GateTests.test_ambiguous_self_intersection_anchor_rejected) ... FAIL
+test_cancel_before_consuming_generator (__main__.GateTests.test_cancel_before_consuming_generator) ... FAIL
+test_closed_self_loop_rejected (__main__.GateTests.test_closed_self_loop_rejected) ... FAIL
+test_controls (__main__.GateTests.test_controls) ... ok
+test_crossing_at_interior_vertices_is_reported (__main__.GateTests.test_crossing_at_interior_vertices_is_reported) ... FAIL
+test_equivalent_vertex_anchor_has_stable_edge_ids (__main__.GateTests.test_equivalent_vertex_anchor_has_stable_edge_ids) ... FAIL
+test_false_dimension_flags_cannot_silently_connect_stacked_lines (__main__.GateTests.test_false_dimension_flags_cannot_silently_connect_stacked_lines) ... FAIL
+test_geographic_core_cannot_label_degrees_meters (__main__.GateTests.test_geographic_core_cannot_label_degrees_meters) ... FAIL
+test_nonmember_crossing_is_reported (__main__.GateTests.test_nonmember_crossing_is_reported) ... FAIL
+
+======================================================================
+FAIL: test_ambiguous_self_intersection_anchor_rejected (__main__.GateTests.test_ambiguous_self_intersection_anchor_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py", line 95, in test_ambiguous_self_intersection_anchor_rejected
+    with self.assertRaises(BuildError): build(c, 'ambiguous_anchor')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: BuildError not raised
+
+======================================================================
+FAIL: test_cancel_before_consuming_generator (__main__.GateTests.test_cancel_before_consuming_generator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py", line 74, in test_cancel_before_consuming_generator
+    self.assertLessEqual(len(consumed), 1)
+AssertionError: 10000 not less than or equal to 1
+
+======================================================================
+FAIL: test_closed_self_loop_rejected (__main__.GateTests.test_closed_self_loop_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py", line 79, in test_closed_self_loop_rejected
+    with self.assertRaises(BuildError): build(c, 'self_loop')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: BuildError not raised
+
+======================================================================
+FAIL: test_crossing_at_interior_vertices_is_reported (__main__.GateTests.test_crossing_at_interior_vertices_is_reported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py", line 87, in test_crossing_at_interior_vertices_is_reported
+    self.assertIn('UNDECLARED_CROSSING', {q['code'] for q in g['qa_issues']})
+AssertionError: 'UNDECLARED_CROSSING' not found in {'DISCONNECTED_COMPONENT', 'DANGLE'}
+
+======================================================================
+FAIL: test_equivalent_vertex_anchor_has_stable_edge_ids (__main__.GateTests.test_equivalent_vertex_anchor_has_stable_edge_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py", line 46, in test_equivalent_vertex_anchor_has_stable_edge_ids
+    self.assertEqual([e['edge_id'] for e in a['edges']], [e['edge_id'] for e in b['edges']])
+AssertionError: Lists differ: ['e_45de87ec8848487a85e771f121015a39a19944d25[230 chars]f1a'] != ['e_2151de7139aa390083571509aae19e184608f6fca[230 chars]252']
+
+First differing element 0:
+'e_45de87ec8848487a85e771f121015a39a19944d25b86c4223c20470a2b0dac20'
+'e_2151de7139aa390083571509aae19e184608f6fca4ab37109901a17d9389ee6c'
+
+Diff is 659 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_false_dimension_flags_cannot_silently_connect_stacked_lines (__main__.GateTests.test_false_dimension_flags_cannot_silently_connect_stacked_lines)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py", line 60, in test_false_dimension_flags_cannot_silently_connect_stacked_lines
+    with self.assertRaises(BuildError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: BuildError not raised
+
+======================================================================
+FAIL: test_geographic_core_cannot_label_degrees_meters (__main__.GateTests.test_geographic_core_cannot_label_degrees_meters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py", line 52, in test_geographic_core_cannot_label_degrees_meters
+    with self.assertRaises(BuildError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: BuildError not raised
+
+======================================================================
+FAIL: test_nonmember_crossing_is_reported (__main__.GateTests.test_nonmember_crossing_is_reported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/folders/9b/z_yj9vs158jcrc00cz5gtngh0000gn/T/url-original-7wwc2kcv/tests/audit/test_graph_gate.py", line 36, in test_nonmember_crossing_is_reported
+    self.assertIn('UNDECLARED_CROSSING', {q['code'] for q in g['qa_issues']})
+AssertionError: 'UNDECLARED_CROSSING' not found in {'DISCONNECTED_COMPONENT', 'DANGLE'}
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.011s
+
+FAILED (failures=8)

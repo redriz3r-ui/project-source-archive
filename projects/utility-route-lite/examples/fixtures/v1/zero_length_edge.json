@@ -1,0 +1,68 @@
+{
+  "case_id": "zero_length_edge",
+  "expected": {
+    "build_error": "INVALID_GEOMETRY",
+    "build_status": "FAILED",
+    "qa_codes_include": [
+      "INVALID_GEOMETRY"
+    ]
+  },
+  "network_crs": "EPSG:3857",
+  "rule_profile": {
+    "allow_2d_projection": false,
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "direction": {
+      "field": "direction",
+      "map": {
+        "both": "BOTH",
+        "forward": "FORWARD",
+        "reverse": "REVERSE"
+      },
+      "mode": "FIELD"
+    },
+    "eligibility": {
+      "field": "status",
+      "map": {
+        "blocked": "BLOCKED",
+        "open": "OPEN",
+        "unknown": "UNKNOWN"
+      },
+      "mode": "FIELD"
+    },
+    "ellipsoid": "NONE",
+    "profile_id": "synthetic_v1",
+    "qa_near_miss_m": 0.02,
+    "schema_version": "1.0.0",
+    "strict": true
+  },
+  "schema_version": "1.0.0",
+  "source": {
+    "features": [
+      {
+        "geometry": {
+          "coordinates": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "type": "LineString"
+        },
+        "properties": {
+          "asset_key": "zero",
+          "direction": "both",
+          "status": "open"
+        },
+        "type": "Feature"
+      }
+    ],
+    "type": "FeatureCollection"
+  },
+  "source_crs": "EPSG:3857",
+  "source_layer_key": "synthetic_corridors",
+  "synthetic": true
+}

@@ -1,0 +1,21 @@
+test_1000_edge_benchmark_graph_is_one_component (test_builder_core.BuilderCoreTests.test_1000_edge_benchmark_graph_is_one_component) ... ok
+test_bad_junction_coordinate_is_rejected (test_builder_core.BuilderCoreTests.test_bad_junction_coordinate_is_rejected) ... ok
+test_bad_source_inputs_fail_with_stable_codes (test_builder_core.BuilderCoreTests.test_bad_source_inputs_fail_with_stable_codes) ... ok
+test_blocked_shortcut_remains_blocked (test_builder_core.BuilderCoreTests.test_blocked_shortcut_remains_blocked) ... ok
+test_declared_endpoint_to_interior_transition (test_builder_core.BuilderCoreTests.test_declared_endpoint_to_interior_transition) ... ok
+test_duplicate_geometry_is_reported_without_merging_edges (test_builder_core.BuilderCoreTests.test_duplicate_geometry_is_reported_without_merging_edges) ... ok
+test_exact_endpoint_is_one_geometric_node (test_builder_core.BuilderCoreTests.test_exact_endpoint_is_one_geometric_node) ... ok
+test_explicit_junction_splits_only_members_and_one_direction (test_builder_core.BuilderCoreTests.test_explicit_junction_splits_only_members_and_one_direction) ... ok
+test_false_crossing_is_disconnected (test_builder_core.BuilderCoreTests.test_false_crossing_is_disconnected) ... ok
+test_gap_does_not_move_endpoint (test_builder_core.BuilderCoreTests.test_gap_does_not_move_endpoint) ... ok
+test_graph_has_frozen_required_fields_and_source_edge_map (test_builder_core.BuilderCoreTests.test_graph_has_frozen_required_fields_and_source_edge_map) ... ok
+test_multipart_reference_and_deterministic_output (test_builder_core.BuilderCoreTests.test_multipart_reference_and_deterministic_output) ... ok
+test_prohibited_turn_is_not_invented (test_builder_core.BuilderCoreTests.test_prohibited_turn_is_not_invented) ... ok
+test_t_touch_at_interior_does_not_connect (test_builder_core.BuilderCoreTests.test_t_touch_at_interior_does_not_connect) ... ok
+test_unknown_status_fails_closed (test_builder_core.BuilderCoreTests.test_unknown_status_fails_closed) ... ok
+test_z_requires_opt_in_and_preserves_original_ordinates (test_builder_core.BuilderCoreTests.test_z_requires_opt_in_and_preserves_original_ordinates) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.108s
+
+OK

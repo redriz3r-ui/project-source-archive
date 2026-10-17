@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "NETWORK_GRAPH",
+  "source_layer_key": "synthetic_corridors",
+  "source_crs_wkt": "EPSG:4326",
+  "network_crs_wkt": "EPSG:4326",
+  "source_snapshot_sha256": "376895049c5bab5f059a1fd407a41decbdb8ac14a42ca9578a44194f00f753ab",
+  "profile_hash": "987e837927f4bff596b1677b5acc76abf8b683682356760c9ddb54d2088dddb3",
+  "rule_profile": {
+    "allow_2d_projection": false,
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "direction": {
+      "field": "direction",
+      "map": {
+        "both": "BOTH",
+        "forward": "FORWARD",
+        "reverse": "REVERSE"
+      },
+      "mode": "FIELD"
+    },
+    "eligibility": {
+      "field": "status",
+      "map": {
+        "blocked": "BLOCKED",
+        "open": "OPEN",
+        "unknown": "UNKNOWN"
+      },
+      "mode": "FIELD"
+    },
+    "ellipsoid": "NONE",
+    "profile_id": "synthetic_v1",
+    "qa_near_miss_m": 0.02,
+    "schema_version": "1.0.0",
+    "strict": true
+  },
+  "junctions_sha256": null,
+  "measurement": {
+    "ellipsoid": "NONE",
+    "method": "PLANAR_LENGTH",
+    "qgis_version": "PURE_PYTHON"
+  },
+  "source_parts": [
+    {
+      "source_layer_key": "synthetic_corridors",
+      "source_feature_key": "h",
+      "source_part_index": 0,
+      "original_vertices": [
+        [
+          -122.0,
+          37.0
+        ],
+        [
+          -121.999,
+          37.0
+        ]
+      ],
+      "network_vertices_xy": [
+        [
+          -122.0,
+          37.0
+        ],
+        [
+          -121.999,
+          37.0
+        ]
+      ],
+      "has_z": false,
+      "has_m": false
+    }
+  ],
+  "nodes": [
+    {
+      "node_id": "n_4432d8b15d19ba1c5d82964a8fb5f094f672996c72457d22db5d27463620fab9",
+      "xy": [
+        -121.999,
+        37.0
+      ],
+      "kind": "GEOMETRIC_ENDPOINT",
+      "anchors": [
+        {
+          "source_layer_key": "synthetic_corridors",
+          "source_feature_key": "h",
+          "source_part_index": 0,
+          "anchor": "END"
+        }
+      ]
+    },
+    {
+      "node_id": "n_9d172b96966e2a4a84c783de643353f67d079687ecfd2292a4445367ef1e57e3",
+      "xy": [
+        -122.0,
+        37.0
+      ],
+      "kind": "GEOMETRIC_ENDPOINT",
+      "anchors": [
+        {
+          "source_layer_key": "synthetic_corridors",
+          "source_feature_key": "h",
+          "source_part_index": 0,
+          "anchor": "START"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "e_768455488d4f80a071737080f5aa6da0463ce70e359c23de3c718f34533c558c",
+      "source_layer_key": "synthetic_corridors",
+      "source_feature_key": "h",
+      "source_part_index": 0,
+      "from_node_id": "n_9d172b96966e2a4a84c783de643353f67d079687ecfd2292a4445367ef1e57e3",
+      "to_node_id": "n_4432d8b15d19ba1c5d82964a8fb5f094f672996c72457d22db5d27463620fab9",
+      "from_anchor": "START",
+      "to_anchor": "END",
+      "vertices_xy": [
+        [
+          -122.0,
+          37.0
+        ],
+        [
+          -121.999,
+          37.0
+        ]
+      ],
+      "length_m": 0.0010000000000047748,
+      "edge_status": "OPEN",
+      "direction": "BOTH"
+    }
+  ],
+  "transitions": [],
+  "qa_issues": [
+    {
+      "schema_version": "1.0.0",
+      "issue_id": "i_62326de67c1729463f7ce10064a93a09cf195991097269924923bcfb0e99c9f2",
+      "route_id": null,
+      "severity": "WARNING",
+      "code": "DANGLE",
+      "message": "Eligible network endpoint has one incident edge",
+      "source_layer_key": "synthetic_corridors",
+      "source_feature_key": "h",
+      "source_part_index": 0,
+      "edge_id": null,
+      "junction_id": null,
+      "xy": [
+        -121.999,
+        37.0
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "issue_id": "i_a9d3404b9d2bae54737afa72a742f3b45510964eb7ba3325dc57d1144b397719",
+      "route_id": null,
+      "severity": "WARNING",
+      "code": "DANGLE",
+      "message": "Eligible network endpoint has one incident edge",
+      "source_layer_key": "synthetic_corridors",
+      "source_feature_key": "h",
+      "source_part_index": 0,
+      "edge_id": null,
+      "junction_id": null,
+      "xy": [
+        -122.0,
+        37.0
+      ]
+    }
+  ],
+  "graph_digest": "e42326b7576ac2d8617ad7bfe02539f4ca77b740dc22a1cfc807aa934062939f",
+  "build_summary": {
+    "connection_policy": "GEOMETRIC_ENDPOINT_ONLY",
+    "connection_verification": "NOT_ASSET_VERIFIED",
+    "physical_edge_count": 1,
+    "node_count": 2,
+    "component_count": 1,
+    "node_component_ids": {
+      "n_9d172b96966e2a4a84c783de643353f67d079687ecfd2292a4445367ef1e57e3": "c_630283692b18ec0b42d3010b34444ed97d67aff068b9f189ebb5916432a0a1b1",
+      "n_4432d8b15d19ba1c5d82964a8fb5f094f672996c72457d22db5d27463620fab9": "c_630283692b18ec0b42d3010b34444ed97d67aff068b9f189ebb5916432a0a1b1"
+    },
+    "source_to_edges": [
+      {
+        "source_layer_key": "synthetic_corridors",
+        "source_feature_key": "h",
+        "source_part_index": 0,
+        "edge_ids": [
+          "e_768455488d4f80a071737080f5aa6da0463ce70e359c23de3c718f34533c558c"
+        ]
+      }
+    ]
+  }
+}
