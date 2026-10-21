@@ -1,0 +1,11 @@
+*.[hH][aA][rR]
+!examples/synthetic.har
+captures/
+.venv/
+__pycache__/
+*.egg-info/
+dashboard/node_modules/
+dashboard/dist/
+reports/*
+!reports/.gitkeep
+.DS_Store
