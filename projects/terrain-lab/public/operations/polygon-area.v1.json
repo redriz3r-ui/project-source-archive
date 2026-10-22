@@ -1,0 +1,71 @@
+{
+  "id": "polygon-area",
+  "contractVersion": "terrain-lab-operation/v1",
+  "title": "Polygon area",
+  "description": "Turf.js spherical area of a WGS84 GeoJSON Polygon or MultiPolygon, in square meters.",
+  "method": "Turf.js area on WGS84 coordinates; interior rings subtract area",
+  "inputGeometry": ["Polygon", "MultiPolygon"],
+  "outputGeometry": ["Polygon", "MultiPolygon"],
+  "crs": "OGC:CRS84 (WGS84 longitude, latitude)",
+  "units": "square meters",
+  "limits": {
+    "maximumCoordinates": 20000,
+    "coordinateDimensions": "2 to 16 numeric values; longitude and latitude determine area",
+    "maxKeyLength": 120,
+    "maxLabelLength": 200,
+    "maxSourceReferenceLength": 2048,
+    "maxFeaturePropertiesBytes": 16384,
+    "ringsMustBeClosed": true
+  },
+  "scientificCaveats": [
+    "This is horizontal spherical area, not three-dimensional terrain surface area.",
+    "Closed rings and coordinate ranges are checked, but self-intersections and polygon topology are not fully validated.",
+    "Area of a solar panel array is not total developed land, tortoise habitat loss, or ecological impact.",
+    "Caller-supplied source references are not verified by the operation."
+  ],
+  "requestSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["contractVersion", "operationId", "units", "input"],
+    "properties": {
+      "contractVersion": { "const": "terrain-lab-operation/v1" },
+      "operationId": { "const": "polygon-area" },
+      "units": { "const": "square-meters" },
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "label", "feature"],
+        "properties": {
+          "key": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "label": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "feature": {
+            "type": "object", "required": ["type", "geometry"],
+            "properties": {
+              "type": { "const": "Feature" },
+              "geometry": { "type": "object", "required": ["type", "coordinates"],
+                "properties": { "type": { "enum": ["Polygon", "MultiPolygon"] }, "coordinates": { "type": "array", "minItems": 1 } } },
+              "properties": { "type": ["object", "null"] }
+            }
+          }
+        }
+      },
+      "sourceReference": { "type": "string", "minLength": 1, "maxLength": 2048 }
+    }
+  },
+  "responseSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "oneOf": [
+      { "type": "object", "required": ["contractVersion", "operationId", "ok", "result", "provenance"],
+        "properties": { "contractVersion": { "const": "terrain-lab-operation/v1" }, "operationId": { "const": "polygon-area" },
+          "ok": { "const": true }, "result": { "type": "object" }, "provenance": { "type": "object" } } },
+      { "type": "object", "required": ["contractVersion", "operationId", "ok", "error"],
+        "properties": { "contractVersion": { "const": "terrain-lab-operation/v1" }, "operationId": { "const": "polygon-area" },
+          "ok": { "const": false }, "error": { "type": "object", "required": ["code", "message"] } } }
+    ]
+  },
+  "provenance": {
+    "callerSupplied": "sourceReference is unverified caller text",
+    "registeredDataset": "Only an internal caller that checked source files may supply study, dataset, feature, and checksum evidence"
+  }
+}

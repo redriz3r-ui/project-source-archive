@@ -1,0 +1,15 @@
+{
+  "catalogVersion": "terrain-lab-operations/v1",
+  "operations": [
+    {
+      "id": "point-distance",
+      "contractVersion": "terrain-lab-operation/v1",
+      "descriptor": "/operations/point-distance.v1.json"
+    },
+    {
+      "id": "polygon-area",
+      "contractVersion": "terrain-lab-operation/v1",
+      "descriptor": "/operations/polygon-area.v1.json"
+    }
+  ]
+}

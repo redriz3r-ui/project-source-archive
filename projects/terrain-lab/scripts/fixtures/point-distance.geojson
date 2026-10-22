@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "West point" },
+      "geometry": { "type": "Point", "coordinates": [-112.115, 36.105] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "East point" },
+      "geometry": { "type": "Point", "coordinates": [-112.095, 36.112] }
+    }
+  ]
+}

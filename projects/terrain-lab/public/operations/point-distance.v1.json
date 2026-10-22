@@ -1,0 +1,189 @@
+{
+  "id": "point-distance",
+  "contractVersion": "terrain-lab-operation/v1",
+  "title": "Point distance",
+  "description": "Horizontal straight-line spherical distance between two WGS84 GeoJSON points, in meters.",
+  "method": "Turf.js distance on WGS84 coordinates",
+  "inputs": {
+    "first": "GeoJSON Point wrapped as a SourceFeature",
+    "second": "GeoJSON Point wrapped as a SourceFeature"
+  },
+  "output": "AnalysisResult with a GeoJSON LineString connecting the two input coordinates and a numeric distance in meters",
+  "crs": "OGC:CRS84 (WGS84 longitude, latitude)",
+  "limits": {
+    "coordinateDimensions": "2 to 16 numeric values; only longitude and latitude are used",
+    "heightUsed": false,
+    "maxKeyLength": 120,
+    "maxLabelLength": 200,
+    "maxSourceReferenceLength": 2048,
+    "maxFeaturePropertiesBytes": 16384,
+    "sourceKeysMustDiffer": true
+  },
+  "scientificCaveats": [
+    "The result is a horizontal spherical distance, not a terrain-surface distance or travel route.",
+    "A line connecting model cells is not evidence of habitat connectivity or animal movement.",
+    "Caller-supplied source references are not verified by this operation."
+  ],
+  "requestSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["contractVersion", "operationId", "inputs"],
+    "properties": {
+      "contractVersion": { "const": "terrain-lab-operation/v1" },
+      "operationId": { "const": "point-distance" },
+      "inputs": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["first", "second"],
+        "properties": {
+          "first": { "$ref": "#/$defs/sourceFeature" },
+          "second": { "$ref": "#/$defs/sourceFeature" }
+        }
+      },
+      "sourceReference": { "type": "string", "minLength": 1, "maxLength": 2048, "pattern": "\\S" }
+    },
+    "$defs": {
+      "sourceFeature": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "label", "feature"],
+        "properties": {
+          "key": { "type": "string", "minLength": 1, "maxLength": 120, "pattern": "\\S" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\S" },
+          "feature": { "$ref": "#/$defs/pointFeature" }
+        }
+      },
+      "pointFeature": {
+        "type": "object",
+        "required": ["type", "geometry"],
+        "properties": {
+          "type": { "const": "Feature" },
+          "geometry": {
+            "type": "object",
+            "required": ["type", "coordinates"],
+            "properties": {
+              "type": { "const": "Point" },
+              "coordinates": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 16,
+                "prefixItems": [
+                  { "type": "number", "minimum": -180, "maximum": 180 },
+                  { "type": "number", "minimum": -90, "maximum": 90 },
+                  { "type": "number" }
+                ],
+                "items": { "type": "number" }
+              }
+            }
+          },
+          "properties": { "type": ["object", "null"] }
+        }
+      }
+    }
+  },
+  "responseSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["contractVersion", "operationId", "ok", "result", "provenance"],
+    "properties": {
+      "contractVersion": { "const": "terrain-lab-operation/v1" },
+      "operationId": { "const": "point-distance" },
+      "ok": { "const": true },
+      "result": {
+        "type": "object",
+        "required": ["id", "title", "valueLabel", "sourceLabel", "feature"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "const": "Point distance" },
+          "valueLabel": { "type": "string", "minLength": 1 },
+          "sourceLabel": { "type": "string", "minLength": 1 },
+          "feature": {
+            "type": "object",
+            "required": ["type", "geometry", "properties"],
+            "properties": {
+              "type": { "const": "Feature" },
+              "geometry": {
+                "type": "object",
+                "required": ["type", "coordinates"],
+                "properties": {
+                  "type": { "const": "LineString" },
+                  "coordinates": {
+                    "type": "array", "minItems": 2, "maxItems": 2,
+                    "items": {
+                      "type": "array", "minItems": 2, "maxItems": 2,
+                      "prefixItems": [
+                        { "type": "number", "minimum": -180, "maximum": 180 },
+                        { "type": "number", "minimum": -90, "maximum": 90 }
+                      ],
+                      "items": false
+                    }
+                  }
+                }
+              },
+              "properties": {
+                "type": "object",
+                "required": ["classification", "observed", "operation", "value", "unit", "source", "method", "computedAt"],
+                "properties": {
+                  "classification": { "const": "computed geometry" },
+                  "observed": { "const": false },
+                  "operation": { "const": "distance" },
+                  "value": { "type": "number", "minimum": 0 },
+                  "unit": { "const": "meters" },
+                  "source": { "type": "string" },
+                  "method": { "type": "string" },
+                  "computedAt": { "type": "string", "format": "date-time" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "provenance": { "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["verification", "inputKeys"],
+          "properties": {
+            "verification": { "const": "caller-supplied" },
+            "inputKeys": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" } },
+            "sourceReference": { "type": "string" }
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["verification", "inputKeys", "studyId", "datasetId", "sourceUrl", "sourceArchiveSha256", "sourceRasterSha256"],
+          "properties": {
+            "verification": { "const": "registered-dataset" },
+            "inputKeys": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" } },
+            "studyId": { "type": "string", "minLength": 1 },
+            "datasetId": { "type": "string", "minLength": 1 },
+            "sourceUrl": { "type": "string", "minLength": 1, "pattern": "^https?://" },
+            "sourceArchiveSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "sourceRasterSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+          }
+        }
+      ] }
+    }
+  },
+  "errorSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["contractVersion", "operationId", "ok", "error"],
+    "properties": {
+      "contractVersion": { "const": "terrain-lab-operation/v1" },
+      "operationId": { "const": "point-distance" },
+      "ok": { "const": false },
+      "error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "message"],
+        "properties": {
+          "code": { "enum": ["INVALID_REQUEST", "UNSUPPORTED_VERSION", "UNSUPPORTED_OPERATION", "INVALID_GEOMETRY", "INVALID_PARAMETERS", "COMPUTATION_FAILED"] },
+          "message": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
