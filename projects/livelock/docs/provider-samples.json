@@ -1,0 +1,30 @@
+{
+  "notice": "Synthetic internal gateway contract examples retained for future gateway tests. Current integration directly uses official v2 count/results/current_show. Actual private local evidence is in ignored artifacts/live-verification.json and redacted live-browser-verification.json. The official feed cannot confirm OFFLINE from omission.",
+  "samples": [
+    {
+      "platform": "chaturbate",
+      "username": "sample_handle",
+      "state": "live",
+      "source": "authorized-affiliate",
+      "observedAt": "2026-10-22T17:00:00Z",
+      "validUntil": "2026-10-22T17:01:30Z"
+    },
+    {
+      "platform": "chaturbate",
+      "username": "sample_handle",
+      "state": "offline",
+      "source": "authorized-affiliate",
+      "observedAt": "2026-10-22T17:00:00Z",
+      "validUntil": "2026-10-22T17:01:30Z"
+    },
+    {
+      "platform": "chaturbate",
+      "username": "sample_handle",
+      "state": "unknown",
+      "source": "authorized-affiliate",
+      "observedAt": "2026-10-22T17:00:00Z",
+      "validUntil": "2026-10-22T17:01:30Z",
+      "reason": "unavailable"
+    }
+  ]
+}

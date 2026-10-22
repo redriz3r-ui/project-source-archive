@@ -1,0 +1,8 @@
+node_modules/
+test-results/
+playwright-report/
+.env*
+*.log
+config/*.local.json
+artifacts/live-verification*.json
+artifacts/live-browser*.json

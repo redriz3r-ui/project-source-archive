@@ -1,0 +1,1 @@
+[{"label":"4chan /gif board","regex":"^https?://([a-z0-9-]+\\.)*(4chan\\.org|4channel\\.org)(:[0-9]+)?/(g|%67|%47)(i|%69|%49)(f|%66|%46)(/|%2f|[?#]|$)"}]

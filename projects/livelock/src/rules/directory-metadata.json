@@ -1,0 +1,15 @@
+{
+  "source": "https://theporndude.com/",
+  "retrievedAt": "2026-10-22T20:21:33.955Z",
+  "extractionSha256": "fbdd4c6ad10cf83d3012abf1392142b482988e0209739f5d702795a66e0df792",
+  "categoryPages": 156,
+  "attemptedCategoryPages": 156,
+  "discoveredCategoryPages": 156,
+  "listingCount": 9036,
+  "domainCount": 3035,
+  "unresolvedCount": 0,
+  "headerResolvedLinks": 2220,
+  "reviewPagesChecked": 9,
+  "failedPages": [],
+  "coverage": "Public category-card external URL attributes, domain mentions in listing descriptions, and displayed domain links on nine final review pages. Public referral redirects were resolved with bounded HEAD-only requests; no destination bodies were downloaded. No review prose/images/videos are bundled. A snapshot is not proof of every historical, search-only, unlisted or future directory entry."
+}
