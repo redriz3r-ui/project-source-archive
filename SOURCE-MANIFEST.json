@@ -1,0 +1,4722 @@
+[
+  {
+    "path": "projects/cassette-glow/.gitignore",
+    "bytes": 283,
+    "sha256": "0bce4cce322cb1547f46dc8c58fc55c98c59d4e4c95dce37d83ad46e72aba953"
+  },
+  {
+    "path": "projects/cassette-glow/PUBLICATION.md",
+    "bytes": 727,
+    "sha256": "8f42e709abeec67e658bc6943da6430f0249cc434d48b82068a444e3ac01f7f2"
+  },
+  {
+    "path": "projects/cassette-glow/README.md",
+    "bytes": 5069,
+    "sha256": "d039cb987471d91dc924f74cde50d9d255d8eea599ec07cc0e8728f6a17f158d"
+  },
+  {
+    "path": "projects/cassette-glow/cassette/__init__.py",
+    "bytes": 64,
+    "sha256": "2cbb8a6b1d234369376beb98fd11bd7540ec93e4b72280a85b28ab38463e1e59"
+  },
+  {
+    "path": "projects/cassette-glow/cassette/inputs.py",
+    "bytes": 1784,
+    "sha256": "7d179a52df100dea03210a304d911d9480e1833c761934a2919cfbd0d471b56f"
+  },
+  {
+    "path": "projects/cassette-glow/cassette/render.py",
+    "bytes": 2303,
+    "sha256": "933c098205690d38466c4660e7751d4e8258293a792f10b1fd798b0a731e8e96"
+  },
+  {
+    "path": "projects/cassette-glow/cassette/scene.py",
+    "bytes": 2440,
+    "sha256": "7090b59f26e78e8269ad464447603960b0e2bfb96cb1339a0d20a32ce4fc6138"
+  },
+  {
+    "path": "projects/cassette-glow/cassette/settings.py",
+    "bytes": 407,
+    "sha256": "0a20b4530afd77a284cdeb870246fb3360ea7e9c8aeaa9f0a65691e8fae2481d"
+  },
+  {
+    "path": "projects/cassette-glow/main.py",
+    "bytes": 1215,
+    "sha256": "171ceba8c4a8e130adaccc9c9147a83d2cf553e308a485c3bf92abf9b252d6cc"
+  },
+  {
+    "path": "projects/cassette-glow/tests/check_animation.py",
+    "bytes": 2017,
+    "sha256": "c83c38f12b05cc014f45563d41216cc64c6c5d87301b4f68b1f15967ba180fe4"
+  },
+  {
+    "path": "projects/facade-godot/.editorconfig",
+    "bytes": 33,
+    "sha256": "3b2c749c8a940905a08f727d8be9017c9568a12421c0aee7e37e9543b3751b1b"
+  },
+  {
+    "path": "projects/facade-godot/.gitattributes",
+    "bytes": 80,
+    "sha256": "21b01a606c9f85f18bb9230245f00ab104df7409cbb2fe9423f6751ca72ba754"
+  },
+  {
+    "path": "projects/facade-godot/.gitignore",
+    "bytes": 329,
+    "sha256": "6cba6d97fe4a87ce8fdf192009cfcc22638decc45b4ef1b24db0e9d3e83f25d3"
+  },
+  {
+    "path": "projects/facade-godot/PUBLICATION.md",
+    "bytes": 672,
+    "sha256": "62fb151c77af02119c5d0f96b45ee015b706b333e814637c775803147c6dad7e"
+  },
+  {
+    "path": "projects/facade-godot/README.md",
+    "bytes": 130,
+    "sha256": "4b95086ef905acbf8d44085b41783a7369872630c854835bbeb120822be58c99"
+  },
+  {
+    "path": "projects/facade-godot/icon.svg",
+    "bytes": 994,
+    "sha256": "f6369bae7e12e6d16019cd6214cf27a2fdb6f3f6d024bd6f23c322be4804474f"
+  },
+  {
+    "path": "projects/facade-godot/project.godot",
+    "bytes": 503,
+    "sha256": "2c45a790d4218ebc4da8c9350d6ce600bede38bfa4d11ae95e7fe5dd561faf26"
+  },
+  {
+    "path": "projects/facade-godot/scenes/InterrogationEnding.tscn",
+    "bytes": 1006,
+    "sha256": "72f97a18d83575296edcf2c38f3eed8f3b1d9a379146a039773bf3042c8e1270"
+  },
+  {
+    "path": "projects/facade-godot/scenes/InterrogationScene.tscn",
+    "bytes": 4327,
+    "sha256": "53589ab2741aba6438e13f66e68bf76f17cf511bb4aa1b977ad3f87f88ba3480"
+  },
+  {
+    "path": "projects/facade-godot/scenes/ending.tscn",
+    "bytes": 1017,
+    "sha256": "c35d15d0a6c362c3ef562cc4aaf308aa1beb820360e39b374c898bdb0b9436fe"
+  },
+  {
+    "path": "projects/facade-godot/scenes/main.tscn",
+    "bytes": 2639,
+    "sha256": "32231429776aec9cfff83aa42cc2d26028d07569c0dd3155173019f52646eeee"
+  },
+  {
+    "path": "projects/facade-godot/scripts/GPTClient.gd",
+    "bytes": 6647,
+    "sha256": "374ac9a8c21136921caf52c7627ec3e24e165b217941aca35c3a33ccc75d9f82"
+  },
+  {
+    "path": "projects/facade-godot/scripts/GPTClient.gd.uid",
+    "bytes": 19,
+    "sha256": "e997b1d40c679227aab1387f4715e43bd2a52d7e947db35a1dae97592833690e"
+  },
+  {
+    "path": "projects/facade-godot/scripts/InterrogationEnding.gd",
+    "bytes": 1154,
+    "sha256": "ba6bf60066425d865b658e215a8e3e83f367baa26887ddf3b4b5e0a097305f3e"
+  },
+  {
+    "path": "projects/facade-godot/scripts/InterrogationEnding.gd.uid",
+    "bytes": 20,
+    "sha256": "ddf05876f563d68b73085fd2d890aece043b1f94a37382827874a9effadc1287"
+  },
+  {
+    "path": "projects/facade-godot/scripts/InterrogationStateManager.gd",
+    "bytes": 6852,
+    "sha256": "732d032814c830a92d15f9076d0eb7b3fef974f0fa24ea3dc236265bae5999de"
+  },
+  {
+    "path": "projects/facade-godot/scripts/InterrogationStateManager.gd.uid",
+    "bytes": 20,
+    "sha256": "1f35c5a8b8eda87cbb9fcce45a83ef317bde97ada82982ecd7a3d8bbad766e29"
+  },
+  {
+    "path": "projects/facade-godot/scripts/InterrogationUI.gd",
+    "bytes": 3815,
+    "sha256": "09e884c1d7d1101035887af4393a3a57791e36a21d385d9bbae6b41cae0a7c81"
+  },
+  {
+    "path": "projects/facade-godot/scripts/InterrogationUI.gd.uid",
+    "bytes": 20,
+    "sha256": "32e5cf50016b9859f7a58287a04d981bf7d59fdc9bacb970860ba04365353a21"
+  },
+  {
+    "path": "projects/facade-godot/scripts/StateManager.gd.uid",
+    "bytes": 20,
+    "sha256": "d77cd683a143bf7847f08eb689090dcbef9154c8f2b93f90090bdd8501ffc074"
+  },
+  {
+    "path": "projects/facade-godot/scripts/ending.gd",
+    "bytes": 1922,
+    "sha256": "c64bae353c889129facd2b300b3b3d9945b0f79535d7304c55803ff5d30abfbc"
+  },
+  {
+    "path": "projects/facade-godot/scripts/ending.gd.uid",
+    "bytes": 19,
+    "sha256": "470e8d6986daeb92d654ef93fd76fcbabaa5071826d340b1f1cd53ed8f2a2541"
+  },
+  {
+    "path": "projects/facade-godot/scripts/gpt_client.gd",
+    "bytes": 984,
+    "sha256": "9d88abd2f6c44e9d493b14a1ca57b23c48a1e2ee7a44bdd4b1f6ecdc2840a73e"
+  },
+  {
+    "path": "projects/facade-godot/scripts/gpt_client.gd.uid",
+    "bytes": 20,
+    "sha256": "f4ade3ac2f9f517c2409d09fef0ffcc4ede7a569076e118e840313ea5c76fed9"
+  },
+  {
+    "path": "projects/facade-godot/scripts/main.gd",
+    "bytes": 3888,
+    "sha256": "1a292b38e6069769b16b8a65b01a387fc0784139a25b35740451e8bce19eb2f9"
+  },
+  {
+    "path": "projects/facade-godot/scripts/main.gd.uid",
+    "bytes": 20,
+    "sha256": "64a00ad9f965a781cb1f4289437706dfea078dd1d170b574ccb2fca4e1a1b05d"
+  },
+  {
+    "path": "projects/facade-godot/scripts/state_manager.gd",
+    "bytes": 9266,
+    "sha256": "ad2217c3a32049fd0ffb1e0b3233f8cde32c136e2bb0219557ef5dae71c0d115"
+  },
+  {
+    "path": "projects/facade-godot/scripts/state_manager.gd.uid",
+    "bytes": 19,
+    "sha256": "c388ceb7b66b665bc9fb09025c92e029987e91898b312310f61e981fb318d25d"
+  },
+  {
+    "path": "projects/ffs-reel-engine/.env.example",
+    "bytes": 122,
+    "sha256": "c1b9dcd8cc4a0d7d7478221da7076ff93bc3c3a18b2df25cb53cea81579e8776"
+  },
+  {
+    "path": "projects/ffs-reel-engine/.gitignore",
+    "bytes": 380,
+    "sha256": "3c2e481b8e55753c3aac351120eec193df06d493a6596c4839b0d167bba3d5a9"
+  },
+  {
+    "path": "projects/ffs-reel-engine/PUBLICATION.md",
+    "bytes": 923,
+    "sha256": "1e013bc235151718714fe18b3a1b7270efb5855c7b37c470e9248586b8a337c1"
+  },
+  {
+    "path": "projects/ffs-reel-engine/README.md",
+    "bytes": 5510,
+    "sha256": "eda7d28a39d2109bf3b35621d038fef0acc34d17c546be74c43aaa35eb1f6508"
+  },
+  {
+    "path": "projects/ffs-reel-engine/app.py",
+    "bytes": 10231,
+    "sha256": "2c6fcc9a787039e25e0ec0bff1862915d7d05c9e209073d05302021209ca44bb"
+  },
+  {
+    "path": "projects/ffs-reel-engine/docs/CONVERSION_MODE.md",
+    "bytes": 1307,
+    "sha256": "06662816a1cc2a68e4321d2a81f21b6c36966256c5ac455d20b33f8b8eac4c23"
+  },
+  {
+    "path": "projects/ffs-reel-engine/docs/CURRENT_FORM_2026-08-18.md",
+    "bytes": 3786,
+    "sha256": "a865684d93437bf85fcb474a9fe464f1062f7c93606238a9ebbd1b30750cb931"
+  },
+  {
+    "path": "projects/ffs-reel-engine/docs/PRODUCT.md",
+    "bytes": 1110,
+    "sha256": "e056ec7511af431f18ed21bf2d74c7d1bc2fa2285714a9256660833c5381a33c"
+  },
+  {
+    "path": "projects/ffs-reel-engine/requirements.txt",
+    "bytes": 120,
+    "sha256": "8b91b019b52b55627de8b9cb4693f1edc4ba69fa23b4ea08cdc6addbc26cff56"
+  },
+  {
+    "path": "projects/ffs-reel-engine/schema/project.schema.json",
+    "bytes": 1293,
+    "sha256": "16b7ac46379e4fbdc01e55cead6df854691d2b6fd3c42db10e360f2fd99ef5cb"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/__init__.py",
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/ai_evidence_research.py",
+    "bytes": 20855,
+    "sha256": "a97e7fc9582cd137a74fedb6b60f4217f4ef5c30fb66164e2d14248f7003d859"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/captions.py",
+    "bytes": 5493,
+    "sha256": "54744edce1504b81a70141607993779095cb18b75ad3cd86747431bc359813cf"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/clip_refinement.py",
+    "bytes": 10813,
+    "sha256": "5c4d69553f1d548d0b7786942125a29a6fc5712c4301a8ed5e852b1be1f7571a"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/concept_generator.py",
+    "bytes": 11011,
+    "sha256": "73ce78d5e30af1fdf4dd67deff766123f49a020b2f055213fbea6d4e396f524a"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/conversion_renderer.py",
+    "bytes": 11827,
+    "sha256": "6d49e2124f0f69e74096a520aa31251f7850af76824c71d12f4cc6cc6b9b1bca"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/editorial_renderer.py",
+    "bytes": 13476,
+    "sha256": "df000d0db48eb72b11b20eb9ac5421fda4ebff731381cecae800124159015d64"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/editorial_rerank.py",
+    "bytes": 5030,
+    "sha256": "75632162306131283c3eb1ae100aad0303ff163f391d19f939d1675bf11622d3"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/engine.py",
+    "bytes": 75020,
+    "sha256": "e336444e1b2cc05129ddef94dd71e54f8a47e1362f8d220d7bed3e6999b02a0a"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/evidence_builder.py",
+    "bytes": 2578,
+    "sha256": "e5bd534db2604763ecb503f03023da593aed6e2d3fdfe9d56192fd3debc92e02"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/film_index.py",
+    "bytes": 23181,
+    "sha256": "8147f4560683a833f856349e7c8e2800967d0eb8577a5a6021b4d79ef98f0f18"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/mood_montage.py",
+    "bytes": 18118,
+    "sha256": "eea26df37164d3ab87ee441f7c4b07164d5f6a0f69c242263671a13aee55ec05"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/scene_enrichment.py",
+    "bytes": 2999,
+    "sha256": "169a973f0a1f3d18d9875ab2fc57161c0e567173361cb3c01f1105a720b79244"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/scene_map.py",
+    "bytes": 6039,
+    "sha256": "2472c784767bc9d76e5893b53688fdb1c9aaa20b8be9488b57ee7ba3da1595e7"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/semantic_search.py",
+    "bytes": 4164,
+    "sha256": "f6de0336cfa2d5b1ac93627f0e0f4d54b71bda7a636cd015b13efe5c7249f636"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/storyboard.py",
+    "bytes": 12310,
+    "sha256": "ff8f536e40369e8d22a6193622c516fc0cbaada176655b3e49483692f8ffdfc4"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/transcription.py",
+    "bytes": 7772,
+    "sha256": "d75a37830ce7d243fd14d451ceb8bd377f57f5d473aa7e57c89a1ec4ef3ecce9"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/visual_evidence.py",
+    "bytes": 11085,
+    "sha256": "2aecc2ca95f5249a9a60f3cbb5934db713ce04eeafd5361ebda00a1d9486708e"
+  },
+  {
+    "path": "projects/ffs-reel-engine/src/visual_montage.py",
+    "bytes": 16551,
+    "sha256": "b3c92d790e8b51d1ac23801ffe42f64a5c56835ab5e820fbd6e98c40d05d66a1"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/app.css",
+    "bytes": 3924,
+    "sha256": "e69744db771dff2abc6cfe7cb6dac45d459c7524b261b2b428a27db557f1daa4"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/app.js",
+    "bytes": 16134,
+    "sha256": "13f3e6a84b2d28919fa3c8dac573d43c90385ea04b728fce5b6fc90047b4ce02"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/conversion.css",
+    "bytes": 1030,
+    "sha256": "4a77d8dbd7f5e902baf5b0fbbd63671471583d94fac48348016bafd98c4cd6b2"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/conversion.js",
+    "bytes": 4011,
+    "sha256": "d2448251f0440acd54f4d68b94c68fff4ac2b40a5f572134ae02edbed9a4c3c5"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/scene-search.css",
+    "bytes": 4174,
+    "sha256": "bb31b0384aa0a85bbcf6ce80dc9efb5f0d025cbb35114b6c896fdfdfb0e03bbe"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/scenes.css",
+    "bytes": 776,
+    "sha256": "c24ff7965f787e4c5c48b48215fa10412c8df961abfc86f89344b85d8f7d3bda"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/scenes.js",
+    "bytes": 17208,
+    "sha256": "a2a26b8c5515da692d0dfeb35576e1f2825c12e74de42e8eb2064d0c36f7c791"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/storyboard.css",
+    "bytes": 3560,
+    "sha256": "59e82c2407a7e9c2f4ed7d0d91200eedf0c96c8a91aca04646fe51d196c4ecd2"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/storyboard.js",
+    "bytes": 15205,
+    "sha256": "e8a5904cdb049d368f95972fabced05864bc5f8e10f755b4dbfa2805cd470c8c"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/transcription.css",
+    "bytes": 421,
+    "sha256": "73048d6a849ca793b252a08b20eed125e9c192f3fd18d6f222c4864ead214b8c"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/workspace.css",
+    "bytes": 5398,
+    "sha256": "393f8f55260d6890ea07bb57de8dfe49a5a8cad117a22d7fb370e4c4299a4588"
+  },
+  {
+    "path": "projects/ffs-reel-engine/static/workspace.js",
+    "bytes": 11924,
+    "sha256": "1578e30ad999c8bc0d3ad4f7295ce58c8fa9bb945224a56e09eb418a02e064df"
+  },
+  {
+    "path": "projects/ffs-reel-engine/templates/conversion.html",
+    "bytes": 1736,
+    "sha256": "1b16625c9f55bed60cd705af2ae552990cbd9506d9fa3c078f10ba2ca636a92f"
+  },
+  {
+    "path": "projects/ffs-reel-engine/templates/index.html",
+    "bytes": 5990,
+    "sha256": "52ac80958d218bab0fba66fc0e556858e89307b59a1edb09ad61fb39f47d9002"
+  },
+  {
+    "path": "projects/ffs-reel-engine/templates/scenes.html",
+    "bytes": 3133,
+    "sha256": "e2e1c5c6e2560c446cb1375ca2bfbf3862fae5f49d3323e545a273a0329869bc"
+  },
+  {
+    "path": "projects/ffs-reel-engine/templates/storyboard.html",
+    "bytes": 2423,
+    "sha256": "a386eddf9b1e68d6f8ce31efc6cf46168f03e559e40e42a6fe4ec7addccb93b8"
+  },
+  {
+    "path": "projects/ffs-reel-engine/templates/workspace.html",
+    "bytes": 4418,
+    "sha256": "56951cffcec229b1e9406c292f201b55cffbe479bbd5653f528a012b0335b72f"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/fixture.srt",
+    "bytes": 551,
+    "sha256": "bc7c0e6e29da7e181e16c756583b08dbb07bcac2c68eeee6a74f81805155c1dc"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/storyboard_fixture_server.py",
+    "bytes": 2448,
+    "sha256": "0ec95862e5705b2bde16efda9567258e03d9265d45ab3969faabe8e0b768fe7d"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_ai_evidence_research.py",
+    "bytes": 8769,
+    "sha256": "cc8e5bebc083ec43e2e705bcf10e5e5253652881a575ea271b51f9ebe3776812"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_ai_evidence_research_route.py",
+    "bytes": 3554,
+    "sha256": "8e68ff5a76133ac8d417b019c858ab1c51e3d0f62c48b6db438b5d7c9103532d"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_captions.py",
+    "bytes": 2991,
+    "sha256": "72a94038f96cc6353f8a7482623e64a55599113e03a69f5e453a9c2e19c6cf16"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_clip_refinement.py",
+    "bytes": 6309,
+    "sha256": "65cbde6f2a023e9b213511a5aaa6400676437ea3569e764af36dda3a5584bdb6"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_concept_generator.py",
+    "bytes": 6541,
+    "sha256": "016a724dd295f27a21eaf56ea914e00341f461429f8f9bd5efc57c5cfc8e8839"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_conversion_renderer.py",
+    "bytes": 6235,
+    "sha256": "291d1bf89a35762135c73c203d125073ee001c60c1814f3cc1ca815f1aea9414"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_editorial_export.py",
+    "bytes": 6894,
+    "sha256": "93a02f6374427158521155a29f3d61c3cec531512a69ba8919c03eb097ca6ecf"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_editorial_renderer.py",
+    "bytes": 9078,
+    "sha256": "f60e3e18626aab90c08e25bb7f472c0423ba13a14b8fca5114902fc1a2e73502"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_editorial_rerank.py",
+    "bytes": 2128,
+    "sha256": "cad351d7322a50282327199daf0fa6a6437fef4e1a1c15b00b74789fc29ac98a"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_engine.py",
+    "bytes": 2692,
+    "sha256": "808da6e3c129dab37c41068849586a287830dd5b96d67a9955f908f48b610e83"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_mood_montage.py",
+    "bytes": 11608,
+    "sha256": "e7956075ed13d451a40452fd0ef0fd9314cabc92b1ef081199040b890db9b017"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_research_downstream.py",
+    "bytes": 11870,
+    "sha256": "bc8dca28d310599fcca5d2179daa98c6b82a26942fe6e9f9048be938f498031c"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_research_persistence.py",
+    "bytes": 7442,
+    "sha256": "3d604ae0a9d7dc029398bcd13471f572a54cedfd299c0a17984388a09ca667e0"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_storyboard.py",
+    "bytes": 7397,
+    "sha256": "d90d777933bb4abaedcea269de3e7f75279ae02d2d26110f2ec94fe7e75cb8ba"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_visual_evidence.py",
+    "bytes": 9047,
+    "sha256": "297b9975e97696fc92f955f987e8578de6a8f93f79af2df18c639c2784f9f6a0"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_visual_montage.py",
+    "bytes": 5367,
+    "sha256": "9d0044dea9a6581b9637a93bc76ed378c6eb283b6905e6aaada4374d4dab8f8c"
+  },
+  {
+    "path": "projects/ffs-reel-engine/tests/test_workspace.py",
+    "bytes": 1626,
+    "sha256": "228ce78714166c8761e6d4930f7703bb7b786e6b13893b5fe8ab4bbec0bafdee"
+  },
+  {
+    "path": "projects/ffs-reel-engine/transcribe_project.py",
+    "bytes": 1746,
+    "sha256": "20ef9cce41605b1d11b954d8dc86f48bdad8e1c88af39af5fc2d936167fbfcb8"
+  },
+  {
+    "path": "projects/film-reel-engine/.gitignore",
+    "bytes": 335,
+    "sha256": "107ef8f0def121b8f40cdda199c46c7856f7ff2affef1cbfb0957b3912cb0bdd"
+  },
+  {
+    "path": "projects/film-reel-engine/PUBLICATION.md",
+    "bytes": 867,
+    "sha256": "823170ac18232eb97eab6568b43959c60f7efb6c7057b6df9a737c442973d833"
+  },
+  {
+    "path": "projects/film-reel-engine/README.md",
+    "bytes": 14263,
+    "sha256": "5e61a1d80e55b724f4b2e848cee88287d76b44a4af7aaf60f896f0cbfde66363"
+  },
+  {
+    "path": "projects/film-reel-engine/VALIDATION.md",
+    "bytes": 4641,
+    "sha256": "18e6428243947b63a311b38237b276db7adfccb334c0ba9fe60d131ec26e59b2"
+  },
+  {
+    "path": "projects/film-reel-engine/config.yaml",
+    "bytes": 924,
+    "sha256": "c1bf8cbf65512046caf9229b5ae8e3b2b4d8c8b2cd5b609fb0bc21e27f266f87"
+  },
+  {
+    "path": "projects/film-reel-engine/presets/atmosphere.json",
+    "bytes": 157,
+    "sha256": "c99c5e5b2c45c028e7b6325024040154862ee27f5c60d39d2a793b087445e08e"
+  },
+  {
+    "path": "projects/film-reel-engine/presets/frenzy.json",
+    "bytes": 174,
+    "sha256": "efe0e6186d9b5616f38076edb9e563644a1fbde510944c461e6ecc4555aad53b"
+  },
+  {
+    "path": "projects/film-reel-engine/presets/longing.json",
+    "bytes": 166,
+    "sha256": "5869a8e5629bebe04f549c0fa085c4f7613ce45ed8b013b3cf6fa6ed37ea2238"
+  },
+  {
+    "path": "projects/film-reel-engine/reel.py",
+    "bytes": 7638,
+    "sha256": "186c8b71e02cf6b063374f7f6d84f38197670838fec7016169225303a556bbc2"
+  },
+  {
+    "path": "projects/film-reel-engine/requirements.txt",
+    "bytes": 74,
+    "sha256": "5fdb8b7f52e19529f2b035147aa0a43d593ea08f2dfc4bb683fefbb61925e99a"
+  },
+  {
+    "path": "projects/film-reel-engine/src/__init__.py",
+    "bytes": 75,
+    "sha256": "448df481f659cb8f2a6ef03cf6db97c83a710b06e028951af4fa84758afef01a"
+  },
+  {
+    "path": "projects/film-reel-engine/src/editor.py",
+    "bytes": 3940,
+    "sha256": "46e386c35a4d91cf51c198542144b0d6df5c39076cfdcf598e61a45b990820a7"
+  },
+  {
+    "path": "projects/film-reel-engine/src/end_cards.py",
+    "bytes": 1366,
+    "sha256": "04e2c4e1f91e1f6121f900ea888a2672d777d88bffe935d042e70645f627e410"
+  },
+  {
+    "path": "projects/film-reel-engine/src/face_detection.py",
+    "bytes": 681,
+    "sha256": "7584500ec196289c20a4a6a5d29221c8f1550be9ccc88092322f8ddae4b0a48c"
+  },
+  {
+    "path": "projects/film-reel-engine/src/frame_analysis.py",
+    "bytes": 1455,
+    "sha256": "5a74ea75c6e04a08d729264cc15262c515a731f34bdf9e4b63f3b7a6e5f8713f"
+  },
+  {
+    "path": "projects/film-reel-engine/src/ingest.py",
+    "bytes": 3464,
+    "sha256": "1b3f9f0eccf7018fe59d22fdcfbcf84b37ef586163ee0f99293c4a0a7c00aedc"
+  },
+  {
+    "path": "projects/film-reel-engine/src/motion_analysis.py",
+    "bytes": 1304,
+    "sha256": "b3005cc98b18690786c8f6ebdf004f561821207e8409b90efd247c0b43c4460f"
+  },
+  {
+    "path": "projects/film-reel-engine/src/reel_director.py",
+    "bytes": 9219,
+    "sha256": "869286a2df9d2b2499c386c4f2813d49a39dd83956c656c83af1b1bef4bfbd4a"
+  },
+  {
+    "path": "projects/film-reel-engine/src/reframer.py",
+    "bytes": 4677,
+    "sha256": "57376b9dab52c9e071b8846def1a7d2e6a09a194f44645ed1732e12533e748a7"
+  },
+  {
+    "path": "projects/film-reel-engine/src/renderer.py",
+    "bytes": 10309,
+    "sha256": "8e6085911cc2a0b8e4115d7fc1796410f1537610867f0aca11b369663a9739c5"
+  },
+  {
+    "path": "projects/film-reel-engine/src/scene_detection.py",
+    "bytes": 3982,
+    "sha256": "4ff7475fb332ac9027191d966fe15310a41525994accba7364f054cfee663de7"
+  },
+  {
+    "path": "projects/film-reel-engine/src/semantic.py",
+    "bytes": 1379,
+    "sha256": "5ee6785ace425f5b8c27138457db483b1c15ceddc6c6c85a340adfc72665e1aa"
+  },
+  {
+    "path": "projects/film-reel-engine/src/shot_analysis.py",
+    "bytes": 6259,
+    "sha256": "7e5a1b9a3e9bbb840bcf875f41c3ce7a0c06d74ddb7bb1de5d627da5d0f637a8"
+  },
+  {
+    "path": "projects/film-reel-engine/src/shot_ranker.py",
+    "bytes": 3475,
+    "sha256": "0c1ef6de921c29581613239dc9cc96ff5a67eb3b90aa018103e3fd3b7360ca00"
+  },
+  {
+    "path": "projects/film-reel-engine/src/thumbnails.py",
+    "bytes": 1179,
+    "sha256": "9fed2ed519520d3788fe284107a1f5f4e4e1bbfa0b33751f31de1f5fbebd12d3"
+  },
+  {
+    "path": "projects/film-reel-engine/src/utils.py",
+    "bytes": 4256,
+    "sha256": "a09eedbe7043bbe08290ddfdb55f0644e10d4864236a224d81049adfb04d6062"
+  },
+  {
+    "path": "projects/film-reel-engine/tests/integration.py",
+    "bytes": 7195,
+    "sha256": "e42eacebe86c4fc7231bb14f8003a0f3530625785112da29bcb8850eea7e11f3"
+  },
+  {
+    "path": "projects/film-reel-engine/tests/test_engine.py",
+    "bytes": 6619,
+    "sha256": "77ef716a89f4dfcb3f6c0fc2cdc48c4f9a31a809be4354a62d91dac358c04c2f"
+  },
+  {
+    "path": "projects/film-reel-engine/ui/index.html",
+    "bytes": 24439,
+    "sha256": "b8c3bc0a8ecb5b9e218286e03ee6ad910e9ce54050d47df285cef9359d7cfd6a"
+  },
+  {
+    "path": "projects/film-reel-engine/ui.py",
+    "bytes": 16563,
+    "sha256": "8854ddc63242301332dec99760d04a445c526af2bc8a7c08cfa8caf3749f590b"
+  },
+  {
+    "path": "projects/godot-game-jam/.editorconfig",
+    "bytes": 33,
+    "sha256": "3b2c749c8a940905a08f727d8be9017c9568a12421c0aee7e37e9543b3751b1b"
+  },
+  {
+    "path": "projects/godot-game-jam/.gitattributes",
+    "bytes": 80,
+    "sha256": "21b01a606c9f85f18bb9230245f00ab104df7409cbb2fe9423f6751ca72ba754"
+  },
+  {
+    "path": "projects/godot-game-jam/.gitignore",
+    "bytes": 329,
+    "sha256": "6cba6d97fe4a87ce8fdf192009cfcc22638decc45b4ef1b24db0e9d3e83f25d3"
+  },
+  {
+    "path": "projects/godot-game-jam/PUBLICATION.md",
+    "bytes": 713,
+    "sha256": "f3b39bb6136d64db78fbc1b331d77823e2226c0ef8fffc6d2125947befcb97ff"
+  },
+  {
+    "path": "projects/godot-game-jam/README.md",
+    "bytes": 792,
+    "sha256": "7287409eea0e589677313c64b61247e9ada4a30da4ed74c89d4db288f0397e9e"
+  },
+  {
+    "path": "projects/godot-game-jam/icon.svg",
+    "bytes": 994,
+    "sha256": "f6369bae7e12e6d16019cd6214cf27a2fdb6f3f6d024bd6f23c322be4804474f"
+  },
+  {
+    "path": "projects/godot-game-jam/project.godot",
+    "bytes": 1185,
+    "sha256": "7c731a7d3844fe2440c7164a14d0a23f5961eafd34a554eb6d2b89ffda554e87"
+  },
+  {
+    "path": "projects/godot-game-jam/scenes/Main.tscn",
+    "bytes": 652,
+    "sha256": "a8faef1af166c6b9c78737c42498cf3721710ccb717fdef35dc29595150b882d"
+  },
+  {
+    "path": "projects/godot-game-jam/scenes/Main3D.tscn",
+    "bytes": 1157,
+    "sha256": "1a7ced82798657bb232f6865cf37a2ec716ce791bf0ed6eab1742b0e02d4c326"
+  },
+  {
+    "path": "projects/godot-game-jam/scenes/UnravelableObject.tscn",
+    "bytes": 843,
+    "sha256": "d80ab3979957fcdc52bcac76c1bc1ef2b568ad275ff4aafb32325ecaa0838721"
+  },
+  {
+    "path": "projects/godot-game-jam/scenes/UnravelableObject3D.tscn",
+    "bytes": 940,
+    "sha256": "fa0c3ae56209c4e5e669fa52bd1690a099a00c78e2aeabcde5bb1c2f913a24e5"
+  },
+  {
+    "path": "projects/godot-game-jam/scenes/main_game.tscn",
+    "bytes": 2089,
+    "sha256": "3e9bbd30bcb7fb86ef75451dbb71ac8e27da31cbb7476dab245de5df7241327d"
+  },
+  {
+    "path": "projects/godot-game-jam/scenes/mystery_box.tscn",
+    "bytes": 1991,
+    "sha256": "ceffea6619c421135d7350782d91834f57dfe34dd7371833321730a865e67bd4"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/dial_puzzle.gd",
+    "bytes": 1264,
+    "sha256": "2d4e16138104928dcc58362c16854ed27ec7c8abb1fa6cd7d7560d8baaf2d099"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/dial_puzzle.gd.uid",
+    "bytes": 20,
+    "sha256": "2a25fabb7a4211f8477ec9207b08183dc1df0c4d5e4b4da05e6edd4174a28d4a"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/main.gd",
+    "bytes": 1496,
+    "sha256": "9c39c0251aee5b241aad7b4357570f6cdbfabb9461305277c509d0d78845d950"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/main.gd.uid",
+    "bytes": 20,
+    "sha256": "98584fef622f63536784a2707d106fc3634754d77e9aeebaa7e3982c94f093eb"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/main3d.gd",
+    "bytes": 1276,
+    "sha256": "d17e81b9f50abd03c6bc60738d65a0825551fe0f421a57cec0d6e2118bde16d1"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/main3d.gd.uid",
+    "bytes": 20,
+    "sha256": "00ad2d987e860aa7b79ff8a469d7beed93cfc69f66c4e746224d7826341561e6"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/mystery_box.gd",
+    "bytes": 1698,
+    "sha256": "c74a4f8b48d2eaf28a84388f0a668ecaf2b14d5de391bfef9ada4c1065184992"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/mystery_box.gd.uid",
+    "bytes": 20,
+    "sha256": "fcfec49f36edbcc3d798cb27c66b130e82cbdd1473b3b9ad640e4c4356ceb154"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/puzzle_manager.gd",
+    "bytes": 1423,
+    "sha256": "65a2b96ff56b43d167a0f6772ff6ef573fb404dfbc8c99018872bbf2f8fc3845"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/puzzle_manager.gd.uid",
+    "bytes": 20,
+    "sha256": "5c79be36a6d0ff3e37485fa1253cd6b5ce0e989fa5bcf60c80446193da473fcd"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/unravelable_object.gd",
+    "bytes": 1178,
+    "sha256": "ee397527af7d8dbfa7f5cf81154d4fec6c2c52bf508d8001b51528bb1ec94d0d"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/unravelable_object.gd.uid",
+    "bytes": 20,
+    "sha256": "9bf6111fe8cdc884e225c843eb3fb69c308ec62c0e6041ef7681b397101e8f9c"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/unravelable_object_3d.gd",
+    "bytes": 1147,
+    "sha256": "6347d18f9295df1da7406daf67fbe25dbe1b136640726de61cca627e27825b9c"
+  },
+  {
+    "path": "projects/godot-game-jam/scripts/unravelable_object_3d.gd.uid",
+    "bytes": 20,
+    "sha256": "18797de79aea9336eea9b379bc6ae03b88741281ab1cb85fce436d4b5c8c39cc"
+  },
+  {
+    "path": "projects/history-documentary-engine/.gitignore",
+    "bytes": 348,
+    "sha256": "391775b240ed567204f975f5091102b7657f2b7a39f7a858919c71daad5bc33c"
+  },
+  {
+    "path": "projects/history-documentary-engine/PUBLICATION.md",
+    "bytes": 991,
+    "sha256": "33c545d0337e99bf1adb4969112ce3c8292a18c6f766cbac59c99b0a3b028ffc"
+  },
+  {
+    "path": "projects/history-documentary-engine/README.md",
+    "bytes": 13171,
+    "sha256": "378cee5401421e81742ac5c48caf81831e234263ca48e1ebf77ded109b3bc189"
+  },
+  {
+    "path": "projects/history-documentary-engine/automation/example-brief.json",
+    "bytes": 1104,
+    "sha256": "c98c55566cfba48c3319d714f1041f94c7fcd50bf7c21a078ad82cf8bf288f84"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/adapters/internet-archive.ts",
+    "bytes": 2523,
+    "sha256": "d480b8f7184f31c32d01be02fa55b5acc1febfa2749131e9da0fddbd1476404b"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/adapters/library-of-congress.ts",
+    "bytes": 3277,
+    "sha256": "03f984418519048375b37688babdbe0cc8b4660a50b4809396b0c4b7a9e44076"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/adapters/macos-say.ts",
+    "bytes": 1050,
+    "sha256": "8ff9645b9c8c90afbd6619b3f8f6fd2415b89e92007f0f47a9a964ae11dfb4df"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/adapters/nasa-images.ts",
+    "bytes": 1846,
+    "sha256": "6ea87bb7a9303868818fe806c9004ffbcc0dc9b1591c25355b84da137dec65e9"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/adapters/procedural-assets.ts",
+    "bytes": 5448,
+    "sha256": "8e0c23425f5ee2e8a40d85ee285afdeeab6254bd021991ed81c18f6ea68562c8"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/adapters/wikimedia-commons.ts",
+    "bytes": 2274,
+    "sha256": "cca18f6f4c0ce41598f029d5999124925c71a80a884297b4f123dd51e801762a"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/adapters/wikipedia-research.ts",
+    "bytes": 7667,
+    "sha256": "363c1bcf58459e4627b6f3ecd3113c8f43332b1a0bbdb900ae73929761528367"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/adapters.ts",
+    "bytes": 1593,
+    "sha256": "e631aa987b9e8e1063238f5b86779c3294eccce754e19a4b4334e5821e20408e"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/aguinaldo-segment.ts",
+    "bytes": 7826,
+    "sha256": "ca6431db4d621c731859fa9177bbbab9c7637146e949c80fcf7a084ad0e28980"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/archive.ts",
+    "bytes": 9791,
+    "sha256": "9e690fadef001c743a430e6e54560b16cd18fa869d78726d5e79e517c796986c"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/assemble-illustrated-master.ts",
+    "bytes": 2120,
+    "sha256": "a4d0b245545922e1251447a6e51e7066ff163af07f14411004149fb64ab19992"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/brief.ts",
+    "bytes": 1730,
+    "sha256": "c100a6ab15e9ef9b271b54233121ced33a70e1eed5dde9a372043a1cd376dc24"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/captions.ts",
+    "bytes": 3219,
+    "sha256": "6c17554464a88023365327834fb617382fcb6bef03779b0665af7170e6b8302f"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/creative-assets.ts",
+    "bytes": 4296,
+    "sha256": "ed98ac3fd8d19dd733190318d781da89b994d9dc1f10049c23aed083537e56ed"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/curate-blair-assets.ts",
+    "bytes": 13988,
+    "sha256": "3e19a84092b574159724ff4025e3a88fb64bd81c4d55b8cd8ef80a41195a0528"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/curate-jordan-assets.ts",
+    "bytes": 8265,
+    "sha256": "cfa7853b7957827a5335fe1527a0e4019b67c0caf03fae67cadfd85fac461053"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/director.ts",
+    "bytes": 6934,
+    "sha256": "b79ae644d58d3731c8ede52d4a4c06809ba4216711e66d06a1c17b90fed18c7e"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/index.ts",
+    "bytes": 14168,
+    "sha256": "18f05fc2e0fca183b0de7a87bb1f0645a844bbe18b1249e2264af3f88490d6c6"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/intelligence-proof.ts",
+    "bytes": 6868,
+    "sha256": "0dabd42992c553a3d7f9ba422ed2f6ebe1164fc5b611973eae67a7132ed830d8"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/local-documentary.ts",
+    "bytes": 10947,
+    "sha256": "54d537a2f33869e793d6cb95425d171f3598d105e83183210fa2f92e844cb182"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/manila-assets.ts",
+    "bytes": 5938,
+    "sha256": "acd7c32e6e693267f7d9276e18059c1452bf8764fc9939dfb3ed3307c6271538"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/manila-audio.ts",
+    "bytes": 2287,
+    "sha256": "1903aa4a70d8715c756fb3f0efec61472d8e07aa3390de1edb6f9c4cf947b875"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/manila-documents.ts",
+    "bytes": 1854,
+    "sha256": "6cc7173e3131db0c5769e73f9dc3a57a09ac427f29c14146d52a75b3e575e99b"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/manila-full.ts",
+    "bytes": 4832,
+    "sha256": "c4186152f8f126387e0a472b95963d175dfa02c9004260ea27801140273fce4d"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/manila-opening.ts",
+    "bytes": 3233,
+    "sha256": "26ec8e57392edbaca53ba1ed1b5fc912b21caf83d50b6cabc0c2b4b6810fcdd9"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/manila-research.ts",
+    "bytes": 3380,
+    "sha256": "04f5d35b3d3840fabd3e9ab49e42918e46c1fe10a7073b5358f3a31e0e73338a"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/manila-script.ts",
+    "bytes": 2914,
+    "sha256": "f88856f636550fb351cde55e2c271805d51552ceaee3da120f4d5d7905e5b058"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/master-announcements.ts",
+    "bytes": 1117,
+    "sha256": "6a50f2e51232e2e83e775f22e3f51758b7a2d73a0ff8901cc1b46f4d79a18cfe"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/master-assemble.ts",
+    "bytes": 1758,
+    "sha256": "c06de62a375627a341a3b6e1f593b7dcc7b4c5ddadc34f58829fff979b1dfbdb"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/merge-jordan-fragments.ts",
+    "bytes": 2579,
+    "sha256": "d5c21c05930575d6ecc734c74af00bc812eb3eb265d19fee896263e2697c797a"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/narration.ts",
+    "bytes": 2556,
+    "sha256": "207d82ce497e928386a02f62a131f396e5cb42a010f2b0e057eadbc6ae78681c"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/phone-proof.ts",
+    "bytes": 3538,
+    "sha256": "4e3f3da5e93c2addefb301a081cc3332c0971fb0d499417d1b4986c0205ea613"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/planner.ts",
+    "bytes": 5196,
+    "sha256": "39ddfd05982f3da33840f4f9be88fb854356bc030af68271341a2c09640a2685"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/prepare-rough-cut.ts",
+    "bytes": 2417,
+    "sha256": "feeac554ffa51833189728cac8f5a7b860d05cf4a474f7b394092655e35edcf3"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/presidential.ts",
+    "bytes": 4905,
+    "sha256": "6aac528ffbbc533add5e0074ba8ae07a2a5766ca389eeeedc0e6aa6037c7aaef"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/production.ts",
+    "bytes": 8342,
+    "sha256": "071b399fbf423612709c52e712d648ad1cf0cb11b914df7748b5241495fb0c17"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/quezon-segment.ts",
+    "bytes": 8763,
+    "sha256": "6b2b9ef35a1707a3357bcea827d6bffed18a09ef4e70dd84db54069289255f57"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/render-episode-preview.ts",
+    "bytes": 1645,
+    "sha256": "e17158c56b6e5cb68011f9c218dbdddce41b23568f947b723ce1b2f93339216a"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/render-illustrated-presidents.ts",
+    "bytes": 1978,
+    "sha256": "a5726b5c96d8523d262c3f6c8e96ff31b3fd68ac16eb70fe6fc288a8c00b6c7c"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/render.ts",
+    "bytes": 3161,
+    "sha256": "4223f8f78c1e1df962cd14d77e3025a65fc645a18f6b1775664dfcb52de666aa"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/repair-quezon-assets.ts",
+    "bytes": 1627,
+    "sha256": "1598fe322b01f03b8e898b7b01296a319a5a3d8f5650577df550b5247f494ae1"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/research.ts",
+    "bytes": 9502,
+    "sha256": "c17e883abadb279333cc3c5dc36266b2df26011937437cfcec6c34412a13ae01"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/resume.ts",
+    "bytes": 13385,
+    "sha256": "c1c015668b659d8bf5db8034458cc50af6a793304fb09bbfb39348b44ebb0ff2"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/validate-apollo-opening.ts",
+    "bytes": 4274,
+    "sha256": "5ff2502c48e881bb91f87f7b34511d8bff068abbe5fc036c9bb9579e9b634587"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/validate-episode-preproduction.ts",
+    "bytes": 2012,
+    "sha256": "258a3d6aa211a0b56692ef4bbc0656e1ec458966cc0356ba174670ea57e0cd89"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/validation.ts",
+    "bytes": 12270,
+    "sha256": "af6908cb0ea54ec0a82305cd5abc2946adfe6da65477fa6159d58232208e98a2"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/visual-director.ts",
+    "bytes": 4505,
+    "sha256": "a2946864ae75d9b6aee56f4bb4ba241388f4ed8d5ce821bb124601983f45549d"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/wiki-compile.ts",
+    "bytes": 4553,
+    "sha256": "a20b9ddc06234d17e756041536caa3487d8afd934ab0a5007821fca967344b48"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/wiki-full-render.ts",
+    "bytes": 5368,
+    "sha256": "9d4999f76fb9dfa126589c4a3abdcc920a93be8e103c3105830df1b22fa1f959"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/wiki-proof-assets.ts",
+    "bytes": 2963,
+    "sha256": "883558e61e4e0a9142846cd3e0223f39a7145e6688c5852ade513103f191501c"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/wiki-proof-render.ts",
+    "bytes": 2362,
+    "sha256": "72cc0736d5fd9a7917d052000d39bcd531edf6ab2f48dbb7759b7229338a3e86"
+  },
+  {
+    "path": "projects/history-documentary-engine/cli/wiki-visual-evidence.ts",
+    "bytes": 9548,
+    "sha256": "da332766e5d8441c9ac9df4fbc304dbc3aed4162e856c6700d7d4dec79d462d2"
+  },
+  {
+    "path": "projects/history-documentary-engine/docs/presidential-pipeline.md",
+    "bytes": 10716,
+    "sha256": "d4cc120a5a78dd1358a162db018c405d47a4d57fd143771a73d72f696f4a4eda"
+  },
+  {
+    "path": "projects/history-documentary-engine/package-lock.json",
+    "bytes": 168285,
+    "sha256": "8cbc32992d88a46008ffce444c4690325ec8f1488b7a63a6762106c78d4a2856"
+  },
+  {
+    "path": "projects/history-documentary-engine/package.json",
+    "bytes": 3914,
+    "sha256": "bcc73e75399c85db77160d3bf5a643d2e3a03161348700c3291cc4ce98dc4b97"
+  },
+  {
+    "path": "projects/history-documentary-engine/remotion.config.ts",
+    "bytes": 141,
+    "sha256": "772e8bfa73e2221b5549ed587d35869364c3023596c8055fca8897190ecf9a5e"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/Documentary.tsx",
+    "bytes": 2311,
+    "sha256": "743400446bf078041f7a342c36febc647f99227a38405d6fdf931037812fde4a"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/Root.tsx",
+    "bytes": 6436,
+    "sha256": "c435f8397d3d6cca2ff86119d38b86c9257e70bd2150012844067e18b859f405"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/captions/CaptionOverlay.tsx",
+    "bytes": 783,
+    "sha256": "3d406ce8d481903b01d5168526a844ac277caf51b72084e92ea623ee5b7bb972"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/episodes/manila1898Proof.ts",
+    "bytes": 4362,
+    "sha256": "500eaaeaec0fa005740ce82583b977582c8780bba620cb5c386d300e409279d4"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/episodes/manilaFull.ts",
+    "bytes": 3710,
+    "sha256": "b3b8fba0abc940c85226cb3fbea48aabee8db4b4b34cc76eb736e3d1f62ca050"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/episodes/manilaOpening.ts",
+    "bytes": 2734,
+    "sha256": "065c3394d177469cc1f4e639261eb43369cd27f9ae1378c22b107347089fe4e0"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/episodes/manilaResearch.ts",
+    "bytes": 8692,
+    "sha256": "54da4df1f750f40f618e93be2cca7da834f13e42502174eda5010f0013e0425e"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/episodes/manilaScript.ts",
+    "bytes": 12499,
+    "sha256": "275557f543ba4aa2dfefa19ee706b148dd6905e0f86672ca4fee62a7f4d817c7"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/index.ts",
+    "bytes": 105,
+    "sha256": "5462d3268136731ce43bfd7c5072ea1ba48b51fec94fa30076f5044f4b39e4a2"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/intelligence/engine.ts",
+    "bytes": 6627,
+    "sha256": "4cc0b906543bf5388e1df113a4c2982e1cb45d6b2009c458c237197fab202c82"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/intelligence/jordanFixture.ts",
+    "bytes": 4504,
+    "sha256": "a5c0223021c887c708b4472f7b68706f31a2c795d987ad2e7c93d1a53b6ecda7"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/intelligence/registry.ts",
+    "bytes": 853,
+    "sha256": "4f97319183d96e6136c41ccfd0f5cbaf4f97ce6c95881c15e3e39cba4684d6bf"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/intelligence/schema.ts",
+    "bytes": 3444,
+    "sha256": "a620db85b9302ae2ee57d3fa4470dc11c57714e845ee54f437ad039e6d7bd8a6"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/manifest/sample.ts",
+    "bytes": 177,
+    "sha256": "adb1837a354d73fe6f6ec9042a2876297d58a79865d8fd79c2f5705e46a7d1da"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/manifest/schema.ts",
+    "bytes": 6059,
+    "sha256": "8383ffcbe76902b11dedd37fc698997734bba34d49bef45dd6525303d9d59c45"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/master/PresidentGridTransition.tsx",
+    "bytes": 7430,
+    "sha256": "514150ca8318774e20e0fdfa76d9e15248840e33883b7fa055daa3a37f5b01ca"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/master/presidents.ts",
+    "bytes": 2406,
+    "sha256": "300aca14b8a7655ac9698f8b86b91593bbf98d60b041702906c92a5a53916436"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/phone/PhoneFast.tsx",
+    "bytes": 4017,
+    "sha256": "2d62d0d66884e8ff666979d24d96540ed241de52518d1431656f1ddf74a714d2"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/phone/compiler.ts",
+    "bytes": 1885,
+    "sha256": "20d41daa801d3cf0682b388894dec2e4f48b3910d489b5f618fece7a8e40993b"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/phone/jordanProof.ts",
+    "bytes": 6040,
+    "sha256": "545896fae6f1d6cc7daafc3098e1032f44281224bed2dd8e3604e3ae89f608d5"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/phone/migration.ts",
+    "bytes": 1048,
+    "sha256": "435898aa0a8559264ac8cddfbeab295747c1e988f8a62b93a34d5572e60c5160"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/phone/schema.ts",
+    "bytes": 3037,
+    "sha256": "06de2fc34ccdd03ddf8acfedba2dbd145fc66d9897fda75f355a80348cb5b034"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/phone/validator.ts",
+    "bytes": 4479,
+    "sha256": "f58d11acacc056d3af66d99e065141de1bf4a7db3e0ebece4c2e530f04349b74"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/presidential/local-director.ts",
+    "bytes": 7226,
+    "sha256": "6078cf5e3e789693fa3a0b4087b84c34101f7e984ff3393b382093ac451dc6dd"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/presidential/pipeline.ts",
+    "bytes": 12556,
+    "sha256": "3a6f69c941a98f13c2a629c6b79af41bf3170f0958b973f10f69731bd8b8a57a"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/presidential/production.ts",
+    "bytes": 23646,
+    "sha256": "52cbf6bb7a1690806badbb629f44e26fdeabe7fc07a57c9643c3bbae83ceb9a8"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/presidential/wikimedia-cache.ts",
+    "bytes": 9994,
+    "sha256": "51893d6ea8ae4a64b94110e2b97560912bf3ce1b2b68934fda74eb61c2a73cab"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/presidents/PresidentSegment.tsx",
+    "bytes": 2717,
+    "sha256": "ef63e3ea37ee976d9f2ad07990c4153fcaed3c3acaae6e389ce69d7e696c0084"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/presidents/schema.ts",
+    "bytes": 1359,
+    "sha256": "e022d8eff7f57e0afe1b0d3fd23c4728afbef46abdc084bf08d1dd35853dc8f3"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/prototypes/ApolloOpening.tsx",
+    "bytes": 3635,
+    "sha256": "b2dc6a9b8c39fcd4bf03da1b3f2ecaebbcf94a27bc3495fd2b496c9c45c509af"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/prototypes/apolloOpeningPlan.ts",
+    "bytes": 4374,
+    "sha256": "193b4d69db2c3d96fbdfb76853372963448e001acb048329957b9730d74ba131"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/ArchivePhoto.tsx",
+    "bytes": 854,
+    "sha256": "165e817c113f668091eaa1ed7538dfa696039f519cbc216ede6bc2c30e10e8c2"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/GraphicCards.tsx",
+    "bytes": 3543,
+    "sha256": "b13bb67d86393902adba9fac324da5fb270bd1917c1407484bc750602064e05d"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/KenBurns.tsx",
+    "bytes": 1263,
+    "sha256": "5f66100693ac52b4cad5666f9ac53aa8b2790fed46fdbe1bbcea82cc4062aa67"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/MapLibreScene.tsx",
+    "bytes": 3773,
+    "sha256": "011ed99f0540cb783c86b0a118a0d0705f758b1dfa1d3489b13ab74ec0884ea8"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/MapScene.tsx",
+    "bytes": 3380,
+    "sha256": "ea28c6a5ee1054cfaee3aa454a633834eba83627a3a24a24f3bda0543e3914aa"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/TitleCard.tsx",
+    "bytes": 1912,
+    "sha256": "8b2889102f262e80c8d31fbee08febf4445f4b5df3fa64e337938807e455889d"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/VisualExplainers.tsx",
+    "bytes": 4592,
+    "sha256": "92e959d957b6e0a382b64094801a2416daa7ca50b8b81a549f8934427dfa4caa"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/registry.tsx",
+    "bytes": 1370,
+    "sha256": "c68e890073760c2da6fa9b2de36f1fb5ef0cc4bcdf41e3c2b7d49a67090617d1"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/scenes/shared.tsx",
+    "bytes": 1878,
+    "sha256": "4ccb95efecea8287a939577031536e342b0c754565f4c99913b709a8508dce03"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/IllustratedPresidentSegment.tsx",
+    "bytes": 7613,
+    "sha256": "2a6cc8fa76a68b9ab63adac25bda5da8a6991110d9e3365901e7e7458849f002"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/MagsaysayIllustratedSegment.tsx",
+    "bytes": 7956,
+    "sha256": "8f1c6f90ca76920b64193ec381a9ce9b1e225ab30577d0a33219e17e37bc666f"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/PhotoPoseScene.tsx",
+    "bytes": 5183,
+    "sha256": "ebaf0ebf7c009c1015bdc6fe3e8396597a7e45fa8f3c366360ee9a724fb5264c"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/StickFigureScene.tsx",
+    "bytes": 5441,
+    "sha256": "fc43c642711cc750cdd7b4f43c4616930f1aac92c3a53c6d77beb000edd6f814"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/layouts/VisualSceneLayout.tsx",
+    "bytes": 3867,
+    "sha256": "f711ebf7cd8749fe6a9eeaf1499e59a43f28e68780273721c73a918ee974a635"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/library/MagsaysayKit.tsx",
+    "bytes": 5593,
+    "sha256": "10a49cbac6f690c405a86ee8c3dbdb87feb9c509dc4f697654706590898074a1"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/library/PresidentFigure.tsx",
+    "bytes": 2703,
+    "sha256": "aceb0539eaf2ebf2c3cce1651f9e64825245cf2320c926ccfea03da32f733840"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/library/PresidentProfiles.ts",
+    "bytes": 3387,
+    "sha256": "69b1c68274cbd615f963a887a802fe3f1940bbf68762bb46339e248e884a62d8"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/magsaysayProof.ts",
+    "bytes": 918,
+    "sha256": "448812c6801297ddbe0b9126147aff921806a37e348ee459af716bd1168ab04c"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/presidentManifests.ts",
+    "bytes": 1675,
+    "sha256": "5ece0ade876704effa4caaef5271a7f34e5ed73ca7fcdad2f372c230e16bd337"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/stick/schema.ts",
+    "bytes": 397,
+    "sha256": "259782b062b03784cd427d3026f3c5dcefdfdb873b5c89889dd3b896c9a333df"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/wiki/WikiLearningVideo.tsx",
+    "bytes": 2685,
+    "sha256": "688c3f9596e43e6d685f43086f2f6cf82b96b244abd0f50961c8cec501066384"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/wiki/compiler.ts",
+    "bytes": 4182,
+    "sha256": "d1e073ec1b2607f4f6a3ed37bf9392ec747496ea76cab73aa355acd5b382b885"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/wiki/schema.ts",
+    "bytes": 2254,
+    "sha256": "6b6eb9a81922046f211b28f59ec1a7411f10ab22f6115c6b5b3202ca8dbef349"
+  },
+  {
+    "path": "projects/history-documentary-engine/src/wiki/visualEvidence.ts",
+    "bytes": 4181,
+    "sha256": "5df24b15e7fff45138f768208e8d32b87071c5f145e8dbe3830b1d0b35200f8a"
+  },
+  {
+    "path": "projects/history-documentary-engine/tests/core.test.ts",
+    "bytes": 7511,
+    "sha256": "009541221f6fe16e5c8ae3383fdc63cca7e30f397ea9c5ff7c94a4cac0e50aa1"
+  },
+  {
+    "path": "projects/history-documentary-engine/tests/intelligence.test.ts",
+    "bytes": 3250,
+    "sha256": "94f73533689c8dd30d19ac5527feb27c70635517e109e9855920678172de1640"
+  },
+  {
+    "path": "projects/history-documentary-engine/tests/local-documentary.test.ts",
+    "bytes": 1515,
+    "sha256": "e5c4dbb8e1a1e96407be6aa85f194cb00095868391abc7791e53e8238d85c67d"
+  },
+  {
+    "path": "projects/history-documentary-engine/tests/presidential.test.ts",
+    "bytes": 8448,
+    "sha256": "fe7585e897786df95bb818464ec33c691412589a61727d4b4438bae39a63125a"
+  },
+  {
+    "path": "projects/history-documentary-engine/tsconfig.json",
+    "bytes": 392,
+    "sha256": "300e61bc3e23977f569689480f8c29bc6e5646167811f77d97e65cebe583579e"
+  },
+  {
+    "path": "projects/livelock/.github/workflows/ci.yml",
+    "bytes": 528,
+    "sha256": "1f597e2cf25902de53a4f813b89e16f0c7795fb602819736b5cffca4305ba4fb"
+  },
+  {
+    "path": "projects/livelock/.gitignore",
+    "bytes": 425,
+    "sha256": "38848301f37a299cf0cf2215f9f298829142792d74ddbdf7d37436007320931a"
+  },
+  {
+    "path": "projects/livelock/CODEX_BUILD_PROMPT.md",
+    "bytes": 8778,
+    "sha256": "01537e238734197b69c9f262e03316ccbb4479e124f4b5878e641df2e4506862"
+  },
+  {
+    "path": "projects/livelock/LICENSE",
+    "bytes": 1078,
+    "sha256": "67c31115abe73d54b74652653ca279eb10e80f188416a439a90f96ae876b2001"
+  },
+  {
+    "path": "projects/livelock/LIVELOCK_ARCHITECTURE.md",
+    "bytes": 24583,
+    "sha256": "f85b86ed80903f03646f78e992a2af7a4f73b4d081054182cb7d9b3ef0614fa0"
+  },
+  {
+    "path": "projects/livelock/PUBLICATION.md",
+    "bytes": 999,
+    "sha256": "88732bca519998ff7deeaa1193a9b387a8344472bedbf10198e9f16fa3fb0b92"
+  },
+  {
+    "path": "projects/livelock/README.md",
+    "bytes": 9522,
+    "sha256": "709061489cad9a763b7800feda5e4b7f6967ad24f36779d2bb3f115b36d1dcde"
+  },
+  {
+    "path": "projects/livelock/blocked.html",
+    "bytes": 1164,
+    "sha256": "60c334b1ff89176457999b58957d4715b3b521b0f076e553871aaed7e372bc74"
+  },
+  {
+    "path": "projects/livelock/config/affiliate.example.json",
+    "bytes": 51,
+    "sha256": "3baf3548370f2e52bc143e85f8378ce52a4fd9634b23163600f2bb49c08ef199"
+  },
+  {
+    "path": "projects/livelock/docs/blocklist.md",
+    "bytes": 3858,
+    "sha256": "888a3806b53fbc0aaf0b096af2464e5ac376dec2f6cf553ac607b7f42224870b"
+  },
+  {
+    "path": "projects/livelock/docs/directory-blocklist.md",
+    "bytes": 4582,
+    "sha256": "dbeb4b4441dbfeb36c1671371e9f2020e83c2ca0d7676d5ae475281ae2e72491"
+  },
+  {
+    "path": "projects/livelock/docs/manual-install.md",
+    "bytes": 3963,
+    "sha256": "e9bc3b7dd294b5e6cf35a5a781a2906f4b695ab96eb9a7ce479b471a9b63c577"
+  },
+  {
+    "path": "projects/livelock/docs/permission-model.md",
+    "bytes": 3339,
+    "sha256": "37c57f4a134921230ef5f168a21cb568b185bbfa1ec9f6d62b986eb44949a7a9"
+  },
+  {
+    "path": "projects/livelock/docs/production-report.md",
+    "bytes": 13436,
+    "sha256": "377efdcb6a4976c9ded1793f46d5dfd0e6e42c05fdf5cd091db05b0b1bd5204f"
+  },
+  {
+    "path": "projects/livelock/docs/provider-feasibility.md",
+    "bytes": 4788,
+    "sha256": "0eb82db31f20dd79f428b5a8a52155df6c2ab034d1a39cf00d365f73a257263d"
+  },
+  {
+    "path": "projects/livelock/docs/provider-samples.json",
+    "bytes": 1096,
+    "sha256": "7aa81375c8e4c168544c078294b680a2f84f12bd9a3249c4e10e8f133df152e4"
+  },
+  {
+    "path": "projects/livelock/docs/test-matrix.md",
+    "bytes": 8241,
+    "sha256": "9e67b363a3903ea4c868da1469d216bbae8f6949c6392497d4554439f7453817"
+  },
+  {
+    "path": "projects/livelock/docs/threat-model.md",
+    "bytes": 5319,
+    "sha256": "3020d38fdf304eb1b166c947daebfb0ac7525c11ea1ef44b429034c5f05cb257"
+  },
+  {
+    "path": "projects/livelock/eslint.config.js",
+    "bytes": 404,
+    "sha256": "f36599167d1f7865f00ccd78b38b2fe86daebd6e67bbd6459d2f0ddf03ff619f"
+  },
+  {
+    "path": "projects/livelock/options.html",
+    "bytes": 3994,
+    "sha256": "174a1e027dc4e7402a0771b932aeaa4cc28bf8271c27f134746894906de26c34"
+  },
+  {
+    "path": "projects/livelock/package-lock.json",
+    "bytes": 104165,
+    "sha256": "519b5d0373eaa969f87d0ceb7afb06848b31a595cd1a98a9afd5aa54cdea8678"
+  },
+  {
+    "path": "projects/livelock/package.json",
+    "bytes": 1097,
+    "sha256": "42576c57eee864bbeede4363f627efc5ac2610ce3f760a3e3f2c78fdf7bce23d"
+  },
+  {
+    "path": "projects/livelock/playwright.config.ts",
+    "bytes": 194,
+    "sha256": "cb53ee86e02cbc90dabf077d0e48647c7dc41037c307b30a0b839dd65c993c74"
+  },
+  {
+    "path": "projects/livelock/popup.html",
+    "bytes": 1221,
+    "sha256": "907791e83ba17c4ec900ad4aeb76d4c7772dbf016c853557a26bfdb8d3084243"
+  },
+  {
+    "path": "projects/livelock/scripts/build.mjs",
+    "bytes": 4293,
+    "sha256": "b43c4087d4aa9825f22b8b5094646a660620a3fde2da9c7c2b7e9c4889ec982b"
+  },
+  {
+    "path": "projects/livelock/scripts/check-live.mjs",
+    "bytes": 1271,
+    "sha256": "8e7d79dc01992bb124843582a11b12c687bb24a8dde211446a6ace7dc1909503"
+  },
+  {
+    "path": "projects/livelock/scripts/import-blocklist.mjs",
+    "bytes": 2614,
+    "sha256": "161eb5ca970add8855e7bf911aea2b49cc647f43eeec7880183f717fa0c74227"
+  },
+  {
+    "path": "projects/livelock/scripts/import-directory.mjs",
+    "bytes": 3682,
+    "sha256": "50a89ce9432001d75c5cfb7eb104c0db5e0085b9961c70e564ab44d4060809b4"
+  },
+  {
+    "path": "projects/livelock/scripts/package.mjs",
+    "bytes": 738,
+    "sha256": "5b919bbaf922c2ca2748c368165ae822f6db47409cf9194093995087cdb089d2"
+  },
+  {
+    "path": "projects/livelock/scripts/resolve-directory-links.mjs",
+    "bytes": 1665,
+    "sha256": "bc46e3be07d79ea24ecc7b53980e6900e450c5902329384140a35ad557064b43"
+  },
+  {
+    "path": "projects/livelock/src/background/controller.ts",
+    "bytes": 6683,
+    "sha256": "e1ba8a5d076af1bb7e5c7d8519f537950086df62e51c8bd3dd442e63af509fb4"
+  },
+  {
+    "path": "projects/livelock/src/background/index.ts",
+    "bytes": 3838,
+    "sha256": "0b0b3d64169fd122753107e8fce77281b5838c684ff955069686d85dcfd18a17"
+  },
+  {
+    "path": "projects/livelock/src/blocked/main.ts",
+    "bytes": 3772,
+    "sha256": "66f79c1528b39db261fb8cf1ac384cbf82f3d8ba9227efa1e67f4ade5abd5963"
+  },
+  {
+    "path": "projects/livelock/src/build-env.d.ts",
+    "bytes": 85,
+    "sha256": "07ca991b3b3701645e07c6e0ee5890e28307455a0f3ef2c5e5b7160bb8cea2a8"
+  },
+  {
+    "path": "projects/livelock/src/content/room-guard.ts",
+    "bytes": 1288,
+    "sha256": "49ac693a1cc713a76c61b08c4fa355f2aa3b9229338ab4609f1bf912e6bbb805"
+  },
+  {
+    "path": "projects/livelock/src/core/blocklist.ts",
+    "bytes": 1183,
+    "sha256": "e952a3d5f52d1daca53f011ae293006daffb028b2d171d740efcf62a4eff8fa6"
+  },
+  {
+    "path": "projects/livelock/src/core/policy.ts",
+    "bytes": 5063,
+    "sha256": "1b88018abc15fe87fb9478ee5ed8832c51d3e8aab227aa407a31de916288660b"
+  },
+  {
+    "path": "projects/livelock/src/providers/affiliate-provider.ts",
+    "bytes": 7150,
+    "sha256": "a9eb46a6e062978e58e675774957f035b576d5c4a6b7d140fc0a7cbf942b276c"
+  },
+  {
+    "path": "projects/livelock/src/providers/fixture-provider.dev.ts",
+    "bytes": 587,
+    "sha256": "6e62104a7622c5ccc27ee4d8987ef6e469ba06d76428ea4d49cf4fcc6a0d8e5a"
+  },
+  {
+    "path": "projects/livelock/src/providers/gateway-provider.ts",
+    "bytes": 1113,
+    "sha256": "6a01de60f93f0bd3c39edfe449502d13f2bc726bc24a74dc5531271b242b3c67"
+  },
+  {
+    "path": "projects/livelock/src/providers/interface.ts",
+    "bytes": 527,
+    "sha256": "f6c7a51b3faf3f17edc1b785c87ba9362c0e28da33a940877a02ff5e3dd53399"
+  },
+  {
+    "path": "projects/livelock/src/rules/blocked-paths.json",
+    "bytes": 154,
+    "sha256": "02188cb34c379924733aa811c6a2ff2931ca2d48962ae528db784e174c71d11c"
+  },
+  {
+    "path": "projects/livelock/src/rules/blocklist-metadata.json",
+    "bytes": 1315,
+    "sha256": "ec711311cc598e1f2a471d620c4da7cab564bbc83cdec5b90f04b02952864d9c"
+  },
+  {
+    "path": "projects/livelock/src/rules/directory-domains.json",
+    "bytes": 58383,
+    "sha256": "d6ad4db9d25722c3fe53423237601b9980ed9318cb6ce49bd8da1cf73181096a"
+  },
+  {
+    "path": "projects/livelock/src/rules/directory-metadata.json",
+    "bytes": 827,
+    "sha256": "6b9d77b768a353df31fab4877a06fd159c2f11e74c9c9375a75b8af93603a29b"
+  },
+  {
+    "path": "projects/livelock/src/ui/main.ts",
+    "bytes": 4549,
+    "sha256": "4a2702fda53f03162450fbbd62978a8a6feea080790345b22e565b02912b5f74"
+  },
+  {
+    "path": "projects/livelock/src/ui/style.css",
+    "bytes": 1972,
+    "sha256": "3c0a32f091f1f7591ed485a7e562bdc5b630d54dbd041b0f294fe01e37e79a96"
+  },
+  {
+    "path": "projects/livelock/tests/affiliate.test.ts",
+    "bytes": 5962,
+    "sha256": "1e964a6577923ad03e35fd146f92bd84254a04124b7c015ae56b6f79cb3a3b7e"
+  },
+  {
+    "path": "projects/livelock/tests/blocklist.test.ts",
+    "bytes": 1519,
+    "sha256": "02171f489808463a6e0e9b3992215b5930b6392a9f586201e00f8857f73bf550"
+  },
+  {
+    "path": "projects/livelock/tests/controller.test.ts",
+    "bytes": 6816,
+    "sha256": "cdc207e67718cc7ea892e3922d18baf8008b8596763208cafe8cebe25c5a34ec"
+  },
+  {
+    "path": "projects/livelock/tests/e2e/extension.spec.ts",
+    "bytes": 19779,
+    "sha256": "d8b4fd73ebc07be09a37dbeef7e0b224719b87ef776b4ac4a13417c735efb384"
+  },
+  {
+    "path": "projects/livelock/tests/policy.test.ts",
+    "bytes": 5254,
+    "sha256": "e9eea704230290563504a31aea217d5cc853eaa835a035fc37094a9050a91797"
+  },
+  {
+    "path": "projects/livelock/third-party/blocklistproject-UNLICENSE.txt",
+    "bytes": 1211,
+    "sha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e"
+  },
+  {
+    "path": "projects/livelock/tsconfig.json",
+    "bytes": 402,
+    "sha256": "8ec35e610f81ff7edc2420a8dfb02f55a79aa2bb968014245474032c51bb9dba"
+  },
+  {
+    "path": "projects/livelock/vite.config.ts",
+    "bytes": 291,
+    "sha256": "e5fd239d759c21c43c7e295a10060d804687712690a446cbe54c184fa75ce66a"
+  },
+  {
+    "path": "projects/livelock/vitest.config.ts",
+    "bytes": 129,
+    "sha256": "acc0aaa1fc50f0487c41542c050cbb971c406355e278f8c4625fd0c8e922be0f"
+  },
+  {
+    "path": "projects/music-event-calendar/.gitignore",
+    "bytes": 283,
+    "sha256": "0bce4cce322cb1547f46dc8c58fc55c98c59d4e4c95dce37d83ad46e72aba953"
+  },
+  {
+    "path": "projects/music-event-calendar/PUBLICATION.md",
+    "bytes": 736,
+    "sha256": "e9a89f60b4a72ca4dad4c7052454784346fdf26842a2b85217188c7b313e6da9"
+  },
+  {
+    "path": "projects/music-event-calendar/README.md",
+    "bytes": 198,
+    "sha256": "56b7f7952f610291a20fc2584ebc56cecd2d1dc6774519cbf026abb6cc92e4be"
+  },
+  {
+    "path": "projects/music-event-calendar/data/events.json",
+    "bytes": 3,
+    "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  {
+    "path": "projects/music-event-calendar/package-lock.json",
+    "bytes": 27482,
+    "sha256": "875731f7e039efba3d760809ae469c18ef1188ba26dcb63b876d945c65656c53"
+  },
+  {
+    "path": "projects/music-event-calendar/package.json",
+    "bytes": 270,
+    "sha256": "8b168fc04d90f92bcc3f99d8165ef1099a67d5b085d0c3677573acda9e25ca21"
+  },
+  {
+    "path": "projects/music-event-calendar/public/app.js",
+    "bytes": 17774,
+    "sha256": "11cd38adc9d5bb097a7411e1478748f31cf38309c35679cad119e3a2c6d66fca"
+  },
+  {
+    "path": "projects/music-event-calendar/public/index.html",
+    "bytes": 7468,
+    "sha256": "6c79de40716a7689695ac5e4f0963ce074268da3dd6bae08f5def83325369d2d"
+  },
+  {
+    "path": "projects/music-event-calendar/public/styles.css",
+    "bytes": 16543,
+    "sha256": "2f624c9ad9eb96d4069421e1d0b62e2f9e20a0b4e64f1a72d2059de9ab394edc"
+  },
+  {
+    "path": "projects/music-event-calendar/server.js",
+    "bytes": 748,
+    "sha256": "44bb8b5014235f4f8aa4a6c66d9dddef5651463c42f04f777ae8701b176754d9"
+  },
+  {
+    "path": "projects/musicgoo/.editorconfig",
+    "bytes": 33,
+    "sha256": "3b2c749c8a940905a08f727d8be9017c9568a12421c0aee7e37e9543b3751b1b"
+  },
+  {
+    "path": "projects/musicgoo/.gitattributes",
+    "bytes": 80,
+    "sha256": "21b01a606c9f85f18bb9230245f00ab104df7409cbb2fe9423f6751ca72ba754"
+  },
+  {
+    "path": "projects/musicgoo/.gitignore",
+    "bytes": 329,
+    "sha256": "6cba6d97fe4a87ce8fdf192009cfcc22638decc45b4ef1b24db0e9d3e83f25d3"
+  },
+  {
+    "path": "projects/musicgoo/Nebula.gd",
+    "bytes": 2468,
+    "sha256": "ca419a982a910a04a87d9d432b43ca444ae9080b660e20fd6362c08b649716ea"
+  },
+  {
+    "path": "projects/musicgoo/Nebula.gd.uid",
+    "bytes": 20,
+    "sha256": "2f874a313da18720467f152f49468de6ad567929db5f1d1206dbaa586953b555"
+  },
+  {
+    "path": "projects/musicgoo/PUBLICATION.md",
+    "bytes": 819,
+    "sha256": "ba0324ae66bd3b79fded47767d3b3ec34765b4fa83e5da588dda11ef16c60cca"
+  },
+  {
+    "path": "projects/musicgoo/README.md",
+    "bytes": 133,
+    "sha256": "06f4ac847c8657f3051f688422e7857b756faba785cc753cb1d111f57ebc0790"
+  },
+  {
+    "path": "projects/musicgoo/ShootingStarSpawner.gd",
+    "bytes": 740,
+    "sha256": "f4b68b09eefbfada991c8b69854337d664887462ded5cea00eb229fdf42d814a"
+  },
+  {
+    "path": "projects/musicgoo/ShootingStarSpawner.gd.uid",
+    "bytes": 19,
+    "sha256": "3c2c6b3c5ed3f23bf4f61cbcbef40e883f6c218eea0d95b2924ed42b22a5d63d"
+  },
+  {
+    "path": "projects/musicgoo/export_presets.cfg",
+    "bytes": 13026,
+    "sha256": "c8ae03ce0bceeddabbd020e7f609aca43994cbc11fe368212626f1eac9c15adb"
+  },
+  {
+    "path": "projects/musicgoo/icon copy.svg",
+    "bytes": 994,
+    "sha256": "f6369bae7e12e6d16019cd6214cf27a2fdb6f3f6d024bd6f23c322be4804474f"
+  },
+  {
+    "path": "projects/musicgoo/icon.svg",
+    "bytes": 994,
+    "sha256": "f6369bae7e12e6d16019cd6214cf27a2fdb6f3f6d024bd6f23c322be4804474f"
+  },
+  {
+    "path": "projects/musicgoo/music_ui.gd",
+    "bytes": 1139,
+    "sha256": "d8e51ce3a21f29e803fa7297b69ca3fe2537fa2ce94dc5ca568b82bb95f67f7f"
+  },
+  {
+    "path": "projects/musicgoo/music_ui.gd.uid",
+    "bytes": 20,
+    "sha256": "6fe3c85fb8ad1c836c7212c2c19fed4ee494e9794041f77c8a3cb8105ade84cc"
+  },
+  {
+    "path": "projects/musicgoo/nightsky.gd",
+    "bytes": 157441,
+    "sha256": "a7da2db76a58dec8388b8569cf8f93f05f56637874780588d42a3a058547f30c"
+  },
+  {
+    "path": "projects/musicgoo/nightsky.gd.uid",
+    "bytes": 20,
+    "sha256": "3b9883f91da287076b3846aef7420a182adf2f0e32eb888586ceb50a052b8e1f"
+  },
+  {
+    "path": "projects/musicgoo/nightsky.tscn",
+    "bytes": 1912,
+    "sha256": "b39cf3f2860a3c6e8ae068942499aa3cdbc2086c73d9520eaf37d451c664b649"
+  },
+  {
+    "path": "projects/musicgoo/nightsky_new.gd",
+    "bytes": 109934,
+    "sha256": "afe072ce1e0c813d8921535ed4ea28b5eec8c6d836d175fa2956e1de566bf64c"
+  },
+  {
+    "path": "projects/musicgoo/nightsky_new.gd.uid",
+    "bytes": 20,
+    "sha256": "f8e9209f43cc19d9669e75f486d9346e094578d7573c26dd829b6dafe5d62789"
+  },
+  {
+    "path": "projects/musicgoo/node_2d.gd",
+    "bytes": 2780,
+    "sha256": "349149accc1eaac27d2ee961138095d688f565b35f08800ed81a1e1990993ef2"
+  },
+  {
+    "path": "projects/musicgoo/node_2d.gd.uid",
+    "bytes": 19,
+    "sha256": "20201968e8bced1c40b2ef61e01423c3b17802da75365dcab07c69d7df4f1e33"
+  },
+  {
+    "path": "projects/musicgoo/node_2d.tscn",
+    "bytes": 419,
+    "sha256": "620f2b11a422e738e9c6dc170ba58c0f69f5260684998eaba6121130efb6920d"
+  },
+  {
+    "path": "projects/musicgoo/path/to/file",
+    "bytes": 4377,
+    "sha256": "99b3352db986dfd728342e8d9b4f6da11cd193a8aa09379b1a2c4031b5a4b11d"
+  },
+  {
+    "path": "projects/musicgoo/project.godot",
+    "bytes": 8542,
+    "sha256": "bc2d5f813c8126ff71941d69cf864ef55539da79ccec6847f7603a582524fa86"
+  },
+  {
+    "path": "projects/musicgoo/scenes/main_menu.gd.uid",
+    "bytes": 20,
+    "sha256": "35a1cb62f31a5f50e4d5dac210ea60f9cb9fdfa3c933924e64c7850b80b76c24"
+  },
+  {
+    "path": "projects/musicgoo/scripts/entities/enemy.gd.uid",
+    "bytes": 19,
+    "sha256": "7c03cd2d4366812f9b644a410c94036690986952e630f50cecbd3cb8886184e5"
+  },
+  {
+    "path": "projects/musicgoo/scripts/entities/player_ship.gd.uid",
+    "bytes": 20,
+    "sha256": "3dbc4f2c054fd63977a6ccb1673389e627cab793677c5c79402974bfa87b60e1"
+  },
+  {
+    "path": "projects/musicgoo/scripts/entities/power_up.gd.uid",
+    "bytes": 19,
+    "sha256": "35c9d50f4845bc69a846961a6caf0edd07ba75ae813e0fc4d411b852da45eac7"
+  },
+  {
+    "path": "projects/musicgoo/scripts/entities/projectile.gd.uid",
+    "bytes": 19,
+    "sha256": "4eae0eefd15b3f533c23bc982af449eaf0dbcb0bcadb66b9a4462c8ca94e7bbb"
+  },
+  {
+    "path": "projects/musicgoo/scripts/managers/audio_manager.gd",
+    "bytes": 374,
+    "sha256": "5abc42b2f4f77a01ee31d7473ded6334b7fae15daf15dad7b20cd8476e29f67a"
+  },
+  {
+    "path": "projects/musicgoo/scripts/managers/audio_manager.gd.uid",
+    "bytes": 20,
+    "sha256": "afe67cdca08e7c9d34a0eb07743f3a760c640aef096ecf13c084e1d58c9f970c"
+  },
+  {
+    "path": "projects/musicgoo/scripts/managers/enemy_spawner.gd.uid",
+    "bytes": 20,
+    "sha256": "a479a4379a98db7aa2fc177b0b552fab1259c5e4a40dd9a18707e10bee630cc3"
+  },
+  {
+    "path": "projects/musicgoo/scripts/managers/game_manager.gd",
+    "bytes": 161,
+    "sha256": "d8ede90e7f5f564e2b49d3942ad68810b1e48f529157d41bdefaf890b5600494"
+  },
+  {
+    "path": "projects/musicgoo/scripts/managers/game_manager.gd.uid",
+    "bytes": 20,
+    "sha256": "71697cad92dfcab23f5650eb55d27b7aeee1e402727e3ff3d81ca28e6e59e7a9"
+  },
+  {
+    "path": "projects/musicgoo/scripts/managers/power_up_spawner.gd.uid",
+    "bytes": 20,
+    "sha256": "cc75832bfecda72c9f989c6c7c06d70bc303f5feb65a072bf9a367b495747174"
+  },
+  {
+    "path": "projects/musicgoo/scripts/managers/ui_manager.gd.uid",
+    "bytes": 20,
+    "sha256": "3d4c9987b2c30758f48dd5400e6536655cf101a1b2a243d53c388a99858d6321"
+  },
+  {
+    "path": "projects/musicgoo/starfield.gd",
+    "bytes": 329,
+    "sha256": "dc6afac52c7fb282e4224fc63f871c9227727fb5a36d0a3c28d197e4dd572e66"
+  },
+  {
+    "path": "projects/musicgoo/starfield.gd.uid",
+    "bytes": 20,
+    "sha256": "b61cb4f1bbb252e17411a5ebf01cea59b4de8534246484664b9f890609c68a4a"
+  },
+  {
+    "path": "projects/peacock-world/.editorconfig",
+    "bytes": 33,
+    "sha256": "3b2c749c8a940905a08f727d8be9017c9568a12421c0aee7e37e9543b3751b1b"
+  },
+  {
+    "path": "projects/peacock-world/.gitattributes",
+    "bytes": 80,
+    "sha256": "21b01a606c9f85f18bb9230245f00ab104df7409cbb2fe9423f6751ca72ba754"
+  },
+  {
+    "path": "projects/peacock-world/.gitignore",
+    "bytes": 329,
+    "sha256": "6cba6d97fe4a87ce8fdf192009cfcc22638decc45b4ef1b24db0e9d3e83f25d3"
+  },
+  {
+    "path": "projects/peacock-world/PUBLICATION.md",
+    "bytes": 638,
+    "sha256": "752267ead647ac8c05537f2bcc3d989ba8fd0856422b5b1c57df76e3c574e1f9"
+  },
+  {
+    "path": "projects/peacock-world/Peacock.gd",
+    "bytes": 908,
+    "sha256": "2581d34dab9b9cd41564a071bca1aea6db5604f1b6d4b2eef808dae847decfc2"
+  },
+  {
+    "path": "projects/peacock-world/Peacock.gd.uid",
+    "bytes": 20,
+    "sha256": "7f5262d0c5fb49154950c0a948772c8637f541e26d2c9eef1e7dd22de4210ccd"
+  },
+  {
+    "path": "projects/peacock-world/README.md",
+    "bytes": 128,
+    "sha256": "1b03adedae423f46648c3c90524aba716978d24e6fe32c43c1764e1165130328"
+  },
+  {
+    "path": "projects/peacock-world/icon.svg",
+    "bytes": 994,
+    "sha256": "f6369bae7e12e6d16019cd6214cf27a2fdb6f3f6d024bd6f23c322be4804474f"
+  },
+  {
+    "path": "projects/peacock-world/peacock_world.tscn",
+    "bytes": 1855,
+    "sha256": "8538e78f698077cb70d6cab81d4d6c0feb233fbfcd2e5e1f0ac0e01dbef230ad"
+  },
+  {
+    "path": "projects/peacock-world/project.godot",
+    "bytes": 430,
+    "sha256": "038898eebe79c392bd4432bf8f46af3ae202d9d676a973176f426e12e002bce2"
+  },
+  {
+    "path": "projects/phaseplay/.env.example",
+    "bytes": 252,
+    "sha256": "8ea63b20f33c9e582240693986f40f4156b6fe27cb2a93c808af1ea31b026fae"
+  },
+  {
+    "path": "projects/phaseplay/.gitignore",
+    "bytes": 353,
+    "sha256": "6ebd3ece6255b837d20891a5ba497e52167b607a465778e2a9a2439995eaf814"
+  },
+  {
+    "path": "projects/phaseplay/PUBLICATION.md",
+    "bytes": 740,
+    "sha256": "df20fe68bb36eff6d566256a999f823d74db9bcc4ef31ed7f04610af4950affa"
+  },
+  {
+    "path": "projects/phaseplay/README.md",
+    "bytes": 2588,
+    "sha256": "ab43c635577e749e6d0aac849ae35fe351e1bdd77674fce246cbcf8b6917beda"
+  },
+  {
+    "path": "projects/phaseplay/apps/api/package.json",
+    "bytes": 532,
+    "sha256": "9cb679988b4d0b3689d07c5ec838d0c5219bfadf72b4cda14478421f122549a0"
+  },
+  {
+    "path": "projects/phaseplay/apps/api/src/app.ts",
+    "bytes": 2148,
+    "sha256": "e723c85311c4c7772f6162d263ab09314128c817fccb6b853bd948d7a1e9802f"
+  },
+  {
+    "path": "projects/phaseplay/apps/api/src/server.ts",
+    "bytes": 223,
+    "sha256": "f026cf69f6c4684a018f58dc941edfbb8bf0d368d0a1511dfd543a5c80301fbe"
+  },
+  {
+    "path": "projects/phaseplay/apps/api/tsconfig.json",
+    "bytes": 110,
+    "sha256": "ff80d7d2526aff4283aa5a82cf488c56daf6e38e8b28751739dfa565e7cff214"
+  },
+  {
+    "path": "projects/phaseplay/apps/web/index.html",
+    "bytes": 319,
+    "sha256": "391338b97c7a5b4bb26b47dc66d9140b19a0a368f9129af617481520d7dc2366"
+  },
+  {
+    "path": "projects/phaseplay/apps/web/package.json",
+    "bytes": 501,
+    "sha256": "e7b52ba5424af762ccd1633ebdf17fda75546e112a2cbb2e7f00248d6a17a4eb"
+  },
+  {
+    "path": "projects/phaseplay/apps/web/src/App.tsx",
+    "bytes": 5715,
+    "sha256": "613bfbd90bacdfc3f18549e3456286506a647b8a235e36b84819a56b12e27b9b"
+  },
+  {
+    "path": "projects/phaseplay/apps/web/src/main.tsx",
+    "bytes": 229,
+    "sha256": "e16fd1a3b90b07615973bbaf842ca4633879241032c3a0ba9f9aa4a7f0ca32df"
+  },
+  {
+    "path": "projects/phaseplay/apps/web/src/styles.css",
+    "bytes": 6954,
+    "sha256": "2ff5578e124783b616c3aa085e2e2a3837097f79e96b6e3efaf31ba86cf251d0"
+  },
+  {
+    "path": "projects/phaseplay/apps/web/tsconfig.json",
+    "bytes": 136,
+    "sha256": "17985877a5c1523e2a84a2ebdde75b7a04baf1770f3ccb179060116592ffbc53"
+  },
+  {
+    "path": "projects/phaseplay/apps/web/vite.config.ts",
+    "bytes": 427,
+    "sha256": "fb04a6fb32808046bfa13053f9ee478e9bee37bf6c27c857f05c305ab85a3c25"
+  },
+  {
+    "path": "projects/phaseplay/assets/README.md",
+    "bytes": 147,
+    "sha256": "608488e4f6ab9290e7b880181e8144cea3e1a8680478d03da82667855dda3b51"
+  },
+  {
+    "path": "projects/phaseplay/docs/architecture.md",
+    "bytes": 766,
+    "sha256": "a90af571a43bc41936f5ad6eb5f692970e352dda0cb2afead98843879c08aec7"
+  },
+  {
+    "path": "projects/phaseplay/docs/game-catalog.md",
+    "bytes": 1328,
+    "sha256": "bbea6cb7c242febf6680cc08f47cb2e194ccaa0843f9a80e77a572e00316d7bd"
+  },
+  {
+    "path": "projects/phaseplay/docs/responsible-play.md",
+    "bytes": 603,
+    "sha256": "4b6d9b92ab793c1d020352948006132c133872fb579ff434f754470a32c1f470"
+  },
+  {
+    "path": "projects/phaseplay/package-lock.json",
+    "bytes": 252734,
+    "sha256": "746c674cb8a784e61cca4693b05e4947a77f5c8c8062d53553b7a5fb74c15ffb"
+  },
+  {
+    "path": "projects/phaseplay/package.json",
+    "bytes": 735,
+    "sha256": "453385fe31023221dfa0feefd926e206c4927f8cbbeb6a7769a2dbdbe2ed9a8c"
+  },
+  {
+    "path": "projects/phaseplay/packages/agent/package.json",
+    "bytes": 310,
+    "sha256": "ae274212eb95584b85129ba8602775a941007e68b1bcade97300030047a87188"
+  },
+  {
+    "path": "projects/phaseplay/packages/agent/src/index.ts",
+    "bytes": 500,
+    "sha256": "a46d3f847aad4639e6ec5603731ddb8534b3f6a9cd31cd1627c1714200e9a814"
+  },
+  {
+    "path": "projects/phaseplay/packages/agent/tsconfig.json",
+    "bytes": 112,
+    "sha256": "b12421ba1e4ddf2114839f21c9d348a390192008ae5bb1d32b5f8cf2c91da2fb"
+  },
+  {
+    "path": "projects/phaseplay/packages/domain/package.json",
+    "bytes": 277,
+    "sha256": "f10cbc6b89e91f4900b1edd939f41eaadd9cd5276ab7ed78dbca17aa6993d87a"
+  },
+  {
+    "path": "projects/phaseplay/packages/domain/src/index.ts",
+    "bytes": 2227,
+    "sha256": "562c5e83fb00b0fd58e776a3cc570c71649922d5600e2123b2d88d100b11fb42"
+  },
+  {
+    "path": "projects/phaseplay/packages/domain/tsconfig.json",
+    "bytes": 130,
+    "sha256": "b595a7a7f872261a68f2c053b0e7fee5c6ee4a858f9059d2fc4f2d95903bc9f1"
+  },
+  {
+    "path": "projects/phaseplay/packages/engine/package.json",
+    "bytes": 327,
+    "sha256": "113a4610b9212e9d97a3fc9b7682cf4484c09fd97a194d381769f9aabeec4bcb"
+  },
+  {
+    "path": "projects/phaseplay/packages/engine/src/index.test.ts",
+    "bytes": 591,
+    "sha256": "2d42e6d592327a3b5e74c9c70113e4cc927a10467184a041aad591ff1ef88cef"
+  },
+  {
+    "path": "projects/phaseplay/packages/engine/src/index.ts",
+    "bytes": 2196,
+    "sha256": "c3f038691154db2edc724c38859b4da35b16f6aaac2be046cba2eaf75552b247"
+  },
+  {
+    "path": "projects/phaseplay/packages/engine/tsconfig.json",
+    "bytes": 130,
+    "sha256": "b595a7a7f872261a68f2c053b0e7fee5c6ee4a858f9059d2fc4f2d95903bc9f1"
+  },
+  {
+    "path": "projects/phaseplay/packages/game-classification/package.json",
+    "bytes": 358,
+    "sha256": "c28970b9e6c9c839c2e2069a926d7476e047daeb624be18638aa5be3020c5960"
+  },
+  {
+    "path": "projects/phaseplay/packages/game-classification/src/data/games.json",
+    "bytes": 6212,
+    "sha256": "0d9c7a7d5d53b7359b86a509f87910553e5647df0d8b437b067a2ffa8dfceb33"
+  },
+  {
+    "path": "projects/phaseplay/packages/game-classification/src/index.test.ts",
+    "bytes": 791,
+    "sha256": "a5c86e347e331ec54e7c3d92270001e3a76d1fe0fb5ceb707e3f0e77179d7997"
+  },
+  {
+    "path": "projects/phaseplay/packages/game-classification/src/index.ts",
+    "bytes": 4444,
+    "sha256": "345eebc88581fc1a88ba316aa6ec994c234165fda1ce6ec80745e98f0b8c4ace"
+  },
+  {
+    "path": "projects/phaseplay/packages/game-classification/tsconfig.json",
+    "bytes": 112,
+    "sha256": "b12421ba1e4ddf2114839f21c9d348a390192008ae5bb1d32b5f8cf2c91da2fb"
+  },
+  {
+    "path": "projects/phaseplay/packages/persistence/package.json",
+    "bytes": 290,
+    "sha256": "b9066da11456f3c1b04ae96e02cbe11d5b66e651b3adb8f8887f6edc23c28302"
+  },
+  {
+    "path": "projects/phaseplay/packages/persistence/src/index.ts",
+    "bytes": 611,
+    "sha256": "90e8af364b7e030d7959e56eea9cb23f428c6c3fc7187ded0757122f9c75ba36"
+  },
+  {
+    "path": "projects/phaseplay/packages/persistence/tsconfig.json",
+    "bytes": 112,
+    "sha256": "b12421ba1e4ddf2114839f21c9d348a390192008ae5bb1d32b5f8cf2c91da2fb"
+  },
+  {
+    "path": "projects/phaseplay/tsconfig.base.json",
+    "bytes": 286,
+    "sha256": "e57c462635cdc22f96ff1ceffe3233dc9c9366ac8938589c33eb7d517bbac7e6"
+  },
+  {
+    "path": "projects/pickleball-godot/.editorconfig",
+    "bytes": 33,
+    "sha256": "3b2c749c8a940905a08f727d8be9017c9568a12421c0aee7e37e9543b3751b1b"
+  },
+  {
+    "path": "projects/pickleball-godot/.gitattributes",
+    "bytes": 80,
+    "sha256": "21b01a606c9f85f18bb9230245f00ab104df7409cbb2fe9423f6751ca72ba754"
+  },
+  {
+    "path": "projects/pickleball-godot/.gitignore",
+    "bytes": 329,
+    "sha256": "6cba6d97fe4a87ce8fdf192009cfcc22638decc45b4ef1b24db0e9d3e83f25d3"
+  },
+  {
+    "path": "projects/pickleball-godot/PUBLICATION.md",
+    "bytes": 700,
+    "sha256": "655460d56e4c66ec1a319910b4023240a979c0856e804b2c4fcb38907264ec62"
+  },
+  {
+    "path": "projects/pickleball-godot/README.md",
+    "bytes": 151,
+    "sha256": "cdac7a955d4f0c81d5421bf7300ba20990559f4b5c128e957dacf4a32d838652"
+  },
+  {
+    "path": "projects/pickleball-godot/export_presets.cfg",
+    "bytes": 11903,
+    "sha256": "ca20b21e769306d0ab6f5bf90815f622f1fdb36df11fca91febd1dec4c8dcbec"
+  },
+  {
+    "path": "projects/pickleball-godot/icon.svg",
+    "bytes": 994,
+    "sha256": "f6369bae7e12e6d16019cd6214cf27a2fdb6f3f6d024bd6f23c322be4804474f"
+  },
+  {
+    "path": "projects/pickleball-godot/project.godot",
+    "bytes": 724,
+    "sha256": "7750faf2de5852b313a7756f904d23933805e6fae439c0b8b0c65c73a0aa6909"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/court.gd",
+    "bytes": 27450,
+    "sha256": "84d2256d204b678a3cce15255c20448735186af9e15bb484d8bd77edea8cfac4"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/court.gd.uid",
+    "bytes": 19,
+    "sha256": "eed2f8fe9622eb440655b8c6f79faa815a78df1640a5e499a82ae7db9399babf"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/court.tscn",
+    "bytes": 274,
+    "sha256": "01a867be52a93413a5247f851c805093d5d0a9366854566d283e19b6d59cd545"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/explosion_particles.gd",
+    "bytes": 3217,
+    "sha256": "1a0975bfa114fb189845720a45a6a7f9c3cef7809464250dcc528d1307649f83"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/explosion_particles.gd.uid",
+    "bytes": 20,
+    "sha256": "9ec9342b0fb5906d78ed5853f4f85e90ae23f514a0d687f0e6f55db701e0b5fd"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/main_menu.gd",
+    "bytes": 4964,
+    "sha256": "be8cded1f3e1540aa9fd5fd91c5e1baeafed6ad587ace611a52584b69250f597"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/main_menu.gd.uid",
+    "bytes": 20,
+    "sha256": "d1a0d0e32be0810bd18d15202a6abfea23bcd93e6f2a5286905a6e09c2385ede"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/main_menu.tscn",
+    "bytes": 4809,
+    "sha256": "5a9373ce85692a5023b2f48cfe23a674b43bd0f04850ee707111c8c5bb74a9fc"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/main_menu_root.tscn",
+    "bytes": 5681,
+    "sha256": "7acf482ecabf41407d8086aebb767d7e77115998269c3c0372d57adc97875338"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/menu.gd",
+    "bytes": 3301,
+    "sha256": "0e9c09e4788f310a76318c74aacf28d6f467abf07e52af019d8cfebb0a4aeaae"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/menu.gd.uid",
+    "bytes": 19,
+    "sha256": "343e058fc466d90a462796d883d9054b92a6fa163416cff27cac561021e8bb2b"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/physics_playground.gd",
+    "bytes": 21527,
+    "sha256": "9cef62b67450ea7d077952427c1e245cf64e9ea8859b3db6e30c2a72925d15d0"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/physics_playground.gd.uid",
+    "bytes": 19,
+    "sha256": "e827675f38dd11ec148185536dd273d39f2da41bfd7ef848e6f94f68da26263e"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/physics_playground.tscn",
+    "bytes": 248,
+    "sha256": "6c9ccb22aa780953d53173d3cc481e858806b64144e0700e0e5f4feac5b28bd2"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/player.gd",
+    "bytes": 2716,
+    "sha256": "5cd601bfab2dc1087c368be9baa6e75235efaf7db5e92663480774197513ff18"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/player.gd.uid",
+    "bytes": 20,
+    "sha256": "0ad3e33c6a84799ea99674cd099b72122e39da987c60fd1ed57776b0846759a5"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/simulation.gd",
+    "bytes": 3964,
+    "sha256": "aefed9ed5a6891753eed52f64e2ba7e922366ee2cfa79524c322a9bfd7be7422"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/simulation.gd.uid",
+    "bytes": 20,
+    "sha256": "53686d916250f4f5a7d3fbdde0e4a423faaa02e3456a0c98acf4e81d461bc625"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/simulation.tscn",
+    "bytes": 1607,
+    "sha256": "c8329db936f5bbeafc599b1acebb31de27517820b491bb42d55c58d1dce7b3ed"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/simulation_root.tscn",
+    "bytes": 1575,
+    "sha256": "987f87d69177b0ce2155f32118f77d653a746f881bd3130d093120e33fb418a0"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/training.gd",
+    "bytes": 3221,
+    "sha256": "b74b19fe547570e16497f4628cc7617bbf55502e40a57a517cbe261316bdc27b"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/training.gd.uid",
+    "bytes": 20,
+    "sha256": "86d7ab4e6e5fe6d0a6076d736a7e2bcf03ea7501c70e4ef074fba5373bf647f7"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/training.tscn",
+    "bytes": 1378,
+    "sha256": "fa8bcb7b2ed10125271a547cac57c266c8ec70150276924f427a562ffc9d9fc2"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/training_root.tscn",
+    "bytes": 1357,
+    "sha256": "e2431aebfef51a5ae7f432bb0080e10738f1b907229508c5143685214324292e"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/zombie.gd",
+    "bytes": 2711,
+    "sha256": "734a00823ff77ea067169c5dc97c988964f92a7e1594cb5527b9d1bf4c43c7b2"
+  },
+  {
+    "path": "projects/pickleball-godot/scenes/zombie.gd.uid",
+    "bytes": 20,
+    "sha256": "1c5801d33e0e80ca6b84c870b6ec2d0563efb3cf79dbfd91c99d9bf4424bb01f"
+  },
+  {
+    "path": "projects/pico-hand-piano/.gitignore",
+    "bytes": 283,
+    "sha256": "0bce4cce322cb1547f46dc8c58fc55c98c59d4e4c95dce37d83ad46e72aba953"
+  },
+  {
+    "path": "projects/pico-hand-piano/Open Hand Piano.command",
+    "bytes": 569,
+    "sha256": "d5963689b17198130f274c308f26b6844e52b7bf69fcac34f8fa60c91091a905"
+  },
+  {
+    "path": "projects/pico-hand-piano/PUBLICATION.md",
+    "bytes": 927,
+    "sha256": "ef25f78c67d3e6e22652342cc0a17e233f5dc1fa51a38e4028486b755e0d0a54"
+  },
+  {
+    "path": "projects/pico-hand-piano/README.md",
+    "bytes": 1854,
+    "sha256": "524e2fe96f9224fa151143e27e168e9e867f5f1ef4b9f54d8e63ce094d19cb9b"
+  },
+  {
+    "path": "projects/pico-hand-piano/WIRING.md",
+    "bytes": 2145,
+    "sha256": "a7c0288d719268de7ee9fae390181412ce68a541ffe121f8cfec7f8ada49aecf"
+  },
+  {
+    "path": "projects/pico-hand-piano/distance_test.py",
+    "bytes": 743,
+    "sha256": "47ae80eb9c600a81da504686db55909d35cfe3fd26980e0a730d087fe1327045"
+  },
+  {
+    "path": "projects/pico-hand-piano/hand_slider.py",
+    "bytes": 9386,
+    "sha256": "8fa1fe648bbe8a2def51841cd900e18655a99529d7fc0a9d011540fff9d54f84"
+  },
+  {
+    "path": "projects/pico-hand-piano/scan_test.py",
+    "bytes": 877,
+    "sha256": "4134b2210571a0bd96d501126dad2970ea59c2bd298ada35f039bade0f2f76a3"
+  },
+  {
+    "path": "projects/pico-hand-piano/servo_test.py",
+    "bytes": 585,
+    "sha256": "c43fd9ad8021af36ec9172ead28cfe47a1a37906c4d6cb2c5033b77b7d51e585"
+  },
+  {
+    "path": "projects/pico-hand-piano/song_player.py",
+    "bytes": 1888,
+    "sha256": "e03c3ab1e4ea3d677814d22cdccecc79b8e8cb99b3acbbf4755a0d781c26dc92"
+  },
+  {
+    "path": "projects/pico-led-agent/.gitignore",
+    "bytes": 358,
+    "sha256": "0d8100eaf4133201be0e72284ba5ecf0bbea8946c2768e29ec7aa8e514454c74"
+  },
+  {
+    "path": "projects/pico-led-agent/PUBLICATION.md",
+    "bytes": 825,
+    "sha256": "ddc66af5a68bed0ee862780b2ac249d2df0c4c05aebb9997f11d4d8082c9386b"
+  },
+  {
+    "path": "projects/pico-led-agent/README.md",
+    "bytes": 2806,
+    "sha256": "8848f021411efaa0b147fa3114b1af1a15bc35e11e36fb9b6046b8470f974043"
+  },
+  {
+    "path": "projects/pico-led-agent/SETUP.md",
+    "bytes": 3065,
+    "sha256": "ff5778affbe3c35b5504a598f301a1e9abf0520a8735e948c590a993df18e5e6"
+  },
+  {
+    "path": "projects/pico-led-agent/V2.md",
+    "bytes": 5043,
+    "sha256": "b9aac357ba056bacb9f911a971e32c830f42d56900b71b1076b0af7e65b769bd"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/__init__.py",
+    "bytes": 55,
+    "sha256": "31f0d3bccb094f6de6dfa4627e8c0d21e441055e4c9bcde6f1bbb67d1310bc19"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/__main__.py",
+    "bytes": 31,
+    "sha256": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/audio.py",
+    "bytes": 3681,
+    "sha256": "c71e13577e1b6b6fc5fb461eb6cab99ef2472e70574d4b0356bf70ee93ad16ad"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/canvas.py",
+    "bytes": 1715,
+    "sha256": "7430ff5ece052fa04530505bf02329d3338501098dd0934f478f9adb4df3ce2d"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/cli.py",
+    "bytes": 9059,
+    "sha256": "2fe227dcddc32064679555765803b86b109a1bbbd9223aa456f05b69c6e1a813"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/compiler.py",
+    "bytes": 4374,
+    "sha256": "8a8f2ab53687017fc0c2e5bde51f6e9c42164c494a99e4abb3e4e692a0c97cc3"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/effects.py",
+    "bytes": 11457,
+    "sha256": "54d7f05410f0a577b865e03604d9b5267cfe8fc2f2366f2e897f13f9f12c2789"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/media.py",
+    "bytes": 1226,
+    "sha256": "f945e2ef65474a72faa6e9eca300b67cefa07e44fed1642ead2e4838ac49d35d"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/parser.py",
+    "bytes": 2367,
+    "sha256": "cbc7d3ad096766992fdfb17c9feaa0afb5a3217d4e42cf1461db9fda2769f83f"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/presets.py",
+    "bytes": 2477,
+    "sha256": "568cc80907e9bc7d27ca1530559f5e12fe0814515aa1d2393b1844b8ea6c2700"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/protocol_v2.py",
+    "bytes": 2385,
+    "sha256": "1828f7bfef9a0c9115bf864c0c4c7e1b91e573d7925dc3a8877193d93ea50c6e"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/renderer.py",
+    "bytes": 1909,
+    "sha256": "eb34f9c092899b520e5c6b4ecd92ae50dbf1cf71e2d98fc0230d6993777139eb"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/scene.py",
+    "bytes": 5188,
+    "sha256": "42ad2d7bcb07430d1fc70660d847d0f7c85537bb883614cbacc1aad75b56ebcd"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/simulator.py",
+    "bytes": 941,
+    "sha256": "5228dd269597484c979ec207a73b38d37afbb23b963223f6d5d2d914c036382f"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/streaming.py",
+    "bytes": 1164,
+    "sha256": "f976bda7c605c5c8deb8ccd88dddf99c81d088bc31f1c2ae6a83f50e0b61fef9"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/transitions.py",
+    "bytes": 1800,
+    "sha256": "8a5346eb257273daac49cb3e03c6db9b437cd6b3419a3e7325ab1517ba560596"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/transports.py",
+    "bytes": 6697,
+    "sha256": "a2ec450fd94b70e19c9b3f2ec4ea747e58965987c4bb2c29afbafd953a104351"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/visuals.py",
+    "bytes": 966,
+    "sha256": "f231052ec4b205fed469c06b408ec3372d645921e8683adc510a8c7ed1f0384f"
+  },
+  {
+    "path": "projects/pico-led-agent/led_agent/web_preview.py",
+    "bytes": 2676,
+    "sha256": "eb9e626256106407d512ae44308c9712f65f4992431f2fde578b6eae5000cb8b"
+  },
+  {
+    "path": "projects/pico-led-agent/pico/animations.py",
+    "bytes": 3596,
+    "sha256": "3c8b249bcd8b291fd87503144da702c005df9566ef4ab591b17b6ca5eccdc5a6"
+  },
+  {
+    "path": "projects/pico-led-agent/pico/config.example.py",
+    "bytes": 642,
+    "sha256": "3ff5ef00976e5eef1b8762a1e1b2361ea5b6ff183f2a0482166e5549623e2a6c"
+  },
+  {
+    "path": "projects/pico-led-agent/pico/displays.py",
+    "bytes": 4336,
+    "sha256": "46cf50d8967c30b9166364c75c1654868513408361a1f14358eea743b0eaf7ec"
+  },
+  {
+    "path": "projects/pico-led-agent/pico/main.py",
+    "bytes": 2243,
+    "sha256": "9ee68b899001c4013e7a8830a6ec8b5bd9b2fa967ed0310ba3403f3bd94908c5"
+  },
+  {
+    "path": "projects/pico-led-agent/pico_v2/config.example.py",
+    "bytes": 357,
+    "sha256": "b712adade5290a15b882093d27254a4cb014410edf39bc27642cb25080240fca"
+  },
+  {
+    "path": "projects/pico-led-agent/pico_v2/controls.py",
+    "bytes": 1822,
+    "sha256": "225a69496fd3e9e3427d6e43da36a6e1d11ca4ca2899b7f3352f167dd65d9fbc"
+  },
+  {
+    "path": "projects/pico-led-agent/pico_v2/display.py",
+    "bytes": 2667,
+    "sha256": "84ce8eaa5536e4860c51694c198c7c2547578239c31f39a6ca2e0731e99a153d"
+  },
+  {
+    "path": "projects/pico-led-agent/pico_v2/effects.py",
+    "bytes": 10211,
+    "sha256": "c1e213517ae81b6422f363a06a6a645c1af910c0ee327c022dcdb910d5de7993"
+  },
+  {
+    "path": "projects/pico-led-agent/pico_v2/main.py",
+    "bytes": 1934,
+    "sha256": "5eb9b5978727a0a0a9ca7d2f8933825abb40a9e0db64b0e3e02ed74a08072de3"
+  },
+  {
+    "path": "projects/pico-led-agent/pico_v2/runtime.py",
+    "bytes": 11779,
+    "sha256": "2eaabd1b54af7d0203dc8ce39c6268c93fa6cd75d17ed3686a9184ab65382e70"
+  },
+  {
+    "path": "projects/pico-led-agent/pico_v2/wifi_server.py",
+    "bytes": 4875,
+    "sha256": "de84080bff99a71acff82e6b04916fb7a9522382ed236e764abbf7512d9a4234"
+  },
+  {
+    "path": "projects/pico-led-agent/protocol.md",
+    "bytes": 1365,
+    "sha256": "a549c701b00ae5da24c16ab66ba56276ce6ba53762c8814f15f1a9f97e374f3c"
+  },
+  {
+    "path": "projects/pico-led-agent/pyproject.toml",
+    "bytes": 488,
+    "sha256": "c06af571e88746a875149d155f0980660991dc6e20f6a023c6d68da461e996d3"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_audio_streaming.py",
+    "bytes": 1582,
+    "sha256": "1bb0d6d6264c58ea3dc0d21a782ecef69d3b9acd42eb4d056f864a886adf8432"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_cli_entrypoint.py",
+    "bytes": 570,
+    "sha256": "d8c3c72c6ad96ba11ae37958f2176a1a22e1e70857e06b8fb6043cbd8b9cf171"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_controls.py",
+    "bytes": 2379,
+    "sha256": "1809bf69631b4e6fe2319d6a3bc3b8ca8a086900047f6b42b715aa5185652b1d"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_effects.py",
+    "bytes": 1100,
+    "sha256": "c3a297eb3bfd10bfddab8602375f1843e50438f68c66d32b9a934bb365ba3016"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_media.py",
+    "bytes": 1025,
+    "sha256": "c5e7db91c449849796714bbcfe2b13613ade3edb739a48ed2c45f616546eaf2f"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_parser.py",
+    "bytes": 877,
+    "sha256": "f551548170064d9d37ace9ff3a289050b92733ea3fac4e1cb03dab2c3d08d039"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_pico_runtime.py",
+    "bytes": 3740,
+    "sha256": "8251e65867b6d7149aafe17426d8e151a5ffb66290987ed9eff10099651f4c29"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_protocol_v2.py",
+    "bytes": 1862,
+    "sha256": "0e869bbf0a4b7887ff91c52a00befc1811280963c870d1655e6998e1106f960b"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_scene.py",
+    "bytes": 2892,
+    "sha256": "f05041c3afa6bf1556d193408f8fef0618efa98297c2fce359f15cbe409c9ffa"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_serial_session.py",
+    "bytes": 1052,
+    "sha256": "17853f0ee08b080c05bc170d260ae11acecace5611c9eb8524a75d1c909f201a"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_web_preview.py",
+    "bytes": 664,
+    "sha256": "5bef52fd518b8d52d1b319ff080ab46251f75e37dbbf85bf00b147813b58372c"
+  },
+  {
+    "path": "projects/pico-led-agent/tests/test_wifi_server.py",
+    "bytes": 3204,
+    "sha256": "408f1816f6c43fd5e6f8cf76d9f4b0e3340532f23e3f5a137b886f9540fc3afc"
+  },
+  {
+    "path": "projects/pico-led-agent/tools/configure_wifi.py",
+    "bytes": 1728,
+    "sha256": "9923311918ae8d3cf60378e6a525eb37387991a22b3fc19e114faa4e21ba38a1"
+  },
+  {
+    "path": "projects/pico-led-agent/tools/deploy.py",
+    "bytes": 2713,
+    "sha256": "96ace3fb1748c7aee260eb81b9b687af625f5b1073cb925a48ad6841352ef966"
+  },
+  {
+    "path": "projects/pico-servo-radar/.gitignore",
+    "bytes": 336,
+    "sha256": "c6849d76214c9c385ce33d8e17fa9dfceb15bd782e730fa69ef091169b8acfc5"
+  },
+  {
+    "path": "projects/pico-servo-radar/PUBLICATION.md",
+    "bytes": 754,
+    "sha256": "5d6e54937a2cf55893af77fc42f2421f8d7f81dd172047c866dc6abd485a3a3c"
+  },
+  {
+    "path": "projects/pico-servo-radar/README.md",
+    "bytes": 1068,
+    "sha256": "cf7d6ab21329996ba198ee4e14737f352fc3d8a20adaf1c61c5d4dbe12db4fa3"
+  },
+  {
+    "path": "projects/pico-servo-radar/assets/.gitkeep",
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "projects/pico-servo-radar/docs/README.md",
+    "bytes": 116,
+    "sha256": "cad3d8c22e5bea304233d0b1a104dae8807a93a8347650430a389ad97b296ffc"
+  },
+  {
+    "path": "projects/pico-servo-radar/docs/wiring.md",
+    "bytes": 633,
+    "sha256": "dd57fa8e142e0d515a63d9bafe93cd9d1b43466015b7a48e13c83efd43a9f565"
+  },
+  {
+    "path": "projects/pico-servo-radar/experiments/.gitkeep",
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "projects/pico-servo-radar/experiments/servo_test.py",
+    "bytes": 1498,
+    "sha256": "8715e891933b575c62fd054c68e7c2bf03ddafae3f0d04343909a3a8c7ca7778"
+  },
+  {
+    "path": "projects/pico-servo-radar/firmware/main.py",
+    "bytes": 301,
+    "sha256": "f28b7916c5740187e6920421c48fc2572f54cbf3b1b78a6dc612a0726e1f8729"
+  },
+  {
+    "path": "projects/pico-servo-radar/mac/radar_visualizer.py",
+    "bytes": 282,
+    "sha256": "7df723bda1caf9bae62f0a5588678a9e3e3df87d1ce3c2e75c831552245693c6"
+  },
+  {
+    "path": "projects/pico-servo-radar/requirements.txt",
+    "bytes": 33,
+    "sha256": "d164c17fc6d3981c41faf0e61f8cbb0c8348da54c0881d060329dc566ba66423"
+  },
+  {
+    "path": "projects/selfpleasure/.gitignore",
+    "bytes": 676,
+    "sha256": "40c1a58cb7579515eb686b415a7b7d976536ee738accf0e03a74bbaa1d291596"
+  },
+  {
+    "path": "projects/selfpleasure/LICENSE",
+    "bytes": 1082,
+    "sha256": "c5d114ba1262ed737dba38ffab5008ba333815949488894d87117385f6c878ee"
+  },
+  {
+    "path": "projects/selfpleasure/PUBLICATION.md",
+    "bytes": 869,
+    "sha256": "43f86137b58ce582be65f4f552b2e1cffcd69fbf2be90f5a35cd8d19ff11cea5"
+  },
+  {
+    "path": "projects/selfpleasure/README.md",
+    "bytes": 41179,
+    "sha256": "03a2c1a4ece5d0b4f330767e593f748da5bf5bb6ab290a639671b78187a1df5c"
+  },
+  {
+    "path": "projects/selfpleasure/app/__init__.py",
+    "bytes": 41,
+    "sha256": "38c8ca9f01e98851b8907d493f6c28dd097f4e67d71208de3b114f4c516cfb55"
+  },
+  {
+    "path": "projects/selfpleasure/app/api/__init__.py",
+    "bytes": 102,
+    "sha256": "86366434d2d75b93f2282185f722c1ee09dbf1db7243c4bc9776c4c26b8bfa72"
+  },
+  {
+    "path": "projects/selfpleasure/app/api/application.py",
+    "bytes": 56989,
+    "sha256": "8a08580ca351ad2ec77e9772113efebb06f7b001a168173b6c3595ddf3e055c0"
+  },
+  {
+    "path": "projects/selfpleasure/app/camera/__init__.py",
+    "bytes": 176,
+    "sha256": "0a65a3011a9cad6623d392b8d19aa78b1e6f77d1bfa3e15635d5b8a8e7ab5a9c"
+  },
+  {
+    "path": "projects/selfpleasure/app/camera/service.py",
+    "bytes": 25545,
+    "sha256": "63ac8bb43bea753d54120eb7c1bbba686ec74b2c3054cac28fd688f0cd3c954f"
+  },
+  {
+    "path": "projects/selfpleasure/app/config.py",
+    "bytes": 984,
+    "sha256": "3be7fa0b93a5660bd9ce2419fc4f7a477594e99414c593d405633460ed8b6660"
+  },
+  {
+    "path": "projects/selfpleasure/app/desktop.py",
+    "bytes": 953,
+    "sha256": "bacbfab274d2991bf009315f097863ce020d7c826839c493f644aa4dbe68609e"
+  },
+  {
+    "path": "projects/selfpleasure/app/devices/__init__.py",
+    "bytes": 303,
+    "sha256": "aff12cf82d150b58d94b523f307810d6bd74b8b9364084de130c14132956fb2f"
+  },
+  {
+    "path": "projects/selfpleasure/app/devices/buttplug_client.py",
+    "bytes": 7900,
+    "sha256": "36ca545e351a14b445c6bf65a7c7c534de93e74c331dd34b2de3ff6b69def3bb"
+  },
+  {
+    "path": "projects/selfpleasure/app/devices/models.py",
+    "bytes": 673,
+    "sha256": "06d4cd6569f5b2ff5bed6f648d1e54f98e27a415ec55add576a72c1d3d8529d5"
+  },
+  {
+    "path": "projects/selfpleasure/app/devices/registry.py",
+    "bytes": 1736,
+    "sha256": "7011ba04416b8771769be6347ff1844b5388c51e0459050ad01c1581b4bd8002"
+  },
+  {
+    "path": "projects/selfpleasure/app/devices/simulated.py",
+    "bytes": 1216,
+    "sha256": "ab689686f53c591cf08b1c181a6fb8bebd43640c0ac0cc45c7b108f51b8760da"
+  },
+  {
+    "path": "projects/selfpleasure/app/diagnostics/__init__.py",
+    "bytes": 171,
+    "sha256": "d60afd6b3556e79aa5eba59bfe2d8351caafecca7f56684d681ae15402627acc"
+  },
+  {
+    "path": "projects/selfpleasure/app/diagnostics/benchmark.py",
+    "bytes": 5165,
+    "sha256": "1dccbc9d968e9613e96a3a02d77e44a44bc4d1e4a68a324f1929e2113f0e0d1a"
+  },
+  {
+    "path": "projects/selfpleasure/app/diagnostics/collect_hardware_validation.py",
+    "bytes": 5468,
+    "sha256": "9ec2b7541ee7e959c6ae9dc7baa3ef0a098bea91d846ec90cd72cf51bc4f4785"
+  },
+  {
+    "path": "projects/selfpleasure/app/diagnostics/hand_benchmark.py",
+    "bytes": 2640,
+    "sha256": "08c09a01505beff668bbc6128e8753b361c0debf55e97eff3187c5fbba92a791"
+  },
+  {
+    "path": "projects/selfpleasure/app/diagnostics/hardware_validation.py",
+    "bytes": 21067,
+    "sha256": "7dd0097136e94f4f4fd298b2549beb8f70a28e1705dadf40932ac795c44955f4"
+  },
+  {
+    "path": "projects/selfpleasure/app/diagnostics/latency.py",
+    "bytes": 6764,
+    "sha256": "a97cf43d7166ac8bf8b9c05ea4bf70eea4114d7bb0dadd24e546bff395516599"
+  },
+  {
+    "path": "projects/selfpleasure/app/evaluation/__init__.py",
+    "bytes": 58,
+    "sha256": "c554bb3d367b7b6761c56edba5b0b3c0c0dfb4a088c5c993a6b9ab1eaea67f80"
+  },
+  {
+    "path": "projects/selfpleasure/app/evaluation/metrics.py",
+    "bytes": 4499,
+    "sha256": "f5087d212ef9236aefd5f89b079bd6476a468bad3c4c82b1387396cc8f103bd1"
+  },
+  {
+    "path": "projects/selfpleasure/app/evaluation/service.py",
+    "bytes": 9666,
+    "sha256": "776a9a7ae8d92382770d17d1bffa6f6632a73993b1881fdbb4ffc4bb2ac0667a"
+  },
+  {
+    "path": "projects/selfpleasure/app/evaluation/stroke.py",
+    "bytes": 12551,
+    "sha256": "cdbdad01cd8b78947fe35e75cab71cb6bc696bf548915287e12ecddf04402628"
+  },
+  {
+    "path": "projects/selfpleasure/app/events.py",
+    "bytes": 894,
+    "sha256": "dfb61421b557c1b3844e4789fc706e7c46b1ba22afd87ec26836896c302e9af7"
+  },
+  {
+    "path": "projects/selfpleasure/app/main.py",
+    "bytes": 895,
+    "sha256": "fa2973bc412f8285a359cf1ffc5d5937f23baa1a01e74113ef2c5819461138cf"
+  },
+  {
+    "path": "projects/selfpleasure/app/paths.py",
+    "bytes": 526,
+    "sha256": "c1612157c82080b86a2638ace917989004a36afa925d1fcbadef2441bf79771f"
+  },
+  {
+    "path": "projects/selfpleasure/app/safety/__init__.py",
+    "bytes": 158,
+    "sha256": "d99b9db97c6c5e3ad7f334b870809e9df5cba3ca2fe36c5c6feba3ec0b29a934"
+  },
+  {
+    "path": "projects/selfpleasure/app/safety/controller.py",
+    "bytes": 16738,
+    "sha256": "3c6981b1780ec024ead64e4b380c6fcb4748a24905d81a87f121ed3196f4c21d"
+  },
+  {
+    "path": "projects/selfpleasure/app/safety/emergency_stop.py",
+    "bytes": 845,
+    "sha256": "061553e931322b31133f3c79456faa1bf745e4032ce52941a9dc606c8c94c4e4"
+  },
+  {
+    "path": "projects/selfpleasure/app/safety/watchdog.py",
+    "bytes": 246,
+    "sha256": "80a98fef734d5fee46150d8e140b7df101c1f61a1473aca3ca9a80b74437298e"
+  },
+  {
+    "path": "projects/selfpleasure/app/services.py",
+    "bytes": 3436,
+    "sha256": "a763eccd7181556ed6a460f59f3861bf8dbc7292c28a31153073b291d11d5f76"
+  },
+  {
+    "path": "projects/selfpleasure/app/triggers/__init__.py",
+    "bytes": 174,
+    "sha256": "2583f9541e04b8d766a99da94932e2584a14492c1001fbc1d51ec6868c5d74e5"
+  },
+  {
+    "path": "projects/selfpleasure/app/triggers/automation.py",
+    "bytes": 14381,
+    "sha256": "0ec4047facedc3c9ee7dec42c373196d3605bc57b8c3a16c768d3a93b2253d9b"
+  },
+  {
+    "path": "projects/selfpleasure/app/triggers/hand_response.py",
+    "bytes": 30401,
+    "sha256": "9bc9edd94d3611552fa1eb7302e442204337bfaf91f8f283727497d695490581"
+  },
+  {
+    "path": "projects/selfpleasure/app/triggers/patterns.py",
+    "bytes": 1930,
+    "sha256": "b92c2c2bd06820312b50043b5fc508a8fb9cabb92f9ace85ac43e03847282f87"
+  },
+  {
+    "path": "projects/selfpleasure/app/triggers/rules.py",
+    "bytes": 704,
+    "sha256": "6092b681b6666b54cf8a118aaf55f5988f27eed7b64ea7fb62df360f864c282a"
+  },
+  {
+    "path": "projects/selfpleasure/app/triggers/session.py",
+    "bytes": 1930,
+    "sha256": "b1406130df5515b30398022753d32bbe207d5742bd15f78282fda1d8aff820d9"
+  },
+  {
+    "path": "projects/selfpleasure/app/triggers/store.py",
+    "bytes": 5796,
+    "sha256": "8a0eca1fb47f8a626a2ffc87695c307a862218e299505bacfb6b906f9249e544"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/__init__.py",
+    "bytes": 149,
+    "sha256": "0e85bb6074b2b61f9a4967545b09a4cf3ae34ae2a7db8c4291aa88b5b67222a9"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/benchmark.py",
+    "bytes": 5926,
+    "sha256": "4ca80e7fb45497539c0d6eca12077326653397aadd9c426c51d98b214a108ec4"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/calibration.py",
+    "bytes": 4132,
+    "sha256": "8967aba531476b71a20f285f9b18dea02a73a0e5434420a1a2d08c3ce75775e4"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/download_hand_model.py",
+    "bytes": 1371,
+    "sha256": "400c54e2f904ee413b4b6c3071f12c77b9898489d2fb70b81e7dd354192accb3"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/download_model.py",
+    "bytes": 1348,
+    "sha256": "13bcad8423cfa47cb90b713f5f1bb4e785c4bc431e97fa82c74ea37ad6c6bfb1"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/geometry.py",
+    "bytes": 1699,
+    "sha256": "577eea2326e9d0c2f21aedc32c33ae77d07f0e88e5245544c484d716daf3d64f"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/hand_tracking.py",
+    "bytes": 8034,
+    "sha256": "a2b477d48f85d9fd82065e6c73ee114a5a30f56ce564513015d30cb80508f471"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/interaction.py",
+    "bytes": 9629,
+    "sha256": "60e06f62655fb8ab5485d2ae57bef228bf7a51e49b26a424830216fd3dc8c110"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/object_tracker.py",
+    "bytes": 5314,
+    "sha256": "7ee82d61bbfc8d425f54e1e1358aa85433ae708bf108ea117b2bd48feac2752a"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/overlays.py",
+    "bytes": 2092,
+    "sha256": "b72f6c8c27fbbf955d1a2c95c46611d5eb3148b8400a1e9f2cb443d7f13ab31f"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/service.py",
+    "bytes": 6200,
+    "sha256": "984174645a2521f0b130095211cddc4017b2208c8b0ce8aa418e819211928bdc"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/stroke_contract.py",
+    "bytes": 3076,
+    "sha256": "6b8088beb75b1ec9c6c2176127ec1d8171de608afc5c3ed9e5c1a8d230c92e0b"
+  },
+  {
+    "path": "projects/selfpleasure/app/vision/stroke_estimator.py",
+    "bytes": 10007,
+    "sha256": "2e2e12bdef5c70bf6e7dffa159b70d9e2f87967c6ddbb31b7222ae6a308f51dd"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/__init__.py",
+    "bytes": 34,
+    "sha256": "f931b08026d8a9bd4189ed75f32593c5347d4253ed9785027e275c1b00da70d1"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/app.js",
+    "bytes": 5987,
+    "sha256": "853eebcc061ee941294cfc606224e8b86083d4a07c105ed53abf5b7ea7f7bbb5"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/camera.html",
+    "bytes": 8082,
+    "sha256": "619310019ed9bffe17a790b244a3fa7a060836768998a4879ecf2e08cd14156d"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/camera.js",
+    "bytes": 13630,
+    "sha256": "9e9deb30e207dfc18ed45fd73e1e71b9aed4af77be938cca74ab754781372b10"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/devices.html",
+    "bytes": 2824,
+    "sha256": "8a517bbd9e82d806034296b75595d214bfb16d070860f378e1965f2a59c39f1f"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/devices.js",
+    "bytes": 6798,
+    "sha256": "6232df57fd73608cc3a075d8ea6d8722d0abb6407dad7fbdd8c5f198849ae30c"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/evaluate.html",
+    "bytes": 4818,
+    "sha256": "6965b30f2a454a0a479b5adc39a1077b1723e523fd74bb3fe53f92ff6a0c354d"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/evaluate.js",
+    "bytes": 9112,
+    "sha256": "3158f0c674c98abfea10de85494023968a74b497c011b6b9c7feb03ae9f08b76"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/hand-evaluate.html",
+    "bytes": 4212,
+    "sha256": "c11700c5e85021c38aaeccc47dcd09ab88a7355abb548193d1097492c51bf799"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/hand-evaluate.js",
+    "bytes": 8174,
+    "sha256": "1ec642541adef9cbe3fb131d00813e712a0e127a0a7188e024b39c1749fbba97"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/hand-session.html",
+    "bytes": 11538,
+    "sha256": "cfd25ebf39004a3cd7d84c5418259b662b2bbea397ed7bbad69664ff1a483d4a"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/hand-session.js",
+    "bytes": 32912,
+    "sha256": "4582357ae5eca468b5b7e218afdedffb959be190aac7a72b5d829d6f53ded81e"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/hand.html",
+    "bytes": 6313,
+    "sha256": "4960abdac65cf17aaf1e989c31beeefa060df5d56f2411dcc72dc5e51b0615a4"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/hand.js",
+    "bytes": 10569,
+    "sha256": "2cda47164844b26afcfcc8ebe4232a845a7f2c3a21a6de2c5169f2274c03d382"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/index.html",
+    "bytes": 5954,
+    "sha256": "f7c944344db30ccc40a69960b4b387d9df5d09370cce33296b6d739648148833"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/rules.html",
+    "bytes": 3540,
+    "sha256": "9f19eb13d3e78ae2009ffab0de06c2c23239ac6518bbfc443e7eb7d6cbaf8c08"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/rules.js",
+    "bytes": 7616,
+    "sha256": "905a806cf23ae2dde3d689d2add4fd8b234c71d0f424b52236bac68bea4919f1"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/styles.css",
+    "bytes": 17838,
+    "sha256": "5fb396e1c926f90d775d7ba69a8f121c820273c3b524be3d0a686594795c0470"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/tabletop.js",
+    "bytes": 10666,
+    "sha256": "c1be9e5f2de29b252ad5e487ed593ec49f14c274b317bbcde1d4699fcf78f8d1"
+  },
+  {
+    "path": "projects/selfpleasure/app/web/unified.html",
+    "bytes": 5142,
+    "sha256": "7b0212ceb3329cc9a73b72fa96ba0adf4a07b949ed2791d1a6cfe5165f583a5f"
+  },
+  {
+    "path": "projects/selfpleasure/docs/compatibility.md",
+    "bytes": 3039,
+    "sha256": "7d7401f6f9f18e01b7bfc5a68e6c9c18436896558bd2559cfbfed8e2b9b8dec1"
+  },
+  {
+    "path": "projects/selfpleasure/docs/first-run.md",
+    "bytes": 2100,
+    "sha256": "d553219fbe7a3ee112bdfcfb0bd5d19a63adda9a334e4c66e690a7c06f747294"
+  },
+  {
+    "path": "projects/selfpleasure/docs/hand-stroke-stage1.md",
+    "bytes": 7103,
+    "sha256": "2784fe0ee0fddf4f4a68df6f6d92d333f53de9aadf4e45058cff79174934d6a9"
+  },
+  {
+    "path": "projects/selfpleasure/docs/hand-stroke-stage2.md",
+    "bytes": 3804,
+    "sha256": "268b589d727de890670fa1db00bcd03f807d09ac968722e4aa01b0c99db1fc66"
+  },
+  {
+    "path": "projects/selfpleasure/docs/hand-stroke-stage3.md",
+    "bytes": 5000,
+    "sha256": "d7af23030e40e3d632b86645a3480caee9067917cac1c057524f71c1027c7daa"
+  },
+  {
+    "path": "projects/selfpleasure/docs/hand-stroke-stage5.md",
+    "bytes": 8507,
+    "sha256": "3c56774b6835359aef056bcb08ccfba8105ce94f5e6b8063c45182ea1910faa8"
+  },
+  {
+    "path": "projects/selfpleasure/docs/hand-stroke-stage6.md",
+    "bytes": 5353,
+    "sha256": "ae3afde4f454419266826f9ca2cbf5b4573bd5efcf0c8f811b837c6c78dbe233"
+  },
+  {
+    "path": "projects/selfpleasure/docs/privacy-policy.md",
+    "bytes": 2041,
+    "sha256": "c4394bac759aae527a10b7adf7a56e940533e35c73c38608caabee743ad7fb73"
+  },
+  {
+    "path": "projects/selfpleasure/docs/release-readiness.md",
+    "bytes": 5501,
+    "sha256": "f0bc250c29245197cead808ae525b7c7726c7cf07a169fe0d34d2857b877a46d"
+  },
+  {
+    "path": "projects/selfpleasure/docs/uninstall.md",
+    "bytes": 1313,
+    "sha256": "e709b0929644997de8623525beccaa64d4aac3e3e5fae19afaf97b29be34f97a"
+  },
+  {
+    "path": "projects/selfpleasure/packaging/SelfPleasure.spec",
+    "bytes": 1638,
+    "sha256": "b75e4117524a1947b48b1c6057484a6cc77394a962a54eba45561ce0ddfd96b8"
+  },
+  {
+    "path": "projects/selfpleasure/packaging/entitlements.plist",
+    "bytes": 244,
+    "sha256": "8c24a829d30d0ab9e238c26f7a06b3fff6e717a901ee811c58471bdd4fdb8fa8"
+  },
+  {
+    "path": "projects/selfpleasure/pyproject.toml",
+    "bytes": 748,
+    "sha256": "a8d6cc070a0e048929c0d228247e83901b1caeaf0c378864cb4c3d0a89dd8148"
+  },
+  {
+    "path": "projects/selfpleasure/tests/__init__.py",
+    "bytes": 46,
+    "sha256": "46e7f7bba05c478ec25c17dc19abf3a27da66d09cf03170415b21fc8c13a4ecd"
+  },
+  {
+    "path": "projects/selfpleasure/tests/fixtures/recognition_cases.json",
+    "bytes": 4055,
+    "sha256": "7386ad5224bf546cf2c86ff5f7f43070b4c0591354f952782a79ba6c1e665b66"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_api.py",
+    "bytes": 2739,
+    "sha256": "5c8c731c6f7a25db2d293630e74dbc2f7361609180aaf0e0417d638bf9ba3b85"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_automation.py",
+    "bytes": 9151,
+    "sha256": "6c43cb903c351215a81407ea5765ea8d52bd0ba3b36a2c82aef4ae3f2628bc57"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_camera.py",
+    "bytes": 5128,
+    "sha256": "0da3270cd1e9edd390bbe1f1a18cb9cba81b58884c8a5e5fdc378a0333283c39"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_device_control.py",
+    "bytes": 19461,
+    "sha256": "b49842cdaed1ca4c7c874b99520e70698b91a2bfc028f57876e9f263ef0ab4e7"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_evaluation.py",
+    "bytes": 10963,
+    "sha256": "396113357627e85df8f0b803b2a27de710efe1d3917ae5725baee628e1770b9c"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_foundation.py",
+    "bytes": 1362,
+    "sha256": "26972dd2276c47891a05ac8437fe1d6057e33b91cfaea693b9d7d3f2e352ae18"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_hand_response.py",
+    "bytes": 24169,
+    "sha256": "a7889a0cdaffaf1ac8b7fdc90207b7b3f39c907b20c6c7d329de3ee5fe21e608"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_hand_session.py",
+    "bytes": 13078,
+    "sha256": "73b8f0cd3be8a16f4a7fb1513e85027faeb4ba4f62058eaafc6d370302e4f30c"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_hand_stroke_baseline.py",
+    "bytes": 8032,
+    "sha256": "8a8c7b8f3a0442445a8ecd7b790f73a3c67c9731dbc1962f9ca5ee887253d43a"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_hand_tracking.py",
+    "bytes": 7812,
+    "sha256": "7bc16698868061f5f6e39cb7a18692a2fb47a45e102052095cb1bab5e501a8c2"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_hardware_validation.py",
+    "bytes": 11664,
+    "sha256": "ce9498425010d66d34cfac78c6380e71f1577f7002b059e4fc673d1f1bddaf80"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_interaction.py",
+    "bytes": 9434,
+    "sha256": "9a444929349571eb8a92f027be50eec9b66e2276aa4b468e7ea4baa6ac5887e8"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_paths.py",
+    "bytes": 1054,
+    "sha256": "7215fad21b41bb2c395b1645f084675387c869a1af16ba38ec72a365d81cd832"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_patterns.py",
+    "bytes": 10836,
+    "sha256": "d850b81d5297b26c40f54ec86f5fafa6e32656f7f8c9bbb5b8d2c0841c8918fb"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_session.py",
+    "bytes": 5885,
+    "sha256": "b5bf9231c8195d27602f8f5cec16e948455473d9d98335553570a60d352323ab"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_stage6.py",
+    "bytes": 6972,
+    "sha256": "a535abd2b0357f98f24699fb77acec23504e8912ef83892a0e1bd0d7775953fc"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_stroke_recognition.py",
+    "bytes": 10204,
+    "sha256": "e56e7271f4c955f529f4a9410bcae509a31ff9fa24be4f36e2612a38a21b5eef"
+  },
+  {
+    "path": "projects/selfpleasure/tests/test_tabletop.py",
+    "bytes": 6281,
+    "sha256": "8ea9c2c72af20399bb4ec1463b74946f5b53f808ba277901d9155f31e800e25f"
+  },
+  {
+    "path": "projects/site-architecture-lab/.gitignore",
+    "bytes": 442,
+    "sha256": "9190b4e35cb464cfaa493786d9c4b6a92e441e86204b23f22a200ff01e6e1e60"
+  },
+  {
+    "path": "projects/site-architecture-lab/IMPLEMENTATION.md",
+    "bytes": 1606,
+    "sha256": "bcc1373acca0d2d18cd67d2ad87a5c8dd8f5ff98c3f9e261d606878e8671ce8f"
+  },
+  {
+    "path": "projects/site-architecture-lab/PUBLICATION.md",
+    "bytes": 839,
+    "sha256": "cd38bd19738bf00b7e7c2c111b04dee3314a20f4fbd5443af1153907e31720ac"
+  },
+  {
+    "path": "projects/site-architecture-lab/README.md",
+    "bytes": 8604,
+    "sha256": "62601aafbef9ff315fee77c4d6dea44da7b31733ecf79be98a65ae0ae7bf3f40"
+  },
+  {
+    "path": "projects/site-architecture-lab/dashboard/index.html",
+    "bytes": 262,
+    "sha256": "efeaaef17deddcaa0520ead66d6346f94ecb2d9f68abe3cf1a9848bc1428533b"
+  },
+  {
+    "path": "projects/site-architecture-lab/dashboard/package-lock.json",
+    "bytes": 37699,
+    "sha256": "f16449572e2acc0dc728c6943929520409dbf68dfd7bd6be7c25b091e52a900f"
+  },
+  {
+    "path": "projects/site-architecture-lab/dashboard/package.json",
+    "bytes": 416,
+    "sha256": "f37cab5da88e43dfac8fc22a672350222d2bdd92b11661e31d10d8c308de5603"
+  },
+  {
+    "path": "projects/site-architecture-lab/dashboard/src/main.tsx",
+    "bytes": 9949,
+    "sha256": "7ca19c6c7ba1389beb26c28fb695e5dad82701dcbe2dcdc8ccc6f7a46cd87cc0"
+  },
+  {
+    "path": "projects/site-architecture-lab/dashboard/src/style.css",
+    "bytes": 4357,
+    "sha256": "454974399f87c917e960bef38d258b57f92410571f8614ec0506ed846fcd4e32"
+  },
+  {
+    "path": "projects/site-architecture-lab/dashboard/tsconfig.json",
+    "bytes": 228,
+    "sha256": "950c01fcdfa7e081221d21e37117c6d915cb6f8d736ee2b05d07e5e62155b299"
+  },
+  {
+    "path": "projects/site-architecture-lab/dashboard/vite.config.ts",
+    "bytes": 149,
+    "sha256": "f77a3c17a15cd4337641d98581dd033ab707e7aa90f27001c4bd61885bbc8b51"
+  },
+  {
+    "path": "projects/site-architecture-lab/examples/synthetic.har",
+    "bytes": 10287,
+    "sha256": "e8ed4506bdc7e7d427b8fc7b92eb6e01c9b73b96791f6d226ed204c429e7dff6"
+  },
+  {
+    "path": "projects/site-architecture-lab/pyproject.toml",
+    "bytes": 380,
+    "sha256": "c7cab3631833676c66ccf9123b67d3c1a29234d79a6267c928586efcbf76a4b8"
+  },
+  {
+    "path": "projects/site-architecture-lab/run.sh",
+    "bytes": 87,
+    "sha256": "09e34b1018ac984db92cccbe3058e2e87b6c763f39a251bf0192cec9e0d18d2d"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/analysis.py",
+    "bytes": 5388,
+    "sha256": "7e3c62ff681ccac109787e3ab5ad4d0da51558f8716d9dbc10644d0d00331bbc"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/cli.py",
+    "bytes": 4102,
+    "sha256": "738bb34e1917cfb774665b8a56eb5906601336d80e0e6f12f98551c7f70fe240"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/frontend.py",
+    "bytes": 392,
+    "sha256": "95a0f999c01cf9433782939032e3b431dce9f3122a5656af7d3d9c939443d2ea"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/http_analysis.py",
+    "bytes": 640,
+    "sha256": "9f1abe2847ea96ede8f882a7dc4e861f61af3772816c302e04c2d61145eb4c12"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/privacy.py",
+    "bytes": 2211,
+    "sha256": "dfa9e811292a53815f3248d27608d718b0e4c782db862a6af591f7c80675aa08"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/realtime.py",
+    "bytes": 378,
+    "sha256": "6f503d30baa9d9f85e82d888408c770389c6b14235d4786ccdeb2fd6309c7372"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/reports.py",
+    "bytes": 2797,
+    "sha256": "3b0ba699d63443ca54815630e4e0a78e9d1a9ca104d6cd370c49f1ae3e5c8ae5"
+  },
+  {
+    "path": "projects/site-architecture-lab/src/site_architecture_lab/streaming.py",
+    "bytes": 681,
+    "sha256": "1b450674efb7b563dbb4ba19702d986b6495ec67d678101edd36f65080d8b067"
+  },
+  {
+    "path": "projects/site-architecture-lab/tests/smoke_local.py",
+    "bytes": 1868,
+    "sha256": "8e5be4413338a8e2588fe9aa8f2455479f86ddaba228c8d6ca3fdb46d445a96d"
+  },
+  {
+    "path": "projects/site-architecture-lab/tests/test_analysis.py",
+    "bytes": 3730,
+    "sha256": "23e90aa4ea9bd5279bcc8f3f21f720bacc292dc818c7d1b686bba078809e9f24"
+  },
+  {
+    "path": "projects/stepcounter/.gitignore",
+    "bytes": 283,
+    "sha256": "0bce4cce322cb1547f46dc8c58fc55c98c59d4e4c95dce37d83ad46e72aba953"
+  },
+  {
+    "path": "projects/stepcounter/PUBLICATION.md",
+    "bytes": 641,
+    "sha256": "7990c305f6869d56490624a88f82ff107c51e2f433feedcd2a47c80db30d4bba"
+  },
+  {
+    "path": "projects/stepcounter/README.md",
+    "bytes": 119,
+    "sha256": "6ac118b8cc6035067fa78b3a98ae7b46b5ad9c434f092d8ad8b707fa5e3d682d"
+  },
+  {
+    "path": "projects/stepcounter/app.js",
+    "bytes": 2256,
+    "sha256": "681359b24f56c0b5748a6a4cd4606190753e75fbbf01ca3ed3744a957ed35854"
+  },
+  {
+    "path": "projects/stepcounter/index.html",
+    "bytes": 357,
+    "sha256": "d203a903553da63d4455eb59e0b641620ee61c6898c5a0ce23926c34dd6b7c65"
+  },
+  {
+    "path": "projects/stepcounter/styles.css",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "projects/streamclip/.gitignore",
+    "bytes": 353,
+    "sha256": "ddc95ef51058f173b1480522c77d1fce501bf6e8b69b2929e7972b09306c8c8a"
+  },
+  {
+    "path": "projects/streamclip/PUBLICATION.md",
+    "bytes": 753,
+    "sha256": "a6aa93b466bdfa4dc6aff515bea7a0deb2862447f30831b4931fe831fa33703d"
+  },
+  {
+    "path": "projects/streamclip/README.md",
+    "bytes": 5424,
+    "sha256": "162692a55769cd3fb633cb92dc9e4c0043aa80cd47d28a90b3b111d03f3bae04"
+  },
+  {
+    "path": "projects/streamclip/analyze.py",
+    "bytes": 113,
+    "sha256": "d8e25d39783557c4beb87ada1c930caeb455286a0fb94b55e8b348670c118d82"
+  },
+  {
+    "path": "projects/streamclip/compare_twitch_clips.py",
+    "bytes": 124,
+    "sha256": "1824efbf911039133f429e353d64858daa09e101ca7f6b30ffbdf6bf0fc74193"
+  },
+  {
+    "path": "projects/streamclip/config.example.json",
+    "bytes": 386,
+    "sha256": "8bd8dc6a906eb26305516f33a40614dbb06ddfeda9e36924216b88808d5c973f"
+  },
+  {
+    "path": "projects/streamclip/pyproject.toml",
+    "bytes": 590,
+    "sha256": "b5e90c50ca6ad1e7f0e1c99e68ae150bb38cabcc44731f3ee8f51f8117ac08f6"
+  },
+  {
+    "path": "projects/streamclip/requirements.txt",
+    "bytes": 42,
+    "sha256": "5bd1cc6a8efcd6210f27f3f6920cbe7a3f3ae8f5ec86ac79787a294ad025d556"
+  },
+  {
+    "path": "projects/streamclip/streamclip/__init__.py",
+    "bytes": 67,
+    "sha256": "838db6d6b2043c10487569e95cc708ebcb5bc6f709aea4695269837d9e0919cd"
+  },
+  {
+    "path": "projects/streamclip/streamclip/cli.py",
+    "bytes": 2922,
+    "sha256": "3a378dec85a9407766446cb0fecae14a14138c316557116db8e50d13bb5c7d47"
+  },
+  {
+    "path": "projects/streamclip/streamclip/config.py",
+    "bytes": 1053,
+    "sha256": "6fa54c5fb0fde2159616a245ddc86e51233892c172f4a94b0f4e13986e919179"
+  },
+  {
+    "path": "projects/streamclip/streamclip/detection.py",
+    "bytes": 3708,
+    "sha256": "31067d11cceaa76b8291c5be69cfee9d89530b18cc489a36b176aa582961e43b"
+  },
+  {
+    "path": "projects/streamclip/streamclip/media.py",
+    "bytes": 983,
+    "sha256": "3e4824e8921f17ef663f16c45cf2dc03600e0f59fe6c7d7bd2ae3796ceedc4a2"
+  },
+  {
+    "path": "projects/streamclip/streamclip/models.py",
+    "bytes": 1024,
+    "sha256": "008a52c3ef89dd4a75d6a6ed202292668fc9c233773768ea37559d036510fb67"
+  },
+  {
+    "path": "projects/streamclip/streamclip/providers.py",
+    "bytes": 4706,
+    "sha256": "a4af5d58c76c902fb78858ab023e4ff01048311cd3d2d98f2abd530c28ed6228"
+  },
+  {
+    "path": "projects/streamclip/streamclip/ranking.py",
+    "bytes": 1375,
+    "sha256": "5e7dda64a750374309de342472f3acfcb69909a35f420b01c648ea29f7435a9d"
+  },
+  {
+    "path": "projects/streamclip/streamclip/report.py",
+    "bytes": 2979,
+    "sha256": "9b47f65b811cbe7680372adfa8b76441ed907b3c819823fdbb7474dd863af149"
+  },
+  {
+    "path": "projects/streamclip/streamclip/transcription.py",
+    "bytes": 779,
+    "sha256": "4b5326087e732574bd7dbdf1ba2c6f0f7fd4b2d7ee9e4d50bf153235e0ede91a"
+  },
+  {
+    "path": "projects/streamclip/streamclip/twitch_compare.py",
+    "bytes": 4673,
+    "sha256": "911664698f3a63fe12c4974894a1a05269d1ab519d9d433cc0883036f5debd10"
+  },
+  {
+    "path": "projects/streamclip/tests/fixtures/chat.json",
+    "bytes": 220,
+    "sha256": "49d6b6a127d004c3238ac9766a796b7758d17e6d77b24466fa5801e951f406b5"
+  },
+  {
+    "path": "projects/streamclip/tests/test_detection.py",
+    "bytes": 1479,
+    "sha256": "7ce0ff046e621095b9b905eb0239dcabdb83f8918c9cc002c47fabe4f471ee17"
+  },
+  {
+    "path": "projects/streamclip/tests/test_providers.py",
+    "bytes": 565,
+    "sha256": "7c56dd03804dbef09ce5e576610a02aae428bb8cad34b9f89616bbc74c458ed0"
+  },
+  {
+    "path": "projects/streamclip/tests/test_twitch_compare.py",
+    "bytes": 737,
+    "sha256": "8a50c6144366aa82c665d5cd517e1486a055655441080a0c58bdec0934f7c905"
+  },
+  {
+    "path": "projects/terrain-lab/.gitignore",
+    "bytes": 313,
+    "sha256": "7e79c73246b4c25168240d167fa78ecce11c1e9210301a992b34de770d2d8033"
+  },
+  {
+    "path": "projects/terrain-lab/NORTH_STAR.md",
+    "bytes": 5038,
+    "sha256": "06712021beed1375cd98202ec689ff468510e29ce7b77399eefe3ffb5d66eb0c"
+  },
+  {
+    "path": "projects/terrain-lab/PUBLICATION.md",
+    "bytes": 811,
+    "sha256": "b919359e344052c8239bab4f048558ff7c0bde1655c38f908d47e5cafbadca03"
+  },
+  {
+    "path": "projects/terrain-lab/README.md",
+    "bytes": 34388,
+    "sha256": "5d042f7071b4d8218d8ec88ca69f7cb3add01da92548e09c30b638c354be6c8f"
+  },
+  {
+    "path": "projects/terrain-lab/index.html",
+    "bytes": 493,
+    "sha256": "3c27998f1e8923b8e137c4bf1a1c02d70a67f08d72cc77877ac5454aedf696ff"
+  },
+  {
+    "path": "projects/terrain-lab/package-lock.json",
+    "bytes": 103341,
+    "sha256": "b769201484d8930ca528f560c7579f8103cef532396be3aa3c56ad2d08b05c11"
+  },
+  {
+    "path": "projects/terrain-lab/package.json",
+    "bytes": 2788,
+    "sha256": "8af130a7cbc0350b8a39c4d2ac91c0962c5afe34dfecd1e674747e8f9ddb30ec"
+  },
+  {
+    "path": "projects/terrain-lab/public/operations/index.json",
+    "bytes": 376,
+    "sha256": "35d4e8488493aa1c6d2784e911a5ce26d2a668afcaa7adfe5ef02e240a01ad70"
+  },
+  {
+    "path": "projects/terrain-lab/public/operations/point-distance.v1.json",
+    "bytes": 7686,
+    "sha256": "ac7baa938ba8da72b8c38cbdd3f99969349aae509eb10a31401bc430622db07f"
+  },
+  {
+    "path": "projects/terrain-lab/public/operations/polygon-area.v1.json",
+    "bytes": 3457,
+    "sha256": "664d685c120643e0089bc7fa7c4a4bc0d782286e4470a3ff087ba6b6dcd37db3"
+  },
+  {
+    "path": "projects/terrain-lab/sandbox.html",
+    "bytes": 502,
+    "sha256": "4b2ff04cdf4f8e0f7b99c9cb3d9d6a00ed4de37223a161565d71f456000dab10"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/build_verified_layers.py",
+    "bytes": 6707,
+    "sha256": "4904bbcaa1181899d86d03c7ae3af02f7cc09553633a021b6f58d2f91472eec8"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/desert_tortoise_research.py",
+    "bytes": 15224,
+    "sha256": "a9b233dbe3daaa0cb32e9336648a6e41c0e2c9ed9d3f04080d3834d6398f1ee1"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/esque_cell_area.mjs",
+    "bytes": 4602,
+    "sha256": "bf12c0061ae8c20c420215eb72e1d362bc9ef3661b1fd8fb29bbe872529f28ed"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/fixtures/point-distance.geojson",
+    "bytes": 368,
+    "sha256": "d5f202d8a380ad2b3dc001eb796a148fa4623221bbc7acc364aa60d1c8ab41bb"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/fixtures/polygon-area.geojson",
+    "bytes": 674,
+    "sha256": "21d09b6498aaf42a34b7833eacf9b8e176daa0cc6520596f4fd7ab58226e4053"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/fleckenstein_array_area.mjs",
+    "bytes": 4458,
+    "sha256": "0c4227288b94a2e6b899fbcb3f0bee0316783b80a60d3d6748067c4a52bfae80"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/nussear_cell_distance.mjs",
+    "bytes": 6614,
+    "sha256": "6a488b6b39936d0adcfa085fff4cea6901cb0af5c3a93aa6405496c7fa210ccc"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/point_distance_cli.mjs",
+    "bytes": 2021,
+    "sha256": "e1fdc2e42f82471fd7c892a3a07c71478b4b937d2117619cb587e69890a8efc1"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/polygon_area_cli.mjs",
+    "bytes": 1715,
+    "sha256": "2391358748318958c47b5859077ad160f96a3ca7c749e2e9553d391980c081d9"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/prepare_joshua_tree_hybrid.py",
+    "bytes": 3265,
+    "sha256": "cf31a06d7615e28a1fb992ea2b8537e79e9d48d31503e8b34510256ee134763b"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/prepare_uspvdb_2023.py",
+    "bytes": 2332,
+    "sha256": "d137693fe8d3e3193e76a9ceb35779cadcadea41dc906db0e854936a397ff9c9"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/read_nested_zip_member.py",
+    "bytes": 818,
+    "sha256": "5e2f2516b3eea8026638eabeae4943f8c8a14c1b043f05f7a90c959ff3d4386e"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/research_intake.mjs",
+    "bytes": 4329,
+    "sha256": "7cf5e1ffcaa677575eea3613f9ed5ac5ca5961b408268a48e5735d60a2ec0881"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_analysis.mjs",
+    "bytes": 5739,
+    "sha256": "4b76829ad447552b6f8c08cd5c01927615a5a8a065f24010bf639f3fd7987fb4"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_data.py",
+    "bytes": 1362,
+    "sha256": "8e4c2bc35bf9d9859d0f97f58956834dced9b1bbe29e22c6cf3d5f3791c9cf5d"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_desert_tortoise_research.py",
+    "bytes": 5344,
+    "sha256": "32b62a96f9095bf6aeec0feabdffa87f90f139e404209e6b89c86a141feb43c3"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_distance_parity.mjs",
+    "bytes": 4040,
+    "sha256": "5aaf9575dcb933e7f84bfa0244a41190edcada86b1395a478302c9aba57a3409"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_fleckenstein_array_area.mjs",
+    "bytes": 3202,
+    "sha256": "54762c32a9a4090c2f4d622ea71068ae4184bcfc857029682e97a2ad95749b77"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_fleckenstein_layer.mjs",
+    "bytes": 2587,
+    "sha256": "0ddaa40e72f0ae14ef994af72a9b29bdeffa381cd19d271b0128242221bb625d"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_joshua_tree_intake.mjs",
+    "bytes": 6271,
+    "sha256": "621c03da130437e50f7779765dfd42e3f31a84ad3758742a6f7bc74ffac3bb50"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_joshua_tree_layer.mjs",
+    "bytes": 3767,
+    "sha256": "b68c22515bda1b6bd8b130043d55e9ff7b5a83901498212c4f82a1b77f6c7ee4"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_nussear_cell_distance.mjs",
+    "bytes": 3121,
+    "sha256": "27eafd1da8bec0c0d49b77692f3974c9b21eb2a32cf604cb2e73cf8275c66974"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_pmtiles.mjs",
+    "bytes": 2257,
+    "sha256": "053cddfc6ceac7a28f51fccfa0b73a75bd5ba992d403a58a420c0ff140f885b6"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_point_distance.mjs",
+    "bytes": 1850,
+    "sha256": "7bdb24e3d2c262bb79ad93d15baefbab3918f5461d281aab561996b2ed21b412"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_point_distance_cli.mjs",
+    "bytes": 1830,
+    "sha256": "3e49f4d6df8b5bea9cf775b10d432c6b10718c7e548126bac7a8b9158705c4d3"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_point_distance_contract.mjs",
+    "bytes": 5367,
+    "sha256": "5e4e559489ab624239e75e79aca68363d1fd92c51dbbf14c0f962b0e5c59b949"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_polygon_area_contract.mjs",
+    "bytes": 4946,
+    "sha256": "d1b7ce1ece71dd57fbc526a7abfb05aa0c7456b5d4b5f017f46019fedb880cfd"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_research_intake.mjs",
+    "bytes": 5226,
+    "sha256": "fd4b90567fbd47e5f56c657c21c37dec68e8cd6214784a90df6c93b7c4b3e83f"
+  },
+  {
+    "path": "projects/terrain-lab/scripts/verify_study_metadata.mjs",
+    "bytes": 7510,
+    "sha256": "1f97045a820cc73e2bd83b080300fd8a308687f009ff023b128a6d432e9228fb"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/dutcherStudy.ts",
+    "bytes": 5256,
+    "sha256": "7a0639180d4744d15d7d43a731f90141c18ba11da39c82cb0960e649dd9f493c"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/esqueStudy.ts",
+    "bytes": 4523,
+    "sha256": "a0bf390e2bc3ad4927b52c2c3831851fecc1e02db82cf7f4c3faea10cc4d878c"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/figures.ts",
+    "bytes": 5206,
+    "sha256": "8fac771472866f936261d73ab06ecc9ef2045b7a235f45f95d1364ec15fa3d37"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/fleckensteinStudy.ts",
+    "bytes": 5969,
+    "sha256": "57e6719e80936d9ff6767b686829820a7f31f72fd812a68aa83aa5dba9e6222d"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/nussearStudy.ts",
+    "bytes": 3990,
+    "sha256": "bb3e604d53bab6d7dad6b10d2dad3cfa062fc28ad5a31baac21e88d73a38b7e6"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/places.ts",
+    "bytes": 2165,
+    "sha256": "46a6d814287bc591c747f1c684bdb2c5ebe6f9ae9709525da84ba441d650ecb2"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/story.ts",
+    "bytes": 3141,
+    "sha256": "272485d0c71e45914af498dadd361bad5f8346afe4b4d6cd5c08b616b4801614"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/studies.ts",
+    "bytes": 618,
+    "sha256": "2e2954a271ce78caa44290b6748beb4e3e2cd3241e27e9d04f5e90d2f41e7a13"
+  },
+  {
+    "path": "projects/terrain-lab/src/data/studyMetadata.ts",
+    "bytes": 7178,
+    "sha256": "b20d2d5d10e28a89952957a8d4f8e37f633af2f83194ad7f34a42d2f9358a918"
+  },
+  {
+    "path": "projects/terrain-lab/src/geo/analysisCommon.ts",
+    "bytes": 2304,
+    "sha256": "1e4e4c6a06797f516c31bb855ac705c8264e8798931babc6915eadba0df15e82"
+  },
+  {
+    "path": "projects/terrain-lab/src/geo/pointDistance.ts",
+    "bytes": 1457,
+    "sha256": "771caab221c7cf9c5ce3d359a447356969acbe84827b3e08a8618d76547fdd6e"
+  },
+  {
+    "path": "projects/terrain-lab/src/geo/pointDistanceContract.ts",
+    "bytes": 11238,
+    "sha256": "5534135bfb8c6ed7fc524e962c497b968c27561407034261a821e4995b70cb7d"
+  },
+  {
+    "path": "projects/terrain-lab/src/geo/polygonArea.ts",
+    "bytes": 1204,
+    "sha256": "14042dc1ff1bcb27f59e2a48f3009fbd6ed3b58cf9e56695da06a6f2f497b8a8"
+  },
+  {
+    "path": "projects/terrain-lab/src/geo/polygonAreaContract.ts",
+    "bytes": 10125,
+    "sha256": "8348940ad4f76261153d2375969b4fea7dd3a5e7244cafb1d7e0429b4471e7ed"
+  },
+  {
+    "path": "projects/terrain-lab/src/geo/webMercator.ts",
+    "bytes": 415,
+    "sha256": "9c3b6411c5357c6c18ca6b78d12ce3dc44a5af28794d36d880371e560f0c64ce"
+  },
+  {
+    "path": "projects/terrain-lab/src/main.ts",
+    "bytes": 15164,
+    "sha256": "37ed8d34a03c5f66387c9dc43007afc04584f731070af37268c7352501ebffa0"
+  },
+  {
+    "path": "projects/terrain-lab/src/map/atlasMap.ts",
+    "bytes": 16491,
+    "sha256": "d1d92da59109a72feea8c9b70f6ed4570b629bd9f6356e44810ad47cd847f49e"
+  },
+  {
+    "path": "projects/terrain-lab/src/research/intake.ts",
+    "bytes": 15246,
+    "sha256": "6de30335a1e90ca200df761501d0a5d42120e33cf37d49ac44f0eb3d189bc610"
+  },
+  {
+    "path": "projects/terrain-lab/src/research/shapefileIntake.ts",
+    "bytes": 13687,
+    "sha256": "492e8f5229dda4ccc0e1951f2ede2649be5cdfcb9b7c77b4b3aa3a278a058c8f"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/analysis.ts",
+    "bytes": 4460,
+    "sha256": "7f4bdc0dbbdc6c579eb3b5e6897de3008bda1815f032e9d84f20aed0e7c7f0a8"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/deckPoints.ts",
+    "bytes": 3504,
+    "sha256": "863a1e802cf2c51ec55c85e419f16a2329f6ed44480aa27f070cb31a6aee4b27"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/drawing.ts",
+    "bytes": 4525,
+    "sha256": "1e1149a05549d158e266020632fd070d8dd7cfd4abf23644722a7b304c41bf4a"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/geojson.ts",
+    "bytes": 3851,
+    "sha256": "30527c1515cfa5382f17d3d7d2b7dc7f354b49d52a2483e68a8ee66b42f5e909"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/geotiff.ts",
+    "bytes": 13500,
+    "sha256": "d138a2ca8e2b3d705651575cdbf805ec92bf7c9007fef121a874ba20240c374a"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/main.ts",
+    "bytes": 79123,
+    "sha256": "3b413d970904fefbb6794c199aae6df5a6f09a86994ce4674dcb21006f71792a"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/map.ts",
+    "bytes": 23220,
+    "sha256": "d05b1b94a6cafeead7ec4693a6b4293be2707187fc9089c07016aa9d6d1f415f"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/pmtiles.ts",
+    "bytes": 8797,
+    "sha256": "1d3d0b2132ba03adb837dea4da10033968290d3bc44bcfa4e8b1291b2890b782"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/pointCapability.ts",
+    "bytes": 252,
+    "sha256": "3db63a6e46810d2508eb0b9677782a9554fb33b7dd1d044c6309486391edeeb4"
+  },
+  {
+    "path": "projects/terrain-lab/src/sandbox/style.css",
+    "bytes": 24654,
+    "sha256": "8934d46b70b672e4297c0045e19553985c09b331120cc42ea3c9b0aa3e3a1275"
+  },
+  {
+    "path": "projects/terrain-lab/src/style.css",
+    "bytes": 22715,
+    "sha256": "98ad5060d77dde985fc4fe99bd2d6cc6f56de533ed10a7d13d6350bcb9c98433"
+  },
+  {
+    "path": "projects/terrain-lab/tsconfig.json",
+    "bytes": 317,
+    "sha256": "00458a72ffce418b0231e7a1ed6f5d4a5530ba0b4c4daa8f06141046d56abbce"
+  },
+  {
+    "path": "projects/terrain-lab/vite.config.ts",
+    "bytes": 279,
+    "sha256": "285f4777643528107f62656a569e6d02e390766e2e8a2edbfec7f7873d4c24b7"
+  },
+  {
+    "path": "projects/utility-route-lite/.gitignore",
+    "bytes": 283,
+    "sha256": "0bce4cce322cb1547f46dc8c58fc55c98c59d4e4c95dce37d83ad46e72aba953"
+  },
+  {
+    "path": "projects/utility-route-lite/LICENSE",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "path": "projects/utility-route-lite/PUBLICATION.md",
+    "bytes": 968,
+    "sha256": "f43e728fafdd0192bea9e3514c6764e399205514f78d366a51ce7f1f20d49e74"
+  },
+  {
+    "path": "projects/utility-route-lite/README.md",
+    "bytes": 2877,
+    "sha256": "7e1ce2a177b9d4c84bba125c5b7e55a623fe089459eb5496b6829ed0c061a14e"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/ACCEPTANCE_MATRIX.md",
+    "bytes": 10428,
+    "sha256": "456b6171b40cc018cf53c1cae53579ad623a2fef3242798a560a73f0f09e59f5"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/ARCHITECTURE.md",
+    "bytes": 16351,
+    "sha256": "3f1b528d886b92846310cb46602d099c701668220de42e2b15f5ddc67fcae533"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/BUILD_STATUS.md",
+    "bytes": 3738,
+    "sha256": "76b0f0e77db8dc46a63c771314104bdc4387c6fcb981528dcec7ca50a2413a99"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/DATA_CONTRACT.md",
+    "bytes": 21824,
+    "sha256": "1aa260c8a8b9b05303840a9ddecf10a233cfe91ea010e3d85f2437dc6fbfbe99"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/DECISIONS.md",
+    "bytes": 6885,
+    "sha256": "0746e83143fbd7b998e4075d2e07aede40538268079dabc8c7012c458d05a3d7"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/HANDOFF_03.md",
+    "bytes": 3447,
+    "sha256": "1d4d3df405c4107f9bbbb3de41204c7319579b067371d56b29710546c3feaee0"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/HANDOFF_04.md",
+    "bytes": 2366,
+    "sha256": "345748bad22d4c328285b79a29c61aa89d72b3a92df95f68f588edade75943eb"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/HANDOFF_05.md",
+    "bytes": 3120,
+    "sha256": "0782aa70eb31c1b222030fbfa0ae1b9e18b5ecffee83865ac363fb0157114db6"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/HANDOFF_06.md",
+    "bytes": 4243,
+    "sha256": "2ed291a91a6ede16c9183716e7c14f25326b9f1d6d2b328d024debf9545f2ea6"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/NETWORK_BUILDER.md",
+    "bytes": 2747,
+    "sha256": "08064682423aae9b037e944a8f6bfef4ef83dc77551700fec670223bae95a00e"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/PRODUCT_SPEC.md",
+    "bytes": 15055,
+    "sha256": "5661a48dc8cc23f30e7a7f2c1e1131c88fd1cf07515c87d3168c1fe83396284e"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/RISKS.md",
+    "bytes": 1361,
+    "sha256": "6d4078777cd41003953a096b9c24145267560ae895a6ed3d5315ca6bb5b40004"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/GATE_A_REMEDIATION.md",
+    "bytes": 11067,
+    "sha256": "c3f4c205bb07d1b8d53d40a6a21ad1b8cb1a101f92084921653a8f7be3aec91b"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/GRAPH_REVIEW.md",
+    "bytes": 16749,
+    "sha256": "b6171013e7278335111d67ae77a007953b3f9ff11fe560daee01321fe5d72845"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/GRAPH_REVIEW_REAUDIT.md",
+    "bytes": 26403,
+    "sha256": "f362ca306af49d4bf291de280af0812bf7e70cf3c1afb2c44871f31b8a404bcb"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/PRIOR_ART.md",
+    "bytes": 27581,
+    "sha256": "4fddf3e502e1140eb7a5a57a17edcc5d68c23bd2f992f6a4f175cc30fb0783ef"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/RISKS.md",
+    "bytes": 5716,
+    "sha256": "107677ea66b02a3de0c3c74d6ee676c263894ca78865ccb8ea0b50b66f292178"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/architecture-contract.txt",
+    "bytes": 721,
+    "sha256": "17db6f78c1bf7ecd016c41008b1a20538358ef55b3fa77b82f1f5adb34feb866"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/ambiguous_anchor.json",
+    "bytes": 10930,
+    "sha256": "f92d3f2637a6708f82e686d7e1c87f2e05a729ecdab5658dac512afc23250599"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/anchor_left.json",
+    "bytes": 13537,
+    "sha256": "70cd2f89690be87da372b12e8304eacce89492a31837a11c7be23ae0414ab08b"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/anchor_right.json",
+    "bytes": 13537,
+    "sha256": "cbda3652218fdfcdf8aa63805199105233f775d44144d9142e8d71a8f7146d0a"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/application-after.json",
+    "bytes": 1328,
+    "sha256": "f996c4a28a7c7b8d56a082c546a20e897e600c21ce26e3654ec0655cdf317a72"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/application-before.json",
+    "bytes": 1328,
+    "sha256": "f996c4a28a7c7b8d56a082c546a20e897e600c21ce26e3654ec0655cdf317a72"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/core-regressions.txt",
+    "bytes": 6655,
+    "sha256": "6333e724c143af4a176242a9a2ced1d7d05e3c181a9d3608a0aabe186f19212c"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/degrees_as_meters.json",
+    "bytes": 5015,
+    "sha256": "c61aa1d5e904e29de328f2cef9afdab6677965bc7c2bdbceb70317ad88cf52fd"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/existing-core.txt",
+    "bytes": 2251,
+    "sha256": "a0a930236421ab900ffc1c15d45258867a380e76f8fe2ca2f25cd8d8a9599a7e"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/existing-qgis.txt",
+    "bytes": 610,
+    "sha256": "03dbda0d80ed6686d6bd901ab025c1f524e79f04dbf029ad9ca7eec14a0b597f"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/fingerprints.json",
+    "bytes": 165,
+    "sha256": "273386384eac2df7126c25c2e6e3c868320e762b7a4c675013e362bb914fc583"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/nonmember_crossing.json",
+    "bytes": 18265,
+    "sha256": "ba9ec6eecc61cae41bd0d074da311d106df5aa231501e26b5cc8d7e7ad9c7d23"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/qgis-regressions.txt",
+    "bytes": 1263,
+    "sha256": "4523dda64694c205fb403c80a38e336ae63a217fbe5d473402e576cb0a2e0bc8"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/scaling.json",
+    "bytes": 380,
+    "sha256": "44ff1cecc957e92f5b65f3c5d9503a3ebc7e590d5838ecf8ec8457eee8d71682"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/self_loop.json",
+    "bytes": 3927,
+    "sha256": "d252cc8cc52bf756faacc33a13d7db082201a9e69b5746047241ce1f9299e57d"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/stacked_flags.json",
+    "bytes": 7061,
+    "sha256": "3389c801a8ed916cfe23aa6348070248ef341eda9f7f4a98abf4c474db67e1bb"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a/vertex_crossing.json",
+    "bytes": 9562,
+    "sha256": "4a05252a039433ee8f564e64dcfe375d7b7f9f7e8ac27f2d750ecde7eadc4083"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/adversarial-core.txt",
+    "bytes": 5206,
+    "sha256": "1ce110467497ed8c3c6063be0d98e27cde7921246b7039c64655628f469db55f"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/adversarial-qgis.txt",
+    "bytes": 1456,
+    "sha256": "cf5146aa50273b2912203330917f07102b45c74c028444a9e99488038025289c"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/application-after.json",
+    "bytes": 1327,
+    "sha256": "9c94b588a8bb164a3c795a9be42a7ca6f4a9e47006d5c2dac828872de0df507a"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/application-before.json",
+    "bytes": 1327,
+    "sha256": "9c94b588a8bb164a3c795a9be42a7ca6f4a9e47006d5c2dac828872de0df507a"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/baseline-reconstruction.json",
+    "bytes": 258,
+    "sha256": "e5dce289564a92307238bf48392838b03562a253e07727107c636f5c35e442c1"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/commands-baseline.json",
+    "bytes": 1478,
+    "sha256": "d5d058bbb3964207e46d41f0cab4f1b0e2ee6377e285dc876381fbcc60b4cf6b"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/commands.json",
+    "bytes": 4745,
+    "sha256": "702f89535d9b3852e60de1106fa541e795ba678368afa8f789dd84fb0566a792"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/crs-qgis.txt",
+    "bytes": 388,
+    "sha256": "98cb198b0b56920124d5539b04fa49b5898e4c3da23759b0b1fa9e70a8e3a612"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/environment.txt",
+    "bytes": 1249,
+    "sha256": "a3340408e41b77d8d33395b0f2b27a466edcdcfb45db824f230668df2cc0a6f2"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/existing-core.txt",
+    "bytes": 2107,
+    "sha256": "3480434e57b540e153344e74826af083eb5a7fd9c315879e7885122f9dd7cd53"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/existing-qgis.txt",
+    "bytes": 610,
+    "sha256": "ce4544929db325841081f5612f258156ec9aa7eda125c582ed7e9213529463e8"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/full-discovery-qgis.txt",
+    "bytes": 25857,
+    "sha256": "b7df8b9c31b081ae306ea191f23045efaa9e109cddb1a02db7defac8a834ab3d"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/full-discovery-system.txt",
+    "bytes": 25292,
+    "sha256": "9f14b35e169b3f8d8f76e27f2899e306552f721e1120363c6f92dbaa82e8b08e"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/independent-core.txt",
+    "bytes": 1110,
+    "sha256": "b5a195fd8545fb603953f52d4702aba7d4569406a155592c91a7e00797c0d6bf"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/independent-qgis.txt",
+    "bytes": 491,
+    "sha256": "89d3eec67c73ec3e1176687e5af0ae8fd12836edb5e2734484aba57d2e92dadd"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/new-core.txt",
+    "bytes": 1216,
+    "sha256": "6bcde2aa2f57cde0fd9338d171e9926b655173f450bb38a633db980c11bd9365"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/new-qgis.txt",
+    "bytes": 434,
+    "sha256": "f11a041afe59a37ef7f200742fa54269ef46086a2962131c7b94f5f87f44cae8"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/original-fixture-adapter.txt",
+    "bytes": 21213,
+    "sha256": "f0223c03f2f1558096b9979b066ca454a906f21e19d8e2bf5d1112b7a878e203"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/original-independent-core.txt",
+    "bytes": 6299,
+    "sha256": "2c411b74b8cc5741de1c90ff8ceced906f182f3e2952e6e7f672777a4763769d"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/original-independent-qgis.txt",
+    "bytes": 1255,
+    "sha256": "1e126a9761c20f326020f6f1556906d60eb2871cf4894bd1c55b9075cc945c6c"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/original-new-regressions.txt",
+    "bytes": 4413,
+    "sha256": "4d000fd19359f49e34f7543d757d5a018429141cf4d8d6cea25ea38a41263332"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-reaudit/scale-50k.txt",
+    "bytes": 1625,
+    "sha256": "e6c74cb987f25604bf78398fdbd79e2b9833e70efaa51cc6f684dbad3f6420bd"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/crs-qgis.txt",
+    "bytes": 388,
+    "sha256": "0ec30c58299b77ab45421aa0db83ca0362e21206ff67fb72e43d44b6736ab13e"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/existing-core.txt",
+    "bytes": 2251,
+    "sha256": "e3e3f4e5966512897f4106007ae67f82580cafd2c8994429a2cd3d13532eb11c"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/existing-qgis.txt",
+    "bytes": 610,
+    "sha256": "994b629de0e83250d38eb41f6e4d242bed302aae27c8edf952d63f0264f7cd0b"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/full-discovery.txt",
+    "bytes": 25292,
+    "sha256": "2c85a707266fac97ca88bae0ef2e74ea6abd36c094a2632d4eaf3c400b1898ec"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/independent-core.txt",
+    "bytes": 1110,
+    "sha256": "69e68b8090626bbfde6c95156ad5792ba30a19ec657a26030fbd98989432c4a6"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/independent-qgis.txt",
+    "bytes": 491,
+    "sha256": "ee664097961227927945cdbf5e2c1d0d650ae7eebcd5edc92bd52880f5504750"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/new-core.txt",
+    "bytes": 1336,
+    "sha256": "4b6eb08bcbd692de1fa7ce8ca7cc851d023f8be6676b3ce37ff925149309c831"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/new-qgis.txt",
+    "bytes": 434,
+    "sha256": "6f4dfb1896206d0c93a51d84494263d2448e89aa8a030986de24cb385dafbb62"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/scale-10k.json",
+    "bytes": 134,
+    "sha256": "f939486b1aef9d31c14afc37cef776037cc45e95892f44ed5fbcfb47ed40aafa"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-remediation/scale-50k.json",
+    "bytes": 133,
+    "sha256": "ee3643f33eb3da78f88946365663fd5b9c6c5dfff0552ebc98ca88a53e13e369"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/after-core.txt",
+    "bytes": 1446,
+    "sha256": "5918df1fee5b3fe1fbab42d69ef3d16f313fd99d3078b46944a796d440301f69"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/after-qgis.txt",
+    "bytes": 891,
+    "sha256": "9b5ab620d83147143135eb97e30eaa2a1c81f2501e7fee927b010a8bb0c155db"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/application.json",
+    "bytes": 1441,
+    "sha256": "90543e128dc1ff048caf8726294220bbd272cada1881cc2182ac4003eeb4af3e"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/before-contract.json",
+    "bytes": 66,
+    "sha256": "ede19fcaa151fe4be858d19d5c3d3a542078dd991a92b15b9733eb16e3c546c8"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/before-core.txt",
+    "bytes": 5206,
+    "sha256": "eb0d7fe2a8c91a31704b643f84428d0c250b19368d13d6d2dfeee09d571611cf"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/before-qgis.txt",
+    "bytes": 1456,
+    "sha256": "6a8b589872c30ac19dc9458bab03bca3a96bdd465069c9cf26d5e96735c2a9b1"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/builder-qgis.txt",
+    "bytes": 610,
+    "sha256": "827080fe1a61b908aa1d8aeb42f247fa7e723c9c0938ad4de64afc596e970fbe"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/cancellation-qgis.txt",
+    "bytes": 434,
+    "sha256": "4470a510208852aaacb07bee0d847bc76fe3f1a504a3d7516b7632e94fdc57c6"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/commands.json",
+    "bytes": 4877,
+    "sha256": "d05203b9ca7f1b7d6f6bae7ffefaa225e001243279d13c5e1a625780ad4a5fcb"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/contract.txt",
+    "bytes": 75,
+    "sha256": "0985faf482cdffcc3571cf84232c6b07fbcc99b6f19b476f5ad10947c15fefb7"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/crs-qgis.txt",
+    "bytes": 388,
+    "sha256": "7632997b3c63eb9cc79f404b5e418ac4d9dbd0eb2a0241596c420eaac28b2632"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/existing-core.txt",
+    "bytes": 2107,
+    "sha256": "8d52a4af134f1fda03e397361d3e9ebda7676645d6d82dbea0079fac34e3cb0f"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/existing-qgis.txt",
+    "bytes": 610,
+    "sha256": "698564b74b9efd45f3dccd1f6aa7a1963450ddf0a24e6cd80812be71c15afa0a"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/full-discovery-system.txt",
+    "bytes": 25864,
+    "sha256": "174f760de6a489bdc9556987bd04861470349f42bd6d05e601f2db3ada20ce4f"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/geometry-api.txt",
+    "bytes": 148,
+    "sha256": "4a32c2b9fd103525bdb8b82190b846df7f6ffe405c5d5870380093fc21f5c626"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/new-qgis.txt",
+    "bytes": 785,
+    "sha256": "851b7973b95de4e3224b4945afac3bfca150f5aca90cc3b53ffa2c8b46df0777"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/original-independent-core.txt",
+    "bytes": 1605,
+    "sha256": "fba79b656d085b5ced509e5c33bc74b48981d59b35e7dc06397caddae0b51c1d"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/original-independent-qgis.txt",
+    "bytes": 491,
+    "sha256": "82684ae337a3af7af3e73546f5c0e1bd17fe2104af535e91e39943f7f2415d88"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/reaudit-core.txt",
+    "bytes": 1446,
+    "sha256": "0effed291ab7fbbce4eddcb7f0a5cce56a3a4322d2d46332983ff26b6a691181"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/reaudit-qgis.txt",
+    "bytes": 909,
+    "sha256": "7ddc7e7a1cda7147a14688d9ccc52ace7abe54a2bd9ac20811fcc110dfcccbb8"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/round1-core.txt",
+    "bytes": 1249,
+    "sha256": "124ef4ab10e25536fe36d8fbd0903177b356f90977efada78776a9cef0d254ef"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/round1-qgis.txt",
+    "bytes": 434,
+    "sha256": "2fae0784251ab7b0251fb2492cfc78ecaa9997235a6bc14ad5039c5bcb8d87d9"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/round2-core.txt",
+    "bytes": 658,
+    "sha256": "ba8b7ecee2bb75a03847f937fe963ac8b9d5f005ea3ef09e7fbbb9ce17f6426e"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/round2-qgis.txt",
+    "bytes": 785,
+    "sha256": "af93187d018378525ab5664d98af13c4b6473576e75f1fe2642de37c7edc6384"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/scale-50k.txt",
+    "bytes": 1624,
+    "sha256": "43eefb68db6ff662c63e2619cde7326938fb08d51eddff0c31d8b7083b96675f"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/system-test_builder_core.txt",
+    "bytes": 2251,
+    "sha256": "4ed32fb29773289d9877f6e15fdd03381ed57c77b56fec5d43ea2f327fe02e21"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/system-test_contract.txt",
+    "bytes": 638,
+    "sha256": "b1402d189e81a0f9ad8f0fee47126fa290bdcd885f9f420d77eef344026070aa"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/system-test_gate_a_regressions.txt",
+    "bytes": 1336,
+    "sha256": "7812c247e37deacaa77d833ca35c4dd17eacbf08f43edd44059a948e64d7f781"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/system-test_round2.txt",
+    "bytes": 670,
+    "sha256": "d52090c45750248603e575df97ac22844f3aeb0279493f7964c32dafaf41dc7d"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/gate-a-round2/system-test_scaffold.txt",
+    "bytes": 503,
+    "sha256": "01ea6c19a7993ba13b649fed0e6ed1217b9cf7c4727a39dd5bcb0f7378325c48"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/prompt06-core-tests.txt",
+    "bytes": 2251,
+    "sha256": "685a9d7914f2a04c41c3f3d36ddf1aff8c19ac9a713aff99c3c88a12438d754f"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/prompt06-final-adjustments.diff",
+    "bytes": 2744,
+    "sha256": "dc3cbbd0e7c60b6616089bb236f746e0643032451943feb7a78c24ff671b4e04"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/prompt06-plugin.diff",
+    "bytes": 50107,
+    "sha256": "f6a478c1b88d4e77dc62ec3c8407663314acd08eab48f8c9f7701d2691364419"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/prompt06-qgis-tests.txt",
+    "bytes": 610,
+    "sha256": "6131f0953540239ef1808cd822348fd54c094375d7c0edd2a5a055a70a486e65"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/qgis-feasibility.txt",
+    "bytes": 1109,
+    "sha256": "2ca757ee01aee2f2a0249ab808606b9dacf366efb87be3776594c87ea3356d2a"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/audits/evidence/upstream.json",
+    "bytes": 60124,
+    "sha256": "14d4717462867204ee4e3b6661a71db3b5bb12202ddc6c89a11542f82817d200"
+  },
+  {
+    "path": "projects/utility-route-lite/docs/contract/v1.json",
+    "bytes": 9532,
+    "sha256": "0625073d304afd3d64e1da3b3851e621e5790dffb86731ddd1b956082ca36be8"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/README.md",
+    "bytes": 4150,
+    "sha256": "a30d365e2995050e2615a4ce73e00a0b1bd5d7a1d8a04fe4eb8c2315a4b03a8c"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/batch_one_bad_record.json",
+    "bytes": 2026,
+    "sha256": "585e067e91223827a843354f46698b16e123dc00d849d043aae9ade3348adedf"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/blocked_shortcut.json",
+    "bytes": 2981,
+    "sha256": "de6abc5325f499904271848afdc81a70c801372a1b9a03d69058cd09ea1eaf65"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/crossing_unconnected.json",
+    "bytes": 2048,
+    "sha256": "97a52bcf8463e4a42c325577b46c5da48453c4fbfa8681ad09c9a83f1b22ce92"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/csv_html_escaping.json",
+    "bytes": 1795,
+    "sha256": "b343013e7237550082fa1ee4575a8498fbae4382624544a8e26cd748032a64ec"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/declared_junction.json",
+    "bytes": 5007,
+    "sha256": "46d4d72ae95b71d218ce639aa2bf28f9d69f5234f0498b1bad6a5711a2b46431"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/disconnected_components.json",
+    "bytes": 2055,
+    "sha256": "a21acc13ef1ad114cce81c15852f0ed6b8deaab76aa411e76a6401ed865b7245"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/duplicate_geometry.json",
+    "bytes": 2012,
+    "sha256": "42b7292fa19c90338b49f36f687562be5d3c8f57b025f228da5838678e0a6ddf"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/duplicate_source_id.json",
+    "bytes": 1760,
+    "sha256": "8d911461688b1403093591ef9cde79804c0732a2cd48ca9d3d715bb536674f07"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/geographic_metric.json",
+    "bytes": 1723,
+    "sha256": "a475114c265c8bacbba9014f83183d804365b650c5ada0277366c243a773ddf0"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/manifest.json",
+    "bytes": 550,
+    "sha256": "7e2a2732c63c88bd7f1aaa0ffa08ca90e3cb4f8b20250f2c2286ab3824bdd7b8"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/multipart_refs.json",
+    "bytes": 1875,
+    "sha256": "22a87b2b8c3ce9b2098431276a9379e5402545c29b794242ab596add6f7744c4"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/outside_snap_tolerance.json",
+    "bytes": 1590,
+    "sha256": "40814f21a243413ca77ceaa3069a2f70c0d374eca78d87c1f1c569cb0329b1ae"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/prohibited_turn.json",
+    "bytes": 4928,
+    "sha256": "7e46e324545110d494668fb360b7c01cd216e0cf1f3824f1da1adb7db93cd2dc"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/reverse_direction.json",
+    "bytes": 1794,
+    "sha256": "cea09ed7a93246486c8e629d5bb173e59f5a5022c436e60d58bf7138f8334d7a"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/same_bent_line_interior.json",
+    "bytes": 1945,
+    "sha256": "50e344721d06652ab0858bdeed68c0c526ad442f8ff51866075b13982242e1b5"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/same_start_end.json",
+    "bytes": 1568,
+    "sha256": "8626f869bfe11d7407f36801f9dc908867309d375227de6adf579739c76b8cf3"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/tiny_endpoint_gap.json",
+    "bytes": 2038,
+    "sha256": "d61405473fdc97e3af198b2b019b771a5cdefabb8827b784325ee72d22beca1b"
+  },
+  {
+    "path": "projects/utility-route-lite/examples/fixtures/v1/zero_length_edge.json",
+    "bytes": 1419,
+    "sha256": "ea2623ca3cb9cefcf836066cfeb78b93ee024a058d628e91d613b8d908fd4852"
+  },
+  {
+    "path": "projects/utility-route-lite/pyproject.toml",
+    "bytes": 104,
+    "sha256": "5043bfa9011ccb95336b24924533e469cf2268c9bf7d706a36e796558b0985d4"
+  },
+  {
+    "path": "projects/utility-route-lite/scripts/build_zip.py",
+    "bytes": 1478,
+    "sha256": "3abc94c9168a31659f532c67d245bdb96daba900086767cd670b029efaedcc2c"
+  },
+  {
+    "path": "projects/utility-route-lite/scripts/check_contract.py",
+    "bytes": 8010,
+    "sha256": "30bf38102f2b0358cb623275bc49351c6756b688cafa72b1c3866d5765cffe1c"
+  },
+  {
+    "path": "projects/utility-route-lite/scripts/epsg3857.wkt",
+    "bytes": 1814,
+    "sha256": "c2350ebe574e0beedfdbc01f224861a1fd5cfec8323829c19decd5e824e08031"
+  },
+  {
+    "path": "projects/utility-route-lite/scripts/regenerate_fixtures.py",
+    "bytes": 11071,
+    "sha256": "4d94be9a38319df2c52efeb1b00a086a0ab51c7e5dcb72110dfe8674dd3431f1"
+  },
+  {
+    "path": "projects/utility-route-lite/scripts/run_qgis_audit_macos.sh",
+    "bytes": 1007,
+    "sha256": "e2fd0e7748231dc529e87ea6569ecc5b2366b57575283f1dd0f85577a2f4911f"
+  },
+  {
+    "path": "projects/utility-route-lite/scripts/run_qgis_scaffold_macos.sh",
+    "bytes": 945,
+    "sha256": "55e49176c2c88bf4f6683bcd3767a180774f26775ce856685eb9d1822eee7545"
+  },
+  {
+    "path": "projects/utility-route-lite/scripts/verify_gate_a_round2.py",
+    "bytes": 2416,
+    "sha256": "5fe60c0a1344ca95cef3f93e64ca02027fd6bd5861466b7d75135756c6483a11"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/builder_scale_remediation.py",
+    "bytes": 1073,
+    "sha256": "d7abdcf98d298ee3c24bfc162131493bd10fb5a6695bd40aa04c8a7972400299"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/graph_scaling_probe.py",
+    "bytes": 953,
+    "sha256": "4b359261abffa5d7fedc71448f83d6131ed103b78eafeb4e333b4bb54332822a"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/probe_round2.py",
+    "bytes": 660,
+    "sha256": "cd7af9c89b296db543f66272a63e4dc2e6c5807e1d300b7462c739966206036e"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/qgis_graph_gate.py",
+    "bytes": 2604,
+    "sha256": "064ded9ed7da74945ef685c3d1ad4abc0885a355eb9bbb9a53b34b89434c8155"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/qgis_reaudit_adversarial.py",
+    "bytes": 4424,
+    "sha256": "5544f6a705129dd46ee618a8bdbf63f807dc0a37d4e479ef453a75305eae330a"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/qgis_remediation.py",
+    "bytes": 4506,
+    "sha256": "15533822e982806f8eee48b6e076c844d1e4858377abb0fd65a22ff381400d76"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/qgis_round2.py",
+    "bytes": 4288,
+    "sha256": "7fd92e8ea2958ea6849f3f8d16d128442ddf69a65192a24a9d337be5209718b4"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/reaudit_scale.py",
+    "bytes": 3302,
+    "sha256": "d121ab63f1ef91a68cd37a74364bc7f5842a92c8f3fae5d19ba87b0c72058637"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/run_reaudit.py",
+    "bytes": 6167,
+    "sha256": "a6095f39dddaa6fe8b29446b5f852a46612253768da56d30bcbb8ef00a12d89d"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/test_contract_registry.py",
+    "bytes": 1664,
+    "sha256": "68777920105cdd299fa7d05233d976ddd215d40519f0f5c4f2bf243fc4913c1c"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/test_graph_gate.py",
+    "bytes": 5134,
+    "sha256": "b14f54d092ff63c33c86a489ba719e567865927386dcc6fc920f2ee5c73085d7"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/test_qgis_feasibility.py",
+    "bytes": 7142,
+    "sha256": "9d114532ede9a832f65bea52f74652e9fd85433c6c09d526a31a3565cf777f8a"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/audit/test_reaudit_adversarial.py",
+    "bytes": 4287,
+    "sha256": "a5cc26b154f568dd73e90e57d31b4ece02e9656a33f2328057bf8738ad90677b"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/fixture_adapter.py",
+    "bytes": 627,
+    "sha256": "fb4e1558f4727a82d13d028e32800bd45e63916938d2dfa94e2ea4a46259eb91"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/qgis_builder.py",
+    "bytes": 6076,
+    "sha256": "cc7ef285d3cbc9d2aa2552050a53288e4bc198aedb1fbe6f8f0b497442f03b71"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/qgis_smoke.py",
+    "bytes": 4402,
+    "sha256": "a1a0b3e35bfd43034094e4af9953bbaa0c910ab2e20bf51e0d4f7173ad36f230"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/test_builder_core.py",
+    "bytes": 10175,
+    "sha256": "36e14aaaa8cbad37588d6eb3cb6baa4bd9f32ee2798a82eea19f8d1d9b72d4ed"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/test_contract.py",
+    "bytes": 3470,
+    "sha256": "8721d99507ec9eedf891228ad03ed921da60794998815b59ac90c721016e5e5e"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/test_crs_contract.py",
+    "bytes": 2667,
+    "sha256": "98a53766d9f16cb04c00c01628b838b375d4f02f79b5735a6066c666b77d9a98"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/test_gate_a_regressions.py",
+    "bytes": 6324,
+    "sha256": "d4fa60c6a208e3a4c40ed780c8b591abaddf0cb42cd9f15dc739f155644597b7"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/test_graph_fixtures.py",
+    "bytes": 3115,
+    "sha256": "bb0c1fbabe7aa23b0277f1124bdc7867644e767a8403eb80faea0262aeec05d7"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/test_round2.py",
+    "bytes": 2247,
+    "sha256": "b0d508d626c3fbfc8daec4e3cebe04af4b57b86715839d81a83ca28e236f3f12"
+  },
+  {
+    "path": "projects/utility-route-lite/tests/test_scaffold.py",
+    "bytes": 1795,
+    "sha256": "8fa0c99df9dea3289406cb28ffe6bd684685805826f6f954860c94843d257d6b"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/__init__.py",
+    "bytes": 211,
+    "sha256": "1f5bf6ba16c9c1707b649609174d39f53f8b81c9ed3ffd115a3e4e953e0f7aa8"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/core/__init__.py",
+    "bytes": 77,
+    "sha256": "33f38fdc3cb8365b299bdc96a7726e9c3e7c19cc95db94265de13d9e70dcd22f"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/core/builder.py",
+    "bytes": 38041,
+    "sha256": "0d8763fd4df26d17db6033a5235c7f5b0cbd682c1a61aa926082871038325cf4"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/core/serialization.py",
+    "bytes": 942,
+    "sha256": "b90254d84fc0684d908f9bd8e1fef1fb951a59375182bebe0eef2d6906573136"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/icon.svg",
+    "bytes": 428,
+    "sha256": "2708a6f93503fad50e6a40d6db938f6234d64f7f9b4914746f2d4a6ecb608fdc"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/metadata.txt",
+    "bytes": 690,
+    "sha256": "f66a1b16bcd8943fb7d9cd46d474fbab63c2539a421641a066831735747a879c"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/plugin.py",
+    "bytes": 2478,
+    "sha256": "e641be04426258a72ac3b1d8d646999ee67b23110bfa566f40db55dfd3eb7b65"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/processing/__init__.py",
+    "bytes": 54,
+    "sha256": "bce7aa3aef08b87337d9314b3e6b777c472f9f7fbc8d05548bdd98e575f542a3"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/processing/algorithms.py",
+    "bytes": 11548,
+    "sha256": "6f2a3d6408e1d20b18812838d276e100764a7fe68a8670847c0370f04506b332"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/processing/provider.py",
+    "bytes": 836,
+    "sha256": "4c209b975767cef59c635d03422302e905dd662a95837fd6f950ffa3ae8baa1d"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/qgis_adapters/__init__.py",
+    "bytes": 46,
+    "sha256": "b64d5ef2ab1fdde857449e09543566259bb26e5c9b27690b46a09f33e7de35ed"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/qgis_adapters/builder.py",
+    "bytes": 8234,
+    "sha256": "170b7ca5423a0c658c2b935ab3e7df3bee721241472ca48c4fadeca4d6ef55c1"
+  },
+  {
+    "path": "projects/utility-route-lite/utility_route_lite/qgis_adapters/crs.py",
+    "bytes": 424,
+    "sha256": "7f80046a9780779d6adc9243fed6d3c9f156e2a2853d5e03b8574b0bab848c97"
+  }
+]

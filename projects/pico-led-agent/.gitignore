@@ -6,3 +6,28 @@ pico_v2/config.py
 .env
 presets.json
 
+
+# Local state and generated outputs
+.DS_Store
+.env
+.env.*
+!.env.example
+*.local.*
+config.local*.json
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.godot/
+.build/
+xcuserdata/
+*.xcuserstate
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+runs/
+input/
+outputs/
+reports/
+!reports/.gitkeep
